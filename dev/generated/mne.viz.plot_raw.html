@@ -22,6 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../_static/copybutton.js"></script>
 
 
@@ -78,7 +79,10 @@
   </head><body>
 
 <div class="d-block devbar alert alert-danger">
-This documentation is for <strong>development version 0.21.dev0</strong>.
+This is documentation for the <em>unstable development version</em> of MNE-Python,
+<a href="https://mne.tools/dev/install/advanced.html#using-the-development-version-of-mne-python-latest-master">available here</a>.
+Or, switch to documentation for the <a href="https://mne.tools/stable">current stable version</a>.
+
 </div>
 
 
@@ -169,7 +173,10 @@ This documentation is for <strong>development version 0.21.dev0</strong>.
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.svg" alt="Logo"/>
             </a></p><ul>
-<li><a class="reference internal" href="#">mne.viz.plot_raw</a></li>
+<li><a class="reference internal" href="#">mne.viz.plot_raw</a><ul>
+<li><a class="reference internal" href="#examples-using-mne-viz-plot-raw">Examples using <code class="docutils literal notranslate"><span class="pre">mne.viz.plot_raw</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -260,7 +267,7 @@ will be applied.</p>
 </dd>
 <dt><strong>filtorder</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Filtering order. 0 will use FIR filtering with MNE defaults.
 Other values will construct an IIR filter of the given order
-and apply it with <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.filtfilt.html#scipy.signal.filtfilt" title="(in SciPy v1.5.0.dev0+0befca4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">filtfilt()</span></code></a> (making the effective
+and apply it with <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.filtfilt.html#scipy.signal.filtfilt" title="(in SciPy v1.5.0.dev0+0d49346)"><code class="xref py py-func docutils literal notranslate"><span class="pre">filtfilt()</span></code></a> (making the effective
 order twice <code class="docutils literal notranslate"><span class="pre">filtorder</span></code>). Filtering may produce some edge artifacts
 (at the left and right edges) of the signals during display.</p>
 <div class="versionchanged">
@@ -371,7 +378,10 @@ By default, the channel means are removed when <code class="docutils literal not
 <code class="docutils literal notranslate"><span class="pre">True</span></code>. This flag can be toggled by pressing ‘d’.</p>
 </dd></dl>
 
-<div style='clear:both'></div></div>
+<div class="section" id="examples-using-mne-viz-plot-raw">
+<span id="sphx-glr-backreferences-mne-viz-plot-raw"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.viz.plot_raw</span></code><a class="headerlink" href="#examples-using-mne-viz-plot-raw" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-clear"></div></div>
+</div>
 
 
     </div>
@@ -404,5 +414,6 @@ By default, the channel means are removed when <code class="docutils literal not
       <p class="text-center text-muted small">&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-03-27.</p>
     </div></div></div>
   </footer>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

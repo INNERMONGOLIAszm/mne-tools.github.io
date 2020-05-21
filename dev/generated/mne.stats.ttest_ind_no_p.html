@@ -22,6 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../_static/copybutton.js"></script>
 
 
@@ -78,7 +79,10 @@
   </head><body>
 
 <div class="d-block devbar alert alert-danger">
-This documentation is for <strong>development version 0.21.dev0</strong>.
+This is documentation for the <em>unstable development version</em> of MNE-Python,
+<a href="https://mne.tools/dev/install/advanced.html#using-the-development-version-of-mne-python-latest-master">available here</a>.
+Or, switch to documentation for the <a href="https://mne.tools/stable">current stable version</a>.
+
 </div>
 
 
@@ -169,7 +173,10 @@ This documentation is for <strong>development version 0.21.dev0</strong>.
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.svg" alt="Logo"/>
             </a></p><ul>
-<li><a class="reference internal" href="#">mne.stats.ttest_ind_no_p</a></li>
+<li><a class="reference internal" href="#">mne.stats.ttest_ind_no_p</a><ul>
+<li><a class="reference internal" href="#examples-using-mne-stats-ttest-ind-no-p">Examples using <code class="docutils literal notranslate"><span class="pre">mne.stats.ttest_ind_no_p</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -189,7 +196,7 @@ This documentation is for <strong>development version 0.21.dev0</strong>.
 <dt id="mne.stats.ttest_ind_no_p">
 <code class="sig-prename descclassname">mne.stats.</code><code class="sig-name descname">ttest_ind_no_p</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">equal_var</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">sigma</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/stats/parametric.py#L66-L117"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.stats.ttest_ind_no_p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Independent samples t-test without p calculation.</p>
-<p>This is a modified version of <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind" title="(in SciPy v1.5.0.dev0+0befca4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_ind()</span></code></a>. It operates
+<p>This is a modified version of <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind" title="(in SciPy v1.5.0.dev0+0d49346)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_ind()</span></code></a>. It operates
 along the first axis. The <code class="docutils literal notranslate"><span class="pre">sigma</span></code> parameter provides an optional “hat”
 adjustment (see <a class="reference internal" href="mne.stats.ttest_1samp_no_p.html#mne.stats.ttest_1samp_no_p" title="mne.stats.ttest_1samp_no_p"><code class="xref py py-func docutils literal notranslate"><span class="pre">ttest_1samp_no_p()</span></code></a> and <a class="footnote-reference brackets" href="#ridgwayetal2012" id="id1">1</a>).</p>
 <dl class="field-list">
@@ -199,7 +206,7 @@ adjustment (see <a class="reference internal" href="mne.stats.ttest_1samp_no_p.h
 </dd>
 <dt><strong>b</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/glossary.html#term-array-like" title="(in NumPy v1.20.dev0)"><span>array_like</span></a></span></dt><dd><p>The second array.</p>
 </dd>
-<dt><strong>equal_var</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Assume equal variance. See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind" title="(in SciPy v1.5.0.dev0+0befca4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_ind()</span></code></a>.</p>
+<dt><strong>equal_var</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Assume equal variance. See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind" title="(in SciPy v1.5.0.dev0+0d49346)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_ind()</span></code></a>.</p>
 </dd>
 <dt><strong>sigma</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>The regularization. See <a class="reference internal" href="mne.stats.ttest_1samp_no_p.html#mne.stats.ttest_1samp_no_p" title="mne.stats.ttest_1samp_no_p"><code class="xref py py-func docutils literal notranslate"><span class="pre">ttest_1samp_no_p()</span></code></a>.</p>
 </dd>
@@ -221,7 +228,10 @@ adjustment (see <a class="reference internal" href="mne.stats.ttest_1samp_no_p.h
 </p>
 </dd></dl>
 
-<div style='clear:both'></div></div>
+<div class="section" id="examples-using-mne-stats-ttest-ind-no-p">
+<span id="sphx-glr-backreferences-mne-stats-ttest-ind-no-p"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.stats.ttest_ind_no_p</span></code><a class="headerlink" href="#examples-using-mne-stats-ttest-ind-no-p" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-clear"></div></div>
+</div>
 
 
     </div>
@@ -254,5 +264,6 @@ adjustment (see <a class="reference internal" href="mne.stats.ttest_1samp_no_p.h
       <p class="text-center text-muted small">&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-03-27.</p>
     </div></div></div>
   </footer>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

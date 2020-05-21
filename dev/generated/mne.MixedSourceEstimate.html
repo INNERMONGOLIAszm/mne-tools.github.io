@@ -22,6 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../_static/copybutton.js"></script>
 
 
@@ -78,7 +79,10 @@
   </head><body>
 
 <div class="d-block devbar alert alert-danger">
-This documentation is for <strong>development version 0.21.dev0</strong>.
+This is documentation for the <em>unstable development version</em> of MNE-Python,
+<a href="https://mne.tools/dev/install/advanced.html#using-the-development-version-of-mne-python-latest-master">available here</a>.
+Or, switch to documentation for the <a href="https://mne.tools/stable">current stable version</a>.
+
 </div>
 
 
@@ -370,7 +374,7 @@ with one array per source space.</p>
 
 <dl class="py method">
 <dt id="mne.MixedSourceEstimate.bin">
-<code class="sig-name descname">bin</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">width</em>, <em class="sig-param">tstart=None</em>, <em class="sig-param">tstop=None</em>, <em class="sig-param">func=&lt;function mean at 0x7f05b00fcee0&gt;</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/source_estimate.py#L932-L976"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.MixedSourceEstimate.bin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">bin</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">width</em>, <em class="sig-param">tstart=None</em>, <em class="sig-param">tstop=None</em>, <em class="sig-param">func=&lt;function mean at 0x7f013a822160&gt;</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/source_estimate.py#L932-L976"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.MixedSourceEstimate.bin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a source estimate object with data summarized over time bins.</p>
 <p>Time bins of <code class="docutils literal notranslate"><span class="pre">width</span></code> seconds. This method is intended for
 visualization only. No filter is applied to the data before binning,
@@ -683,7 +687,7 @@ be created.</p>
 Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
-<dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Window to use in resampling. See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.5.0.dev0+0befca4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+<dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Window to use in resampling. See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.5.0.dev0+0d49346)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of jobs to run in parallel (default 1).
 Requires the joblib package.</p>
@@ -783,7 +787,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 <img alt="Compute MNE inverse solution on evoked data in a mixed source space" src="../_images/sphx_glr_plot_mixed_source_space_inverse_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_mixed_source_space_inverse.html#sphx-glr-auto-examples-inverse-plot-mixed-source-space-inverse-py"><span class="std std-ref">Compute MNE inverse solution on evoked data in a mixed source space</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-</div><div style="clear:both"></div></dd></dl>
+</div><div class="sphx-glr-clear"></div></dd></dl>
 
 <dl class="py method">
 <dt id="mne.MixedSourceEstimate.time_as_index">
@@ -982,7 +986,7 @@ do this automatically (if possible).</p>
 <img alt="Compute MNE inverse solution on evoked data in a mixed source space" src="../_images/sphx_glr_plot_mixed_source_space_inverse_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_mixed_source_space_inverse.html#sphx-glr-auto-examples-inverse-plot-mixed-source-space-inverse-py"><span class="std std-ref">Compute MNE inverse solution on evoked data in a mixed source space</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-</div><div style="clear:both"></div></dd></dl>
+</div><div class="sphx-glr-clear"></div></dd></dl>
 
 </dd></dl>
 
@@ -996,7 +1000,7 @@ do this automatically (if possible).</p>
 <img alt="The :class:`SourceEstimate &lt;mne.SourceEstimate&gt;` data structure" src="../_images/sphx_glr_plot_object_source_estimate_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_object_source_estimate.html#sphx-glr-auto-tutorials-source-modeling-plot-object-source-estimate-py"><span class="std std-ref">The SourceEstimate data structure</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-</div><div style='clear:both'></div></div>
+</div><div class="sphx-glr-clear"></div></div>
 </div>
 
 
@@ -1030,5 +1034,6 @@ do this automatically (if possible).</p>
       <p class="text-center text-muted small">&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-03-27.</p>
     </div></div></div>
   </footer>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

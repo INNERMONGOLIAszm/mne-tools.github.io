@@ -22,6 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../_static/copybutton.js"></script>
 
 
@@ -78,7 +79,10 @@
   </head><body>
 
 <div class="d-block devbar alert alert-danger">
-This documentation is for <strong>development version 0.21.dev0</strong>.
+This is documentation for the <em>unstable development version</em> of MNE-Python,
+<a href="https://mne.tools/dev/install/advanced.html#using-the-development-version-of-mne-python-latest-master">available here</a>.
+Or, switch to documentation for the <a href="https://mne.tools/stable">current stable version</a>.
+
 </div>
 
 
@@ -169,7 +173,10 @@ This documentation is for <strong>development version 0.21.dev0</strong>.
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/mne_logo_small.svg" alt="Logo"/>
             </a></p><ul>
-<li><a class="reference internal" href="#">mne.compute_rank</a></li>
+<li><a class="reference internal" href="#">mne.compute_rank</a><ul>
+<li><a class="reference internal" href="#examples-using-mne-compute-rank">Examples using <code class="docutils literal notranslate"><span class="pre">mne.compute_rank</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -213,7 +220,7 @@ not provide <code class="docutils literal notranslate"><span class="pre">inst.in
 calculating the rank. The singular values are calculated
 in this method such that independent data are expected to
 have singular value around one. Can be ‘auto’ to use the
-same thresholding as <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.linalg.orth.html#scipy.linalg.orth" title="(in SciPy v1.5.0.dev0+0befca4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.linalg.orth()</span></code></a>.</p>
+same thresholding as <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.linalg.orth.html#scipy.linalg.orth" title="(in SciPy v1.5.0.dev0+0d49346)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.linalg.orth()</span></code></a>.</p>
 </dd>
 <dt><strong>proj</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, all projs in <code class="docutils literal notranslate"><span class="pre">inst</span></code> and <code class="docutils literal notranslate"><span class="pre">info</span></code> will be applied or
 considered when <code class="docutils literal notranslate"><span class="pre">rank=None</span></code> or <code class="docutils literal notranslate"><span class="pre">rank='info'</span></code>.</p>
@@ -280,7 +287,10 @@ into account the true data rank.</p>
 </div>
 </dd></dl>
 
-<div style='clear:both'></div></div>
+<div class="section" id="examples-using-mne-compute-rank">
+<span id="sphx-glr-backreferences-mne-compute-rank"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.compute_rank</span></code><a class="headerlink" href="#examples-using-mne-compute-rank" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-clear"></div></div>
+</div>
 
 
     </div>
@@ -313,5 +323,6 @@ into account the true data rank.</p>
       <p class="text-center text-muted small">&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-03-27.</p>
     </div></div></div>
   </footer>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

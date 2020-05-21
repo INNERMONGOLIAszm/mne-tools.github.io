@@ -22,6 +22,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../../_static/copybutton.js"></script>
 
 
@@ -78,7 +79,10 @@
   </head><body>
 
 <div class="d-block devbar alert alert-danger">
-This documentation is for <strong>development version 0.21.dev0</strong>.
+This is documentation for the <em>unstable development version</em> of MNE-Python,
+<a href="https://mne.tools/dev/install/advanced.html#using-the-development-version-of-mne-python-latest-master">available here</a>.
+Or, switch to documentation for the <a href="https://mne.tools/stable">current stable version</a>.
+
 </div>
 
 
@@ -270,7 +274,7 @@ explaining ECG artifacts.</p>
 <a href="../../generated/mne.preprocessing.ICA.html#mne.preprocessing.ICA.plot_components" title="mne.preprocessing.ICA.plot_components" class="sphx-glr-backref-module-mne-preprocessing sphx-glr-backref-type-py-method"><span class="n">ica</span><span class="o">.</span><span class="n">plot_components</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ecg_inds</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="ICA components, ICA005, ICA000" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_run_ica_001.png" />
+<img alt="ICA components, ICA006, ICA000, ICA094" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_run_ica_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fitting ICA to data using 305 channels (please be patient, this may take a while)
 Inferring max_pca_components from picks
@@ -278,7 +282,7 @@ Loading data for 319 events and 106 original time points ...
 0 bad epochs dropped
 Selecting by explained variance: 126 components
 Loading data for 319 events and 106 original time points ...
-Fitting ICA took 26.3s.
+Fitting ICA took 30.0s.
 Reconstructing ECG signal from Magnetometers
 Setting up band-pass filter from 8 - 16 Hz
 
@@ -308,9 +312,11 @@ Reconstructing ECG signal from Magnetometers
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img alt="ICA005, Epochs image and ERP/ERF, Spectrum, Dropped segments: 0.00 %" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_run_ica_002.png" />
+<li><img alt="ICA006, Epochs image and ERP/ERF, Spectrum, Dropped segments: 0.00 %" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_run_ica_002.png" />
 </li>
 <li><img alt="ICA000, Epochs image and ERP/ERF, Spectrum, Dropped segments: 0.00 %" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_run_ica_003.png" />
+</li>
+<li><img alt="ICA094, Epochs image and ERP/ERF, Spectrum, Dropped segments: 0.00 %" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_run_ica_004.png" />
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
@@ -327,10 +333,15 @@ No baseline correction applied
 Not setting metadata
 0 projection items activated
 0 bad epochs dropped
+319 matching events found
+No baseline correction applied
+Not setting metadata
+0 projection items activated
+0 bad epochs dropped
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  35.307 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  391 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  44.772 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  509 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-preprocessing-plot-run-ica-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/524f91808231279d1382039c40dca610/plot_run_ica.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_run_ica.py</span></code></a></p>
@@ -373,5 +384,6 @@ Not setting metadata
       <p class="text-center text-muted small">&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-03-27.</p>
     </div></div></div>
   </footer>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

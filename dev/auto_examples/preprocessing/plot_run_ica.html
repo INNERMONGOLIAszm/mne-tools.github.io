@@ -217,6 +217,7 @@ fast machine it can take about a minute to complete.</p>
 <li><p>MEG channel selection</p></li>
 <li><p>1-30 Hz band-pass filter</p></li>
 <li><p>epoching -0.2 to 0.5 seconds with respect to events</p></li>
+<li><p>rejection based on peak-to-peak amplitude</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path" class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw_fname</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis_filt-0-40_raw.fif&#39;</span>
@@ -225,9 +226,12 @@ fast machine it can take about a minute to complete.</p>
 <a href="../../generated/mne.io.Raw.html#mne.io.Raw.pick_types" title="mne.io.Raw.pick_types" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">meg</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="s1">&#39;bads&#39;</span><span class="p">,</span> <span class="n">stim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
 <a href="../../generated/mne.io.Raw.html#mne.io.Raw.filter" title="mne.io.Raw.filter" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw</span><span class="o">.</span><span class="n">filter</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">fir_design</span><span class="o">=</span><span class="s1">&#39;firwin&#39;</span><span class="p">)</span>
 
+<span class="c1"># peak-to-peak amplitude rejection parameters</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">reject</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">grad</span><span class="o">=</span><span class="mf">4000e-13</span><span class="p">,</span> <span class="n">mag</span><span class="o">=</span><span class="mf">4e-12</span><span class="p">)</span>
 <span class="c1"># longer + more epochs for more artifact exposure</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">events</span></a> <span class="o">=</span> <a href="../../generated/mne.find_events.html#mne.find_events" title="mne.find_events" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">find_events</span></a><span class="p">(</span><a href="../../generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span></a><span class="p">,</span> <span class="n">stim_channel</span><span class="o">=</span><span class="s1">&#39;STI 014&#39;</span><span class="p">)</span>
-<a href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span></a> <span class="o">=</span> <a href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class"><span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span></a><span class="p">(</span><a href="../../generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">events</span></a><span class="p">,</span> <span class="n">event_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<a href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span></a> <span class="o">=</span> <a href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class"><span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span></a><span class="p">(</span><a href="../../generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">events</span></a><span class="p">,</span> <span class="n">event_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                    <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">reject</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">reject</span></a><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -269,20 +273,22 @@ explaining ECG artifacts.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../generated/mne.preprocessing.ICA.html#mne.preprocessing.ICA" title="mne.preprocessing.ICA" class="sphx-glr-backref-module-mne-preprocessing sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ica</span></a> <span class="o">=</span> <a href="../../generated/mne.preprocessing.ICA.html#mne.preprocessing.ICA" title="mne.preprocessing.ICA" class="sphx-glr-backref-module-mne-preprocessing sphx-glr-backref-type-py-class"><span class="n">ICA</span></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;fastica&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><a href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span></a><span class="p">)</span>
 
 <a href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ecg_epochs</span></a> <span class="o">=</span> <a href="../../generated/mne.preprocessing.create_ecg_epochs.html#mne.preprocessing.create_ecg_epochs" title="mne.preprocessing.create_ecg_epochs" class="sphx-glr-backref-module-mne-preprocessing sphx-glr-backref-type-py-function"><span class="n">create_ecg_epochs</span></a><span class="p">(</span><a href="../../generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span></a><span class="p">,</span> <span class="n">tmin</span><span class="o">=-.</span><span class="mi">5</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ecg_inds</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scores</span></a> <span class="o">=</span> <a href="../../generated/mne.preprocessing.ICA.html#mne.preprocessing.ICA.find_bads_ecg" title="mne.preprocessing.ICA.find_bads_ecg" class="sphx-glr-backref-module-mne-preprocessing sphx-glr-backref-type-py-method"><span class="n">ica</span><span class="o">.</span><span class="n">find_bads_ecg</span></a><span class="p">(</span><a href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ecg_epochs</span></a><span class="p">)</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ecg_inds</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">scores</span></a> <span class="o">=</span> <a href="../../generated/mne.preprocessing.ICA.html#mne.preprocessing.ICA.find_bads_ecg" title="mne.preprocessing.ICA.find_bads_ecg" class="sphx-glr-backref-module-mne-preprocessing sphx-glr-backref-type-py-method"><span class="n">ica</span><span class="o">.</span><span class="n">find_bads_ecg</span></a><span class="p">(</span><a href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ecg_epochs</span></a><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
 
 <a href="../../generated/mne.preprocessing.ICA.html#mne.preprocessing.ICA.plot_components" title="mne.preprocessing.ICA.plot_components" class="sphx-glr-backref-module-mne-preprocessing sphx-glr-backref-type-py-method"><span class="n">ica</span><span class="o">.</span><span class="n">plot_components</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ecg_inds</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="ICA components, ICA005, ICA000" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_run_ica_001.png" />
+<img alt="ICA components, ICA006, ICA000" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_run_ica_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fitting ICA to data using 305 channels (please be patient, this may take a while)
 Inferring max_pca_components from picks
 Loading data for 319 events and 106 original time points ...
-0 bad epochs dropped
-Selecting by explained variance: 126 components
-Loading data for 319 events and 106 original time points ...
-Fitting ICA took 21.9s.
+    Rejecting  epoch based on MAG : [&#39;MEG 1711&#39;]
+    Rejecting  epoch based on MAG : [&#39;MEG 1711&#39;]
+2 bad epochs dropped
+Selecting by explained variance: 125 components
+Loading data for 317 events and 106 original time points ...
+Fitting ICA took 47.6s.
 Reconstructing ECG signal from Magnetometers
 Setting up band-pass filter from 8 - 16 Hz
 
@@ -305,6 +311,7 @@ Created an SSP operator (subspace dimension = 3)
 Loading data for 284 events and 151 original time points ...
 0 bad epochs dropped
 Reconstructing ECG signal from Magnetometers
+Using threshold: 0.41 for CTPS ECG detection
 </pre></div>
 </div>
 <p>Plot properties of ECG components:</p>
@@ -312,29 +319,34 @@ Reconstructing ECG signal from Magnetometers
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img alt="ICA005, Epochs image and ERP/ERF, Spectrum, Dropped segments: 0.00 %" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_run_ica_002.png" />
+<li><img alt="ICA006, Epochs image and ERP/ERF, Spectrum, Dropped segments: 0.00 %" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_run_ica_002.png" />
 </li>
 <li><img alt="ICA000, Epochs image and ERP/ERF, Spectrum, Dropped segments: 0.00 %" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_run_ica_003.png" />
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading data for 319 events and 106 original time points ...
-Loading data for 319 events and 106 original time points ...
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading data for 317 events and 106 original time points ...
+Loading data for 317 events and 106 original time points ...
     Using multitaper spectrum estimation with 7 DPSS windows
-319 matching events found
+317 matching events found
 No baseline correction applied
 Not setting metadata
 0 projection items activated
 0 bad epochs dropped
-319 matching events found
+317 matching events found
 No baseline correction applied
 Not setting metadata
 0 projection items activated
 0 bad epochs dropped
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  31.468 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  385 MB</p>
+<p>Plot the estimated source of detected ECG related components</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../generated/mne.preprocessing.ICA.html#mne.preprocessing.ICA.plot_sources" title="mne.preprocessing.ICA.plot_sources" class="sphx-glr-backref-module-mne-preprocessing sphx-glr-backref-type-py-method"><span class="n">ica</span><span class="o">.</span><span class="n">plot_sources</span></a><span class="p">(</span><a href="../../generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span></a><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ecg_inds</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="plot run ica" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_run_ica_004.png" />
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  11.414 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  510 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-preprocessing-plot-run-ica-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/524f91808231279d1382039c40dca610/plot_run_ica.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_run_ica.py</span></code></a></p>

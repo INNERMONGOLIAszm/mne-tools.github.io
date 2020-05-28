@@ -174,8 +174,8 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
               <img class="logo" src="../../_static/mne_logo_small.svg" alt="Logo"/>
             </a></p><ul>
 <li><a class="reference internal" href="#">Plotting topographic maps of evoked data</a><ul>
-<li><a class="reference internal" href="#basic-plot-topomap-options">Basic <em class="xref py py-obj">plot_topomap</em> options</a></li>
-<li><a class="reference internal" href="#additional-plot-topomap-options">Additional <em class="xref py py-obj">plot_topomap</em> options</a></li>
+<li><a class="reference internal" href="#basic-plot-topomap-options">Basic <code class="xref py py-func docutils literal notranslate"><span class="pre">plot_topomap()</span></code> options</a></li>
+<li><a class="reference internal" href="#additional-plot-topomap-options">Additional <code class="xref py py-func docutils literal notranslate"><span class="pre">plot_topomap()</span></code> options</a></li>
 <li><a class="reference internal" href="#more-advanced-usage">More advanced usage</a></li>
 <li><a class="reference internal" href="#animating-the-topomap">Animating the topomap</a></li>
 </ul>
@@ -242,7 +242,7 @@ Applying baseline correction (mode: mean)
 </pre></div>
 </div>
 <div class="section" id="basic-plot-topomap-options">
-<h2>Basic <em class="xref py py-obj">plot_topomap</em> options<a class="headerlink" href="#basic-plot-topomap-options" title="Permalink to this headline">¶</a></h2>
+<h2>Basic <a class="reference internal" href="../../generated/mne.viz.plot_topomap.html#mne.viz.plot_topomap" title="mne.viz.plot_topomap"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_topomap()</span></code></a> options<a class="headerlink" href="#basic-plot-topomap-options" title="Permalink to this headline">¶</a></h2>
 <p>We plot evoked topographies using <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked.plot_topomap" title="mne.Evoked.plot_topomap"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.Evoked.plot_topomap()</span></code></a>. The first
 argument, <code class="docutils literal notranslate"><span class="pre">times</span></code> allows to specify time instants (in seconds!) for which
 topographies will be shown. We select timepoints from 50 to 150 ms with a
@@ -280,7 +280,7 @@ the topographies:</p>
 <img alt="0.050 s, 0.070 s, 0.090 s, 0.110 s, 0.130 s, 0.150 s, fT/cm" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_evoked_topomap_005.png" />
 </div>
 <div class="section" id="additional-plot-topomap-options">
-<h2>Additional <em class="xref py py-obj">plot_topomap</em> options<a class="headerlink" href="#additional-plot-topomap-options" title="Permalink to this headline">¶</a></h2>
+<h2>Additional <a class="reference internal" href="../../generated/mne.viz.plot_topomap.html#mne.viz.plot_topomap" title="mne.viz.plot_topomap"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_topomap()</span></code></a> options<a class="headerlink" href="#additional-plot-topomap-options" title="Permalink to this headline">¶</a></h2>
 <p>We can also use a range of various <a class="reference internal" href="../../generated/mne.viz.plot_topomap.html#mne.viz.plot_topomap" title="mne.viz.plot_topomap"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.viz.plot_topomap()</span></code></a> arguments
 that control how the topography is drawn. For example:</p>
 <ul class="simple">
@@ -528,39 +528,39 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imgbd6a38f60bd846459d13f98a3fa95aa4">
+  <img id="_anim_imga2d11d4969d14c849768be6f51627b47">
   <div class="anim-controls">
-    <input id="_anim_sliderbd6a38f60bd846459d13f98a3fa95aa4" type="range" class="anim-slider"
+    <input id="_anim_slidera2d11d4969d14c849768be6f51627b47" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="animbd6a38f60bd846459d13f98a3fa95aa4.set_frame(parseInt(this.value));"></input>
+           oninput="anima2d11d4969d14c849768be6f51627b47.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button onclick="animbd6a38f60bd846459d13f98a3fa95aa4.slower()"><i class="fa fa-minus"></i></button>
-      <button onclick="animbd6a38f60bd846459d13f98a3fa95aa4.first_frame()"><i class="fa fa-fast-backward">
+      <button onclick="anima2d11d4969d14c849768be6f51627b47.slower()"><i class="fa fa-minus"></i></button>
+      <button onclick="anima2d11d4969d14c849768be6f51627b47.first_frame()"><i class="fa fa-fast-backward">
           </i></button>
-      <button onclick="animbd6a38f60bd846459d13f98a3fa95aa4.previous_frame()">
+      <button onclick="anima2d11d4969d14c849768be6f51627b47.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button onclick="animbd6a38f60bd846459d13f98a3fa95aa4.reverse_animation()">
+      <button onclick="anima2d11d4969d14c849768be6f51627b47.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button onclick="animbd6a38f60bd846459d13f98a3fa95aa4.pause_animation()"><i class="fa fa-pause">
+      <button onclick="anima2d11d4969d14c849768be6f51627b47.pause_animation()"><i class="fa fa-pause">
           </i></button>
-      <button onclick="animbd6a38f60bd846459d13f98a3fa95aa4.play_animation()"><i class="fa fa-play"></i>
+      <button onclick="anima2d11d4969d14c849768be6f51627b47.play_animation()"><i class="fa fa-play"></i>
           </button>
-      <button onclick="animbd6a38f60bd846459d13f98a3fa95aa4.next_frame()"><i class="fa fa-step-forward">
+      <button onclick="anima2d11d4969d14c849768be6f51627b47.next_frame()"><i class="fa fa-step-forward">
           </i></button>
-      <button onclick="animbd6a38f60bd846459d13f98a3fa95aa4.last_frame()"><i class="fa fa-fast-forward">
+      <button onclick="anima2d11d4969d14c849768be6f51627b47.last_frame()"><i class="fa fa-fast-forward">
           </i></button>
-      <button onclick="animbd6a38f60bd846459d13f98a3fa95aa4.faster()"><i class="fa fa-plus"></i></button>
+      <button onclick="anima2d11d4969d14c849768be6f51627b47.faster()"><i class="fa fa-plus"></i></button>
     </div>
-    <form action="#n" name="_anim_loop_selectbd6a38f60bd846459d13f98a3fa95aa4" class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_bd6a38f60bd846459d13f98a3fa95aa4"
+    <form action="#n" name="_anim_loop_selecta2d11d4969d14c849768be6f51627b47" class="anim-state">
+      <input type="radio" name="state" value="once" id="_anim_radio1_a2d11d4969d14c849768be6f51627b47"
              >
-      <label for="_anim_radio1_bd6a38f60bd846459d13f98a3fa95aa4">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_bd6a38f60bd846459d13f98a3fa95aa4"
+      <label for="_anim_radio1_a2d11d4969d14c849768be6f51627b47">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_a2d11d4969d14c849768be6f51627b47"
              checked>
-      <label for="_anim_radio2_bd6a38f60bd846459d13f98a3fa95aa4">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_bd6a38f60bd846459d13f98a3fa95aa4"
+      <label for="_anim_radio2_a2d11d4969d14c849768be6f51627b47">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_a2d11d4969d14c849768be6f51627b47"
              >
-      <label for="_anim_radio3_bd6a38f60bd846459d13f98a3fa95aa4">Reflect</label>
+      <label for="_anim_radio3_a2d11d4969d14c849768be6f51627b47">Reflect</label>
     </form>
   </div>
 </div>
@@ -570,9 +570,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imgbd6a38f60bd846459d13f98a3fa95aa4";
-    var slider_id = "_anim_sliderbd6a38f60bd846459d13f98a3fa95aa4";
-    var loop_select_id = "_anim_loop_selectbd6a38f60bd846459d13f98a3fa95aa4";
+    var img_id = "_anim_imga2d11d4969d14c849768be6f51627b47";
+    var slider_id = "_anim_slidera2d11d4969d14c849768be6f51627b47";
+    var loop_select_id = "_anim_loop_selecta2d11d4969d14c849768be6f51627b47";
     var frames = new Array(11);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAH0CAYAAADhUFPUAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz\
@@ -15488,12 +15488,12 @@ CIKwGRIsgiAIgiAImyHBIgiCIAiCsJn/B9fbfsQiX2mnAAAAAElFTkSuQmCC\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        animbd6a38f60bd846459d13f98a3fa95aa4 = new Animation(frames, img_id, slider_id, 500.0,
+        anima2d11d4969d14c849768be6f51627b47 = new Animation(frames, img_id, slider_id, 500.0,
                                  loop_select_id);
     }, 0);
   })()
 </script></div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  26.599 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.585 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  8 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-visualization-plot-evoked-topomap-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">

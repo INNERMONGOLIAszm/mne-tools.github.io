@@ -242,7 +242,7 @@ defaults to <code class="docutils literal notranslate"><span class="pre">dict(ee
 defaults to <code class="docutils literal notranslate"><span class="pre">dict(eeg=1e6,</span> <span class="pre">grad=1e13,</span> <span class="pre">mag=1e15)</span></code>.</p>
 </dd>
 <dt><strong>titles</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The titles associated with the channels. If None, defaults to
-<em class="xref py py-obj">dict(eeg=’EEG’, grad=’Gradiometers’, mag=’Magnetometers’)</em>.</p>
+<code class="docutils literal notranslate"><span class="pre">dict(eeg='EEG',</span> <span class="pre">grad='Gradiometers',</span> <span class="pre">mag='Magnetometers')</span></code>.</p>
 </dd>
 <dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If list, the list must be a list of Axes of
 the same length as the number of channel types. If instance of
@@ -259,11 +259,11 @@ similar colors. Bad channels will be dotted. If False, the good
 channels are plotted black and bad channels red. Defaults to False.</p>
 </dd>
 <dt><strong>zorder</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">callable()</span></code></a></span></dt><dd><p>Which channels to put in the front or back. Only matters if
-<em class="xref py py-obj">spatial_colors</em> is used.
-If str, must be <em class="xref py py-obj">std</em> or <em class="xref py py-obj">unsorted</em> (defaults to <em class="xref py py-obj">unsorted</em>). If
-<em class="xref py py-obj">std</em>, data with the lowest standard deviation (weakest effects) will
+<code class="docutils literal notranslate"><span class="pre">spatial_colors</span></code> is used.
+If str, must be <code class="docutils literal notranslate"><span class="pre">std</span></code> or <code class="docutils literal notranslate"><span class="pre">unsorted</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">unsorted</span></code>). If
+<code class="docutils literal notranslate"><span class="pre">std</span></code>, data with the lowest standard deviation (weakest effects) will
 be put in front so that they are not obscured by those with stronger
-effects. If <em class="xref py py-obj">unsorted</em>, channels are z-sorted as in the evoked
+effects. If <code class="docutils literal notranslate"><span class="pre">unsorted</span></code>, channels are z-sorted as in the evoked
 instance.
 If callable, must take one argument: a numpy array of the same
 dimensionality as the evoked raw data; and return a list of

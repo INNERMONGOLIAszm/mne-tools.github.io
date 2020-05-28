@@ -371,10 +371,10 @@ original T1 image. If ‘surf’ the coordinate system of the
 FreeSurfer surface is used (Surface RAS).</p>
 </dd>
 <dt><strong>trans</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Either a transformation filename (usually made using mne_analyze)
-or an info dict (usually opened using read_trans()).
-If string, an ending of <em class="xref py py-obj">fif</em> or <em class="xref py py-obj">fif.gz</em> will be assumed to be
-in FIF format, any other ending will be assumed to be a text file
-with a 4x4 transformation matrix (like the <em class="xref py py-obj">–trans</em> MNE-C option.
+or an info dict (usually opened using read_trans()). If string, an
+ending of <code class="docutils literal notranslate"><span class="pre">.fif</span></code> or <code class="docutils literal notranslate"><span class="pre">.fif.gz</span></code> will be assumed to be in FIF
+format, any other ending will be assumed to be a text file with a
+4x4 transformation matrix (like the <code class="docutils literal notranslate"><span class="pre">--trans</span></code> MNE-C option.
 Must be provided if source spaces are in head coordinates and
 include_surfaces and mri_resolution are True.</p>
 </dd>

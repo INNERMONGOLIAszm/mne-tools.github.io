@@ -231,8 +231,8 @@ Note: this function operates in-place.</p>
 <p class="rubric">Notes</p>
 <p>This function can be memory- and CPU-intensive. On a high-end machine
 (2012) running 6 jobs in parallel, an ico-5 (10242 per hemi) source space
-takes about 10 minutes to compute all distances (<em class="xref py py-obj">dist_limit = np.inf</em>).
-With <em class="xref py py-obj">dist_limit = 0.007</em>, computing distances takes about 1 minute.</p>
+takes about 10 minutes to compute all distances (<code class="docutils literal notranslate"><span class="pre">dist_limit</span> <span class="pre">=</span> <span class="pre">np.inf</span></code>).
+With <code class="docutils literal notranslate"><span class="pre">dist_limit</span> <span class="pre">=</span> <span class="pre">0.007</span></code>, computing distances takes about 1 minute.</p>
 <p>We recommend computing distances once per source space and then saving
 the source space to disk, as the computed distances will automatically be
 stored along with the source space data for future use.</p>

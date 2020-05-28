@@ -335,16 +335,16 @@ link to a small, anonymized portion of your data that does yield the error.</p><
 <p>If the problem persists, <a class="reference external" href="https://github.com/mne-tools/mne-python/issues/new?template=bug_report.md">open a new issue</a>
 and include the <em>smallest possible</em> code sample that replicates the error
 you’re seeing. Paste the code sample into the issue, with a line containing
-three backticks (<em class="xref py py-obj">```</em>) above and below the lines of code. This
+three backticks (```) above and below the lines of code. This
 <a class="reference external" href="https://en.wikipedia.org/wiki/Minimal_Working_Example">minimal working example</a> should be self-contained, which means that
 MNE-Python contributors should be able to copy and paste the provided snippet
 and replicate the bug on their own computers.</p>
-<p>If you post to the
-[mailing list](<a class="reference external" href="https://mail.nmr.mgh.harvard.edu/mailman/listinfo/mne_analysis">https://mail.nmr.mgh.harvard.edu/mailman/listinfo/mne_analysis</a>)
-instead, a <a class="reference external" href="https://gist.github.com">GitHub Public Gist</a> for the code sample
+<p>If you post to the <a class="reference external" href="https://gist.github.com">mailing list
+&lt;https://mail.nmr.mgh.harvard.edu/mailman/listinfo/mne_analysis&gt;__
+instead, a `GitHub Public Gist</a> for the code sample
 is recommended; if you use the
 [Gitter channel](<a class="reference external" href="https://gitter.im/mne-tools/mne-python">https://gitter.im/mne-tools/mne-python</a>) the three backticks
-(<em class="xref py py-obj">```</em>) trick works there too.</p>
+(```) trick works there too.</p>
 </div>
 <div class="section" id="why-is-it-dangerous-to-pickle-my-mne-python-objects-and-data-for-later-use">
 <h3><a class="toc-backref" href="#id11">Why is it dangerous to “pickle” my MNE-Python objects and data for later use?</a><a class="headerlink" href="#why-is-it-dangerous-to-pickle-my-mne-python-objects-and-data-for-later-use" title="Permalink to this headline">¶</a></h3>
@@ -389,9 +389,9 @@ datasets.</p>
 <span id="faq-cpu"></span><h3><a class="toc-backref" href="#id13">A function uses multiple CPU cores even though I didn’t tell it to. Why?</a><a class="headerlink" href="#a-function-uses-multiple-cpu-cores-even-though-i-didn-t-tell-it-to-why" title="Permalink to this headline">¶</a></h3>
 <p>Ordinarily in MNE-python the <code class="docutils literal notranslate"><span class="pre">parallel</span></code> module is used to deploy multiple
 cores via the <code class="docutils literal notranslate"><span class="pre">n_jobs</span></code> variable. However, functions like
-<a class="reference internal" href="../generated/mne.preprocessing.maxwell_filter.html#mne.preprocessing.maxwell_filter" title="mne.preprocessing.maxwell_filter"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.preprocessing.maxwell_filter()</span></code></a> that use <a class="reference external" href="https://scipy.github.io/devdocs/linalg.html#module-scipy.linalg" title="(in SciPy v1.6.0.dev0+1bce83f)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a> do not
+<a class="reference internal" href="../generated/mne.preprocessing.maxwell_filter.html#mne.preprocessing.maxwell_filter" title="mne.preprocessing.maxwell_filter"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.preprocessing.maxwell_filter()</span></code></a> that use <a class="reference external" href="https://scipy.github.io/devdocs/linalg.html#module-scipy.linalg" title="(in SciPy v1.6.0.dev0+061aca6)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a> do not
 have an <code class="docutils literal notranslate"><span class="pre">n_jobs</span></code> flag but may still use multiple cores. This is because
-<a class="reference external" href="https://scipy.github.io/devdocs/linalg.html#module-scipy.linalg" title="(in SciPy v1.6.0.dev0+1bce83f)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a> is built with linear algebra libraries that natively
+<a class="reference external" href="https://scipy.github.io/devdocs/linalg.html#module-scipy.linalg" title="(in SciPy v1.6.0.dev0+061aca6)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a> is built with linear algebra libraries that natively
 support multithreading:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.openblas.net/">OpenBLAS</a></p></li>
@@ -417,7 +417,7 @@ changes in the same Python session will have no effect.</p>
 identify the kind of data contained in the file. This will help you determine
 whether to use <a class="reference internal" href="../generated/mne.read_cov.html#mne.read_cov" title="mne.read_cov"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.read_cov()</span></code></a>, <a class="reference internal" href="../generated/mne.read_epochs.html#mne.read_epochs" title="mne.read_epochs"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.read_epochs()</span></code></a>,
 <a class="reference internal" href="../generated/mne.read_evokeds.html#mne.read_evokeds" title="mne.read_evokeds"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.read_evokeds()</span></code></a>, etc. There is also a corresponding command line tool
-<a class="reference internal" href="../generated/commands.html#gen-mne-what"><span class="std std-ref">mne what</span></a>:</p>
+<a class="reference internal" href="../generated/commands.html#mne-what"><span class="std std-ref">mne what</span></a>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> mne what sample_audvis_eog-eve.fif
 <span class="go">events</span>
 </pre></div>
@@ -542,7 +542,7 @@ compared:</p>
 </div>
 <div class="section" id="my-watershed-bem-meshes-look-incorrect">
 <span id="faq-watershed-bem-meshes"></span><h3><a class="toc-backref" href="#id20">My watershed BEM meshes look incorrect</a><a class="headerlink" href="#my-watershed-bem-meshes-look-incorrect" title="Permalink to this headline">¶</a></h3>
-<p>After using <a class="reference internal" href="../generated/commands.html#gen-mne-watershed-bem"><span class="std std-ref">mne watershed_bem</span></a> or <a class="reference internal" href="../generated/mne.bem.make_watershed_bem.html#mne.bem.make_watershed_bem" title="mne.bem.make_watershed_bem"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.bem.make_watershed_bem()</span></code></a>
+<p>After using <a class="reference internal" href="../generated/commands.html#mne-watershed-bem"><span class="std std-ref">mne watershed_bem</span></a> or <a class="reference internal" href="../generated/mne.bem.make_watershed_bem.html#mne.bem.make_watershed_bem" title="mne.bem.make_watershed_bem"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.bem.make_watershed_bem()</span></code></a>
 you might find that the BEM meshes for the brain, inner skull, outer skull,
 and/or scalp surfaces do not look correct in <a class="reference internal" href="../generated/mne.viz.plot_alignment.html#mne.viz.plot_alignment" title="mne.viz.plot_alignment"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.viz.plot_alignment()</span></code></a>
 and <a class="reference internal" href="../generated/mne.viz.plot_bem.html#mne.viz.plot_bem" title="mne.viz.plot_bem"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.viz.plot_bem()</span></code></a>.</p>
@@ -564,9 +564,9 @@ will have defects, and these defects will protrude into the outer skull surface
 order of difficulty):</p>
 <ol class="arabic">
 <li><p>Changing the <code class="docutils literal notranslate"><span class="pre">--preflood</span></code> / <code class="docutils literal notranslate"><span class="pre">-p</span></code> parameter in
-<a class="reference internal" href="../generated/commands.html#gen-mne-watershed-bem"><span class="std std-ref">mne watershed_bem</span></a>.</p></li>
+<a class="reference internal" href="../generated/commands.html#mne-watershed-bem"><span class="std std-ref">mne watershed_bem</span></a>.</p></li>
 <li><p>Changing the <code class="docutils literal notranslate"><span class="pre">--atlas</span></code> and <code class="docutils literal notranslate"><span class="pre">--gcaatlas</span></code> options of
-<a class="reference internal" href="../generated/commands.html#gen-mne-watershed-bem"><span class="std std-ref">mne watershed_bem</span></a>.</p></li>
+<a class="reference internal" href="../generated/commands.html#mne-watershed-bem"><span class="std std-ref">mne watershed_bem</span></a>.</p></li>
 <li><p>Manually editing the meshes (see <a class="reference external" href="https://github.com/ezemikulan/blender_freesurfer">this tutorial</a>.</p></li>
 <li><p>Manually running <a class="reference external" href="http://freesurfer.net/fswiki/mri_watershed">mri_watershed</a> with various FreeSurfer flags (e.g.,
 <code class="docutils literal notranslate"><span class="pre">-less</span></code> to fix the output).</p></li>
@@ -590,8 +590,8 @@ and if it’s not, <a class="reference external" href="https://surfer.nmr.mgh.ha
 <p>It can be helpful to run <code class="docutils literal notranslate"><span class="pre">recon_all</span> <span class="pre">-autorecon1</span> <span class="pre">-xopts</span> <span class="pre">xopts.txt</span></code> in a
 clean directory first to see if this fixes everything, and, if not, then
 resorting to manual control point setting and/or talairach adjustment.
-Once everything looks good at the end of <em class="xref py py-obj">-autorecon1</em>, you can then run
-<a class="reference internal" href="../generated/commands.html#gen-mne-watershed-bem"><span class="std std-ref">mne watershed_bem</span></a> to see if the output is good. Once it is
+Once everything looks good at the end of <code class="docutils literal notranslate"><span class="pre">-autorecon1</span></code>, you can then run
+<a class="reference internal" href="../generated/commands.html#mne-watershed-bem"><span class="std std-ref">mne watershed_bem</span></a> to see if the output is good. Once it is
 (and once brainmask.mgz is correct), you can then proceed with
 <code class="docutils literal notranslate"><span class="pre">recon_all</span> <span class="pre">-autorecon2</span></code> and <code class="docutils literal notranslate"><span class="pre">recon_all</span> <span class="pre">-autorecon3</span></code> to effectively
 complete all <code class="docutils literal notranslate"><span class="pre">recon_all</span></code> steps.</p>

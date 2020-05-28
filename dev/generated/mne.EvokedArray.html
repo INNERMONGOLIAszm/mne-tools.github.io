@@ -460,7 +460,7 @@ prepended to the comment.</p>
 type as the current object.</p>
 </dd>
 <dt><strong>force_update_info</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, force the info for objects to be appended to match the
-values in <em class="xref py py-obj">self</em>. This should generally only be used when adding
+values in <code class="docutils literal notranslate"><span class="pre">self</span></code>. This should generally only be used when adding
 stim channels for which important metadata won’t be overwritten.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.12.</span></p>
@@ -830,7 +830,7 @@ With evoked data, consider the following example:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Using virtual evoked to compute inverse can yield
-unexpected results. The virtual channels have <em class="xref py py-obj">‘_v’</em> appended
+unexpected results. The virtual channels have <code class="docutils literal notranslate"><span class="pre">'_v'</span></code> appended
 at the end of the names to emphasize that the data contained in
 them are interpolated.</p>
 </div>
@@ -839,8 +839,8 @@ them are interpolated.</p>
 <dd class="field-odd"><dl>
 <dt><strong>ch_type</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>The destination channel type. It can be ‘mag’ or ‘grad’.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Either <em class="xref py py-obj">‘accurate’</em> or <em class="xref py py-obj">‘fast’</em>, determines the quality of the
-Legendre polynomial expansion used. <em class="xref py py-obj">‘fast’</em> should be sufficient
+<dt><strong>mode</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Either <code class="docutils literal notranslate"><span class="pre">'accurate'</span></code> or <code class="docutils literal notranslate"><span class="pre">'fast'</span></code>, determines the quality of the
+Legendre polynomial expansion used. <code class="docutils literal notranslate"><span class="pre">'fast'</span></code> should be sufficient
 for most applications.</p>
 </dd>
 </dl>
@@ -1178,8 +1178,8 @@ suppression.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+1bce83f)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+1bce83f)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+061aca6)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+061aca6)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -1609,7 +1609,7 @@ defaults to <code class="docutils literal notranslate"><span class="pre">dict(ee
 defaults to <code class="docutils literal notranslate"><span class="pre">dict(eeg=1e6,</span> <span class="pre">grad=1e13,</span> <span class="pre">mag=1e15)</span></code>.</p>
 </dd>
 <dt><strong>titles</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The titles associated with the channels. If None, defaults to
-<em class="xref py py-obj">dict(eeg=’EEG’, grad=’Gradiometers’, mag=’Magnetometers’)</em>.</p>
+<code class="docutils literal notranslate"><span class="pre">dict(eeg='EEG',</span> <span class="pre">grad='Gradiometers',</span> <span class="pre">mag='Magnetometers')</span></code>.</p>
 </dd>
 <dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If list, the list must be a list of Axes of
 the same length as the number of channel types. If instance of
@@ -1626,11 +1626,11 @@ similar colors. Bad channels will be dotted. If False, the good
 channels are plotted black and bad channels red. Defaults to False.</p>
 </dd>
 <dt><strong>zorder</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">callable()</span></code></a></span></dt><dd><p>Which channels to put in the front or back. Only matters if
-<em class="xref py py-obj">spatial_colors</em> is used.
-If str, must be <em class="xref py py-obj">std</em> or <em class="xref py py-obj">unsorted</em> (defaults to <em class="xref py py-obj">unsorted</em>). If
-<em class="xref py py-obj">std</em>, data with the lowest standard deviation (weakest effects) will
+<code class="docutils literal notranslate"><span class="pre">spatial_colors</span></code> is used.
+If str, must be <code class="docutils literal notranslate"><span class="pre">std</span></code> or <code class="docutils literal notranslate"><span class="pre">unsorted</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">unsorted</span></code>). If
+<code class="docutils literal notranslate"><span class="pre">std</span></code>, data with the lowest standard deviation (weakest effects) will
 be put in front so that they are not obscured by those with stronger
-effects. If <em class="xref py py-obj">unsorted</em>, channels are z-sorted as in the evoked
+effects. If <code class="docutils literal notranslate"><span class="pre">unsorted</span></code>, channels are z-sorted as in the evoked
 instance.
 If callable, must take one argument: a numpy array of the same
 dimensionality as the evoked raw data; and return a list of
@@ -1881,10 +1881,10 @@ defaults to <code class="docutils literal notranslate"><span class="pre">dict(ee
 <dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If list, the list must be a list of Axes of
 the same length as the number of channel types. If instance of
 Axes, there must be only one channel type plotted.
-If <em class="xref py py-obj">group_by</em> is a dict, this cannot be a list, but it can be a dict
-of lists of axes, with the keys matching those of <em class="xref py py-obj">group_by</em>. In that
+If <code class="docutils literal notranslate"><span class="pre">group_by</span></code> is a dict, this cannot be a list, but it can be a dict
+of lists of axes, with the keys matching those of <code class="docutils literal notranslate"><span class="pre">group_by</span></code>. In that
 case, the provided axes will be used for the corresponding groups.
-Defaults to <em class="xref py py-obj">None</em>.</p>
+Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 <dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.1)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.1)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’</span></dt><dd><p>Colormap. If tuple, the first value indicates the colormap to use and
 the second value is a boolean defining interactivity. In interactive
@@ -1901,18 +1901,18 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">'RdBu_r
 </div>
 </dd>
 <dt><strong>mask</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>An array of booleans of the same shape as the data. Entries of the
-data that correspond to <code class="docutils literal notranslate"><span class="pre">`False</span></code> in the mask are masked (see
-<em class="xref py py-obj">do_mask</em> below). Useful for, e.g., masking for statistical
+data that correspond to <code class="docutils literal notranslate"><span class="pre">False</span></code> in the mask are masked (see
+<code class="docutils literal notranslate"><span class="pre">do_mask</span></code> below). Useful for, e.g., masking for statistical
 significance.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.16.</span></p>
 </div>
 </dd>
-<dt><strong>mask_style</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | ‘both’ | ‘contour’ | ‘mask’</span></dt><dd><p>If <em class="xref py py-obj">mask</em> is not None: if ‘contour’, a contour line is drawn around
-the masked areas (<code class="docutils literal notranslate"><span class="pre">True</span></code> in <em class="xref py py-obj">mask</em>). If ‘mask’, entries not
-<code class="docutils literal notranslate"><span class="pre">True</span></code> in <em class="xref py py-obj">mask</em> are shown transparently. If ‘both’, both a contour
+<dt><strong>mask_style</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | ‘both’ | ‘contour’ | ‘mask’</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">mask</span></code> is not None: if ‘contour’, a contour line is drawn around
+the masked areas (<code class="docutils literal notranslate"><span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">mask</span></code>). If ‘mask’, entries not
+<code class="docutils literal notranslate"><span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">mask</span></code> are shown transparently. If ‘both’, both a contour
 and transparency are used.
-If <code class="docutils literal notranslate"><span class="pre">None</span></code>, defaults to ‘both’ if <em class="xref py py-obj">mask</em> is not None, and is ignored
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, defaults to ‘both’ if <code class="docutils literal notranslate"><span class="pre">mask</span></code> is not None, and is ignored
 otherwise.</p>
 <blockquote>
 <div><div class="versionadded">
@@ -1921,10 +1921,10 @@ otherwise.</p>
 </div></blockquote>
 </dd>
 <dt><strong>mask_cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.1)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.1)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’</span></dt><dd><p>The colormap chosen for masked parts of the image (see below), if
-<em class="xref py py-obj">mask</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>. If None, <em class="xref py py-obj">cmap</em> is reused. Defaults to
-<code class="docutils literal notranslate"><span class="pre">Greys</span></code>. Not interactive. Otherwise, as <em class="xref py py-obj">cmap</em>.</p>
+<code class="docutils literal notranslate"><span class="pre">mask</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>. If None, <code class="docutils literal notranslate"><span class="pre">cmap</span></code> is reused. Defaults to
+<code class="docutils literal notranslate"><span class="pre">Greys</span></code>. Not interactive. Otherwise, as <code class="docutils literal notranslate"><span class="pre">cmap</span></code>.</p>
 </dd>
-<dt><strong>mask_alpha</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>A float between 0 and 1. If <em class="xref py py-obj">mask</em> is not None, this sets the
+<dt><strong>mask_alpha</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>A float between 0 and 1. If <code class="docutils literal notranslate"><span class="pre">mask</span></code> is not None, this sets the
 alpha level (degree of transparency) for the masked-out segments.
 I.e., if 0, masked-out segments are not visible at all.
 Defaults to .25.</p>
@@ -1940,17 +1940,17 @@ Defaults to .25.</p>
 <dt><strong>show_names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a> | ‘auto’ | ‘all’</span></dt><dd><p>Determines if channel names should be plotted on the y axis. If False,
 no names are shown. If True, ticks are set automatically by matplotlib
 and the corresponding channel names are shown. If “all”, all channel
-names are shown. If “auto”, is set to False if <em class="xref py py-obj">picks</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+names are shown. If “auto”, is set to False if <code class="docutils literal notranslate"><span class="pre">picks</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
 to <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">picks</span></code> contains 25 or more entries, or to “all”
 if <code class="docutils literal notranslate"><span class="pre">picks</span></code> contains fewer than 25 entries.</p>
 </dd>
-<dt><strong>group_by</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>If a dict, the values must be picks, and <em class="xref py py-obj">axes</em> must also be a dict
-with matching keys, or None. If <em class="xref py py-obj">axes</em> is None, one figure and one axis
-will be created for each entry in <em class="xref py py-obj">group_by</em>.
-Then, for each entry, the picked channels will be plotted
-to the corresponding axis. If <em class="xref py py-obj">titles</em> are None, keys will become plot
-titles. This is useful for e.g. ROIs. Each entry must contain only
-one channel type. For example:</p>
+<dt><strong>group_by</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>If a dict, the values must be picks, and <code class="docutils literal notranslate"><span class="pre">axes</span></code> must also be a dict
+with matching keys, or None. If <code class="docutils literal notranslate"><span class="pre">axes</span></code> is None, one figure and one
+axis will be created for each entry in <code class="docutils literal notranslate"><span class="pre">group_by</span></code>.Then, for each
+entry, the picked channels will be plotted to the corresponding axis.
+If <code class="docutils literal notranslate"><span class="pre">titles</span></code> are None, keys will become plot titles. This is useful
+for e.g. ROIs. Each entry must contain only one channel type.
+For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">group_by</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">Left_ROI</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">Right_ROI</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -2032,7 +2032,7 @@ defaults are passed: <code class="docutils literal notranslate"><span class="pre
 If <code class="docutils literal notranslate"><span class="pre">None</span></code>, no customizable arguments will be passed.
 Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
-<dt><strong>topomap_args</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>A dict of <em class="xref py py-obj">kwargs</em> that are forwarded to
+<dt><strong>topomap_args</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>A dict of <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> that are forwarded to
 <a class="reference internal" href="mne.Evoked.html#mne.Evoked.plot_topomap" title="mne.Evoked.plot_topomap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mne.Evoked.plot_topomap()</span></code></a> to style the topomaps.
 If it is not in this dict, <code class="docutils literal notranslate"><span class="pre">outlines='skirt'</span></code> will be passed.
 <code class="docutils literal notranslate"><span class="pre">show</span></code>, <code class="docutils literal notranslate"><span class="pre">times</span></code>, <code class="docutils literal notranslate"><span class="pre">colorbar</span></code> are illegal.
@@ -2353,7 +2353,7 @@ If None, the ylim parameter for each channel is determined by
 the maximum absolute peak.</p>
 </dd>
 <dt><strong>scalings</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The scalings of the channel types to be applied for plotting. If None,`
-defaults to <em class="xref py py-obj">dict(eeg=1e6, grad=1e13, mag=1e15)</em>.</p>
+defaults to <code class="docutils literal notranslate"><span class="pre">dict(eeg=1e6,</span> <span class="pre">grad=1e13,</span> <span class="pre">mag=1e15)</span></code>.</p>
 </dd>
 <dt><strong>title</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Title of the figure.</p>
 </dd>
@@ -2490,11 +2490,11 @@ be show.</p>
 </dd>
 <dt><strong>show</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Show figure if True.</p>
 </dd>
-<dt><strong>show_names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">callable()</span></code></a></span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, show channel names on top of the map. If a callable is
+<dt><strong>show_names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">callable()</span></code></a></span></dt><dd><p>If True, show channel names on top of the map. If a callable is
 passed, channel names will be formatted using the callable; e.g., to
 delete the prefix ‘MEG ‘ from all channel names, pass the function
-<code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x.replace('MEG</span> <span class="pre">',</span> <span class="pre">'')</span></code>. If <code class="docutils literal notranslate"><span class="pre">mask</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>, names
-of significant sensors only will be shown.</p>
+<code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x.replace('MEG</span> <span class="pre">',</span> <span class="pre">'')</span></code>. If <code class="docutils literal notranslate"><span class="pre">mask</span></code> is not None, only
+significant sensors will be shown.</p>
 </dd>
 <dt><strong>title</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Title. If None (default), no title is displayed.</p>
 </dd>
@@ -2884,7 +2884,7 @@ Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
 <dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Frequency-domain window to use in resampling.
-See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+1bce83f)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+061aca6)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Number of jobs to run in parallel. Can be ‘cuda’ if <code class="docutils literal notranslate"><span class="pre">cupy</span></code>
 is installed properly.</p>

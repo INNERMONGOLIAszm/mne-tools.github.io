@@ -290,11 +290,11 @@ dictionary.</p>
 <a class="reference internal" href="../../generated/mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.Info</span></code></a> object, it is important that the
 fields are consistent:</p>
 <ul class="simple">
-<li><p>The length of the channel information field <em class="xref py py-obj">chs</em> must be
-<em class="xref py py-obj">nchan</em>.</p></li>
-<li><p>The length of the <em class="xref py py-obj">ch_names</em> field must be <em class="xref py py-obj">nchan</em>.</p></li>
-<li><p>The <em class="xref py py-obj">ch_names</em> field should be consistent with the <em class="xref py py-obj">name</em> field
-of the channel information contained in <em class="xref py py-obj">chs</em>.</p></li>
+<li><p>The length of the channel information field <code class="docutils literal notranslate"><span class="pre">chs</span></code> must be
+<code class="docutils literal notranslate"><span class="pre">nchan</span></code>.</p></li>
+<li><p>The length of the <code class="docutils literal notranslate"><span class="pre">ch_names</span></code> field must be <code class="docutils literal notranslate"><span class="pre">nchan</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">ch_names</span></code> field should be consistent with the <code class="docutils literal notranslate"><span class="pre">name</span></code>
+field of the channel information contained in <code class="docutils literal notranslate"><span class="pre">chs</span></code>.</p></li>
 </ul>
 </div>
 </div>
@@ -339,8 +339,9 @@ Ready.
 <h2>Creating <a class="reference internal" href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal notranslate"><span class="pre">Epochs</span></code></a> objects<a class="headerlink" href="#creating-epochs-objects" title="Permalink to this headline">¶</a></h2>
 <p>To create an <a class="reference internal" href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.Epochs</span></code></a> object from scratch, you can use the
 <a class="reference internal" href="../../generated/mne.EpochsArray.html#mne.EpochsArray" title="mne.EpochsArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.EpochsArray</span></code></a> class, which uses a numpy array directly without
-wrapping a raw object. The array must be of <em class="xref py py-obj">shape(n_epochs, n_chans,
-n_times)</em>. The proper units of measure are listed above.</p>
+wrapping a raw object. The array must be of shape
+<code class="docutils literal notranslate"><span class="pre">(n_epochs,</span> <span class="pre">n_chans,</span> <span class="pre">n_times)</span></code>. The proper units of measure are listed
+above.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate some random data: 10 epochs, 5 channels, 2 seconds per epoch</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a> <span class="o">=</span> <span class="mi">100</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.randn.html#numpy.random.randn" title="numpy.random.randn" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span></a><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
@@ -353,10 +354,10 @@ n_times)</em>. The proper units of measure are listed above.</p>
 </pre></div>
 </div>
 <p>It is necessary to supply an “events” array in order to create an Epochs
-object. This is of <em class="xref py py-obj">shape(n_events, 3)</em> where the first column is the sample
-number (time) of the event, the second column indicates the value from which
-the transition is made from (only used when the new value is bigger than the
-old one), and the third column is the new event value.</p>
+object. This is of shape <code class="docutils literal notranslate"><span class="pre">(n_events,</span> <span class="pre">3)</span></code> where the first column is the
+sample number (time) of the event, the second column indicates the value from
+which the transition is made from (only used when the new value is bigger
+than the old one), and the third column is the new event value.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an event matrix: 10 events with alternating event codes</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">events</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
@@ -409,8 +410,8 @@ Need more than one channel to make topography for grad. Disabling interactivity.
 <div class="section" id="creating-evoked-objects">
 <h2>Creating <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a> Objects<a class="headerlink" href="#creating-evoked-objects" title="Permalink to this headline">¶</a></h2>
 <p>If you already have data that is collapsed across trials, you may also
-directly create an evoked array.  Its constructor accepts an array of
-<em class="xref py py-obj">shape(n_chans, n_times)</em> in addition to some bookkeeping parameters.
+directly create an evoked array.  Its constructor accepts an array of shape
+<code class="docutils literal notranslate"><span class="pre">(n_chans,</span> <span class="pre">n_times)</span></code> in addition to some bookkeeping parameters.
 The proper units of measure for the data are listed above.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The averaged data</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_evoked</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -434,7 +435,7 @@ The proper units of measure for the data are listed above.</p>
 Need more than one channel to make topography for grad. Disabling interactivity.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.909 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.466 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  8 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-simulation-plot-creating-data-structures-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">

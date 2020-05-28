@@ -201,7 +201,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <dd class="field-odd"><dl>
 <dt><strong>evoked</strong><span class="classifier"><a class="reference internal" href="mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a> | <a class="reference internal" href="mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Epochs</span></code></a> | <a class="reference internal" href="mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Raw</span></code></a></span></dt><dd><p>The measurement file. Need to have info attribute.</p>
 </dd>
-<dt><strong>trans</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | ‘auto’ | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The full path to the <em class="xref py py-obj">*-trans.fif</em> file produced during
+<dt><strong>trans</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | ‘auto’ | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The full path to the <code class="docutils literal notranslate"><span class="pre">*-trans.fif</span></code> file produced during
 coregistration. If present or found using ‘auto’
 the maps will be in MRI coordinates.
 If None, map for EEG data will not be available.</p>
@@ -215,8 +215,8 @@ It corresponds to Freesurfer environment variable SUBJECTS_DIR.</p>
 <dt><strong>ch_type</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | ‘eeg’ | ‘meg’</span></dt><dd><p>If None, a map for each available channel type will be returned.
 Else only the specified type will be used.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">‘accurate’ | ‘fast’</span></dt><dd><p>Either <em class="xref py py-obj">‘accurate’</em> or <em class="xref py py-obj">‘fast’</em>, determines the quality of the
-Legendre polynomial expansion used. <em class="xref py py-obj">‘fast’</em> should be sufficient
+<dt><strong>mode</strong><span class="classifier">‘accurate’ | ‘fast’</span></dt><dd><p>Either <code class="docutils literal notranslate"><span class="pre">'accurate'</span></code> or <code class="docutils literal notranslate"><span class="pre">'fast'</span></code>, determines the quality of the
+Legendre polynomial expansion used. <code class="docutils literal notranslate"><span class="pre">'fast'</span></code> should be sufficient
 for most applications.</p>
 </dd>
 <dt><strong>meg_surf</strong><span class="classifier">‘helmet’ | ‘head’</span></dt><dd><p>Should be <code class="docutils literal notranslate"><span class="pre">'helmet'</span></code> or <code class="docutils literal notranslate"><span class="pre">'head'</span></code> to specify in which surface

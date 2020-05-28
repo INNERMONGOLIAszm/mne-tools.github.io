@@ -220,10 +220,10 @@ space and set to 1.0 for volumic or discrete source space.</p>
 <dt><strong>depth</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>How to weight (or normalize) the forward using a depth prior.
 If float (default 0.8), it acts as the depth weighting exponent (<code class="docutils literal notranslate"><span class="pre">exp</span></code>)
 to use, which must be between 0 and 1. None is equivalent to 0, meaning
-no depth weighting is performed. It can also be a <em class="xref py py-obj">dict</em> containing
-keyword arguments to pass to <a class="reference internal" href="mne.forward.compute_depth_prior.html#mne.forward.compute_depth_prior" title="mne.forward.compute_depth_prior"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.forward.compute_depth_prior()</span></code></a>
-(see docstring for details and defaults). This is effectively ignored
-when <code class="docutils literal notranslate"><span class="pre">method='eLORETA'</span></code>.</p>
+no depth weighting is performed. It can also be a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>
+containing keyword arguments to pass to
+<a class="reference internal" href="mne.forward.compute_depth_prior.html#mne.forward.compute_depth_prior" title="mne.forward.compute_depth_prior"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.forward.compute_depth_prior()</span></code></a> (see docstring for details and
+defaults). This is effectively ignored when <code class="docutils literal notranslate"><span class="pre">method='eLORETA'</span></code>.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.20: </span>Depth bias ignored for <code class="docutils literal notranslate"><span class="pre">method='eLORETA'</span></code>.</p>
 </div>

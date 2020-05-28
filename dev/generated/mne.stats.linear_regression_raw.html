@@ -231,9 +231,9 @@ in event_id and/or covariates; for missing values, the default (1.) is
 used.</p>
 </dd>
 <dt><strong>covariates</strong><span class="classifier">dict-like | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>If dict-like (e.g., a pandas DataFrame), values have to be array-like
-and of the same length as the rows in <code class="docutils literal notranslate"><span class="pre">`events`</span></code>. Keys correspond
+and of the same length as the rows in <code class="docutils literal notranslate"><span class="pre">events</span></code>. Keys correspond
 to additional event types/conditions to be estimated and are matched
-with the time points given by the first column of <code class="docutils literal notranslate"><span class="pre">`events`</span></code>. If
+with the time points given by the first column of <code class="docutils literal notranslate"><span class="pre">events</span></code>. If
 None, only binary events (from event_id) are used.</p>
 </dd>
 <dt><strong>reject</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>For cleaning raw data before the regression is performed: set up

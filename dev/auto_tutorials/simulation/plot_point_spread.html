@@ -435,7 +435,7 @@ the label masks (stored in labels[i].values).</p>
 <h2>Simulate sensor-space signals<a class="headerlink" href="#simulate-sensor-space-signals" title="Permalink to this headline">¶</a></h2>
 <p>Use the forward solution and add Gaussian noise to simulate sensor-space
 (evoked) data from the known source-space signals. The amount of noise is
-controlled by <em class="xref py py-obj">nave</em> (higher values imply less noise).</p>
+controlled by <code class="docutils literal notranslate"><span class="pre">nave</span></code> (higher values imply less noise).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked_gen</span></a> <span class="o">=</span> <a href="../../generated/mne.simulation.simulate_evoked.html#mne.simulation.simulate_evoked" title="mne.simulation.simulate_evoked" class="sphx-glr-backref-module-mne-simulation sphx-glr-backref-type-py-function"><span class="n">simulate_evoked</span></a><span class="p">(</span><a href="../../generated/mne.Forward.html#mne.Forward" title="mne.Forward" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fwd</span></a><span class="p">,</span> <a href="../../generated/mne.SourceEstimate.html#mne.SourceEstimate" title="mne.SourceEstimate" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stc_gen</span></a><span class="p">,</span> <a href="../../generated/mne.Info.html#mne.Info" title="mne.Info" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked</span><span class="o">.</span><span class="n">info</span></a><span class="p">,</span> <a href="../../generated/mne.Covariance.html#mne.Covariance" title="mne.Covariance" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cov</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nave</span></a><span class="p">,</span>
                              <span class="n">random_state</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">seed</span></a><span class="p">)</span>
 
@@ -489,14 +489,14 @@ sulci and gyri.</p>
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><p>Change the <em class="xref py py-obj">method</em> parameter to either <em class="xref py py-obj">dSPM</em> or <em class="xref py py-obj">MNE</em> to explore the
-effect of the inverse method.</p></li>
-<li><p>Try setting <em class="xref py py-obj">evoked_snr</em> to a small, finite value, e.g. 3., to see the
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">method</span></code> parameter to either <code class="docutils literal notranslate"><span class="pre">'dSPM'</span></code> or <code class="docutils literal notranslate"><span class="pre">'MNE'</span></code> to
+explore the effect of the inverse method.</p></li>
+<li><p>Try setting <code class="docutils literal notranslate"><span class="pre">evoked_snr</span></code> to a small, finite value, e.g. 3., to see the
 effect of noise.</p></li>
 </ul>
 </div></blockquote>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  24.806 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  369 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  12.667 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  525 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-simulation-plot-point-spread-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/79de38c4471b0f2bdb9f1c2d44127146/plot_point_spread.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_point_spread.py</span></code></a></p>

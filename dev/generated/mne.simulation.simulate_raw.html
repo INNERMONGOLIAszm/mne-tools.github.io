@@ -218,9 +218,9 @@ See Notes for details.</p>
 </dd>
 <dt><strong>trans</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Either a transformation filename (usually made using mne_analyze)
 or an info dict (usually opened using read_trans()).
-If string, an ending of <em class="xref py py-obj">fif</em> or <em class="xref py py-obj">fif.gz</em> will be assumed to
+If string, an ending of <code class="docutils literal notranslate"><span class="pre">.fif</span></code> or <code class="docutils literal notranslate"><span class="pre">.fif.gz</span></code> will be assumed to
 be in FIF format, any other ending will be assumed to be a text
-file with a 4x4 transformation matrix (like the <em class="xref py py-obj">–trans</em> MNE-C
+file with a 4x4 transformation matrix (like the <code class="docutils literal notranslate"><span class="pre">--trans</span></code> MNE-C
 option). If trans is None, an identity transform will be used.</p>
 </dd>
 <dt><strong>src</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | instance of <a class="reference internal" href="mne.SourceSpaces.html#mne.SourceSpaces" title="mne.SourceSpaces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SourceSpaces</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Source space corresponding to the stc. If string, should be a source
@@ -236,7 +236,7 @@ the files produced by MaxFilter. If dict, keys should
 be the time points and entries should be 4x4 <code class="docutils literal notranslate"><span class="pre">dev_head_t</span></code>
 matrices. If None, the original head position (from
 <code class="docutils literal notranslate"><span class="pre">info['dev_head_t']</span></code>) will be used. If tuple, should have the
-same format as data returned by <em class="xref py py-obj">head_pos_to_trans_rot_t</em>.
+same format as data returned by <code class="docutils literal notranslate"><span class="pre">head_pos_to_trans_rot_t</span></code>.
 If array, should be of the form returned by
 <a class="reference internal" href="mne.chpi.read_head_pos.html#mne.chpi.read_head_pos" title="mne.chpi.read_head_pos"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.chpi.read_head_pos()</span></code></a>.
 See for example <a class="reference internal" href="#rcf0e4436a8f9-1" id="id1">[1]</a>.</p>

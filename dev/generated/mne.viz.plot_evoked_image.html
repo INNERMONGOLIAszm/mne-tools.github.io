@@ -241,10 +241,10 @@ defaults to <code class="docutils literal notranslate"><span class="pre">dict(ee
 <dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If list, the list must be a list of Axes of
 the same length as the number of channel types. If instance of
 Axes, there must be only one channel type plotted.
-If <em class="xref py py-obj">group_by</em> is a dict, this cannot be a list, but it can be a dict
-of lists of axes, with the keys matching those of <em class="xref py py-obj">group_by</em>. In that
+If <code class="docutils literal notranslate"><span class="pre">group_by</span></code> is a dict, this cannot be a list, but it can be a dict
+of lists of axes, with the keys matching those of <code class="docutils literal notranslate"><span class="pre">group_by</span></code>. In that
 case, the provided axes will be used for the corresponding groups.
-Defaults to <em class="xref py py-obj">None</em>.</p>
+Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 <dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.1)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.1)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’</span></dt><dd><p>Colormap. If tuple, the first value indicates the colormap to use and
 the second value is a boolean defining interactivity. In interactive
@@ -261,18 +261,18 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">'RdBu_r
 </div>
 </dd>
 <dt><strong>mask</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>An array of booleans of the same shape as the data. Entries of the
-data that correspond to <code class="docutils literal notranslate"><span class="pre">`False</span></code> in the mask are masked (see
-<em class="xref py py-obj">do_mask</em> below). Useful for, e.g., masking for statistical
+data that correspond to <code class="docutils literal notranslate"><span class="pre">False</span></code> in the mask are masked (see
+<code class="docutils literal notranslate"><span class="pre">do_mask</span></code> below). Useful for, e.g., masking for statistical
 significance.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.16.</span></p>
 </div>
 </dd>
-<dt><strong>mask_style</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | ‘both’ | ‘contour’ | ‘mask’</span></dt><dd><p>If <em class="xref py py-obj">mask</em> is not None: if ‘contour’, a contour line is drawn around
-the masked areas (<code class="docutils literal notranslate"><span class="pre">True</span></code> in <em class="xref py py-obj">mask</em>). If ‘mask’, entries not
-<code class="docutils literal notranslate"><span class="pre">True</span></code> in <em class="xref py py-obj">mask</em> are shown transparently. If ‘both’, both a contour
+<dt><strong>mask_style</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | ‘both’ | ‘contour’ | ‘mask’</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">mask</span></code> is not None: if ‘contour’, a contour line is drawn around
+the masked areas (<code class="docutils literal notranslate"><span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">mask</span></code>). If ‘mask’, entries not
+<code class="docutils literal notranslate"><span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">mask</span></code> are shown transparently. If ‘both’, both a contour
 and transparency are used.
-If <code class="docutils literal notranslate"><span class="pre">None</span></code>, defaults to ‘both’ if <em class="xref py py-obj">mask</em> is not None, and is ignored
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, defaults to ‘both’ if <code class="docutils literal notranslate"><span class="pre">mask</span></code> is not None, and is ignored
 otherwise.</p>
 <blockquote>
 <div><div class="versionadded">
@@ -281,10 +281,10 @@ otherwise.</p>
 </div></blockquote>
 </dd>
 <dt><strong>mask_cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.1)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.1)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’</span></dt><dd><p>The colormap chosen for masked parts of the image (see below), if
-<em class="xref py py-obj">mask</em> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>. If None, <em class="xref py py-obj">cmap</em> is reused. Defaults to
-<code class="docutils literal notranslate"><span class="pre">Greys</span></code>. Not interactive. Otherwise, as <em class="xref py py-obj">cmap</em>.</p>
+<code class="docutils literal notranslate"><span class="pre">mask</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>. If None, <code class="docutils literal notranslate"><span class="pre">cmap</span></code> is reused. Defaults to
+<code class="docutils literal notranslate"><span class="pre">Greys</span></code>. Not interactive. Otherwise, as <code class="docutils literal notranslate"><span class="pre">cmap</span></code>.</p>
 </dd>
-<dt><strong>mask_alpha</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>A float between 0 and 1. If <em class="xref py py-obj">mask</em> is not None, this sets the
+<dt><strong>mask_alpha</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>A float between 0 and 1. If <code class="docutils literal notranslate"><span class="pre">mask</span></code> is not None, this sets the
 alpha level (degree of transparency) for the masked-out segments.
 I.e., if 0, masked-out segments are not visible at all.
 Defaults to .25.</p>
@@ -300,17 +300,17 @@ Defaults to .25.</p>
 <dt><strong>show_names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a> | ‘auto’ | ‘all’</span></dt><dd><p>Determines if channel names should be plotted on the y axis. If False,
 no names are shown. If True, ticks are set automatically by matplotlib
 and the corresponding channel names are shown. If “all”, all channel
-names are shown. If “auto”, is set to False if <em class="xref py py-obj">picks</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+names are shown. If “auto”, is set to False if <code class="docutils literal notranslate"><span class="pre">picks</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
 to <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">picks</span></code> contains 25 or more entries, or to “all”
 if <code class="docutils literal notranslate"><span class="pre">picks</span></code> contains fewer than 25 entries.</p>
 </dd>
-<dt><strong>group_by</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>If a dict, the values must be picks, and <em class="xref py py-obj">axes</em> must also be a dict
-with matching keys, or None. If <em class="xref py py-obj">axes</em> is None, one figure and one axis
-will be created for each entry in <em class="xref py py-obj">group_by</em>.
-Then, for each entry, the picked channels will be plotted
-to the corresponding axis. If <em class="xref py py-obj">titles</em> are None, keys will become plot
-titles. This is useful for e.g. ROIs. Each entry must contain only
-one channel type. For example:</p>
+<dt><strong>group_by</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>If a dict, the values must be picks, and <code class="docutils literal notranslate"><span class="pre">axes</span></code> must also be a dict
+with matching keys, or None. If <code class="docutils literal notranslate"><span class="pre">axes</span></code> is None, one figure and one
+axis will be created for each entry in <code class="docutils literal notranslate"><span class="pre">group_by</span></code>.Then, for each
+entry, the picked channels will be plotted to the corresponding axis.
+If <code class="docutils literal notranslate"><span class="pre">titles</span></code> are None, keys will become plot titles. This is useful
+for e.g. ROIs. Each entry must contain only one channel type.
+For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">group_by</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">Left_ROI</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">Right_ROI</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 </pre></div>
 </div>

@@ -613,7 +613,7 @@ is a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/s
 type as the current object.</p>
 </dd>
 <dt><strong>force_update_info</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, force the info for objects to be appended to match the
-values in <em class="xref py py-obj">self</em>. This should generally only be used when adding
+values in <code class="docutils literal notranslate"><span class="pre">self</span></code>. This should generally only be used when adding
 stim channels for which important metadata won’t be overwritten.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.12.</span></p>
@@ -921,7 +921,7 @@ With evoked data, consider the following example:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Using virtual epochs to compute inverse can yield
-unexpected results. The virtual channels have <em class="xref py py-obj">‘_v’</em> appended
+unexpected results. The virtual channels have <code class="docutils literal notranslate"><span class="pre">'_v'</span></code> appended
 at the end of the names to emphasize that the data contained in
 them are interpolated.</p>
 </div>
@@ -930,8 +930,8 @@ them are interpolated.</p>
 <dd class="field-odd"><dl>
 <dt><strong>ch_type</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>The destination channel type. It can be ‘mag’ or ‘grad’.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Either <em class="xref py py-obj">‘accurate’</em> or <em class="xref py py-obj">‘fast’</em>, determines the quality of the
-Legendre polynomial expansion used. <em class="xref py py-obj">‘fast’</em> should be sufficient
+<dt><strong>mode</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Either <code class="docutils literal notranslate"><span class="pre">'accurate'</span></code> or <code class="docutils literal notranslate"><span class="pre">'fast'</span></code>, determines the quality of the
+Legendre polynomial expansion used. <code class="docutils literal notranslate"><span class="pre">'fast'</span></code> should be sufficient
 for most applications.</p>
 </dd>
 </dl>
@@ -991,7 +991,7 @@ do <code class="docutils literal notranslate"><span class="pre">epochs[condition
 are selected, resulting in an error. This is because ICA channels
 are not considered data channels (they are of misc type) and only data
 channels are selected when picks is None.</p>
-<p>The <em class="xref py py-obj">method</em> parameter allows e.g. robust averaging.
+<p>The <code class="docutils literal notranslate"><span class="pre">method</span></code> parameter allows e.g. robust averaging.
 For example, one could do:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">trim_mean</span>  
 <span class="gp">&gt;&gt;&gt; </span><span class="n">trim</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">trim_mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  
@@ -1226,7 +1226,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 <p>Decimation can be done multiple times. For example,
 <code class="docutils literal notranslate"><span class="pre">epochs.decimate(2).decimate(2)</span></code> will be the same as
 <code class="docutils literal notranslate"><span class="pre">epochs.decimate(4)</span></code>.
-If <em class="xref py py-obj">decim</em> is 1, this method does not copy the underlying data.</p>
+If <code class="docutils literal notranslate"><span class="pre">decim</span></code> is 1, this method does not copy the underlying data.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.10.0.</span></p>
 </div>
@@ -1448,7 +1448,7 @@ a str (single event) or a list of str. In the case where one of
 the entries is a list of str, event_ids in that list will be
 grouped together before equalizing trial counts across conditions.
 In the case where partial matching is used (using ‘/’ in
-<em class="xref py py-obj">event_ids</em>), <em class="xref py py-obj">event_ids</em> will be matched according to the
+<code class="docutils literal notranslate"><span class="pre">event_ids</span></code>), <code class="docutils literal notranslate"><span class="pre">event_ids</span></code> will be matched according to the
 provided tags, that is, processing works as if the event_ids
 matched by the provided tags had been supplied instead.
 The event_ids must identify nonoverlapping subsets of the epochs.</p>
@@ -1585,8 +1585,8 @@ suppression.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+1bce83f)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+1bce83f)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+061aca6)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+061aca6)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -2147,7 +2147,7 @@ Defaults to None.</p>
 <dt><strong>events</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>, shape (n_events, 3)</span></dt><dd><p>Events to show with vertical bars. If events are provided, the epoch
 numbers are not shown to prevent overlap. You can toggle epoch
 numbering through options (press ‘o’ key). You can use
-<a class="reference internal" href="mne.viz.plot_events.html#mne.viz.plot_events" title="mne.viz.plot_events"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.viz.plot_events()</span></code></a> as a legend for the colors. By default, the
+<a class="reference internal" href="mne.viz.plot_events.html#mne.viz.plot_events" title="mne.viz.plot_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_events</span></code></a> as a legend for the colors. By default, the
 coloring scheme is the same.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2161,7 +2161,7 @@ align with the data.</p>
 <dt><strong>event_colors</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Dictionary of event_id value and its associated color. If None,
 colors are automatically drawn from a default list (cycled through if
 number of events longer than list of default colors). Uses the same
-coloring scheme as <a class="reference internal" href="mne.viz.plot_events.html#mne.viz.plot_events" title="mne.viz.plot_events"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.viz.plot_events()</span></code></a>.</p>
+coloring scheme as <a class="reference internal" href="mne.viz.plot_events.html#mne.viz.plot_events" title="mne.viz.plot_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_events</span></code></a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.14.0.</span></p>
 </div>
@@ -2422,9 +2422,10 @@ number of figures generated; see Notes. Defaults to <code class="docutils litera
 </dd>
 <dt><strong>evoked</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Draw the ER[P/F] below the image or not.</p>
 </dd>
-<dt><strong>ts_args</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Arguments passed to a call to <em class="xref py py-obj">plot_compare_evokeds</em> to style
+<dt><strong>ts_args</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Arguments passed to a call to <a class="reference internal" href="mne.viz.plot_compare_evokeds.html#mne.viz.plot_compare_evokeds" title="mne.viz.plot_compare_evokeds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_compare_evokeds</span></code></a> to style
 the evoked plot below the image. Defaults to an empty dictionary,
-meaning <em class="xref py py-obj">plot_compare_evokeds</em> will be called with default parameters.</p>
+meaning <a class="reference internal" href="mne.viz.plot_compare_evokeds.html#mne.viz.plot_compare_evokeds" title="mne.viz.plot_compare_evokeds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_compare_evokeds</span></code></a> will be called with default
+parameters.</p>
 </dd>
 <dt><strong>title</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>If <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, will be plotted as figure title. Otherwise, the
 title will indicate channel(s) or channel type being plotted. Defaults
@@ -2696,9 +2697,9 @@ types, channel <em>name</em> strings (e.g., <code class="docutils literal notran
 will pick the given channels. Can also be the string values
 “all” to pick all channels, or “data” to pick <a class="reference internal" href="../glossary.html#term-data-channels"><span class="xref std std-term">data channels</span></a>.
 None (default) will pick good data channels
-Cannot be None if <em class="xref py py-obj">ax</em> is supplied.If both <em class="xref py py-obj">picks</em> and <em class="xref py py-obj">ax</em> are None
+Cannot be None if <code class="docutils literal notranslate"><span class="pre">ax</span></code> is supplied.If both <code class="docutils literal notranslate"><span class="pre">picks</span></code> and <code class="docutils literal notranslate"><span class="pre">ax</span></code> are None
 separate subplots will be created for each standard channel type
-(<em class="xref py py-obj">mag</em>, <em class="xref py py-obj">grad</em>, and <em class="xref py py-obj">eeg</em>).</p>
+(<code class="docutils literal notranslate"><span class="pre">mag</span></code>, <code class="docutils literal notranslate"><span class="pre">grad</span></code>, and <code class="docutils literal notranslate"><span class="pre">eeg</span></code>).</p>
 </dd>
 <dt><strong>ax</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Axes to plot into. If None, axes will be created.</p>
 </dd>
@@ -3039,7 +3040,7 @@ on the canvas.</p>
 <dt><strong>title</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Title of the figure.</p>
 </dd>
 <dt><strong>scalings</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The scalings of the channel types to be applied for plotting. If
-<code class="docutils literal notranslate"><span class="pre">None</span></code>, defaults to <em class="xref py py-obj">dict(eeg=1e6, grad=1e13, mag=1e15)</em>.</p>
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, defaults to <code class="docutils literal notranslate"><span class="pre">dict(eeg=1e6,</span> <span class="pre">grad=1e13,</span> <span class="pre">mag=1e15)</span></code>.</p>
 </dd>
 <dt><strong>border</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Matplotlib borders style to be used for each sensor plot.</p>
 </dd>
@@ -3163,7 +3164,7 @@ Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
 <dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Frequency-domain window to use in resampling.
-See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+1bce83f)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+061aca6)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Number of jobs to run in parallel. Can be ‘cuda’ if <code class="docutils literal notranslate"><span class="pre">cupy</span></code>
 is installed properly.</p>

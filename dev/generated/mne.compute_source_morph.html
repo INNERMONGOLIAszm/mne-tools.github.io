@@ -194,7 +194,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.compute_source_morph<a class="headerlink" href="#mne-compute-source-morph" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mne.compute_source_morph">
-<code class="sig-prename descclassname">mne.</code><code class="sig-name descname">compute_source_morph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em>, <em class="sig-param"><span class="n">subject_from</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subject_to</span><span class="o">=</span><span class="default_value">'fsaverage'</span></em>, <em class="sig-param"><span class="n">subjects_dir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zooms</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">niter_affine</span><span class="o">=</span><span class="default_value">100, 100, 10</span></em>, <em class="sig-param"><span class="n">niter_sdr</span><span class="o">=</span><span class="default_value">5, 5, 3</span></em>, <em class="sig-param"><span class="n">spacing</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">smooth</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warn</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">xhemi</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">sparse</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">src_to</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/morph.py#L28-L236"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.compute_source_morph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne.</code><code class="sig-name descname">compute_source_morph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em>, <em class="sig-param"><span class="n">subject_from</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subject_to</span><span class="o">=</span><span class="default_value">'fsaverage'</span></em>, <em class="sig-param"><span class="n">subjects_dir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zooms</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">niter_affine</span><span class="o">=</span><span class="default_value">100, 100, 10</span></em>, <em class="sig-param"><span class="n">niter_sdr</span><span class="o">=</span><span class="default_value">5, 5, 3</span></em>, <em class="sig-param"><span class="n">spacing</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">smooth</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warn</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">xhemi</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">sparse</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">src_to</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/morph.py#L27-L257"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.compute_source_morph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a SourceMorph from one subject to another.</p>
 <p>Method is based on spherical morphing by FreeSurfer for surface
 cortical estimates <a class="reference internal" href="#rd220f8180bf4-1" id="id1">[1]</a> and Symmetric Diffeomorphic Registration
@@ -240,7 +240,11 @@ transform. Default is niter_sdr=(5, 5, 3).</p>
 <dt><strong>spacing</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The resolution of the icosahedral mesh (typically 5).
 If None, all vertices will be used (potentially filling the
 surface). If a list, then values will be morphed to the set of
-vertices specified in in <code class="docutils literal notranslate"><span class="pre">spacing[0]</span></code> and <code class="docutils literal notranslate"><span class="pre">spacing[1]</span></code>.</p>
+vertices specified in in <code class="docutils literal notranslate"><span class="pre">spacing[0]</span></code> and <code class="docutils literal notranslate"><span class="pre">spacing[1]</span></code>.
+This will be ignored if <code class="docutils literal notranslate"><span class="pre">src_to</span></code> is supplied.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.21: </span>src_to, if provided, takes precedence.</p>
+</div>
 </dd>
 <dt><strong>smooth</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Number of iterations for the smoothing of the surface data.
 If None, smooth is automatically defined to fill the surface
@@ -260,11 +264,16 @@ The default is xhemi=False.</p>
 SourceEstimate. If True the only parameters used are subject_to and
 subject_from, and spacing has to be None. Default is sparse=False.</p>
 </dd>
-<dt><strong>src_to</strong><span class="classifier">instance of <a class="reference internal" href="mne.SourceSpaces.html#mne.SourceSpaces" title="mne.SourceSpaces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SourceSpaces</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The destination source space, only used for volume source spaces.
-For volumetric morph, this should be passed so that 1) the resulting
-morph volume is properly constrained to the brain volume, and 2) STCs
-from multiple subjects morphed to the same destination subject/source
-space have the vertices.</p>
+<dt><strong>src_to</strong><span class="classifier">instance of <a class="reference internal" href="mne.SourceSpaces.html#mne.SourceSpaces" title="mne.SourceSpaces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SourceSpaces</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The destination source space.</p>
+<ul class="simple">
+<li><p>For surface-based morphing, this is the preferred over <code class="docutils literal notranslate"><span class="pre">spacing</span></code>
+for providing the vertices.</p></li>
+<li><p>For volumetric morphing, this should be passed so that 1) the
+resultingmorph volume is properly constrained to the brain volume,
+and 2) STCs from multiple subjects morphed to the same destination
+subject/source space have the vertices.</p></li>
+<li><p>For mixed (surface + volume) morphing, this is required.</p></li>
+</ul>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.20.</span></p>
 </div>
@@ -298,6 +307,9 @@ comparisons between hemispheres, use of the symmetric <code class="docutils lite
 model is recommended to minimize bias <a class="reference internal" href="#rd220f8180bf4-1" id="id3">[1]</a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.17.0.</span></p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.0: </span>Support for morphing mixed source estimates.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">

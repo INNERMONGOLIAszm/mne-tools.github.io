@@ -194,12 +194,12 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.decoding.LinearModel<a class="headerlink" href="#mne-decoding-linearmodel" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mne.decoding.LinearModel">
-<em class="property">class </em><code class="sig-prename descclassname">mne.decoding.</code><code class="sig-name descname">LinearModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L17-L217"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mne.decoding.</code><code class="sig-name descname">LinearModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L17-L214"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute and store patterns from linear models.</p>
 <p>The linear model coefficients (filters) are used to extract discriminant
 neural sources from the measured data. This class computes the
 corresponding patterns of these linear filters to make them more
-interpretable <a class="reference internal" href="#r3a399a9ea758-1" id="id1">[1]</a>.</p>
+interpretable <a class="footnote-reference brackets" href="#haufeetal2014" id="id1">1</a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -223,14 +223,12 @@ If None the model will be LogisticRegression.</p>
 <p><span class="versionmodified added">New in version 0.10.</span></p>
 </div>
 <p class="rubric">References</p>
-<dl class="citation">
-<dt class="label" id="r3a399a9ea758-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Haufe, S., Meinecke, F., Gorgen, K., Dahne, S., Haynes, J.-D.,
-Blankertz, B., &amp; Biebmann, F. (2014). On the interpretation of
-weight vectors of linear models in multivariate neuroimaging.
-NeuroImage, 87, 96-110.</p>
+<p id="bibtex-footbibliography-generated/mne.decoding.LinearModel-0"><dl class="footnote brackets">
+<dt class="label" id="haufeetal2014"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Stefan Haufe, Frank Meinecke, Kai Görgen, Sven Dähne, John-Dylan Haynes, Benjamin Blankertz, and Felix Bießmann. On the interpretation of weight vectors of linear models in multivariate neuroimaging. <em>NeuroImage</em>, 87:96–110, 2014. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2013.10.067">doi:10.1016/j.neuroimage.2013.10.067</a>.</p>
 </dd>
 </dl>
+</p>
 <dl class="field-list">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl>
@@ -288,7 +286,7 @@ NeuroImage, 87, 96-110.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.LinearModel.decision_function">
-<code class="sig-name descname">decision_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L187-L200"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.decision_function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">decision_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L184-L197"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.decision_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute distance from the decision function of y from X.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -308,7 +306,7 @@ NeuroImage, 87, 96-110.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.LinearModel.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">fit_params</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L68-L108"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">fit_params</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L65-L105"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate the coefficients of the linear model.</p>
 <p>Save the coefficients in the attribute <code class="docutils literal notranslate"><span class="pre">filters_</span></code> and
 computes the attribute <code class="docutils literal notranslate"><span class="pre">patterns_</span></code>.</p>
@@ -331,15 +329,15 @@ computes the attribute <code class="docutils literal notranslate"><span class="p
 </dd>
 </dl>
 <p class="rubric" id="sphx-glr-backreferences-mne-decoding-linearmodel-fit">Examples using <code class="docutils literal notranslate"><span class="pre">fit</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="Here decoding, a.k.a MVPA or supervised machine learning, is applied to M/EEG data in sensor sp..."><div class="figure align-default" id="id3">
+<div class="sphx-glr-thumbcontainer" tooltip="Here decoding, a.k.a MVPA or supervised machine learning, is applied to M/EEG data in sensor sp..."><div class="figure align-default" id="id2">
 <img alt="Linear classifier on sensor data with plot patterns and filters" src="../_images/sphx_glr_plot_linear_model_patterns_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/decoding/plot_linear_model_patterns.html#sphx-glr-auto-examples-decoding-plot-linear-model-patterns-py"><span class="std std-ref">Linear classifier on sensor data with plot patterns and filters</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/decoding/plot_linear_model_patterns.html#sphx-glr-auto-examples-decoding-plot-linear-model-patterns-py"><span class="std std-ref">Linear classifier on sensor data with plot patterns and filters</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></dd></dl>
 
 <dl class="py method">
 <dt id="mne.decoding.LinearModel.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L139-L155"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L136-L152"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the data and transform it using the linear model.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -382,7 +380,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.LinearModel.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L157-L170"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L154-L167"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute predictions of y from X.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -402,7 +400,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.LinearModel.predict_proba">
-<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L172-L185"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.predict_proba" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L169-L182"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.predict_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute probabilistic predictions of y from X.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -422,7 +420,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.LinearModel.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L202-L217"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L199-L214"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Score the linear model computed on the given test data.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -457,7 +455,7 @@ self</p>
 
 <dl class="py method">
 <dt id="mne.decoding.LinearModel.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L124-L137"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/base.py#L121-L134"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.LinearModel.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform the data using the linear model.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -479,17 +477,17 @@ self</p>
 
 <div class="section" id="examples-using-mne-decoding-linearmodel">
 <span id="sphx-glr-backreferences-mne-decoding-linearmodel"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.decoding.LinearModel</span></code><a class="headerlink" href="#examples-using-mne-decoding-linearmodel" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="Decoding to MEG data in source space on the left cortical surface. Here univariate feature sele..."><div class="figure align-default" id="id4">
+<div class="sphx-glr-thumbcontainer" tooltip="Decoding to MEG data in source space on the left cortical surface. Here univariate feature sele..."><div class="figure align-default" id="id3">
 <img alt="Decoding source space data" src="../_images/sphx_glr_plot_decoding_spatio_temporal_source_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/decoding/plot_decoding_spatio_temporal_source.html#sphx-glr-auto-examples-decoding-plot-decoding-spatio-temporal-source-py"><span class="std std-ref">Decoding source space data</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/decoding/plot_decoding_spatio_temporal_source.html#sphx-glr-auto-examples-decoding-plot-decoding-spatio-temporal-source-py"><span class="std std-ref">Decoding source space data</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here decoding, a.k.a MVPA or supervised machine learning, is applied to M/EEG data in sensor sp..."><div class="figure align-default" id="id5">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here decoding, a.k.a MVPA or supervised machine learning, is applied to M/EEG data in sensor sp..."><div class="figure align-default" id="id4">
 <img alt="Linear classifier on sensor data with plot patterns and filters" src="../_images/sphx_glr_plot_linear_model_patterns_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/decoding/plot_linear_model_patterns.html#sphx-glr-auto-examples-decoding-plot-linear-model-patterns-py"><span class="std std-ref">Linear classifier on sensor data with plot patterns and filters</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/decoding/plot_linear_model_patterns.html#sphx-glr-auto-examples-decoding-plot-linear-model-patterns-py"><span class="std std-ref">Linear classifier on sensor data with plot patterns and filters</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Design philosophy ================= Decoding (a.k.a. MVPA) in MNE largely follows the machine l..."><div class="figure align-default" id="id6">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Design philosophy ================= Decoding (a.k.a. MVPA) in MNE largely follows the machine l..."><div class="figure align-default" id="id5">
 <img alt="Decoding (MVPA)" src="../_images/sphx_glr_plot_sensors_decoding_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/machine-learning/plot_sensors_decoding.html#sphx-glr-auto-tutorials-machine-learning-plot-sensors-decoding-py"><span class="std std-ref">Decoding (MVPA)</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/machine-learning/plot_sensors_decoding.html#sphx-glr-auto-tutorials-machine-learning-plot-sensors-decoding-py"><span class="std std-ref">Decoding (MVPA)</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></div>
 </div>

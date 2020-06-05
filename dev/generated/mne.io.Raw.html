@@ -1338,8 +1338,8 @@ suppression.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+ab3905a)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+ab3905a)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+c5db5e2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+c5db5e2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -1828,8 +1828,8 @@ suppression.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+ab3905a)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+ab3905a)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+c5db5e2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+c5db5e2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -2074,7 +2074,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 <p><span class="versionmodified added">New in version 0.9.0.</span></p>
 </div>
 <p class="rubric" id="sphx-glr-backreferences-mne-io-raw-pick-types">Examples using <code class="docutils literal notranslate"><span class="pre">pick_types</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD [1]_ [2]_ [3]_. CSD takes the spatial Laplacian ..."><div class="figure align-default" id="id84">
+<div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD :footcite`PerrinEtAl1987,PerrinEtAl1989,Cohen201..."><div class="figure align-default" id="id84">
 <img alt="Transform EEG data using current source density (CSD)" src="../_images/sphx_glr_plot_eeg_csd_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/preprocessing/plot_eeg_csd.html#sphx-glr-auto-examples-preprocessing-plot-eeg-csd-py"><span class="std std-ref">Transform EEG data using current source density (CSD)</span></a></span><a class="headerlink" href="#id84" title="Permalink to this image">¶</a></p>
 </div>
@@ -2189,7 +2189,7 @@ will be applied.</p>
 </dd>
 <dt><strong>filtorder</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Filtering order. 0 will use FIR filtering with MNE defaults.
 Other values will construct an IIR filter of the given order
-and apply it with <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.filtfilt.html#scipy.signal.filtfilt" title="(in SciPy v1.6.0.dev0+ab3905a)"><code class="xref py py-func docutils literal notranslate"><span class="pre">filtfilt()</span></code></a> (making the effective
+and apply it with <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.filtfilt.html#scipy.signal.filtfilt" title="(in SciPy v1.6.0.dev0+c5db5e2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">filtfilt()</span></code></a> (making the effective
 order twice <code class="docutils literal notranslate"><span class="pre">filtorder</span></code>). Filtering may produce some edge artifacts
 (at the left and right edges) of the signals during display.</p>
 <div class="versionchanged">
@@ -2303,7 +2303,7 @@ By default, the channel means are removed when <code class="docutils literal not
 <img alt="Reading and writing raw files" src="../_images/sphx_glr_plot_read_and_write_raw_data_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/io/plot_read_and_write_raw_data.html#sphx-glr-auto-examples-io-plot-read-and-write-raw-data-py"><span class="std std-ref">Reading and writing raw files</span></a></span><a class="headerlink" href="#id94" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD [1]_ [2]_ [3]_. CSD takes the spatial Laplacian ..."><div class="figure align-default" id="id95">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD :footcite`PerrinEtAl1987,PerrinEtAl1989,Cohen201..."><div class="figure align-default" id="id95">
 <img alt="Transform EEG data using current source density (CSD)" src="../_images/sphx_glr_plot_eeg_csd_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/preprocessing/plot_eeg_csd.html#sphx-glr-auto-examples-preprocessing-plot-eeg-csd-py"><span class="std std-ref">Transform EEG data using current source density (CSD)</span></a></span><a class="headerlink" href="#id95" title="Permalink to this image">¶</a></p>
 </div>
@@ -2628,7 +2628,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 </dd>
 </dl>
 <p class="rubric" id="sphx-glr-backreferences-mne-io-raw-plot-psd">Examples using <code class="docutils literal notranslate"><span class="pre">plot_psd</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD [1]_ [2]_ [3]_. CSD takes the spatial Laplacian ..."><div class="figure align-default" id="id115">
+<div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD :footcite`PerrinEtAl1987,PerrinEtAl1989,Cohen201..."><div class="figure align-default" id="id115">
 <img alt="Transform EEG data using current source density (CSD)" src="../_images/sphx_glr_plot_eeg_csd_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/preprocessing/plot_eeg_csd.html#sphx-glr-auto-examples-preprocessing-plot-eeg-csd-py"><span class="std std-ref">Transform EEG data using current source density (CSD)</span></a></span><a class="headerlink" href="#id115" title="Permalink to this image">¶</a></p>
 </div>
@@ -2976,7 +2976,7 @@ Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
 <dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Frequency-domain window to use in resampling.
-See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+ab3905a)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+c5db5e2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>stim_picks</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Stim channels. These channels are simply subsampled or
 supersampled (without applying any filtering). This reduces
@@ -3360,7 +3360,7 @@ they are properly set in <code class="docutils literal notranslate"><span class=
 <img alt="Generate simulated raw data" src="../_images/sphx_glr_plot_simulate_raw_data_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/simulation/plot_simulate_raw_data.html#sphx-glr-auto-examples-simulation-plot-simulate-raw-data-py"><span class="std std-ref">Generate simulated raw data</span></a></span><a class="headerlink" href="#id143" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD [1]_ [2]_ [3]_. CSD takes the spatial Laplacian ..."><div class="figure align-default" id="id144">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD :footcite`PerrinEtAl1987,PerrinEtAl1989,Cohen201..."><div class="figure align-default" id="id144">
 <img alt="Transform EEG data using current source density (CSD)" src="../_images/sphx_glr_plot_eeg_csd_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/preprocessing/plot_eeg_csd.html#sphx-glr-auto-examples-preprocessing-plot-eeg-csd-py"><span class="std std-ref">Transform EEG data using current source density (CSD)</span></a></span><a class="headerlink" href="#id144" title="Permalink to this image">¶</a></p>
 </div>
@@ -3553,9 +3553,9 @@ will pick the given channels. Can also be the string values
 None (default) will pick all channels.</p>
 </dd>
 <dt><strong>index</strong><span class="classifier">‘time’ | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Kind of index to use for the DataFrame. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, a sequential
-integer index (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.RangeIndex.html#pandas.RangeIndex" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.RangeIndex</span></code></a>) will be used. If <code class="docutils literal notranslate"><span class="pre">'time'</span></code>, a
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Float64Index.html#pandas.Float64Index" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Float64Index</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Int64Index.html#pandas.Int64Index" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Int64Index</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code></a>, or
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.TimedeltaIndex.html#pandas.TimedeltaIndex" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.TimedeltaIndex</span></code></a> will be used
+integer index (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.RangeIndex.html#pandas.RangeIndex" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.RangeIndex</span></code></a>) will be used. If <code class="docutils literal notranslate"><span class="pre">'time'</span></code>, a
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Float64Index.html#pandas.Float64Index" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Float64Index</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Int64Index.html#pandas.Int64Index" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Int64Index</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code></a>, or
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.TimedeltaIndex.html#pandas.TimedeltaIndex" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.TimedeltaIndex</span></code></a> will be used
 (depending on the value of <code class="docutils literal notranslate"><span class="pre">time_format</span></code>). 
 Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
@@ -3580,7 +3580,7 @@ For convenience, a <code class="docutils literal notranslate"><span class="pre">
 <dt><strong>time_format</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Desired time format. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, no conversion is applied, and time values
 remain as float values in seconds. If <code class="docutils literal notranslate"><span class="pre">'ms'</span></code>, time values will be rounded
 to the nearest millisecond and converted to integers. If <code class="docutils literal notranslate"><span class="pre">'timedelta'</span></code>,
-time values will be converted to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timedelta</span></code></a> values. If <code class="docutils literal notranslate"><span class="pre">'datetime'</span></code>, time values will be converted to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code></a> values, relative to <code class="docutils literal notranslate"><span class="pre">raw.info['meas_date']</span></code> and offset by <code class="docutils literal notranslate"><span class="pre">raw.first_samp</span></code>. 
+time values will be converted to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timedelta</span></code></a> values. If <code class="docutils literal notranslate"><span class="pre">'datetime'</span></code>, time values will be converted to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code></a> values, relative to <code class="docutils literal notranslate"><span class="pre">raw.info['meas_date']</span></code> and offset by <code class="docutils literal notranslate"><span class="pre">raw.first_samp</span></code>. 
 Defaults to <code class="docutils literal notranslate"><span class="pre">'ms'</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.20.</span></p>
@@ -3590,7 +3590,7 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">'ms'</s
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>df</strong><span class="classifier">instance of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.0.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>A dataframe suitable for usage with other statistical/plotting/analysis
+<dt><strong>df</strong><span class="classifier">instance of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.0.4)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>A dataframe suitable for usage with other statistical/plotting/analysis
 packages.</p>
 </dd>
 </dl>
@@ -3635,7 +3635,7 @@ packages.</p>
 <img alt="Define target events based on time lag, plot evoked response" src="../_images/sphx_glr_plot_define_target_events_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/preprocessing/plot_define_target_events.html#sphx-glr-auto-examples-preprocessing-plot-define-target-events-py"><span class="std std-ref">Define target events based on time lag, plot evoked response</span></a></span><a class="headerlink" href="#id165" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD [1]_ [2]_ [3]_. CSD takes the spatial Laplacian ..."><div class="figure align-default" id="id166">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This script shows an example of how to use CSD :footcite`PerrinEtAl1987,PerrinEtAl1989,Cohen201..."><div class="figure align-default" id="id166">
 <img alt="Transform EEG data using current source density (CSD)" src="../_images/sphx_glr_plot_eeg_csd_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/preprocessing/plot_eeg_csd.html#sphx-glr-auto-examples-preprocessing-plot-eeg-csd-py"><span class="std std-ref">Transform EEG data using current source density (CSD)</span></a></span><a class="headerlink" href="#id166" title="Permalink to this image">¶</a></p>
 </div>

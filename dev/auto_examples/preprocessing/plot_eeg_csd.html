@@ -196,12 +196,13 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 </div>
 <div class="sphx-glr-example-title section" id="transform-eeg-data-using-current-source-density-csd">
 <span id="sphx-glr-auto-examples-preprocessing-plot-eeg-csd-py"></span><h1>Transform EEG data using current source density (CSD)<a class="headerlink" href="#transform-eeg-data-using-current-source-density-csd" title="Permalink to this headline">¶</a></h1>
-<p>This script shows an example of how to use CSD <a class="footnote-reference brackets" href="#id4" id="id1">1</a> <a class="footnote-reference brackets" href="#id5" id="id2">2</a> <a class="footnote-reference brackets" href="#id6" id="id3">3</a>.
+<p>This script shows an example of how to use CSD
+:footcite`PerrinEtAl1987,PerrinEtAl1989,Cohen2014,KayserTenke2015`.
 CSD takes the spatial Laplacian of the sensor signal (derivative in both
 x and y). It does what a planar gradiometer does in MEG. Computing these
 spatial derivatives reduces point spread. CSD transformed data have a sharper
 or more distinct topography, reducing the negative impact of volume conduction.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alex Rockhill &lt;aprockhill206@gmail.com&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Alex Rockhill &lt;aprockhill@mailbox.org&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -309,7 +310,7 @@ Loading data for 320 events and 421 original time points ...
 <ul class="sphx-glr-horizontal">
 <li><img alt="0.093 s, 0.205 s, 0.320 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_eeg_csd_005.png" />
 </li>
-<li><img alt="-0.150 s, 0.093 s, 0.225 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_eeg_csd_006.png" />
+<li><img alt="0.095 s, 0.208 s, 0.310 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_eeg_csd_006.png" />
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
@@ -387,26 +388,9 @@ Origin device coordinates:    1.4 17.8 -10.3 mm
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Perrin F, Bertrand O, Pernier J. “Scalp current density mapping:
-Value and estimation from potential data.” IEEE Trans Biomed Eng.
-1987;34(4):283–288.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Perrin F, Pernier J, Bertrand O, Echallier JF. “Spherical splines
-for scalp potential and current density mapping.”
-[Corrigenda EEG 02274, EEG Clin. Neurophysiol., 1990, 76, 565]
-Electroenceph Clin Neurophysiol. 1989;72(2):184–187.</p>
-</dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>Kayser J, Tenke CE. “On the benefits of using surface Laplacian
-(Current Source Density) methodology in electrophysiology.
-Int J Psychophysiol. 2015 Sep; 97(3): 171–173.</p>
-</dd>
-</dl>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  24.220 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  402 MB</p>
+<p id="bibtex-footbibliography-auto_examples/preprocessing/plot_eeg_csd-0"></p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  15.991 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  400 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-preprocessing-plot-eeg-csd-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8b03332e11f644d89651afa7abf9ddf6/plot_eeg_csd.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_eeg_csd.py</span></code></a></p>

@@ -194,10 +194,11 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.datasets.fetch_hcp_mmp_parcellation<a class="headerlink" href="#mne-datasets-fetch-hcp-mmp-parcellation" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mne.datasets.fetch_hcp_mmp_parcellation">
-<code class="sig-prename descclassname">mne.datasets.</code><code class="sig-name descname">fetch_hcp_mmp_parcellation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subjects_dir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">combine</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/datasets/utils.py#L650-L797"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.datasets.fetch_hcp_mmp_parcellation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne.datasets.</code><code class="sig-name descname">fetch_hcp_mmp_parcellation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subjects_dir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">combine</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/datasets/utils.py#L650-L794"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.datasets.fetch_hcp_mmp_parcellation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fetch the HCP-MMP parcellation.</p>
-<p>This will download and install the HCP-MMP parcellation <a class="reference internal" href="#r8b0092f7dffb-1" id="id1">[1]</a> files for
-FreeSurfer’s fsaverage <a class="reference internal" href="#r8b0092f7dffb-2" id="id2">[2]</a> to the specified directory.</p>
+<p>This will download and install the HCP-MMP parcellation
+<a class="footnote-reference brackets" href="#glasseretal2016" id="id1">1</a> files for FreeSurfer’s fsaverage
+<a class="footnote-reference brackets" href="#mills2016" id="id2">2</a> to the specified directory.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -205,7 +206,8 @@ FreeSurfer’s fsaverage <a class="reference internal" href="#r8b0092f7dffb-2" i
 <code class="docutils literal notranslate"><span class="pre">subjects_dir</span> <span class="pre">+</span> <span class="pre">'/fsaverage/label'</span></code>.</p>
 </dd>
 <dt><strong>combine</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, also produce the combined/reduced set of 23 labels per
-hemisphere as <code class="docutils literal notranslate"><span class="pre">HCPMMP1_combined.annot</span></code> <a class="reference internal" href="#r8b0092f7dffb-3" id="id3">[3]</a>.</p>
+hemisphere as <code class="docutils literal notranslate"><span class="pre">HCPMMP1_combined.annot</span></code>
+<a class="footnote-reference brackets" href="#glasseretal2016supp" id="id3">3</a>.</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>If not None, override default verbose level (see <a class="reference internal" href="mne.verbose.html#mne.verbose" title="mne.verbose"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
 and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configure_mne.html#tut-logging"><span class="std std-ref">Logging documentation</span></a> for more).</p>
@@ -217,27 +219,25 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 <p>Use of this parcellation is subject to terms of use on the
 <a class="reference external" href="https://balsa.wustl.edu/WN56">HCP-MMP webpage</a>.</p>
 <p class="rubric">References</p>
-<dl class="citation">
-<dt class="label" id="r8b0092f7dffb-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Glasser MF et al. (2016) A multi-modal parcellation of human
-cerebral cortex. Nature 536:171-178.</p>
+<p id="bibtex-footbibliography-generated/mne.datasets.fetch_hcp_mmp_parcellation-0"><dl class="footnote brackets">
+<dt class="label" id="glasseretal2016"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Matthew F. Glasser, Timothy S. Coalson, Emma C. Robinson, Carl D. Hacker, John Harwell, Essa Yacoub, Kamil Ugurbil, Jesper Andersson, Christian F. Beckmann, Mark Jenkinson, Stephen M. Smith, and David C. Van Essen. A multi-modal parcellation of human cerebral cortex. <em>Nature</em>, 536(7615):171–178, 2016. <a class="reference external" href="https://doi.org/10.1038/nature18933">doi:10.1038/nature18933</a>.</p>
 </dd>
-<dt class="label" id="r8b0092f7dffb-2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Mills K (2016) HCP-MMP1.0 projected on fsaverage.
-<a class="reference external" href="https://figshare.com/articles/HCP-MMP1_0_projected_on_fsaverage/3498446/2">https://figshare.com/articles/HCP-MMP1_0_projected_on_fsaverage/3498446/2</a></p>
+<dt class="label" id="mills2016"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Kathryn Mills. HCP-MMP1.0 projected on fsaverage. 2016. <a class="reference external" href="https://doi.org/10.6084/m9.figshare.3498446.v2">doi:10.6084/m9.figshare.3498446.v2</a>.</p>
 </dd>
-<dt class="label" id="r8b0092f7dffb-3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>Glasser MF et al. (2016) Supplemental information.
-<a class="reference external" href="https://images.nature.com/full/nature-assets/nature/journal/v536/n7615/extref/nature18933-s3.pdf">https://images.nature.com/full/nature-assets/nature/journal/v536/n7615/extref/nature18933-s3.pdf</a></p>
+<dt class="label" id="glasseretal2016supp"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Matthew F. Glasser, Timothy S. Coalson, Emma C. Robinson, Carl D. Hacker, John Harwell, Essa Yacoub, Kamil Ugurbil, Jesper Andersson, Christian F. Beckmann, Mark Jenkinson, Stephen M. Smith, and David C. Van Essen. Supplementary neuroanatomical results for “A multi-modal parcellation of human cerebral cortex”. <em>Nature</em>, 2016. URL: <a class="reference external" href="https://static-content.springer.com/esm/art%3A10.1038%2Fnature18933/MediaObjects/41586_2016_BFnature18933_MOESM330_ESM.pdf#page=2">https://static-content.springer.com/esm/art%3A10.1038%2Fnature18933/MediaObjects/41586_2016_BFnature18933_MOESM330_ESM.pdf#page=2</a>.</p>
 </dd>
 </dl>
+</p>
 </dd></dl>
 
 <div class="section" id="examples-using-mne-datasets-fetch-hcp-mmp-parcellation">
 <span id="sphx-glr-backreferences-mne-datasets-fetch-hcp-mmp-parcellation"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.datasets.fetch_hcp_mmp_parcellation</span></code><a class="headerlink" href="#examples-using-mne-datasets-fetch-hcp-mmp-parcellation" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example, we download the HCP-MMP1.0 parcellation [1]_ and show it on fsaverage. We will..."><div class="figure align-default" id="id7">
+<div class="sphx-glr-thumbcontainer" tooltip="In this example, we download the HCP-MMP1.0 parcellation [1]_ and show it on fsaverage. We will..."><div class="figure align-default" id="id4">
 <img alt="Plot a cortical parcellation" src="../_images/sphx_glr_plot_parcellation_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/visualization/plot_parcellation.html#sphx-glr-auto-examples-visualization-plot-parcellation-py"><span class="std std-ref">Plot a cortical parcellation</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/visualization/plot_parcellation.html#sphx-glr-auto-examples-visualization-plot-parcellation-py"><span class="std std-ref">Plot a cortical parcellation</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></div>
 </div>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mne.decoding.FilterEstimator &#8212; MNE 0.20.5 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,11 +18,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
     <script src="../_static/bootstrap_divs.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../_static/copybutton.js"></script>
 
 
@@ -75,8 +77,7 @@
 
 
 
-  <link rel="canonical" href="https://mne.tools/stable/index.html" />
-</head><body>
+  </head><body>
 
 
 
@@ -192,7 +193,7 @@
 <h1>mne.decoding.FilterEstimator<a class="headerlink" href="#mne-decoding-filterestimator" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mne.decoding.FilterEstimator">
-<em class="property">class </em><code class="sig-prename descclassname">mne.decoding.</code><code class="sig-name descname">FilterEstimator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">l_freq</span></em>, <em class="sig-param"><span class="n">h_freq</span></em>, <em class="sig-param"><span class="n">picks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filter_length</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">l_trans_bandwidth</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">h_trans_bandwidth</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'fir'</span></em>, <em class="sig-param"><span class="n">iir_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fir_design</span><span class="o">=</span><span class="default_value">'firwin'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L412-L550"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.FilterEstimator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mne.decoding.</code><code class="sig-name descname">FilterEstimator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">l_freq</span></em>, <em class="sig-param"><span class="n">h_freq</span></em>, <em class="sig-param"><span class="n">picks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filter_length</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">l_trans_bandwidth</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">h_trans_bandwidth</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'fir'</span></em>, <em class="sig-param"><span class="n">iir_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fir_design</span><span class="o">=</span><span class="default_value">'firwin'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L414-L552"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.FilterEstimator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimator to filter RtEpochs.</p>
 <p>Applies a zero-phase low-pass, high-pass, band-pass, or band-stop
 filter to the channels selected by “picks”.</p>
@@ -268,8 +269,8 @@ forward-backward filtering (via filtfilt).</p>
 See mne.filter.construct_iir_filter for details. If iir_params
 is None and method=”iir”, 4th order Butterworth will be used.</p>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -322,7 +323,7 @@ caution.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.FilterEstimator.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L480-L526"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.FilterEstimator.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L482-L528"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.FilterEstimator.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter data.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -370,7 +371,7 @@ and returns a transformed version of X.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.FilterEstimator.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L528-L550"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.FilterEstimator.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L530-L552"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.FilterEstimator.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter data.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -438,9 +439,9 @@ and returns a transformed version of X.</p>
       <li><a href="../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-05-19.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-09.</p>
   </div>
 </footer>
-<script src="https://mne.tools/versionwarning.js"></script>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

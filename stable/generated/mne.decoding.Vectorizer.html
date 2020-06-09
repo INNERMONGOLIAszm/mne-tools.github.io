@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mne.decoding.Vectorizer &#8212; MNE 0.20.5 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,11 +18,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
     <script src="../_static/bootstrap_divs.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../_static/copybutton.js"></script>
 
 
@@ -75,8 +77,7 @@
 
 
 
-  <link rel="canonical" href="https://mne.tools/stable/index.html" />
-</head><body>
+  </head><body>
 
 
 
@@ -192,7 +193,7 @@
 <h1>mne.decoding.Vectorizer<a class="headerlink" href="#mne-decoding-vectorizer" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mne.decoding.Vectorizer">
-<em class="property">class </em><code class="sig-prename descclassname">mne.decoding.</code><code class="sig-name descname">Vectorizer</code><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L218-L317"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mne.decoding.</code><code class="sig-name descname">Vectorizer</code><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L220-L319"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform n-dimensional array into 2D array of n_samples by n_features.</p>
 <p>This class reshapes an n-dimensional array into an n_samples * n_features
 array, usable by the estimators and transformers of scikit-learn.</p>
@@ -241,7 +242,7 @@ array, usable by the estimators and transformers of scikit-learn.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.Vectorizer.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L235-L255"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L237-L257"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store the shape of the features of X.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -266,7 +267,7 @@ samples are the independent samples used by the estimator
 
 <dl class="py method">
 <dt id="mne.decoding.Vectorizer.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L279-L297"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L281-L299"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the data, then transform in one step.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -291,7 +292,7 @@ samples are the independent samples used by the estimator
 
 <dl class="py method">
 <dt id="mne.decoding.Vectorizer.inverse_transform">
-<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L299-L317"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L301-L319"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform 2D data back to its original feature shape.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -312,7 +313,7 @@ dimension is of length n_samples.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.Vectorizer.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L257-L277"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">X</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L259-L279"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Vectorizer.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert given array into two dimensions.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -391,9 +392,9 @@ samples are the independent samples used by the estimator
       <li><a href="../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-05-19.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-09.</p>
   </div>
 </footer>
-<script src="https://mne.tools/versionwarning.js"></script>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python API Reference &#8212; MNE 0.20.5 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,11 +18,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/language_data.js"></script>
     <script src="_static/bootstrap_divs.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="_static/copybutton.js"></script>
 
 
@@ -75,8 +77,7 @@
 
 
 
-  <link rel="canonical" href="https://mne.tools/stable/index.html" />
-</head><body>
+  </head><body>
 
 
 
@@ -1975,7 +1976,7 @@ directly from a terminal, see <a class="reference internal" href="generated/comm
 <span id="api-reference-statistics"></span><h2><a class="toc-backref" href="#id17">Statistics</a><a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="#module-mne.stats" title="mne.stats"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mne.stats</span></code></a>:</p>
 <span class="target" id="module-mne.stats"></span><p>Functions for statistical analysis.</p>
-<p>Parametric statistics (see <a class="reference external" href="https://scipy.github.io/devdocs/stats.html#module-scipy.stats" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a> and <a class="reference external" href="https://www.statsmodels.org/dev/about.html#module-statsmodels" title="(in statsmodels vv0.12.0.dev0 (+302))"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statsmodels</span></code></a> for more
+<p>Parametric statistics (see <a class="reference external" href="https://scipy.github.io/devdocs/stats.html#module-scipy.stats" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a> and <a class="reference external" href="https://www.statsmodels.org/dev/about.html#module-statsmodels" title="(in statsmodels vv0.12.0.dev0 (+370))"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statsmodels</span></code></a> for more
 options):</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -2141,7 +2142,7 @@ options):</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.decoding.CSP.html#mne.decoding.CSP" title="mne.decoding.CSP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CSP</span></code></a>([n_components, reg, log, cov_est, …])</p></td>
 <td><p>M/EEG signal decomposition using the Common Spatial Patterns (CSP).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.decoding.EMS.html#mne.decoding.EMS" title="mne.decoding.EMS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMS</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.decoding.EMS.html#mne.decoding.EMS" title="mne.decoding.EMS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMS</span></code></a>()</p></td>
 <td><p>Transformer to compute event-matched spatial filters.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.decoding.FilterEstimator.html#mne.decoding.FilterEstimator" title="mne.decoding.FilterEstimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FilterEstimator</span></code></a>(info, l_freq, h_freq[, …])</p></td>
@@ -2165,7 +2166,7 @@ options):</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.decoding.UnsupervisedSpatialFilter.html#mne.decoding.UnsupervisedSpatialFilter" title="mne.decoding.UnsupervisedSpatialFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnsupervisedSpatialFilter</span></code></a>(estimator[, average])</p></td>
 <td><p>Use unsupervised spatial filtering across time and samples.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.decoding.Vectorizer.html#mne.decoding.Vectorizer" title="mne.decoding.Vectorizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vectorizer</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.decoding.Vectorizer.html#mne.decoding.Vectorizer" title="mne.decoding.Vectorizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vectorizer</span></code></a>()</p></td>
 <td><p>Transform n-dimensional array into 2D array of n_samples by n_features.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.decoding.ReceptiveField.html#mne.decoding.ReceptiveField" title="mne.decoding.ReceptiveField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReceptiveField</span></code></a>(tmin, tmax, sfreq[, …])</p></td>
@@ -2338,9 +2339,9 @@ options):</p>
       <li><a href="overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-05-19.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-09.</p>
   </div>
 </footer>
-<script src="https://mne.tools/versionwarning.js"></script>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

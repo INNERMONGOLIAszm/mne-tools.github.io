@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mne.io.RawArray &#8212; MNE 0.20.5 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,11 +18,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
     <script src="../_static/bootstrap_divs.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../_static/copybutton.js"></script>
 
 
@@ -75,8 +77,7 @@
 
 
 
-  <link rel="canonical" href="https://mne.tools/stable/index.html" />
-</head><body>
+  </head><body>
 
 
 
@@ -1133,8 +1134,8 @@ suppression.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -1481,8 +1482,8 @@ suppression.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -1761,7 +1762,7 @@ will be applied.</p>
 </dd>
 <dt><strong>filtorder</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Filtering order. 0 will use FIR filtering with MNE defaults.
 Other values will construct an IIR filter of the given order
-and apply it with <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.filtfilt.html#scipy.signal.filtfilt" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">filtfilt()</span></code></a> (making the effective
+and apply it with <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.filtfilt.html#scipy.signal.filtfilt" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-func docutils literal notranslate"><span class="pre">filtfilt()</span></code></a> (making the effective
 order twice <code class="docutils literal notranslate"><span class="pre">filtorder</span></code>). Filtering may produce some edge artifacts
 (at the left and right edges) of the signals during display.</p>
 <div class="versionchanged">
@@ -2377,7 +2378,7 @@ Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
 <dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Frequency-domain window to use in resampling.
-See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>stim_picks</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Stim channels. These channels are simply subsampled or
 supersampled (without applying any filtering). This reduces
@@ -2768,7 +2769,7 @@ after calling <code class="docutils literal notranslate"><span class="pre">inst.
 
 <dl class="py method">
 <dt id="mne.io.RawArray.set_montage">
-<code class="sig-name descname">set_montage</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">montage</em>, <em class="sig-param">raise_if_subset=&lt;object object at 0x7efe23454ae0&gt;</em>, <em class="sig-param">match_case=True</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L155-L190"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.io.RawArray.set_montage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_montage</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">montage</em>, <em class="sig-param">raise_if_subset=&lt;object object at 0x7fb14221cae0&gt;</em>, <em class="sig-param">match_case=True</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L155-L190"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.io.RawArray.set_montage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set EEG sensor configuration and head digitization.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2863,9 +2864,9 @@ will pick the given channels. Can also be the string values
 None (default) will pick all channels.</p>
 </dd>
 <dt><strong>index</strong><span class="classifier">‘time’ | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Kind of index to use for the DataFrame. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, a sequential
-integer index (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.RangeIndex.html#pandas.RangeIndex" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.RangeIndex</span></code></a>) will be used. If <code class="docutils literal notranslate"><span class="pre">'time'</span></code>, a
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Float64Index.html#pandas.Float64Index" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Float64Index</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Int64Index.html#pandas.Int64Index" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Int64Index</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code></a>, or
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.TimedeltaIndex.html#pandas.TimedeltaIndex" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.TimedeltaIndex</span></code></a> will be used
+integer index (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.RangeIndex.html#pandas.RangeIndex" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.RangeIndex</span></code></a>) will be used. If <code class="docutils literal notranslate"><span class="pre">'time'</span></code>, a
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Float64Index.html#pandas.Float64Index" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Float64Index</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Int64Index.html#pandas.Int64Index" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Int64Index</span></code></a>, <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code></a>, or
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.TimedeltaIndex.html#pandas.TimedeltaIndex" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.TimedeltaIndex</span></code></a> will be used
 (depending on the value of <code class="docutils literal notranslate"><span class="pre">time_format</span></code>). 
 Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
@@ -2894,7 +2895,7 @@ For convenience, a <code class="docutils literal notranslate"><span class="pre">
 <dt><strong>time_format</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Desired time format. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, no conversion is applied, and time values
 remain as float values in seconds. If <code class="docutils literal notranslate"><span class="pre">'ms'</span></code>, time values will be rounded
 to the nearest millisecond and converted to integers. If <code class="docutils literal notranslate"><span class="pre">'timedelta'</span></code>,
-time values will be converted to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timedelta</span></code></a> values. If <code class="docutils literal notranslate"><span class="pre">'datetime'</span></code>, time values will be converted to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code></a> values, relative to <code class="docutils literal notranslate"><span class="pre">raw.info['meas_date']</span></code> and offset by <code class="docutils literal notranslate"><span class="pre">raw.first_samp</span></code>. 
+time values will be converted to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.html#pandas.Timedelta" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timedelta</span></code></a> values. If <code class="docutils literal notranslate"><span class="pre">'datetime'</span></code>, time values will be converted to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html#pandas.Timestamp" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code></a> values, relative to <code class="docutils literal notranslate"><span class="pre">raw.info['meas_date']</span></code> and offset by <code class="docutils literal notranslate"><span class="pre">raw.first_samp</span></code>. 
 Defaults to <code class="docutils literal notranslate"><span class="pre">'ms'</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.20.</span></p>
@@ -2904,7 +2905,7 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">'ms'</s
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>df</strong><span class="classifier">instance of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.0.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>A dataframe suitable for usage with other statistical/plotting/analysis
+<dt><strong>df</strong><span class="classifier">instance of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.0.4)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>A dataframe suitable for usage with other statistical/plotting/analysis
 packages.</p>
 </dd>
 </dl>
@@ -2990,9 +2991,9 @@ packages.</p>
       <li><a href="../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-05-19.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-09.</p>
   </div>
 </footer>
-<script src="https://mne.tools/versionwarning.js"></script>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

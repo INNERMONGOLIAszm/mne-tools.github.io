@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contributing to MNE-Python &#8212; MNE 0.20.5 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,11 +18,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
     <script src="../_static/bootstrap_divs.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../_static/copybutton.js"></script>
 
 
@@ -75,8 +77,7 @@
 
 
 
-  <link rel="canonical" href="https://mne.tools/stable/index.html" />
-</head><body>
+  </head><body>
 
 
 
@@ -523,7 +524,7 @@ cycle, adding the unit tests and documentation changes:</p>
 </div>
 <p>When you’re done, it’s time to run the test suite to make sure your changes
 haven’t broken any existing functionality, and to make sure your new test
-covers the lines of code you’ve added (see <a class="reference external" href="https://www.statsmodels.org/dev/dev/test_notes.html#run-tests" title="(in statsmodels vv0.12.0.dev0 (+302))"><span>Running Tests</span></a> and
+covers the lines of code you’ve added (see <a class="reference external" href="https://www.statsmodels.org/dev/dev/test_notes.html#run-tests" title="(in statsmodels vv0.12.0.dev0 (+370))"><span>Running Tests</span></a> and
 <a class="reference internal" href="#build-docs"><span class="std std-ref">Building the documentation</span></a>, below). Once everything looks good, it’s time to push your
 changes to your fork:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="c1"># push local changes to remote branch origin/new-feature-x</span>
@@ -670,7 +671,7 @@ merge conflicts (since the changelog is updated with almost every PR).</p>
 test across multiple installation targets. However, the CIs are often slower
 than testing locally, especially when other contributors also have open PRs
 (which is basically always the case). Therefore, do not rely on the CIs to
-catch bugs and style errors for you; <a class="reference external" href="https://www.statsmodels.org/dev/dev/test_notes.html#run-tests" title="(in statsmodels vv0.12.0.dev0 (+302))"><span class="xref std std-ref">run the tests locally</span></a>
+catch bugs and style errors for you; <a class="reference external" href="https://www.statsmodels.org/dev/dev/test_notes.html#run-tests" title="(in statsmodels vv0.12.0.dev0 (+370))"><span class="xref std std-ref">run the tests locally</span></a>
 instead before opening a new PR and before each time you push additional
 changes to an already-open PR.</p>
 </div>
@@ -747,7 +748,7 @@ will not).</p>
 </div>
 <p>MNE-Python also uses <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html">Intersphinx</a>, so you can (and should)
 cross-reference to Python built-in classes and functions as well as API
-elements in <a class="reference external" href="https://numpy.org/devdocs/reference/index.html#module-numpy" title="(in NumPy v1.20.dev0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>, <a class="reference external" href="https://scipy.github.io/devdocs/index.html#module-scipy" title="(in SciPy v1.5.0.dev0+01c65a7)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a>, etc. See the Sphinx
+elements in <a class="reference external" href="https://numpy.org/devdocs/reference/index.html#module-numpy" title="(in NumPy v1.20.dev0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>, <a class="reference external" href="https://scipy.github.io/devdocs/index.html#module-scipy" title="(in SciPy v1.6.0.dev0+41a5272)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a>, etc. See the Sphinx
 configuration file (<code class="file docutils literal notranslate"><span class="pre">doc/conf.py</span></code>) for the list of Intersphinx projects
 we link to. Their inventories can be examined using a tool like <a class="reference external" href="https://sphobjinv.readthedocs.io/en/latest/">sphobjinv</a> or
 dumped to file with commands like:</p>
@@ -1003,9 +1004,9 @@ it can serve as a useful example of what to expect from the PR review process.</
       <li><a href="../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-05-19.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-09.</p>
   </div>
 </footer>
-<script src="https://mne.tools/versionwarning.js"></script>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

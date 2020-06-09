@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mne.decoding.PSDEstimator &#8212; MNE 0.20.5 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,11 +18,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
     <script src="../_static/bootstrap_divs.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
+    <link rel="canonical" href="https://mne.tools/stable/index.html" />
     <script type="text/javascript" src="../_static/copybutton.js"></script>
 
 
@@ -75,8 +77,7 @@
 
 
 
-  <link rel="canonical" href="https://mne.tools/stable/index.html" />
-</head><body>
+  </head><body>
 
 
 
@@ -192,7 +193,7 @@
 <h1>mne.decoding.PSDEstimator<a class="headerlink" href="#mne-decoding-psdestimator" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mne.decoding.PSDEstimator">
-<em class="property">class </em><code class="sig-prename descclassname">mne.decoding.</code><code class="sig-name descname">PSDEstimator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sfreq</span><span class="o">=</span><span class="default_value">6.283185307179586</span></em>, <em class="sig-param"><span class="n">fmin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">fmax</span><span class="o">=</span><span class="default_value">inf</span></em>, <em class="sig-param"><span class="n">bandwidth</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">adaptive</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">low_bias</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">normalization</span><span class="o">=</span><span class="default_value">'length'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L321-L408"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.PSDEstimator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mne.decoding.</code><code class="sig-name descname">PSDEstimator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sfreq</span><span class="o">=</span><span class="default_value">6.283185307179586</span></em>, <em class="sig-param"><span class="n">fmin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">fmax</span><span class="o">=</span><span class="default_value">inf</span></em>, <em class="sig-param"><span class="n">bandwidth</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">adaptive</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">low_bias</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">normalization</span><span class="o">=</span><span class="default_value">'length'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L323-L410"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.PSDEstimator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute power spectral density (PSD) using a multi-taper method.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -258,7 +259,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 
 <dl class="py method">
 <dt id="mne.decoding.PSDEstimator.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L366-L385"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.PSDEstimator.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L368-L387"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.PSDEstimator.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute power spectral density (PSD) using a multi-taper method.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -306,7 +307,7 @@ and returns a transformed version of X.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.PSDEstimator.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L387-L408"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.PSDEstimator.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/decoding/transformer.py#L389-L410"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.PSDEstimator.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute power spectral density (PSD) using a multi-taper method.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -374,9 +375,9 @@ and returns a transformed version of X.</p>
       <li><a href="../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-05-19.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-09.</p>
   </div>
 </footer>
-<script src="https://mne.tools/versionwarning.js"></script>
+  <script src="https://mne.tools/versionwarning.js"></script>
   </body>
 </html>

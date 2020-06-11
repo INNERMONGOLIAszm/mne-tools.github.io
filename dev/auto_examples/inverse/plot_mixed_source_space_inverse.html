@@ -176,6 +176,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
             </a></p><ul>
 <li><a class="reference internal" href="#">Compute MNE inverse solution on evoked data in a mixed source space</a><ul>
 <li><a class="reference internal" href="#set-up-our-source-space">Set up our source space</a></li>
+<li><a class="reference internal" href="#viewing-the-source-space">Viewing the source space</a></li>
 <li><a class="reference internal" href="#compute-the-fwd-matrix">Compute the fwd matrix</a></li>
 <li><a class="reference internal" href="#compute-inverse-solution">Compute inverse solution</a></li>
 <li><a class="reference internal" href="#plot-the-surface">Plot the surface</a></li>
@@ -202,7 +203,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 </div>
 <div class="sphx-glr-example-title section" id="compute-mne-inverse-solution-on-evoked-data-in-a-mixed-source-space">
 <span id="sphx-glr-auto-examples-inverse-plot-mixed-source-space-inverse-py"></span><h1>Compute MNE inverse solution on evoked data in a mixed source space<a class="headerlink" href="#compute-mne-inverse-solution-on-evoked-data-in-a-mixed-source-space" title="Permalink to this headline">¶</a></h1>
-<p>Create a mixed source space and compute MNE inverse solution on an
+<p>Create a mixed source space and compute an MNE inverse solution on an
 evoked dataset.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Annalisa Pascarella &lt;a.pascarella@iac.cnr.it&gt;</span>
 <span class="c1">#</span>
@@ -358,6 +359,9 @@ MRI volume : MRI (surface RAS) -&gt; RAS (non-zero origin)
 the src space contains 9 spaces and 2169 points
 </pre></div>
 </div>
+</div>
+<div class="section" id="viewing-the-source-space">
+<h2>Viewing the source space<a class="headerlink" href="#viewing-the-source-space" title="Permalink to this headline">¶</a></h2>
 <p>We could write the mixed source space with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">write_source_spaces</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname_mixed_src</span></a><span class="p">,</span> <a href="../../generated/mne.SourceSpaces.html#mne.SourceSpaces" title="mne.SourceSpaces" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">src</span></a><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -365,7 +369,6 @@ the src space contains 9 spaces and 2169 points
 <p>We can also export source positions to nifti file and visualize it again:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nii_fname</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">op</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bem_dir</span></a><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">-mixed-src.nii&#39;</span> <span class="o">%</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subject</span></a><span class="p">)</span>
 <a href="../../generated/mne.SourceSpaces.html#mne.SourceSpaces.export_volume" title="mne.SourceSpaces.export_volume" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">src</span><span class="o">.</span><span class="n">export_volume</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nii_fname</span></a><span class="p">,</span> <span class="n">mri_resolution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
 <a href="http://nilearn.github.io/modules/generated/nilearn.plotting.plot_img.html#nilearn.plotting.plot_img" title="nilearn.plotting.plot_img" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plotting</span><span class="o">.</span><span class="n">plot_img</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nii_fname</span></a><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;nipy_spectral&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -594,8 +597,8 @@ and each sub structure contained in the src space</p>
 Extracting time courses for 75 labels (mode: mean)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  30.623 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  1473 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  34.414 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  1427 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-inverse-plot-mixed-source-space-inverse-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/3a2b9aa2deb5cb4e8da2ffe2be1bff69/plot_mixed_source_space_inverse.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_mixed_source_space_inverse.py</span></code></a></p>

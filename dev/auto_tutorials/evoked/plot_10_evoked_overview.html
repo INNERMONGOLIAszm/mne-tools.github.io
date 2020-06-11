@@ -515,13 +515,18 @@ proportional to the number of epochs averaged together to create it):</p>
 <span class="k">assert</span> <a href="../../generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">left_right_aud</span></a><span class="o">.</span><span class="n">nave</span> <span class="o">==</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">left_aud</span><span class="o">.</span><span class="n">nave</span></a> <span class="o">+</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">right_aud</span><span class="o">.</span><span class="n">nave</span></a>
 </pre></div>
 </div>
-<p>Keeping track of <code class="docutils literal notranslate"><span class="pre">nave</span></code> is important for inverse imaging, because it is
-used to scale the noise covariance estimate (which in turn affects the
-magnitude of estimated source activity). See <a class="reference internal" href="../../overview/implementation.html#minimum-norm-estimates"><span class="std std-ref">The minimum-norm current estimates</span></a>
-for more information (especially the <a class="reference internal" href="../../overview/implementation.html#whitening-and-scaling"><span class="std std-ref">Whitening and scaling</span></a> section).
-For this reason, combining <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a> objects with either
-<code class="docutils literal notranslate"><span class="pre">weights='equal'</span></code> or by providing custom numeric weights <strong>should usually
-not be done</strong> if you intend to perform inverse imaging on the resulting
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">nave</span></code> attribute of the resulting <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a> object will
+reflect the <em>effective</em> number of averages, and depends on both the <code class="docutils literal notranslate"><span class="pre">nave</span></code>
+attributes of the contributing <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a> objects and the weights at
+which they are combined. Keeping track of effective <code class="docutils literal notranslate"><span class="pre">nave</span></code> is important for
+inverse imaging, because <code class="docutils literal notranslate"><span class="pre">nave</span></code> is used to scale the noise covariance
+estimate (which in turn affects the magnitude of estimated source activity).
+See <a class="reference internal" href="../../overview/implementation.html#minimum-norm-estimates"><span class="std std-ref">The minimum-norm current estimates</span></a> for more information (especially the
+<a class="reference internal" href="../../overview/implementation.html#whitening-and-scaling"><span class="std std-ref">Whitening and scaling</span></a> section). Note that <a class="reference internal" href="../../generated/mne.grand_average.html#mne.grand_average" title="mne.grand_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mne.grand_average</span></code></a> does
+<em>not</em> adjust <code class="docutils literal notranslate"><span class="pre">nave</span></code> to reflect effective number of averaged epochs; rather
+it simply sets <code class="docutils literal notranslate"><span class="pre">nave</span></code> to the number of <em>evokeds</em> that were averaged
+together. For this reason, it is best to use <a class="reference internal" href="../../generated/mne.combine_evoked.html#mne.combine_evoked" title="mne.combine_evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mne.combine_evoked</span></code></a> rather than
+<a class="reference internal" href="../../generated/mne.grand_average.html#mne.grand_average" title="mne.grand_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mne.grand_average</span></code></a> if you intend to perform inverse imaging on the resulting
 <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a> object.</p>
 </div>
 <div class="section" id="other-uses-of-evoked-objects">
@@ -557,8 +562,8 @@ Trial 1: peak of -45 µV at 569 ms in channel EEG 005
 Trial 2: peak of -46 µV at 648 ms in channel EEG 015
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.846 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  506 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.848 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  625 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-evoked-plot-10-evoked-overview-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/4bc6b51e34f6266c5a9cb987ba687b13/plot_10_evoked_overview.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_10_evoked_overview.py</span></code></a></p>

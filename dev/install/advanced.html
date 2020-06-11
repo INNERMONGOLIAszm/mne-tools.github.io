@@ -334,6 +334,14 @@ to force MESA to use modern OpenGL by using this before executing
 </div>
 <p>Also, it’s possible that different software rending backends might perform
 better than others, such as using the <code class="docutils literal notranslate"><span class="pre">llvmpipe</span></code> backend rather than <code class="docutils literal notranslate"><span class="pre">swr</span></code>.</p>
+<p>MESA also can have trouble with full-screen antialiasing, which you can
+disable with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">MNE_3D_OPTION_ANTIALIAS</span><span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+<p>or by doing
+<a class="reference internal" href="../generated/mne.viz.set_3d_options.html#mne.viz.set_3d_options" title="mne.viz.set_3d_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.viz.set_3d_options(antialias=False)</span></code></a> within
+a given Python session.</p>
 </div>
 <div class="section" id="troubleshooting-3d-plots-in-mne-python">
 <span id="troubleshoot-3d"></span><h2><a class="toc-backref" href="#id6">Troubleshooting 3D plots in MNE-Python</a><a class="headerlink" href="#troubleshooting-3d-plots-in-mne-python" title="Permalink to this headline">¶</a></h2>

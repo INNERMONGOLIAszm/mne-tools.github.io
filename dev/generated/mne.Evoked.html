@@ -1266,8 +1266,8 @@ suppression.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+c38df7b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+c38df7b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+6c0f25e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+6c0f25e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -3126,7 +3126,7 @@ Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
 <dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Frequency-domain window to use in resampling.
-See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+c38df7b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+6c0f25e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Number of jobs to run in parallel. Can be ‘cuda’ if <code class="docutils literal notranslate"><span class="pre">cupy</span></code>
 is installed properly.</p>
@@ -3696,7 +3696,7 @@ packages.</p>
 <img alt="Compute sparse inverse solution with mixed norm: MxNE and irMxNE" src="../_images/sphx_glr_plot_mixed_norm_inverse_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_mixed_norm_inverse.html#sphx-glr-auto-examples-inverse-plot-mixed-norm-inverse-py"><span class="std std-ref">Compute sparse inverse solution with mixed norm: MxNE and irMxNE</span></a></span><a class="headerlink" href="#id169" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Create a mixed source space and compute MNE inverse solution on an evoked dataset."><div class="figure align-default" id="id170">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Create a mixed source space and compute an MNE inverse solution on an evoked dataset."><div class="figure align-default" id="id170">
 <img alt="Compute MNE inverse solution on evoked data in a mixed source space" src="../_images/sphx_glr_plot_mixed_source_space_inverse_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_mixed_source_space_inverse.html#sphx-glr-auto-examples-inverse-plot-mixed-source-space-inverse-py"><span class="std std-ref">Compute MNE inverse solution on evoked data in a mixed source space</span></a></span><a class="headerlink" href="#id170" title="Permalink to this image">¶</a></p>
 </div>

@@ -169,33 +169,13 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/mne_logo_small.svg" alt="Logo"/>
-            </a></p><ul>
-<li><a class="reference internal" href="#">mne.Info</a><ul>
-<li><a class="reference internal" href="#examples-using-mne-info">Examples using <code class="docutils literal notranslate"><span class="pre">mne.Info</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-<form action="../search.html" method="get">
- <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
- </div>
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-        </div>
-      </div>
     <div class="body col-md-12 content" role="main">
       
   <div class="section" id="mne-info">
 <h1>mne.Info<a class="headerlink" href="#mne-info" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mne.Info">
-<em class="property">class </em><code class="sig-prename descclassname">mne.</code><code class="sig-name descname">Info</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L183-L791"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mne.</code><code class="sig-name descname">Info</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L194-L806"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Measurement information.</p>
 <p>This data structure behaves like a dictionary. It contains all metadata
 that is available for a recording. However, its keys are restricted to
@@ -677,7 +657,7 @@ See Notes for details.</p>
 
 <dl class="py method">
 <dt id="mne.Info.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L540-L548"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L555-L563"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy the instance.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -718,7 +698,7 @@ See Notes for details.</p>
 
 <dl class="py method">
 <dt id="mne.Info.normalize_proj">
-<code class="sig-name descname">normalize_proj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L550-L564"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.normalize_proj" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">normalize_proj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L565-L579"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.normalize_proj" title="Permalink to this definition">¶</a></dt>
 <dd><p>(Re-)Normalize projection vectors after subselection.</p>
 <p>Applying projection after sub-selecting a set of channels that
 were originally used to compute the original projection vectors
@@ -742,7 +722,7 @@ adequately capture the original signal of interest.</p>
 
 <dl class="py method">
 <dt id="mne.Info.pick_channels">
-<code class="sig-name descname">pick_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">ch_names</span></em>, <em class="sig-param"><span class="n">ordered</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L763-L787"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.pick_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pick_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">ch_names</span></em>, <em class="sig-param"><span class="n">ordered</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L778-L802"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.pick_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pick channels from this Info object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -784,7 +764,7 @@ Raises KeyError if the dict is empty.</p>
 
 <dl class="py method">
 <dt id="mne.Info.set_montage">
-<code class="sig-name descname">set_montage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">montage</span></em>, <em class="sig-param"><span class="n">match_case</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">on_missing</span><span class="o">=</span><span class="default_value">'raise'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L152-L179"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.set_montage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_montage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">montage</span></em>, <em class="sig-param"><span class="n">match_case</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">on_missing</span><span class="o">=</span><span class="default_value">'raise'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L153-L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.set_montage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set EEG sensor configuration and head digitization.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>

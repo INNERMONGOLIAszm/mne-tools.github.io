@@ -169,26 +169,6 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../../index.html">
-              <img class="logo" src="../../_static/mne_logo_small.svg" alt="Logo"/>
-            </a></p><ul>
-<li><a class="reference internal" href="#">Decoding sensor space data with generalization across time and conditions</a><ul>
-<li><a class="reference internal" href="#references">References</a></li>
-</ul>
-</li>
-</ul>
-
-<form action="../../search.html" method="get">
- <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
- </div>
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-        </div>
-      </div>
     <div class="body col-md-12 content" role="main">
       
   <div class="sphx-glr-download-link-note admonition note">
@@ -289,23 +269,21 @@ and test on all right visual vs auditory trials.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>  0%|          | Fitting GeneralizingEstimator : 0/35 [00:00&lt;?,       ?it/s]
-  6%|5         | Fitting GeneralizingEstimator : 2/35 [00:00&lt;00:01,   23.16it/s]
- 11%|#1        | Fitting GeneralizingEstimator : 4/35 [00:00&lt;00:01,   23.55it/s]
- 17%|#7        | Fitting GeneralizingEstimator : 6/35 [00:00&lt;00:01,   24.28it/s]
- 20%|##        | Fitting GeneralizingEstimator : 7/35 [00:00&lt;00:01,   24.50it/s]
- 23%|##2       | Fitting GeneralizingEstimator : 8/35 [00:00&lt;00:01,   24.71it/s]
- 31%|###1      | Fitting GeneralizingEstimator : 11/35 [00:00&lt;00:00,   25.60it/s]
- 40%|####      | Fitting GeneralizingEstimator : 14/35 [00:00&lt;00:00,   26.46it/s]
- 49%|####8     | Fitting GeneralizingEstimator : 17/35 [00:00&lt;00:00,   27.33it/s]
- 57%|#####7    | Fitting GeneralizingEstimator : 20/35 [00:00&lt;00:00,   28.31it/s]
- 63%|######2   | Fitting GeneralizingEstimator : 22/35 [00:00&lt;00:00,   29.06it/s]
- 69%|######8   | Fitting GeneralizingEstimator : 24/35 [00:00&lt;00:00,   29.70it/s]
- 74%|#######4  | Fitting GeneralizingEstimator : 26/35 [00:00&lt;00:00,   30.33it/s]
- 80%|########  | Fitting GeneralizingEstimator : 28/35 [00:00&lt;00:00,   30.99it/s]
- 89%|########8 | Fitting GeneralizingEstimator : 31/35 [00:00&lt;00:00,   32.04it/s]
- 94%|#########4| Fitting GeneralizingEstimator : 33/35 [00:00&lt;00:00,   32.63it/s]
-100%|##########| Fitting GeneralizingEstimator : 35/35 [00:00&lt;00:00,   33.46it/s]
-100%|##########| Fitting GeneralizingEstimator : 35/35 [00:00&lt;00:00,   53.52it/s]
+  6%|5         | Fitting GeneralizingEstimator : 2/35 [00:00&lt;00:00,   47.92it/s]
+ 11%|#1        | Fitting GeneralizingEstimator : 4/35 [00:00&lt;00:00,   48.34it/s]
+ 17%|#7        | Fitting GeneralizingEstimator : 6/35 [00:00&lt;00:00,   48.70it/s]
+ 23%|##2       | Fitting GeneralizingEstimator : 8/35 [00:00&lt;00:00,   49.10it/s]
+ 29%|##8       | Fitting GeneralizingEstimator : 10/35 [00:00&lt;00:00,   49.53it/s]
+ 40%|####      | Fitting GeneralizingEstimator : 14/35 [00:00&lt;00:00,   50.84it/s]
+ 49%|####8     | Fitting GeneralizingEstimator : 17/35 [00:00&lt;00:00,   51.86it/s]
+ 57%|#####7    | Fitting GeneralizingEstimator : 20/35 [00:00&lt;00:00,   52.78it/s]
+ 66%|######5   | Fitting GeneralizingEstimator : 23/35 [00:00&lt;00:00,   53.38it/s]
+ 71%|#######1  | Fitting GeneralizingEstimator : 25/35 [00:00&lt;00:00,   52.99it/s]
+ 80%|########  | Fitting GeneralizingEstimator : 28/35 [00:00&lt;00:00,   54.08it/s]
+ 86%|########5 | Fitting GeneralizingEstimator : 30/35 [00:00&lt;00:00,   54.27it/s]
+ 94%|#########4| Fitting GeneralizingEstimator : 33/35 [00:00&lt;00:00,   55.16it/s]
+100%|##########| Fitting GeneralizingEstimator : 35/35 [00:00&lt;00:00,   55.74it/s]
+100%|##########| Fitting GeneralizingEstimator : 35/35 [00:00&lt;00:00,   68.08it/s]
 </pre></div>
 </div>
 <p>Score on the epochs where the stimulus was presented to the right.</p>
@@ -315,78 +293,62 @@ and test on all right visual vs auditory trials.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>  0%|          | Scoring GeneralizingEstimator : 0/1225 [00:00&lt;?,       ?it/s]
-  1%|1         | Scoring GeneralizingEstimator : 17/1225 [00:00&lt;00:02,  495.48it/s]
-  3%|2         | Scoring GeneralizingEstimator : 35/1225 [00:00&lt;00:02,  496.90it/s]
-  5%|4         | Scoring GeneralizingEstimator : 56/1225 [00:00&lt;00:02,  501.92it/s]
-  6%|6         | Scoring GeneralizingEstimator : 77/1225 [00:00&lt;00:02,  506.78it/s]
-  8%|7         | Scoring GeneralizingEstimator : 93/1225 [00:00&lt;00:02,  504.95it/s]
-  9%|9         | Scoring GeneralizingEstimator : 114/1225 [00:00&lt;00:02,  509.75it/s]
- 11%|#1        | Scoring GeneralizingEstimator : 136/1225 [00:00&lt;00:02,  515.34it/s]
- 12%|#2        | Scoring GeneralizingEstimator : 150/1225 [00:00&lt;00:02,  508.92it/s]
- 14%|#3        | Scoring GeneralizingEstimator : 171/1225 [00:00&lt;00:02,  513.46it/s]
- 16%|#5        | Scoring GeneralizingEstimator : 192/1225 [00:00&lt;00:01,  517.97it/s]
- 17%|#6        | Scoring GeneralizingEstimator : 206/1225 [00:00&lt;00:01,  511.61it/s]
- 19%|#8        | Scoring GeneralizingEstimator : 228/1225 [00:00&lt;00:01,  517.18it/s]
- 20%|##        | Scoring GeneralizingEstimator : 246/1225 [00:00&lt;00:01,  517.64it/s]
- 21%|##        | Scoring GeneralizingEstimator : 255/1225 [00:00&lt;00:01,  493.69it/s]
- 23%|##2       | Scoring GeneralizingEstimator : 276/1225 [00:00&lt;00:01,  498.73it/s]
- 24%|##4       | Scoring GeneralizingEstimator : 294/1225 [00:00&lt;00:01,  500.37it/s]
- 25%|##4       | Scoring GeneralizingEstimator : 304/1225 [00:00&lt;00:01,  483.60it/s]
- 26%|##6       | Scoring GeneralizingEstimator : 321/1225 [00:00&lt;00:01,  484.57it/s]
- 27%|##7       | Scoring GeneralizingEstimator : 335/1225 [00:00&lt;00:01,  480.53it/s]
- 28%|##8       | Scoring GeneralizingEstimator : 348/1225 [00:00&lt;00:01,  474.51it/s]
- 30%|##9       | Scoring GeneralizingEstimator : 363/1225 [00:00&lt;00:01,  472.93it/s]
- 31%|###1      | Scoring GeneralizingEstimator : 381/1225 [00:00&lt;00:01,  475.60it/s]
- 32%|###2      | Scoring GeneralizingEstimator : 393/1225 [00:00&lt;00:01,  467.53it/s]
- 34%|###3      | Scoring GeneralizingEstimator : 413/1225 [00:00&lt;00:01,  472.50it/s]
- 35%|###5      | Scoring GeneralizingEstimator : 431/1225 [00:00&lt;00:01,  475.12it/s]
- 36%|###6      | Scoring GeneralizingEstimator : 447/1225 [00:00&lt;00:01,  475.04it/s]
- 38%|###8      | Scoring GeneralizingEstimator : 468/1225 [00:00&lt;00:01,  480.69it/s]
- 40%|###9      | Scoring GeneralizingEstimator : 485/1225 [00:00&lt;00:01,  481.73it/s]
- 41%|####      | Scoring GeneralizingEstimator : 501/1225 [00:00&lt;00:01,  481.34it/s]
- 42%|####2     | Scoring GeneralizingEstimator : 518/1225 [00:01&lt;00:01,  482.41it/s]
- 44%|####3     | Scoring GeneralizingEstimator : 536/1225 [00:01&lt;00:01,  484.69it/s]
- 45%|####4     | Scoring GeneralizingEstimator : 550/1225 [00:01&lt;00:01,  480.46it/s]
- 47%|####6     | Scoring GeneralizingEstimator : 570/1225 [00:01&lt;00:01,  484.99it/s]
- 48%|####8     | Scoring GeneralizingEstimator : 588/1225 [00:01&lt;00:01,  487.20it/s]
- 49%|####9     | Scoring GeneralizingEstimator : 604/1225 [00:01&lt;00:01,  486.39it/s]
- 51%|#####1    | Scoring GeneralizingEstimator : 626/1225 [00:01&lt;00:01,  492.62it/s]
- 52%|#####2    | Scoring GeneralizingEstimator : 643/1225 [00:01&lt;00:01,  493.17it/s]
- 54%|#####3    | Scoring GeneralizingEstimator : 659/1225 [00:01&lt;00:01,  492.12it/s]
- 55%|#####5    | Scoring GeneralizingEstimator : 677/1225 [00:01&lt;00:01,  493.99it/s]
- 57%|#####6    | Scoring GeneralizingEstimator : 693/1225 [00:01&lt;00:01,  492.97it/s]
- 58%|#####7    | Scoring GeneralizingEstimator : 707/1225 [00:01&lt;00:01,  488.29it/s]
- 59%|#####9    | Scoring GeneralizingEstimator : 723/1225 [00:01&lt;00:01,  487.49it/s]
- 60%|######    | Scoring GeneralizingEstimator : 738/1225 [00:01&lt;00:01,  485.00it/s]
- 62%|######1   | Scoring GeneralizingEstimator : 757/1225 [00:01&lt;00:00,  488.30it/s]
- 63%|######3   | Scoring GeneralizingEstimator : 777/1225 [00:01&lt;00:00,  492.54it/s]
- 65%|######4   | Scoring GeneralizingEstimator : 791/1225 [00:01&lt;00:00,  487.89it/s]
- 66%|######5   | Scoring GeneralizingEstimator : 805/1225 [00:01&lt;00:00,  483.57it/s]
- 67%|######7   | Scoring GeneralizingEstimator : 822/1225 [00:01&lt;00:00,  484.52it/s]
- 69%|######8   | Scoring GeneralizingEstimator : 840/1225 [00:01&lt;00:00,  486.70it/s]
- 70%|#######   | Scoring GeneralizingEstimator : 860/1225 [00:01&lt;00:00,  491.05it/s]
- 72%|#######1  | Scoring GeneralizingEstimator : 881/1225 [00:01&lt;00:00,  496.24it/s]
- 73%|#######2  | Scoring GeneralizingEstimator : 894/1225 [00:01&lt;00:00,  489.17it/s]
- 74%|#######4  | Scoring GeneralizingEstimator : 912/1225 [00:01&lt;00:00,  491.14it/s]
- 76%|#######5  | Scoring GeneralizingEstimator : 930/1225 [00:01&lt;00:00,  492.97it/s]
- 77%|#######6  | Scoring GeneralizingEstimator : 942/1225 [00:01&lt;00:00,  483.54it/s]
- 78%|#######8  | Scoring GeneralizingEstimator : 959/1225 [00:01&lt;00:00,  484.46it/s]
- 80%|#######9  | Scoring GeneralizingEstimator : 979/1225 [00:01&lt;00:00,  488.76it/s]
- 81%|########1 | Scoring GeneralizingEstimator : 993/1225 [00:01&lt;00:00,  483.87it/s]
- 83%|########2 | Scoring GeneralizingEstimator : 1012/1225 [00:01&lt;00:00,  487.19it/s]
- 84%|########4 | Scoring GeneralizingEstimator : 1032/1225 [00:02&lt;00:00,  491.52it/s]
- 85%|########5 | Scoring GeneralizingEstimator : 1042/1225 [00:02&lt;00:00,  475.32it/s]
- 87%|########6 | Scoring GeneralizingEstimator : 1061/1225 [00:02&lt;00:00,  478.97it/s]
- 88%|########8 | Scoring GeneralizingEstimator : 1080/1225 [00:02&lt;00:00,  482.47it/s]
- 89%|########9 | Scoring GeneralizingEstimator : 1092/1225 [00:02&lt;00:00,  473.73it/s]
- 91%|######### | Scoring GeneralizingEstimator : 1110/1225 [00:02&lt;00:00,  476.37it/s]
- 92%|#########2| Scoring GeneralizingEstimator : 1128/1225 [00:02&lt;00:00,  478.63it/s]
- 93%|#########3| Scoring GeneralizingEstimator : 1142/1225 [00:02&lt;00:00,  474.88it/s]
- 95%|#########4| Scoring GeneralizingEstimator : 1160/1225 [00:02&lt;00:00,  477.51it/s]
- 96%|#########6| Scoring GeneralizingEstimator : 1181/1225 [00:02&lt;00:00,  483.02it/s]
- 98%|#########7| Scoring GeneralizingEstimator : 1195/1225 [00:02&lt;00:00,  479.07it/s]
- 99%|#########9| Scoring GeneralizingEstimator : 1216/1225 [00:02&lt;00:00,  484.66it/s]
-100%|##########| Scoring GeneralizingEstimator : 1225/1225 [00:02&lt;00:00,  506.28it/s]
+  1%|1         | Scoring GeneralizingEstimator : 18/1225 [00:00&lt;00:02,  529.65it/s]
+  3%|3         | Scoring GeneralizingEstimator : 41/1225 [00:00&lt;00:02,  535.59it/s]
+  5%|5         | Scoring GeneralizingEstimator : 63/1225 [00:00&lt;00:02,  540.40it/s]
+  7%|7         | Scoring GeneralizingEstimator : 86/1225 [00:00&lt;00:02,  546.10it/s]
+  9%|8         | Scoring GeneralizingEstimator : 108/1225 [00:00&lt;00:02,  550.54it/s]
+ 11%|#         | Scoring GeneralizingEstimator : 131/1225 [00:00&lt;00:01,  555.79it/s]
+ 13%|#2        | Scoring GeneralizingEstimator : 155/1225 [00:00&lt;00:01,  561.77it/s]
+ 14%|#4        | Scoring GeneralizingEstimator : 177/1225 [00:00&lt;00:01,  565.61it/s]
+ 16%|#6        | Scoring GeneralizingEstimator : 200/1225 [00:00&lt;00:01,  570.47it/s]
+ 18%|#8        | Scoring GeneralizingEstimator : 224/1225 [00:00&lt;00:01,  576.02it/s]
+ 20%|##        | Scoring GeneralizingEstimator : 247/1225 [00:00&lt;00:01,  580.56it/s]
+ 22%|##2       | Scoring GeneralizingEstimator : 270/1225 [00:00&lt;00:01,  584.90it/s]
+ 24%|##3       | Scoring GeneralizingEstimator : 293/1225 [00:00&lt;00:01,  589.07it/s]
+ 26%|##5       | Scoring GeneralizingEstimator : 316/1225 [00:00&lt;00:01,  593.09it/s]
+ 28%|##7       | Scoring GeneralizingEstimator : 339/1225 [00:00&lt;00:01,  596.96it/s]
+ 30%|##9       | Scoring GeneralizingEstimator : 362/1225 [00:00&lt;00:01,  600.64it/s]
+ 31%|###1      | Scoring GeneralizingEstimator : 384/1225 [00:00&lt;00:01,  602.96it/s]
+ 33%|###3      | Scoring GeneralizingEstimator : 407/1225 [00:00&lt;00:01,  606.33it/s]
+ 35%|###5      | Scoring GeneralizingEstimator : 431/1225 [00:00&lt;00:01,  610.63it/s]
+ 37%|###7      | Scoring GeneralizingEstimator : 454/1225 [00:00&lt;00:01,  613.87it/s]
+ 39%|###8      | Scoring GeneralizingEstimator : 477/1225 [00:00&lt;00:01,  616.73it/s]
+ 41%|####      | Scoring GeneralizingEstimator : 500/1225 [00:00&lt;00:01,  619.64it/s]
+ 43%|####2     | Scoring GeneralizingEstimator : 523/1225 [00:00&lt;00:01,  622.34it/s]
+ 45%|####4     | Scoring GeneralizingEstimator : 547/1225 [00:00&lt;00:01,  626.28it/s]
+ 47%|####6     | Scoring GeneralizingEstimator : 570/1225 [00:00&lt;00:01,  628.87it/s]
+ 48%|####8     | Scoring GeneralizingEstimator : 593/1225 [00:00&lt;00:01,  631.26it/s]
+ 50%|#####     | Scoring GeneralizingEstimator : 616/1225 [00:00&lt;00:00,  633.50it/s]
+ 52%|#####2    | Scoring GeneralizingEstimator : 640/1225 [00:00&lt;00:00,  636.83it/s]
+ 54%|#####4    | Scoring GeneralizingEstimator : 663/1225 [00:00&lt;00:00,  638.88it/s]
+ 56%|#####6    | Scoring GeneralizingEstimator : 686/1225 [00:01&lt;00:00,  640.57it/s]
+ 58%|#####7    | Scoring GeneralizingEstimator : 709/1225 [00:01&lt;00:00,  642.40it/s]
+ 60%|#####9    | Scoring GeneralizingEstimator : 732/1225 [00:01&lt;00:00,  644.13it/s]
+ 62%|######1   | Scoring GeneralizingEstimator : 755/1225 [00:01&lt;00:00,  645.82it/s]
+ 63%|######3   | Scoring GeneralizingEstimator : 776/1225 [00:01&lt;00:00,  644.44it/s]
+ 65%|######5   | Scoring GeneralizingEstimator : 798/1225 [00:01&lt;00:00,  644.86it/s]
+ 67%|######7   | Scoring GeneralizingEstimator : 821/1225 [00:01&lt;00:00,  646.64it/s]
+ 69%|######8   | Scoring GeneralizingEstimator : 843/1225 [00:01&lt;00:00,  646.91it/s]
+ 71%|#######   | Scoring GeneralizingEstimator : 865/1225 [00:01&lt;00:00,  647.00it/s]
+ 72%|#######2  | Scoring GeneralizingEstimator : 888/1225 [00:01&lt;00:00,  648.63it/s]
+ 74%|#######4  | Scoring GeneralizingEstimator : 911/1225 [00:01&lt;00:00,  650.20it/s]
+ 76%|#######6  | Scoring GeneralizingEstimator : 933/1225 [00:01&lt;00:00,  650.26it/s]
+ 78%|#######8  | Scoring GeneralizingEstimator : 956/1225 [00:01&lt;00:00,  651.78it/s]
+ 80%|#######9  | Scoring GeneralizingEstimator : 978/1225 [00:01&lt;00:00,  651.71it/s]
+ 81%|########1 | Scoring GeneralizingEstimator : 996/1225 [00:01&lt;00:00,  644.41it/s]
+ 83%|########2 | Scoring GeneralizingEstimator : 1014/1225 [00:01&lt;00:00,  637.74it/s]
+ 84%|########4 | Scoring GeneralizingEstimator : 1034/1225 [00:01&lt;00:00,  635.11it/s]
+ 86%|########6 | Scoring GeneralizingEstimator : 1056/1225 [00:01&lt;00:00,  635.89it/s]
+ 88%|########8 | Scoring GeneralizingEstimator : 1079/1225 [00:01&lt;00:00,  638.04it/s]
+ 90%|########9 | Scoring GeneralizingEstimator : 1102/1225 [00:01&lt;00:00,  640.04it/s]
+ 92%|#########1| Scoring GeneralizingEstimator : 1125/1225 [00:01&lt;00:00,  641.90it/s]
+ 94%|#########3| Scoring GeneralizingEstimator : 1148/1225 [00:01&lt;00:00,  643.73it/s]
+ 96%|#########5| Scoring GeneralizingEstimator : 1170/1225 [00:01&lt;00:00,  644.08it/s]
+ 97%|#########7| Scoring GeneralizingEstimator : 1193/1225 [00:01&lt;00:00,  645.70it/s]
+ 99%|#########9| Scoring GeneralizingEstimator : 1215/1225 [00:01&lt;00:00,  645.95it/s]
+100%|##########| Scoring GeneralizingEstimator : 1225/1225 [00:01&lt;00:00,  638.90it/s]
+100%|##########| Scoring GeneralizingEstimator : 1225/1225 [00:01&lt;00:00,  663.60it/s]
 </pre></div>
 </div>
 <p>Plot</p>
@@ -404,8 +366,8 @@ and test on all right visual vs auditory trials.</p>
 </pre></div>
 </div>
 <img alt="Generalization across time and condition" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_decoding_time_generalization_conditions_001.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.754 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  128 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.235 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  8 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-decoding-plot-decoding-time-generalization-conditions-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/adc71f8bf709dad236827dbaa76100e9/plot_decoding_time_generalization_conditions.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_decoding_time_generalization_conditions.py</span></code></a></p>

@@ -169,26 +169,6 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/mne_logo_small.svg" alt="Logo"/>
-            </a></p><ul>
-<li><a class="reference internal" href="#">mne.SourceMorph</a><ul>
-<li><a class="reference internal" href="#examples-using-mne-sourcemorph">Examples using <code class="docutils literal notranslate"><span class="pre">mne.SourceMorph</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-<form action="../search.html" method="get">
- <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
- </div>
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-        </div>
-      </div>
     <div class="body col-md-12 content" role="main">
       
   <div class="section" id="mne-sourcemorph">
@@ -240,10 +220,10 @@ based morphing <a class="reference internal" href="#r4e7e360c4de9-1" id="id2">[1
 </dd>
 <dt><strong>affine</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The volume MRI affine.</p>
 </dd>
-<dt><strong>pre_affine</strong><span class="classifier">instance of <a class="reference external" href="https://dipy.org/documentation/latest/reference/dipy.align/#dipy.align.imaffine.AffineMap" title="(in dipy v1.0.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dipy.align.imaffine.AffineMap</span></code></a></span></dt><dd><p>The <a class="reference external" href="https://dipy.org/documentation/latest/reference/dipy.align/#dipy.align.imaffine.AffineMap" title="(in dipy v1.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dipy.align.imaffine.AffineMap</span></code></a> transformation that is
+<dt><strong>pre_affine</strong><span class="classifier">instance of <a class="reference external" href="https://dipy.org/documentation/latest/reference/dipy.align/#dipy.align.imaffine.AffineMap" title="(in dipy v1.1.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dipy.align.imaffine.AffineMap</span></code></a></span></dt><dd><p>The <a class="reference external" href="https://dipy.org/documentation/latest/reference/dipy.align/#dipy.align.imaffine.AffineMap" title="(in dipy v1.1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dipy.align.imaffine.AffineMap</span></code></a> transformation that is
 applied before the before <code class="docutils literal notranslate"><span class="pre">sdr_morph</span></code>.</p>
 </dd>
-<dt><strong>sdr_morph</strong><span class="classifier">instance of <a class="reference external" href="https://dipy.org/documentation/latest/reference/dipy.align/#dipy.align.imwarp.DiffeomorphicMap" title="(in dipy v1.0.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dipy.align.imwarp.DiffeomorphicMap</span></code></a></span></dt><dd><p>The <a class="reference external" href="https://dipy.org/documentation/latest/reference/dipy.align/#dipy.align.imwarp.DiffeomorphicMap" title="(in dipy v1.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dipy.align.imwarp.DiffeomorphicMap</span></code></a> that applies the
+<dt><strong>sdr_morph</strong><span class="classifier">instance of <a class="reference external" href="https://dipy.org/documentation/latest/reference/dipy.align/#dipy.align.imwarp.DiffeomorphicMap" title="(in dipy v1.1.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dipy.align.imwarp.DiffeomorphicMap</span></code></a></span></dt><dd><p>The <a class="reference external" href="https://dipy.org/documentation/latest/reference/dipy.align/#dipy.align.imwarp.DiffeomorphicMap" title="(in dipy v1.1.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dipy.align.imwarp.DiffeomorphicMap</span></code></a> that applies the
 the symmetric diffeomorphic registration (SDR) morph.</p>
 </dd>
 <dt><strong>src_data</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Additional source data necessary to perform morphing.</p>

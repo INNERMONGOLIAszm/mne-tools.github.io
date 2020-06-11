@@ -169,31 +169,6 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 
 <div class="container">
   <div class="row">
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../../index.html">
-              <img class="logo" src="../../_static/mne_logo_small.svg" alt="Logo"/>
-            </a></p><ul>
-<li><a class="reference internal" href="#">Morph volumetric source estimate</a><ul>
-<li><a class="reference internal" href="#references">References</a></li>
-<li><a class="reference internal" href="#get-a-sourcemorph-object-for-volsourceestimate">Get a SourceMorph object for VolSourceEstimate</a></li>
-<li><a class="reference internal" href="#apply-morph-to-volsourceestimate">Apply morph to VolSourceEstimate</a></li>
-<li><a class="reference internal" href="#convert-morphed-volsourceestimate-into-nifti">Convert morphed VolSourceEstimate into NIfTI</a></li>
-<li><a class="reference internal" href="#plot-results">Plot results</a></li>
-<li><a class="reference internal" href="#reading-and-writing-sourcemorph-from-and-to-disk">Reading and writing SourceMorph from and to disk</a></li>
-</ul>
-</li>
-</ul>
-
-<form action="../../search.html" method="get">
- <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
- </div>
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-        </div>
-      </div>
     <div class="body col-md-12 content" role="main">
       
   <div class="sphx-glr-download-link-note admonition note">
@@ -256,57 +231,64 @@ Downloading missing files remotely
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5cbdba4ef2be3c0019091890?revision=2&amp;action=download&amp;direct&amp;version=2 (186.7 MB)
 
   0%|          | Downloading : 0.00/187M [00:00&lt;?,        ?B/s]
-  0%|          | Downloading : 568k/187M [00:00&lt;00:05,    34.4MB/s]
-  2%|2         | Downloading : 4.05M/187M [00:00&lt;00:05,    35.6MB/s]
-  3%|3         | Downloading : 6.05M/187M [00:00&lt;00:05,    36.9MB/s]
-  5%|5         | Downloading : 10.1M/187M [00:00&lt;00:04,    38.2MB/s]
-  6%|6         | Downloading : 12.1M/187M [00:00&lt;00:04,    39.0MB/s]
- 10%|9         | Downloading : 18.1M/187M [00:00&lt;00:04,    39.8MB/s]
- 12%|#1        | Downloading : 22.1M/187M [00:00&lt;00:04,    40.6MB/s]
- 14%|#3        | Downloading : 26.1M/187M [00:00&lt;00:04,    42.0MB/s]
- 16%|#6        | Downloading : 30.1M/187M [00:00&lt;00:03,    43.5MB/s]
- 18%|#8        | Downloading : 34.1M/187M [00:00&lt;00:03,    45.1MB/s]
- 20%|##        | Downloading : 38.1M/187M [00:00&lt;00:03,    46.7MB/s]
- 23%|##2       | Downloading : 42.1M/187M [00:00&lt;00:03,    48.5MB/s]
- 25%|##4       | Downloading : 46.1M/187M [00:00&lt;00:02,    50.2MB/s]
- 27%|##6       | Downloading : 50.1M/187M [00:00&lt;00:02,    51.6MB/s]
- 29%|##8       | Downloading : 54.1M/187M [00:00&lt;00:02,    53.4MB/s]
- 31%|###1      | Downloading : 58.1M/187M [00:00&lt;00:02,    54.7MB/s]
- 33%|###3      | Downloading : 62.1M/187M [00:00&lt;00:02,    56.3MB/s]
- 35%|###5      | Downloading : 66.1M/187M [00:00&lt;00:02,    57.8MB/s]
- 38%|###7      | Downloading : 70.1M/187M [00:00&lt;00:02,    59.4MB/s]
- 40%|###9      | Downloading : 74.1M/187M [00:00&lt;00:01,    61.3MB/s]
- 42%|####1     | Downloading : 78.1M/187M [00:00&lt;00:01,    63.0MB/s]
- 44%|####3     | Downloading : 82.1M/187M [00:00&lt;00:01,    64.9MB/s]
- 46%|####6     | Downloading : 86.1M/187M [00:00&lt;00:01,    66.4MB/s]
- 48%|####8     | Downloading : 90.1M/187M [00:00&lt;00:01,    68.4MB/s]
- 50%|#####     | Downloading : 94.1M/187M [00:00&lt;00:01,    70.6MB/s]
- 53%|#####2    | Downloading : 98.1M/187M [00:00&lt;00:01,    72.7MB/s]
- 55%|#####4    | Downloading : 102M/187M [00:00&lt;00:01,    74.9MB/s]
- 57%|#####6    | Downloading : 106M/187M [00:00&lt;00:01,    76.8MB/s]
- 59%|#####8    | Downloading : 110M/187M [00:00&lt;00:01,    78.9MB/s]
- 61%|######1   | Downloading : 114M/187M [00:00&lt;00:00,    80.8MB/s]
- 63%|######3   | Downloading : 118M/187M [00:01&lt;00:00,    82.5MB/s]
- 65%|######5   | Downloading : 122M/187M [00:01&lt;00:00,    84.1MB/s]
- 68%|######7   | Downloading : 126M/187M [00:01&lt;00:00,    84.0MB/s]
- 70%|######9   | Downloading : 130M/187M [00:01&lt;00:00,    83.6MB/s]
- 72%|#######1  | Downloading : 134M/187M [00:01&lt;00:00,    85.3MB/s]
- 74%|#######3  | Downloading : 138M/187M [00:01&lt;00:00,    87.0MB/s]
- 76%|#######6  | Downloading : 142M/187M [00:01&lt;00:00,    89.8MB/s]
- 78%|#######8  | Downloading : 146M/187M [00:01&lt;00:00,    91.9MB/s]
- 80%|########  | Downloading : 150M/187M [00:01&lt;00:00,    93.7MB/s]
- 83%|########2 | Downloading : 154M/187M [00:01&lt;00:00,    95.4MB/s]
- 85%|########4 | Downloading : 158M/187M [00:01&lt;00:00,    97.1MB/s]
- 87%|########6 | Downloading : 162M/187M [00:01&lt;00:00,    99.5MB/s]
- 89%|########8 | Downloading : 166M/187M [00:01&lt;00:00,     102MB/s]
- 91%|#########1| Downloading : 170M/187M [00:01&lt;00:00,     104MB/s]
- 93%|#########3| Downloading : 174M/187M [00:01&lt;00:00,     106MB/s]
- 95%|#########5| Downloading : 178M/187M [00:01&lt;00:00,     108MB/s]
- 98%|#########7| Downloading : 182M/187M [00:01&lt;00:00,     111MB/s]
-100%|#########9| Downloading : 186M/187M [00:01&lt;00:00,     112MB/s]
-100%|##########| Downloading : 187M/187M [00:01&lt;00:00,     129MB/s]
+  0%|          | Downloading : 504k/187M [00:00&lt;00:06,    31.0MB/s]
+  1%|1         | Downloading : 1.99M/187M [00:00&lt;00:06,    31.7MB/s]
+  2%|1         | Downloading : 2.99M/187M [00:00&lt;00:05,    32.5MB/s]
+  2%|2         | Downloading : 3.99M/187M [00:00&lt;00:05,    33.2MB/s]
+  3%|2         | Downloading : 4.99M/187M [00:00&lt;00:05,    33.7MB/s]
+  4%|3         | Downloading : 6.99M/187M [00:00&lt;00:05,    34.7MB/s]
+  5%|5         | Downloading : 9.99M/187M [00:00&lt;00:05,    35.9MB/s]
+  6%|6         | Downloading : 12.0M/187M [00:00&lt;00:04,    37.2MB/s]
+  9%|8         | Downloading : 16.0M/187M [00:00&lt;00:04,    38.6MB/s]
+ 11%|#         | Downloading : 20.0M/187M [00:00&lt;00:04,    40.1MB/s]
+ 12%|#1        | Downloading : 22.0M/187M [00:00&lt;00:04,    41.5MB/s]
+ 13%|#2        | Downloading : 24.0M/187M [00:00&lt;00:04,    42.6MB/s]
+ 14%|#3        | Downloading : 26.0M/187M [00:00&lt;00:03,    43.9MB/s]
+ 15%|#4        | Downloading : 28.0M/187M [00:00&lt;00:03,    45.2MB/s]
+ 16%|#6        | Downloading : 30.0M/187M [00:00&lt;00:03,    46.6MB/s]
+ 17%|#7        | Downloading : 32.0M/187M [00:00&lt;00:03,    48.1MB/s]
+ 18%|#8        | Downloading : 34.0M/187M [00:00&lt;00:03,    49.3MB/s]
+ 20%|##        | Downloading : 38.0M/187M [00:00&lt;00:03,    50.9MB/s]
+ 24%|##3       | Downloading : 44.0M/187M [00:00&lt;00:02,    52.4MB/s]
+ 26%|##5       | Downloading : 48.0M/187M [00:00&lt;00:02,    54.4MB/s]
+ 28%|##7       | Downloading : 52.0M/187M [00:00&lt;00:02,    56.0MB/s]
+ 30%|##9       | Downloading : 56.0M/187M [00:00&lt;00:02,    57.6MB/s]
+ 32%|###2      | Downloading : 60.0M/187M [00:00&lt;00:02,    59.2MB/s]
+ 34%|###4      | Downloading : 64.0M/187M [00:00&lt;00:02,    60.8MB/s]
+ 36%|###6      | Downloading : 68.0M/187M [00:00&lt;00:01,    62.7MB/s]
+ 39%|###8      | Downloading : 72.0M/187M [00:00&lt;00:01,    65.0MB/s]
+ 41%|####      | Downloading : 76.0M/187M [00:00&lt;00:01,    65.6MB/s]
+ 43%|####2     | Downloading : 80.0M/187M [00:00&lt;00:01,    65.7MB/s]
+ 45%|####4     | Downloading : 84.0M/187M [00:00&lt;00:01,    64.8MB/s]
+ 47%|####7     | Downloading : 88.0M/187M [00:00&lt;00:01,    65.6MB/s]
+ 49%|####9     | Downloading : 92.0M/187M [00:00&lt;00:01,    67.2MB/s]
+ 51%|#####1    | Downloading : 96.0M/187M [00:00&lt;00:01,    68.8MB/s]
+ 54%|#####3    | Downloading : 100M/187M [00:01&lt;00:01,    68.3MB/s]
+ 56%|#####5    | Downloading : 104M/187M [00:01&lt;00:01,    68.9MB/s]
+ 58%|#####7    | Downloading : 108M/187M [00:01&lt;00:01,    70.0MB/s]
+ 60%|#####9    | Downloading : 112M/187M [00:01&lt;00:01,    70.7MB/s]
+ 62%|######2   | Downloading : 116M/187M [00:01&lt;00:01,    71.8MB/s]
+ 64%|######4   | Downloading : 120M/187M [00:01&lt;00:00,    72.9MB/s]
+ 66%|######6   | Downloading : 124M/187M [00:01&lt;00:00,    72.5MB/s]
+ 69%|######8   | Downloading : 128M/187M [00:01&lt;00:00,    73.5MB/s]
+ 71%|#######   | Downloading : 132M/187M [00:01&lt;00:00,    73.8MB/s]
+ 73%|#######2  | Downloading : 136M/187M [00:01&lt;00:00,    74.0MB/s]
+ 75%|#######4  | Downloading : 140M/187M [00:01&lt;00:00,    75.3MB/s]
+ 77%|#######7  | Downloading : 144M/187M [00:01&lt;00:00,    75.8MB/s]
+ 79%|#######9  | Downloading : 148M/187M [00:01&lt;00:00,    75.9MB/s]
+ 81%|########1 | Downloading : 152M/187M [00:01&lt;00:00,    76.1MB/s]
+ 84%|########3 | Downloading : 156M/187M [00:01&lt;00:00,    76.4MB/s]
+ 86%|########5 | Downloading : 160M/187M [00:01&lt;00:00,    77.6MB/s]
+ 88%|########7 | Downloading : 164M/187M [00:01&lt;00:00,    79.2MB/s]
+ 90%|########9 | Downloading : 168M/187M [00:01&lt;00:00,    80.1MB/s]
+ 92%|#########2| Downloading : 172M/187M [00:01&lt;00:00,    78.4MB/s]
+ 94%|#########4| Downloading : 176M/187M [00:02&lt;00:00,    75.1MB/s]
+ 96%|#########6| Downloading : 180M/187M [00:02&lt;00:00,    76.0MB/s]
+ 99%|#########8| Downloading : 184M/187M [00:02&lt;00:00,    76.8MB/s]
+100%|##########| Downloading : 187M/187M [00:02&lt;00:00,    78.8MB/s]
+100%|##########| Downloading : 187M/187M [00:02&lt;00:00,    92.6MB/s]
 Verifying hash 5133fe92b7b8f03ae19219d5f46e4177.
-File saved as /tmp/tmps8xeir4n/temp.zip.
+File saved as /tmp/tmp6_x03q6j/temp.zip.
 
 Extracting missing files
 Successfully extracted 10 files
@@ -315,87 +297,67 @@ Downloading missing files remotely
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5cbdb9f5353c58001aa02025?revision=4&amp;action=download&amp;direct&amp;version=4 (227.8 MB)
 
   0%|          | Downloading : 0.00/228M [00:00&lt;?,        ?B/s]
-  0%|          | Downloading : 568k/228M [00:00&lt;00:07,    32.2MB/s]
-  1%|          | Downloading : 2.05M/228M [00:00&lt;00:07,    33.3MB/s]
-  2%|2         | Downloading : 5.05M/228M [00:00&lt;00:06,    34.6MB/s]
-  3%|3         | Downloading : 7.05M/228M [00:00&lt;00:06,    35.7MB/s]
-  4%|3         | Downloading : 9.05M/228M [00:00&lt;00:06,    36.7MB/s]
-  7%|6         | Downloading : 15.1M/228M [00:00&lt;00:05,    38.1MB/s]
-  8%|8         | Downloading : 19.1M/228M [00:00&lt;00:05,    39.1MB/s]
- 10%|#         | Downloading : 23.1M/228M [00:00&lt;00:05,    40.6MB/s]
- 12%|#1        | Downloading : 27.1M/228M [00:00&lt;00:05,    40.6MB/s]
- 13%|#2        | Downloading : 29.1M/228M [00:00&lt;00:04,    41.8MB/s]
- 14%|#3        | Downloading : 31.1M/228M [00:00&lt;00:04,    42.9MB/s]
- 15%|#4        | Downloading : 33.1M/228M [00:00&lt;00:04,    43.6MB/s]
- 15%|#5        | Downloading : 35.1M/228M [00:00&lt;00:04,    45.0MB/s]
- 17%|#7        | Downloading : 39.1M/228M [00:00&lt;00:04,    46.4MB/s]
- 18%|#8        | Downloading : 41.1M/228M [00:00&lt;00:04,    47.5MB/s]
- 19%|#8        | Downloading : 43.1M/228M [00:00&lt;00:03,    48.6MB/s]
- 20%|#9        | Downloading : 45.1M/228M [00:00&lt;00:03,    49.5MB/s]
- 21%|##        | Downloading : 47.1M/228M [00:00&lt;00:03,    50.6MB/s]
- 22%|##1       | Downloading : 49.1M/228M [00:00&lt;00:03,    51.6MB/s]
- 22%|##2       | Downloading : 51.1M/228M [00:00&lt;00:03,    52.4MB/s]
- 23%|##3       | Downloading : 53.1M/228M [00:00&lt;00:03,    53.3MB/s]
- 24%|##4       | Downloading : 55.1M/228M [00:00&lt;00:03,    54.0MB/s]
- 25%|##5       | Downloading : 57.1M/228M [00:00&lt;00:03,    54.6MB/s]
- 26%|##5       | Downloading : 59.1M/228M [00:00&lt;00:03,    55.1MB/s]
- 27%|##6       | Downloading : 61.1M/228M [00:00&lt;00:03,    55.5MB/s]
- 28%|##7       | Downloading : 63.1M/228M [00:00&lt;00:03,    56.2MB/s]
- 29%|##8       | Downloading : 65.1M/228M [00:00&lt;00:03,    56.7MB/s]
- 29%|##9       | Downloading : 67.1M/228M [00:00&lt;00:02,    57.6MB/s]
- 30%|###       | Downloading : 69.1M/228M [00:00&lt;00:02,    58.2MB/s]
- 31%|###1      | Downloading : 71.1M/228M [00:00&lt;00:02,    59.3MB/s]
- 32%|###2      | Downloading : 73.1M/228M [00:00&lt;00:02,    60.5MB/s]
- 33%|###2      | Downloading : 75.1M/228M [00:00&lt;00:02,    61.2MB/s]
- 34%|###3      | Downloading : 77.1M/228M [00:00&lt;00:02,    62.1MB/s]
- 35%|###4      | Downloading : 79.1M/228M [00:01&lt;00:02,    63.2MB/s]
- 36%|###5      | Downloading : 81.1M/228M [00:01&lt;00:02,    64.4MB/s]
- 36%|###6      | Downloading : 83.1M/228M [00:01&lt;00:02,    63.8MB/s]
- 37%|###7      | Downloading : 85.1M/228M [00:01&lt;00:02,    63.9MB/s]
- 38%|###8      | Downloading : 87.1M/228M [00:01&lt;00:02,    64.7MB/s]
- 40%|###9      | Downloading : 91.1M/228M [00:01&lt;00:02,    66.3MB/s]
- 41%|####      | Downloading : 93.1M/228M [00:01&lt;00:02,    67.5MB/s]
- 42%|####1     | Downloading : 95.1M/228M [00:01&lt;00:02,    68.8MB/s]
- 43%|####2     | Downloading : 97.1M/228M [00:01&lt;00:01,    70.2MB/s]
- 43%|####3     | Downloading : 99.1M/228M [00:01&lt;00:01,    70.6MB/s]
- 44%|####4     | Downloading : 101M/228M [00:01&lt;00:01,    70.7MB/s]
- 45%|####5     | Downloading : 103M/228M [00:01&lt;00:01,    70.3MB/s]
- 46%|####6     | Downloading : 105M/228M [00:01&lt;00:01,    71.0MB/s]
- 47%|####7     | Downloading : 107M/228M [00:01&lt;00:01,    72.0MB/s]
- 48%|####7     | Downloading : 109M/228M [00:01&lt;00:01,    73.4MB/s]
- 50%|####9     | Downloading : 113M/228M [00:01&lt;00:01,    74.6MB/s]
- 51%|#####     | Downloading : 115M/228M [00:01&lt;00:01,    74.5MB/s]
- 52%|#####2    | Downloading : 119M/228M [00:01&lt;00:01,    75.9MB/s]
- 54%|#####4    | Downloading : 123M/228M [00:01&lt;00:01,    77.6MB/s]
- 57%|#####6    | Downloading : 129M/228M [00:01&lt;00:01,    79.9MB/s]
- 58%|#####8    | Downloading : 133M/228M [00:01&lt;00:01,    80.2MB/s]
- 60%|######    | Downloading : 137M/228M [00:01&lt;00:01,    80.7MB/s]
- 62%|######1   | Downloading : 141M/228M [00:01&lt;00:01,    81.2MB/s]
- 64%|######3   | Downloading : 145M/228M [00:01&lt;00:01,    81.3MB/s]
- 65%|######5   | Downloading : 149M/228M [00:01&lt;00:01,    81.8MB/s]
- 67%|######7   | Downloading : 153M/228M [00:01&lt;00:00,    82.6MB/s]
- 69%|######8   | Downloading : 157M/228M [00:01&lt;00:00,    83.6MB/s]
- 71%|#######   | Downloading : 161M/228M [00:01&lt;00:00,    84.5MB/s]
- 72%|#######2  | Downloading : 165M/228M [00:01&lt;00:00,    85.8MB/s]
- 74%|#######4  | Downloading : 169M/228M [00:01&lt;00:00,    86.8MB/s]
- 76%|#######5  | Downloading : 173M/228M [00:02&lt;00:00,    87.6MB/s]
- 78%|#######7  | Downloading : 177M/228M [00:02&lt;00:00,    89.6MB/s]
- 79%|#######9  | Downloading : 181M/228M [00:02&lt;00:00,    90.0MB/s]
- 81%|########1 | Downloading : 185M/228M [00:02&lt;00:00,    90.2MB/s]
- 83%|########3 | Downloading : 189M/228M [00:02&lt;00:00,    91.2MB/s]
- 85%|########4 | Downloading : 193M/228M [00:02&lt;00:00,    92.7MB/s]
- 87%|########6 | Downloading : 197M/228M [00:02&lt;00:00,    93.7MB/s]
- 88%|########8 | Downloading : 201M/228M [00:02&lt;00:00,    92.5MB/s]
- 90%|######### | Downloading : 205M/228M [00:02&lt;00:00,    91.3MB/s]
- 92%|#########1| Downloading : 209M/228M [00:02&lt;00:00,    90.6MB/s]
- 94%|#########3| Downloading : 213M/228M [00:02&lt;00:00,    91.7MB/s]
- 95%|#########5| Downloading : 217M/228M [00:02&lt;00:00,    91.9MB/s]
- 97%|#########7| Downloading : 221M/228M [00:02&lt;00:00,    93.5MB/s]
- 99%|#########8| Downloading : 225M/228M [00:02&lt;00:00,    95.2MB/s]
-100%|##########| Downloading : 228M/228M [00:02&lt;00:00,    96.8MB/s]
-100%|##########| Downloading : 228M/228M [00:02&lt;00:00,    93.8MB/s]
+  0%|          | Downloading : 0.99M/228M [00:00&lt;00:04,    53.3MB/s]
+  2%|1         | Downloading : 3.99M/228M [00:00&lt;00:04,    55.1MB/s]
+  3%|2         | Downloading : 5.99M/228M [00:00&lt;00:04,    55.0MB/s]
+  4%|3         | Downloading : 7.99M/228M [00:00&lt;00:04,    56.2MB/s]
+  4%|4         | Downloading : 9.99M/228M [00:00&lt;00:03,    57.6MB/s]
+  7%|7         | Downloading : 16.0M/228M [00:00&lt;00:03,    59.7MB/s]
+  9%|8         | Downloading : 20.0M/228M [00:00&lt;00:03,    62.0MB/s]
+ 11%|#         | Downloading : 24.0M/228M [00:00&lt;00:03,    64.2MB/s]
+ 12%|#2        | Downloading : 28.0M/228M [00:00&lt;00:03,    66.1MB/s]
+ 14%|#4        | Downloading : 32.0M/228M [00:00&lt;00:03,    66.7MB/s]
+ 16%|#5        | Downloading : 36.0M/228M [00:00&lt;00:02,    68.4MB/s]
+ 18%|#7        | Downloading : 40.0M/228M [00:00&lt;00:02,    70.9MB/s]
+ 19%|#9        | Downloading : 44.0M/228M [00:00&lt;00:02,    72.9MB/s]
+ 21%|##1       | Downloading : 48.0M/228M [00:00&lt;00:02,    75.4MB/s]
+ 23%|##2       | Downloading : 52.0M/228M [00:00&lt;00:02,    77.2MB/s]
+ 25%|##4       | Downloading : 56.0M/228M [00:00&lt;00:02,    76.6MB/s]
+ 26%|##6       | Downloading : 60.0M/228M [00:00&lt;00:02,    78.3MB/s]
+ 28%|##8       | Downloading : 64.0M/228M [00:00&lt;00:02,    79.2MB/s]
+ 30%|##9       | Downloading : 68.0M/228M [00:00&lt;00:02,    80.2MB/s]
+ 32%|###1      | Downloading : 72.0M/228M [00:00&lt;00:01,    81.8MB/s]
+ 33%|###3      | Downloading : 76.0M/228M [00:00&lt;00:01,    83.5MB/s]
+ 35%|###5      | Downloading : 80.0M/228M [00:00&lt;00:01,    85.7MB/s]
+ 37%|###6      | Downloading : 84.0M/228M [00:00&lt;00:01,    86.2MB/s]
+ 39%|###8      | Downloading : 88.0M/228M [00:00&lt;00:01,    86.4MB/s]
+ 40%|####      | Downloading : 92.0M/228M [00:00&lt;00:01,    89.2MB/s]
+ 42%|####2     | Downloading : 96.0M/228M [00:00&lt;00:01,    91.1MB/s]
+ 44%|####3     | Downloading : 100M/228M [00:00&lt;00:01,    93.5MB/s]
+ 46%|####5     | Downloading : 104M/228M [00:00&lt;00:01,    96.0MB/s]
+ 47%|####7     | Downloading : 108M/228M [00:00&lt;00:01,    99.0MB/s]
+ 49%|####9     | Downloading : 112M/228M [00:00&lt;00:01,     100MB/s]
+ 51%|#####     | Downloading : 116M/228M [00:00&lt;00:01,     102MB/s]
+ 53%|#####2    | Downloading : 120M/228M [00:00&lt;00:01,     104MB/s]
+ 54%|#####4    | Downloading : 124M/228M [00:00&lt;00:01,     104MB/s]
+ 56%|#####6    | Downloading : 128M/228M [00:01&lt;00:00,     105MB/s]
+ 58%|#####7    | Downloading : 132M/228M [00:01&lt;00:00,     107MB/s]
+ 60%|#####9    | Downloading : 136M/228M [00:01&lt;00:00,     109MB/s]
+ 61%|######1   | Downloading : 140M/228M [00:01&lt;00:00,     111MB/s]
+ 63%|######3   | Downloading : 144M/228M [00:01&lt;00:00,     113MB/s]
+ 65%|######4   | Downloading : 148M/228M [00:01&lt;00:00,     115MB/s]
+ 67%|######6   | Downloading : 152M/228M [00:01&lt;00:00,     117MB/s]
+ 68%|######8   | Downloading : 156M/228M [00:01&lt;00:00,     119MB/s]
+ 70%|#######   | Downloading : 160M/228M [00:01&lt;00:00,     121MB/s]
+ 72%|#######2  | Downloading : 164M/228M [00:01&lt;00:00,     122MB/s]
+ 74%|#######3  | Downloading : 168M/228M [00:01&lt;00:00,     124MB/s]
+ 76%|#######5  | Downloading : 172M/228M [00:01&lt;00:00,     126MB/s]
+ 77%|#######7  | Downloading : 176M/228M [00:01&lt;00:00,     129MB/s]
+ 79%|#######9  | Downloading : 180M/228M [00:01&lt;00:00,     121MB/s]
+ 81%|########  | Downloading : 184M/228M [00:01&lt;00:00,     122MB/s]
+ 83%|########2 | Downloading : 188M/228M [00:01&lt;00:00,     123MB/s]
+ 84%|########4 | Downloading : 192M/228M [00:01&lt;00:00,     124MB/s]
+ 86%|########6 | Downloading : 196M/228M [00:01&lt;00:00,     124MB/s]
+ 88%|########7 | Downloading : 200M/228M [00:01&lt;00:00,     126MB/s]
+ 90%|########9 | Downloading : 204M/228M [00:01&lt;00:00,     128MB/s]
+ 91%|#########1| Downloading : 208M/228M [00:01&lt;00:00,     130MB/s]
+ 93%|#########3| Downloading : 212M/228M [00:01&lt;00:00,     116MB/s]
+ 96%|#########5| Downloading : 218M/228M [00:01&lt;00:00,     118MB/s]
+ 97%|#########7| Downloading : 222M/228M [00:01&lt;00:00,     119MB/s]
+ 99%|#########9| Downloading : 226M/228M [00:01&lt;00:00,     121MB/s]
+100%|##########| Downloading : 228M/228M [00:01&lt;00:00,     134MB/s]
 Verifying hash b31509cdcf7908af6a83dc5ee8f49fb1.
-File saved as /tmp/tmpjuh_fert/temp.zip.
+File saved as /tmp/tmpwrim2i17/temp.zip.
 
 Extracting missing files
 Successfully extracted 10 files
@@ -579,8 +541,8 @@ inferred from the data and used morph to ‘fsaverage’ by default, e.g.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><a href="../../generated/mne.SourceMorph.html#mne.SourceMorph.apply" title="mne.SourceMorph.apply" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">morph</span><span class="o">.</span><span class="n">apply</span></a><span class="p">(</span><a href="../../generated/mne.VolSourceEstimate.html#mne.VolSourceEstimate" title="mne.VolSourceEstimate" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stc</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  24.422 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  786 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  23.139 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  746 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-inverse-plot-morph-volume-stc-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/4a539cf6874d7ae7602208a125d473fa/plot_morph_volume_stc.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_morph_volume_stc.py</span></code></a></p>

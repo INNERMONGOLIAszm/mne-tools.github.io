@@ -193,7 +193,7 @@
 <h1>mne.Info<a class="headerlink" href="#mne-info" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mne.Info">
-<em class="property">class </em><code class="sig-prename descclassname">mne.</code><code class="sig-name descname">Info</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L194-L786"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mne.</code><code class="sig-name descname">Info</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L205-L812"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Measurement information.</p>
 <p>This data structure behaves like a dictionary. It contains all metadata
 that is available for a recording.</p>
@@ -667,7 +667,7 @@ See Notes for details.</p>
 
 <dl class="py method">
 <dt id="mne.Info.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L535-L543"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L561-L569"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy the instance.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -708,7 +708,7 @@ See Notes for details.</p>
 
 <dl class="py method">
 <dt id="mne.Info.normalize_proj">
-<code class="sig-name descname">normalize_proj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L545-L559"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.normalize_proj" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">normalize_proj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L571-L585"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.normalize_proj" title="Permalink to this definition">¶</a></dt>
 <dd><p>(Re-)Normalize projection vectors after subselection.</p>
 <p>Applying projection after sub-selecting a set of channels that
 were originally used to compute the original projection vectors
@@ -732,7 +732,7 @@ adequately capture the original signal of interest.</p>
 
 <dl class="py method">
 <dt id="mne.Info.pick_channels">
-<code class="sig-name descname">pick_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">ch_names</span></em>, <em class="sig-param"><span class="n">ordered</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L758-L782"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.pick_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pick_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">ch_names</span></em>, <em class="sig-param"><span class="n">ordered</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L784-L808"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.pick_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pick channels from this Info object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -772,7 +772,7 @@ matches the order of <code class="docutils literal notranslate"><span class="pre
 
 <dl class="py method">
 <dt id="mne.Info.set_montage">
-<code class="sig-name descname">set_montage</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">montage</em>, <em class="sig-param">raise_if_subset=&lt;object object at 0x7fb14221cae0&gt;</em>, <em class="sig-param">match_case=True</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L155-L190"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.set_montage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_montage</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">montage</em>, <em class="sig-param">raise_if_subset=&lt;object object at 0x7fe5e7cd2b20&gt;</em>, <em class="sig-param">match_case=True</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/io/meas_info.py#L156-L191"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Info.set_montage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set EEG sensor configuration and head digitization.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1426,7 +1426,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
       <li><a href="../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-09.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-11.</p>
   </div>
 </footer>
   <script src="https://mne.tools/versionwarning.js"></script>

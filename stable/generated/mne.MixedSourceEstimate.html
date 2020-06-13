@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mne.MixedSourceEstimate &#8212; MNE 0.20.6 documentation</title>
+    <title>mne.MixedSourceEstimate &#8212; MNE 0.20.7 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -94,7 +94,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/mne_logo_small.png"></span>
            </a>
-        <span class="navbar-text navbar-version pull-left"><b>0.20.6</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.20.7</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -132,7 +132,7 @@
           
 <div class="navbar-form navbar-right navbar-btn dropdown btn-group-sm" style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px">
   <button type="button" class="btn btn-primary navbar-btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
-    v0.20.6
+    v0.20.7
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -357,7 +357,7 @@ with one array per source space.</p>
 
 <dl class="py method">
 <dt id="mne.MixedSourceEstimate.bin">
-<code class="sig-name descname">bin</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">width</em>, <em class="sig-param">tstart=None</em>, <em class="sig-param">tstop=None</em>, <em class="sig-param">func=&lt;function mean at 0x7f5fca4e7290&gt;</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/source_estimate.py#L903-L947"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.MixedSourceEstimate.bin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">bin</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">width</em>, <em class="sig-param">tstart=None</em>, <em class="sig-param">tstop=None</em>, <em class="sig-param">func=&lt;function mean at 0x7fc29f14a290&gt;</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/source_estimate.py#L903-L947"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.MixedSourceEstimate.bin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a source estimate object with data summarized over time bins.</p>
 <p>Time bins of <code class="docutils literal notranslate"><span class="pre">width</span></code> seconds. This method is intended for
 visualization only. No filter is applied to the data before binning,
@@ -524,7 +524,7 @@ be created.</p>
 Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
-<dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Window to use in resampling. See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+dbfe06e)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+<dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Window to use in resampling. See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+ddbd9ce)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of jobs to run in parallel (default 1).
 Requires the joblib package.</p>
@@ -845,7 +845,7 @@ do this automatically (if possible).</p>
       <li><a href="../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-12.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-13.</p>
   </div>
 </footer>
   <script src="https://mne.tools/versionwarning.js"></script>

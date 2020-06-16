@@ -175,15 +175,16 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.read_surface<a class="headerlink" href="#mne-read-surface" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mne.read_surface">
-<code class="sig-prename descclassname">mne.</code><code class="sig-name descname">read_surface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">read_metadata</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_dict</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/surface.py#L655-L705"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.read_surface" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne.</code><code class="sig-name descname">read_surface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">read_metadata</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_dict</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">file_format</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/surface.py#L655-L730"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.read_surface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a Freesurfer surface mesh in triangular format.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>fname</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>The name of the file containing the surface.</p>
 </dd>
-<dt><strong>read_metadata</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Read metadata as key-value pairs.
-Valid keys:</p>
+<dt><strong>read_metadata</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Read metadata as key-value pairs. Only works when reading a FreeSurfer
+surface file. For .obj files this dictionary will be empty.</p>
+<p>Valid keys:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>‘head’ : array of int</p></li>
@@ -202,6 +203,14 @@ Valid keys:</p>
 </div>
 </dd>
 <dt><strong>return_dict</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, a dictionary with surface parameters is returned.</p>
+</dd>
+<dt><strong>file_format</strong><span class="classifier">‘auto’ | ‘freesurfer’ | ‘obj’</span></dt><dd><p>File format to use. Can be ‘freesurfer’ to read a FreeSurfer surface
+file, or ‘obj’ to read a Wavefront .obj file (common format for
+importing in other software), or ‘auto’ to attempt to infer from the
+file name. Defaults to ‘auto’.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.0.</span></p>
+</div>
 </dd>
 <dt><strong>verbose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>If not None, override default verbose level (see <a class="reference internal" href="mne.verbose.html#mne.verbose" title="mne.verbose"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
 and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configure_mne.html#tut-logging"><span class="std std-ref">Logging documentation</span></a> for more).</p>
@@ -233,7 +242,11 @@ together form a face).</p>
 
 <div class="section" id="examples-using-mne-read-surface">
 <span id="sphx-glr-backreferences-mne-read-surface"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.read_surface</span></code><a class="headerlink" href="#examples-using-mne-read-surface" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-clear"></div></div>
+<div class="sphx-glr-thumbcontainer" tooltip="Sometimes when creating a BEM model the surfaces need manual correction because of a series of ..."><div class="figure align-default" id="id1">
+<img alt="Editing BEM surfaces in Blender" src="../_images/sphx_glr_plot_fix_bem_in_blender_thumb.jpg" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_fix_bem_in_blender.html#sphx-glr-auto-tutorials-source-modeling-plot-fix-bem-in-blender-py"><span class="std std-ref">Editing BEM surfaces in Blender</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="sphx-glr-clear"></div></div>
 </div>
 
 

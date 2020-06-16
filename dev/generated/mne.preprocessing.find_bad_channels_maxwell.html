@@ -175,7 +175,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.preprocessing.find_bad_channels_maxwell<a class="headerlink" href="#mne-preprocessing-find-bad-channels-maxwell" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mne.preprocessing.find_bad_channels_maxwell">
-<code class="sig-prename descclassname">mne.preprocessing.</code><code class="sig-name descname">find_bad_channels_maxwell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">7.0</span></em>, <em class="sig-param"><span class="n">duration</span><span class="o">=</span><span class="default_value">5.0</span></em>, <em class="sig-param"><span class="n">min_count</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">int_order</span><span class="o">=</span><span class="default_value">8</span></em>, <em class="sig-param"><span class="n">ext_order</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">calibration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cross_talk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">coord_frame</span><span class="o">=</span><span class="default_value">'head'</span></em>, <em class="sig-param"><span class="n">regularize</span><span class="o">=</span><span class="default_value">'in'</span></em>, <em class="sig-param"><span class="n">ignore_ref</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bad_condition</span><span class="o">=</span><span class="default_value">'error'</span></em>, <em class="sig-param"><span class="n">head_pos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mag_scale</span><span class="o">=</span><span class="default_value">100.0</span></em>, <em class="sig-param"><span class="n">skip_by_annotation</span><span class="o">=</span><span class="default_value">'edge', 'bad_acq_skip'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/preprocessing/maxwell.py#L1859-L2046"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.preprocessing.find_bad_channels_maxwell" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne.preprocessing.</code><code class="sig-name descname">find_bad_channels_maxwell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">7.0</span></em>, <em class="sig-param"><span class="n">duration</span><span class="o">=</span><span class="default_value">5.0</span></em>, <em class="sig-param"><span class="n">min_count</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">return_scores</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">int_order</span><span class="o">=</span><span class="default_value">8</span></em>, <em class="sig-param"><span class="n">ext_order</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">calibration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cross_talk</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">coord_frame</span><span class="o">=</span><span class="default_value">'head'</span></em>, <em class="sig-param"><span class="n">regularize</span><span class="o">=</span><span class="default_value">'in'</span></em>, <em class="sig-param"><span class="n">ignore_ref</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bad_condition</span><span class="o">=</span><span class="default_value">'error'</span></em>, <em class="sig-param"><span class="n">head_pos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mag_scale</span><span class="o">=</span><span class="default_value">100.0</span></em>, <em class="sig-param"><span class="n">skip_by_annotation</span><span class="o">=</span><span class="default_value">'edge', 'bad_acq_skip'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/preprocessing/maxwell.py#L1859-L2134"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.preprocessing.find_bad_channels_maxwell" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find bad channels using Maxwell filtering.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -191,10 +191,21 @@ function.</p>
 <dt><strong>limit</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Detection limit (default is 7.). Smaller values will find more bad
 channels at increased risk of including good ones.</p>
 </dd>
-<dt><strong>duration</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Duration into which to window the data for processing. Default is 5.</p>
+<dt><strong>duration</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Duration of the segments into which to slice the data for processing,
+in seconds. Default is 5.</p>
 </dd>
 <dt><strong>min_count</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Minimum number of times a channel must show up as bad in a chunk.
 Default is 5.</p>
+</dd>
+<dt><strong>return_scores</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, return a dictionary with scoring information for each
+evaluated segment of the data. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is experimental and may change in a future
+version of MNE-Python without prior notice. Please
+report any problems and enhancement proposals to the
+developers.</p>
+</div>
 </dd>
 <dt><strong>origin</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/glossary.html#term-array-like" title="(in NumPy v1.20.dev0)"><span>array_like</span></a>, shape (3,) | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Origin of internal and external multipolar moment space in meters.
 The default is <code class="docutils literal notranslate"><span class="pre">'auto'</span></code>, which means <code class="docutils literal notranslate"><span class="pre">(0.,</span> <span class="pre">0.,</span> <span class="pre">0.)</span></code> when
@@ -264,6 +275,57 @@ noisy among the good MEG channels.</p>
 <dt><strong>flat_chs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></span></dt><dd><p>List of MEG channels that were detected as being flat in at least
 <code class="docutils literal notranslate"><span class="pre">min_count</span></code> segments.</p>
 </dd>
+<dt><strong>scores</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>A dictionary with information produced by the scoring algorithms.
+Only returned when <code class="docutils literal notranslate"><span class="pre">return_scores</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. It contains the
+following keys:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ch_names</span></code><span class="classifier">ndarray, shape (n_meg,)</span></dt><dd><p>The names of the MEG channels. Their order corresponds to the
+order of rows in the <code class="docutils literal notranslate"><span class="pre">scores</span></code> and <code class="docutils literal notranslate"><span class="pre">limits</span></code> arrays.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ch_types</span></code><span class="classifier">ndarray, shape (n_meg,)</span></dt><dd><p>The types of the MEG channels in <code class="docutils literal notranslate"><span class="pre">ch_names</span></code> (<code class="docutils literal notranslate"><span class="pre">'mag'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'grad'</span></code>).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">bins</span></code><span class="classifier">ndarray, shape (n_windows, 2)</span></dt><dd><p>The inclusive window boundaries (start and stop; in seconds) used
+to calculate the scores.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">scores_flat</span></code><span class="classifier">ndarray, shape (n_meg, n_windows)</span></dt><dd><p>The scores for testing whether MEG channels are flat.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">limits_flat</span></code><span class="classifier">ndarray, shape (n_meg, 1)</span></dt><dd><p>The score thresholds above which a segment was claffified as
+“flat”.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">scores_noisy</span></code><span class="classifier">ndarray, shape (n_meg, n_windows)</span></dt><dd><p>The scores for testing whether MEG channels are noisy.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">limits_noisy</span></code><span class="classifier">ndarray, shape (n_meg, 1)</span></dt><dd><p>The score thresholds above which a segment was claffified as
+“noisy”.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The scores and limits for channels marked as <code class="docutils literal notranslate"><span class="pre">bad</span></code> in the
+input data will will be set to <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>.</p>
+</div>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -275,10 +337,11 @@ noisy among the good MEG channels.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>All arguments after <code class="docutils literal notranslate"><span class="pre">raw</span></code>, <code class="docutils literal notranslate"><span class="pre">limit</span></code>, <code class="docutils literal notranslate"><span class="pre">duration</span></code>, and <code class="docutils literal notranslate"><span class="pre">min_count</span></code>
-are the same as <a class="reference internal" href="mne.preprocessing.maxwell_filter.html#mne.preprocessing.maxwell_filter" title="mne.preprocessing.maxwell_filter"><code class="xref py py-func docutils literal notranslate"><span class="pre">maxwell_filter()</span></code></a>, except that the following are
-not allowed in this function because they are unused: <code class="docutils literal notranslate"><span class="pre">st_duration</span></code>,
-<code class="docutils literal notranslate"><span class="pre">st_correlation</span></code>, <code class="docutils literal notranslate"><span class="pre">destination</span></code>, <code class="docutils literal notranslate"><span class="pre">st_fixed</span></code>, and <code class="docutils literal notranslate"><span class="pre">st_only</span></code>.</p>
+<p>All arguments after <code class="docutils literal notranslate"><span class="pre">raw</span></code>, <code class="docutils literal notranslate"><span class="pre">limit</span></code>, <code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">min_count</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">return_scores</span></code> are the same as <a class="reference internal" href="mne.preprocessing.maxwell_filter.html#mne.preprocessing.maxwell_filter" title="mne.preprocessing.maxwell_filter"><code class="xref py py-func docutils literal notranslate"><span class="pre">maxwell_filter()</span></code></a>, except that the
+following are not allowed in this function because they are unused:
+<code class="docutils literal notranslate"><span class="pre">st_duration</span></code>, <code class="docutils literal notranslate"><span class="pre">st_correlation</span></code>, <code class="docutils literal notranslate"><span class="pre">destination</span></code>, <code class="docutils literal notranslate"><span class="pre">st_fixed</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">st_only</span></code>.</p>
 <p>This algorithm, for a given chunk of data:</p>
 <ol class="arabic simple">
 <li><p>Runs SSS on the data, without removing external components.</p></li>

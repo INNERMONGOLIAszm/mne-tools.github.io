@@ -326,7 +326,11 @@ $(document).ready(function(){
 <div class="panel-heading"><h4 class="panel-title">
 <a data-toggle="collapse" href="#collapse_hand-stop-o-if-you-are-installing-on-a-headless-server"><em class="fa fa-hand-stop-o"></em> If you are installing on a headless server...</a></h4></div>
 <div id="collapse_hand-stop-o-if-you-are-installing-on-a-headless-server" class="panel-collapse collapse">
-<div class="panel-body"><p>Installing <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/">mayavi</a> requires a running <a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System">X server</a>. If you are
+<div class="panel-body"><p>With <a class="reference external" href="https://docs.pyvista.org/">pyvista</a>:
+Follow the steps described in <a class="reference internal" href="#standard-instructions"><span class="std std-ref">Installing MNE-Python and its dependencies</span></a>
+but use <a class="reference external" href="https://raw.githubusercontent.com/mne-tools/mne-python/master/server_environment.yml">server environment file</a> instead of <a class="reference external" href="https://raw.githubusercontent.com/mne-tools/mne-python/master/environment.yml">environment file</a>.</p>
+<p>With <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/">mayavi</a>:
+Installing <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/">mayavi</a> requires a running <a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System">X server</a>. If you are
 installing MNE-Python into a computer with no display connected to it, you
 can try removing <a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/">mayavi</a> from the <code class="file docutils literal notranslate"><span class="pre">environment.yml</span></code> file before
 running <code class="samp docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">--file</span> <span class="pre">environment.yml</span></code>, activating the new

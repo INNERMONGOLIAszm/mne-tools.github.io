@@ -274,16 +274,16 @@ Done.
 Using cross-validation to select the best estimator.
 Number of samples used : 1705
 log-likelihood on unseen data (descending order):
-   shrunk: -1467.261
+   shrunk: -1466.595
    empirical: -1574.608
 selecting best estimator: shrunk
 [done]
 Computing rank from covariance with rank=None
-    Using tolerance 2.2e-14 (2.2e-16 eps * 102 dim * 0.98  max singular value)
+    Using tolerance 2.2e-14 (2.2e-16 eps * 102 dim * 0.97  max singular value)
     Estimated rank (mag): 99
     MAG: rank 99 computed from 102 data channels with 0 projectors
 Computing rank from covariance with rank=None
-    Using tolerance 1.6e-13 (2.2e-16 eps * 203 dim * 3.5  max singular value)
+    Using tolerance 1.6e-13 (2.2e-16 eps * 203 dim * 3.4  max singular value)
     Estimated rank (grad): 203
     GRAD: rank 203 computed from 203 data channels with 0 projectors
 </pre></div>
@@ -313,11 +313,11 @@ Computing rank from covariance with rank=None
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computing rank from covariance with rank=None
-    Using tolerance 1.6e-13 (2.2e-16 eps * 203 dim * 3.5  max singular value)
+    Using tolerance 1.6e-13 (2.2e-16 eps * 203 dim * 3.4  max singular value)
     Estimated rank (grad): 203
     GRAD: rank 203 computed from 203 data channels with 0 projectors
 Computing rank from covariance with rank=None
-    Using tolerance 2.2e-14 (2.2e-16 eps * 102 dim * 0.98  max singular value)
+    Using tolerance 2.2e-14 (2.2e-16 eps * 102 dim * 0.97  max singular value)
     Estimated rank (mag): 99
     MAG: rank 99 computed from 102 data channels with 3 projectors
     Created an SSP operator (subspace dimension = 3)
@@ -377,15 +377,15 @@ Applying loose dipole orientations. Loose value of 0.2.
 Whitening the forward solution.
     Created an SSP operator (subspace dimension = 3)
 Computing rank from covariance with rank=None
-    Using tolerance 2.9e-13 (2.2e-16 eps * 305 dim * 4.3  max singular value)
+    Using tolerance 2.9e-13 (2.2e-16 eps * 305 dim * 4.2  max singular value)
     Estimated rank (mag + grad): 302
     MEG: rank 302 computed from 305 data channels with 3 projectors
     Setting small MEG eigenvalues to zero (without PCA)
 Creating the source covariance matrix
 Adjusting source covariance matrix.
 Computing SVD of whitened and weighted lead field matrix.
-    largest singular value = 4.69106
-    scaling factor to adjust the trace = 9.00563e+18
+    largest singular value = 4.69422
+    scaling factor to adjust the trace = 8.8068e+18
 </pre></div>
 </div>
 </div>
@@ -412,7 +412,7 @@ Applying inverse operator to &quot;aud_l&quot;...
     Computing inverse...
     Eigenleads need to be weighted ...
     Computing residual...
-    Explained  65.6% variance
+    Explained  66.0% variance
     Combining the current components...
     dSPM...
 [done]
@@ -502,7 +502,7 @@ Applying inverse operator to &quot;aud_l&quot;...
     Computing inverse...
     Eigenleads need to be weighted ...
     Computing residual...
-    Explained  65.6% variance
+    Explained  66.0% variance
     dSPM...
 [done]
 </pre></div>
@@ -515,8 +515,8 @@ the source space.</p>
 <a class="reference internal" href="plot_dipole_orientations.html#tut-dipole-orientations"><span class="std std-ref">The role of dipole orientations in distributed source localization</span></a>. To see outputs using different methods, see
 <a class="reference internal" href="plot_mne_solutions.html#tut-mne-fixed-free"><span class="std std-ref">Computing various MNE solutions</span></a>. For other examples using evoked data, see
 <a class="reference internal" href="../../generated/mne.minimum_norm.apply_inverse.html#sphx-glr-backreferences-mne-minimum-norm-apply-inverse"><span class="std std-ref">examples using apply_inverse</span></a>.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  50.864 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  113 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  25.814 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  157 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-source-modeling-plot-mne-dspm-source-localization-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/45693b704c195d4724aadd0b1d08868d/plot_mne_dspm_source_localization.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_mne_dspm_source_localization.py</span></code></a></p>

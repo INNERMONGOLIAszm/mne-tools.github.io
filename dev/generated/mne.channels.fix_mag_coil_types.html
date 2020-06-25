@@ -175,12 +175,15 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.channels.fix_mag_coil_types<a class="headerlink" href="#mne-channels-fix-mag-coil-types" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mne.channels.fix_mag_coil_types">
-<code class="sig-prename descclassname">mne.channels.</code><code class="sig-name descname">fix_mag_coil_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L1360-L1394"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.channels.fix_mag_coil_types" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne.channels.</code><code class="sig-name descname">fix_mag_coil_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">use_cal</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L1360-L1397"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.channels.fix_mag_coil_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fix magnetometer coil types.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>info</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>The info dict to correct. Corrections are done in-place.</p>
+</dd>
+<dt><strong>use_cal</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, further refine the check for old coil types by checking
+<code class="docutils literal notranslate"><span class="pre">info['chs'][ii]['cal']</span></code>.</p>
 </dd>
 </dl>
 </dd>

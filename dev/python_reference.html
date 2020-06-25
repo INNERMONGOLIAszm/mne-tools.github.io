@@ -886,10 +886,10 @@ directly from a terminal, see <a class="reference internal" href="generated/comm
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.channels.make_grid_layout.html#mne.channels.make_grid_layout" title="mne.channels.make_grid_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_grid_layout</span></code></a>(info[, picks, n_col])</p></td>
 <td><p>Generate .lout file for custom data, i.e., ICA sources.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.channels.find_ch_connectivity.html#mne.channels.find_ch_connectivity" title="mne.channels.find_ch_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_ch_connectivity</span></code></a>(info, ch_type)</p></td>
-<td><p>Find the connectivity matrix for the given channels.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.channels.find_ch_adjacency.html#mne.channels.find_ch_adjacency" title="mne.channels.find_ch_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_ch_adjacency</span></code></a>(info, ch_type)</p></td>
+<td><p>Find the adjacency matrix for the given channels.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.channels.read_ch_connectivity.html#mne.channels.read_ch_connectivity" title="mne.channels.read_ch_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_ch_connectivity</span></code></a>(fname[, picks])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.channels.read_ch_adjacency.html#mne.channels.read_ch_adjacency" title="mne.channels.read_ch_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_ch_adjacency</span></code></a>(fname[, picks])</p></td>
 <td><p>Parse FieldTrip neighbors .mat file.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne.channels.equalize_channels.html#mne.channels.equalize_channels" title="mne.channels.equalize_channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equalize_channels</span></code></a>(instances[, copy, verbose])</p></td>
@@ -1450,13 +1450,16 @@ directly from a terminal, see <a class="reference internal" href="generated/comm
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.surface.complete_surface_info.html#mne.surface.complete_surface_info" title="mne.surface.complete_surface_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface.complete_surface_info</span></code></a>(surf[, …])</p></td>
 <td><p>Complete surface information.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.use_coil_def.html#mne.use_coil_def" title="mne.use_coil_def"><code class="xref py py-obj docutils literal notranslate"><span class="pre">use_coil_def</span></code></a>(fname)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.surface.read_curvature.html#mne.surface.read_curvature" title="mne.surface.read_curvature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface.read_curvature</span></code></a>(filepath[, binary])</p></td>
+<td><p>Load in curvature values from the ?h.curv file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.use_coil_def.html#mne.use_coil_def" title="mne.use_coil_def"><code class="xref py py-obj docutils literal notranslate"><span class="pre">use_coil_def</span></code></a>(fname)</p></td>
 <td><p>Use a custom coil definition file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.write_bem_surfaces.html#mne.write_bem_surfaces" title="mne.write_bem_surfaces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_bem_surfaces</span></code></a>(fname, surfs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.write_bem_surfaces.html#mne.write_bem_surfaces" title="mne.write_bem_surfaces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_bem_surfaces</span></code></a>(fname, surfs)</p></td>
 <td><p>Write BEM surfaces to a fiff file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.write_trans.html#mne.write_trans" title="mne.write_trans"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_trans</span></code></a>(fname, trans)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.write_trans.html#mne.write_trans" title="mne.write_trans"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_trans</span></code></a>(fname, trans)</p></td>
 <td><p>Write a -trans.fif file.</p></td>
 </tr>
 </tbody>
@@ -1940,7 +1943,7 @@ directly from a terminal, see <a class="reference internal" href="generated/comm
 <span id="api-reference-statistics"></span><h2><a class="toc-backref" href="#id17">Statistics</a><a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="#module-mne.stats" title="mne.stats"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mne.stats</span></code></a>:</p>
 <span class="target" id="module-mne.stats"></span><p>Functions for statistical analysis.</p>
-<p>Parametric statistics (see <a class="reference external" href="https://scipy.github.io/devdocs/stats.html#module-scipy.stats" title="(in SciPy v1.6.0.dev0+4bf5b9f)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a> and <a class="reference external" href="https://www.statsmodels.org/dev/about.html#module-statsmodels" title="(in statsmodels vv0.12.0.dev0 (+437))"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statsmodels</span></code></a> for more
+<p>Parametric statistics (see <a class="reference external" href="https://scipy.github.io/devdocs/stats.html#module-scipy.stats" title="(in SciPy v1.6.0.dev0+e423817)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a> and <a class="reference external" href="https://www.statsmodels.org/dev/about.html#module-statsmodels" title="(in statsmodels vv0.12.0.dev0 (+437))"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statsmodels</span></code></a> for more
 options):</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -1993,62 +1996,65 @@ options):</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.stats.permutation_cluster_test.html#mne.stats.permutation_cluster_test" title="mne.stats.permutation_cluster_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permutation_cluster_test</span></code></a>(X[, threshold, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.stats.combine_adjacency.html#mne.stats.combine_adjacency" title="mne.stats.combine_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine_adjacency</span></code></a>(*structure)</p></td>
+<td><p>Create a sparse binary adjacency/neighbors matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.stats.permutation_cluster_test.html#mne.stats.permutation_cluster_test" title="mne.stats.permutation_cluster_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permutation_cluster_test</span></code></a>(X[, threshold, …])</p></td>
 <td><p>Cluster-level statistical permutation test.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.stats.permutation_cluster_1samp_test.html#mne.stats.permutation_cluster_1samp_test" title="mne.stats.permutation_cluster_1samp_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permutation_cluster_1samp_test</span></code></a>(X[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.stats.permutation_cluster_1samp_test.html#mne.stats.permutation_cluster_1samp_test" title="mne.stats.permutation_cluster_1samp_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permutation_cluster_1samp_test</span></code></a>(X[, …])</p></td>
 <td><p>Non-parametric cluster-level paired t-test.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.stats.permutation_t_test.html#mne.stats.permutation_t_test" title="mne.stats.permutation_t_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permutation_t_test</span></code></a>(X[, n_permutations, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.stats.permutation_t_test.html#mne.stats.permutation_t_test" title="mne.stats.permutation_t_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permutation_t_test</span></code></a>(X[, n_permutations, …])</p></td>
 <td><p>One sample/paired sample permutation test based on a t-statistic.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.stats.spatio_temporal_cluster_test.html#mne.stats.spatio_temporal_cluster_test" title="mne.stats.spatio_temporal_cluster_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_cluster_test</span></code></a>(X[, threshold, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.stats.spatio_temporal_cluster_test.html#mne.stats.spatio_temporal_cluster_test" title="mne.stats.spatio_temporal_cluster_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_cluster_test</span></code></a>(X[, threshold, …])</p></td>
 <td><p>Non-parametric cluster-level test for spatio-temporal data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.stats.spatio_temporal_cluster_1samp_test.html#mne.stats.spatio_temporal_cluster_1samp_test" title="mne.stats.spatio_temporal_cluster_1samp_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_cluster_1samp_test</span></code></a>(X[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.stats.spatio_temporal_cluster_1samp_test.html#mne.stats.spatio_temporal_cluster_1samp_test" title="mne.stats.spatio_temporal_cluster_1samp_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_cluster_1samp_test</span></code></a>(X[, …])</p></td>
 <td><p>Non-parametric cluster-level paired t-test for spatio-temporal data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.stats.summarize_clusters_stc.html#mne.stats.summarize_clusters_stc" title="mne.stats.summarize_clusters_stc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize_clusters_stc</span></code></a>(clu[, p_thresh, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.stats.summarize_clusters_stc.html#mne.stats.summarize_clusters_stc" title="mne.stats.summarize_clusters_stc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize_clusters_stc</span></code></a>(clu[, p_thresh, …])</p></td>
 <td><p>Assemble summary SourceEstimate from spatiotemporal cluster results.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.stats.bootstrap_confidence_interval.html#mne.stats.bootstrap_confidence_interval" title="mne.stats.bootstrap_confidence_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bootstrap_confidence_interval</span></code></a>(arr[, ci, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.stats.bootstrap_confidence_interval.html#mne.stats.bootstrap_confidence_interval" title="mne.stats.bootstrap_confidence_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bootstrap_confidence_interval</span></code></a>(arr[, ci, …])</p></td>
 <td><p>Get confidence intervals from non-parametric bootstrap.</p></td>
 </tr>
 </tbody>
 </table>
-<p>Compute <code class="docutils literal notranslate"><span class="pre">connectivity</span></code> matrices for cluster-level statistics:</p>
+<p>Compute <code class="docutils literal notranslate"><span class="pre">adjacency</span></code> matrices for cluster-level statistics:</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.channels.find_ch_connectivity.html#mne.channels.find_ch_connectivity" title="mne.channels.find_ch_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">channels.find_ch_connectivity</span></code></a>(info, ch_type)</p></td>
-<td><p>Find the connectivity matrix for the given channels.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.channels.find_ch_adjacency.html#mne.channels.find_ch_adjacency" title="mne.channels.find_ch_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">channels.find_ch_adjacency</span></code></a>(info, ch_type)</p></td>
+<td><p>Find the adjacency matrix for the given channels.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.channels.read_ch_connectivity.html#mne.channels.read_ch_connectivity" title="mne.channels.read_ch_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">channels.read_ch_connectivity</span></code></a>(fname[, picks])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.channels.read_ch_adjacency.html#mne.channels.read_ch_adjacency" title="mne.channels.read_ch_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">channels.read_ch_adjacency</span></code></a>(fname[, picks])</p></td>
 <td><p>Parse FieldTrip neighbors .mat file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.spatial_dist_connectivity.html#mne.spatial_dist_connectivity" title="mne.spatial_dist_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_dist_connectivity</span></code></a>(src, dist[, verbose])</p></td>
-<td><p>Compute connectivity from distances in a source space.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.spatial_dist_adjacency.html#mne.spatial_dist_adjacency" title="mne.spatial_dist_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_dist_adjacency</span></code></a>(src, dist[, verbose])</p></td>
+<td><p>Compute adjacency from distances in a source space.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.spatial_src_connectivity.html#mne.spatial_src_connectivity" title="mne.spatial_src_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_src_connectivity</span></code></a>(src[, dist, verbose])</p></td>
-<td><p>Compute connectivity for a source space activation.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.spatial_src_adjacency.html#mne.spatial_src_adjacency" title="mne.spatial_src_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_src_adjacency</span></code></a>(src[, dist, verbose])</p></td>
+<td><p>Compute adjacency for a source space activation.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.spatial_tris_connectivity.html#mne.spatial_tris_connectivity" title="mne.spatial_tris_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_tris_connectivity</span></code></a>(tris[, …])</p></td>
-<td><p>Compute connectivity from triangles.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.spatial_tris_adjacency.html#mne.spatial_tris_adjacency" title="mne.spatial_tris_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_tris_adjacency</span></code></a>(tris[, …])</p></td>
+<td><p>Compute adjacency from triangles.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.spatial_inter_hemi_connectivity.html#mne.spatial_inter_hemi_connectivity" title="mne.spatial_inter_hemi_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_inter_hemi_connectivity</span></code></a>(src, dist[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.spatial_inter_hemi_adjacency.html#mne.spatial_inter_hemi_adjacency" title="mne.spatial_inter_hemi_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_inter_hemi_adjacency</span></code></a>(src, dist[, …])</p></td>
 <td><p>Get vertices on each hemisphere that are close to the other hemisphere.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.spatio_temporal_src_connectivity.html#mne.spatio_temporal_src_connectivity" title="mne.spatio_temporal_src_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_src_connectivity</span></code></a>(src, n_times)</p></td>
-<td><p>Compute connectivity for a source space activation over time.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.spatio_temporal_src_adjacency.html#mne.spatio_temporal_src_adjacency" title="mne.spatio_temporal_src_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_src_adjacency</span></code></a>(src, n_times)</p></td>
+<td><p>Compute adjacency for a source space activation over time.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.spatio_temporal_tris_connectivity.html#mne.spatio_temporal_tris_connectivity" title="mne.spatio_temporal_tris_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_tris_connectivity</span></code></a>(tris, n_times)</p></td>
-<td><p>Compute connectivity from triangles and time instants.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.spatio_temporal_tris_adjacency.html#mne.spatio_temporal_tris_adjacency" title="mne.spatio_temporal_tris_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_tris_adjacency</span></code></a>(tris, n_times)</p></td>
+<td><p>Compute adjacency from triangles and time instants.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.spatio_temporal_dist_connectivity.html#mne.spatio_temporal_dist_connectivity" title="mne.spatio_temporal_dist_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_dist_connectivity</span></code></a>(src, …)</p></td>
-<td><p>Compute connectivity from distances in a source space and time instants.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.spatio_temporal_dist_adjacency.html#mne.spatio_temporal_dist_adjacency" title="mne.spatio_temporal_dist_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatio_temporal_dist_adjacency</span></code></a>(src, n_times, …)</p></td>
+<td><p>Compute adjacency from distances in a source space and time instants.</p></td>
 </tr>
 </tbody>
 </table>

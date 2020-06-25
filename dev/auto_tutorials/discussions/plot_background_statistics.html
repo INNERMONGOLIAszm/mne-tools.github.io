@@ -200,7 +200,7 @@ introductory manner, and demonstrate how to use some MNE statistical functions.<
 <li><p><a class="reference internal" href="#non-parametric-resampling-test-with-a-maximum-statistic" id="id16">Non-parametric resampling test with a maximum statistic</a></p></li>
 <li><p><a class="reference internal" href="#clustering" id="id17">Clustering</a></p>
 <ul>
-<li><p><a class="reference internal" href="#defining-the-connectivity-neighbor-adjacency-matrix" id="id18">Defining the connectivity/neighbor/adjacency matrix</a></p></li>
+<li><p><a class="reference internal" href="#defining-the-adjacency-matrix" id="id18">Defining the adjacency matrix</a></p></li>
 <li><p><a class="reference internal" href="#standard-clustering" id="id19">Standard clustering</a></p></li>
 <li><p><a class="reference internal" href="#id3" id="id20">“Hat” variance adjustment</a></p></li>
 <li><p><a class="reference internal" href="#threshold-free-cluster-enhancement-tfce" id="id21">Threshold-free cluster enhancement (TFCE)</a></p></li>
@@ -591,7 +591,7 @@ of processed neuroimaging data).</p></li>
 <p>Each of the aforementioned multiple comparisons corrections have the
 disadvantage of not fully incorporating the correlation structure of the
 data, namely that points close to one another (e.g., in space or time) tend
-to be correlated. However, by defining the connectivity/adjacency/neighbor
+to be correlated. However, by defining the adjacency/adjacency/neighbor
 structure in our data, we can use <strong>clustering</strong> to compensate.</p>
 <p>To use this, we need to rethink our null hypothesis. Instead
 of thinking about a null hypothesis about means per voxel (with one
@@ -645,16 +645,16 @@ Moreover, because the test statistic concerns the full data, the null
 hypothesis (and our rejection of it) refers to the structure of the full
 data. For more information, see also the comprehensive
 <a class="reference external" href="http://www.fieldtriptoolbox.org/faq/how_not_to_interpret_results_from_a_cluster-based_permutation_test">FieldTrip tutorial</a>.</p>
-<div class="section" id="defining-the-connectivity-neighbor-adjacency-matrix">
-<h4><a class="toc-backref" href="#id18">Defining the connectivity/neighbor/adjacency matrix</a><a class="headerlink" href="#defining-the-connectivity-neighbor-adjacency-matrix" title="Permalink to this headline">¶</a></h4>
-<p>First we need to define our connectivity/neighbor/adjacency matrix.
+<div class="section" id="defining-the-adjacency-matrix">
+<h4><a class="toc-backref" href="#id18">Defining the adjacency matrix</a><a class="headerlink" href="#defining-the-adjacency-matrix" title="Permalink to this headline">¶</a></h4>
+<p>First we need to define our adjacency (sometimes called “neighbors”) matrix.
 This is a square array (or sparse matrix) of shape <code class="docutils literal notranslate"><span class="pre">(n_src,</span> <span class="pre">n_src)</span></code> that
-contains zeros and ones to define which spatial points are connected, i.e.,
+contains zeros and ones to define which spatial points are neighbors, i.e.,
 which voxels are adjacent to each other. In our case this
 is quite simple, as our data are aligned on a rectangular grid.</p>
 <p>Let’s pretend that our data were smaller – a 3 x 3 grid. Thinking about
 each voxel as being connected to the other voxels it touches, we would
-need a 9 x 9 connectivity matrix. The first row of this matrix contains the
+need a 9 x 9 adjacency matrix. The first row of this matrix contains the
 voxels in the flattened data that the first voxel touches. Since it touches
 the second element in the first row and the first element in the second row
 (and is also a neighbor to itself), this would be:</p>
@@ -663,24 +663,24 @@ the second element in the first row and the first element in the second row
 </div>
 <p><a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_extraction" title="(in scikit-learn v0.23)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a> provides a convenient function for this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.image</span> <span class="kn">import</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.image.grid_to_graph.html#sklearn.feature_extraction.image.grid_to_graph" title="sklearn.feature_extraction.image.grid_to_graph" class="sphx-glr-backref-module-sklearn-feature_extraction-image sphx-glr-backref-type-py-function"><span class="n">grid_to_graph</span></a>  <span class="c1"># noqa: E402</span>
-<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mini_connectivity</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.image.grid_to_graph.html#sklearn.feature_extraction.image.grid_to_graph" title="sklearn.feature_extraction.image.grid_to_graph" class="sphx-glr-backref-module-sklearn-feature_extraction-image sphx-glr-backref-type-py-function"><span class="n">grid_to_graph</span></a><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-<span class="k">assert</span> <a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mini_connectivity</span><span class="o">.</span><span class="n">shape</span></a> <span class="o">==</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mini_connectivity</span></a><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mini_adjacency</span></a> <span class="o">=</span> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.image.grid_to_graph.html#sklearn.feature_extraction.image.grid_to_graph" title="sklearn.feature_extraction.image.grid_to_graph" class="sphx-glr-backref-module-sklearn-feature_extraction-image sphx-glr-backref-type-py-function"><span class="n">grid_to_graph</span></a><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="k">assert</span> <a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mini_adjacency</span><span class="o">.</span><span class="n">shape</span></a> <span class="o">==</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mini_adjacency</span></a><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[1 1 0 1 0 0 0 0 0]
 </pre></div>
 </div>
-<p>In general the connectivity between voxels can be more complex, such as
+<p>In general the adjacency between voxels can be more complex, such as
 those between sensors in 3D space, or time-varying activation at brain
 vertices on a cortical surface. MNE provides several convenience functions
-for computing connectivity/neighbor/adjacency matrices (see the
+for computing adjacency matrices (see the
 <a class="reference internal" href="../../python_reference.html#api-reference-statistics"><span class="std std-ref">Statistics API</span></a>).</p>
 </div>
 <div class="section" id="standard-clustering">
 <h4><a class="toc-backref" href="#id19">Standard clustering</a><a class="headerlink" href="#standard-clustering" title="Permalink to this headline">¶</a></h4>
-<p>Here, since our data are on a grid, we can use <code class="docutils literal notranslate"><span class="pre">connectivity=None</span></code> to
+<p>Here, since our data are on a grid, we can use <code class="docutils literal notranslate"><span class="pre">adjacency=None</span></code> to
 trigger optimized grid-based code, and run the clustering algorithm.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">titles</span></a><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Clustering&#39;</span><span class="p">)</span>
 <span class="c1"># Reshape data to what is equivalent to (n_samples, n_space, n_time)</span>
@@ -688,7 +688,7 @@ trigger optimized grid-based code, and run the clustering algorithm.</p>
 <span class="c1"># Compute threshold from t distribution (this is also the default)</span>
 <span class="n">threshold</span> <span class="o">=</span> <a href="https://scipy.github.io/devdocs/generated/scipy.stats.rv_continuous.ppf.html#scipy.stats.rv_continuous.ppf" title="scipy.stats.rv_continuous.ppf" class="sphx-glr-backref-module-scipy-stats sphx-glr-backref-type-py-method"><span class="n">stats</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span></a><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">alpha</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_subjects</span></a> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_clust</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">clusters</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_values</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">H0</span></a> <span class="o">=</span> <a href="../../generated/mne.stats.permutation_cluster_1samp_test.html#mne.stats.permutation_cluster_1samp_test" title="mne.stats.permutation_cluster_1samp_test" class="sphx-glr-backref-module-mne-stats sphx-glr-backref-type-py-function"><span class="n">permutation_cluster_1samp_test</span></a><span class="p">(</span>
-    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">connectivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">adjacency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_permutations</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_permutations</span></a><span class="p">,</span> <span class="n">out_type</span><span class="o">=</span><span class="s1">&#39;mask&#39;</span><span class="p">)</span>
 <span class="c1"># Put the cluster data in a viewable format</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_clust</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ones.html#numpy.ones" title="numpy.ones" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">ones</span></a><span class="p">((</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">width</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">width</span></a><span class="p">))</span>
@@ -708,17 +708,17 @@ Found 2 clusters
 Permuting 510 times...
 
   0%|          |  : 0/510 [00:00&lt;?,       ?it/s]
-  8%|8         |  : 42/510 [00:00&lt;00:00, 1207.61it/s]
- 16%|#6        |  : 84/510 [00:00&lt;00:00, 1208.90it/s]
- 25%|##4       |  : 127/510 [00:00&lt;00:00, 1211.91it/s]
- 37%|###7      |  : 190/510 [00:00&lt;00:00, 1229.91it/s]
- 46%|####6     |  : 235/510 [00:00&lt;00:00, 1234.30it/s]
- 56%|#####6    |  : 286/510 [00:00&lt;00:00, 1245.45it/s]
- 67%|######7   |  : 342/510 [00:00&lt;00:00, 1260.97it/s]
- 78%|#######8  |  : 400/510 [00:00&lt;00:00, 1277.87it/s]
- 89%|########8 |  : 452/510 [00:00&lt;00:00, 1288.66it/s]
- 99%|#########8|  : 503/510 [00:00&lt;00:00, 1298.16it/s]
-100%|##########|  : 510/510 [00:00&lt;00:00, 1472.60it/s]
+  9%|8         |  : 44/510 [00:00&lt;00:00, 1266.59it/s]
+ 19%|#9        |  : 97/510 [00:00&lt;00:00, 1278.69it/s]
+ 29%|##9       |  : 150/510 [00:00&lt;00:00, 1290.43it/s]
+ 41%|####      |  : 209/510 [00:00&lt;00:00, 1307.43it/s]
+ 54%|#####3    |  : 274/510 [00:00&lt;00:00, 1328.58it/s]
+ 64%|######3   |  : 326/510 [00:00&lt;00:00, 1337.46it/s]
+ 73%|#######3  |  : 373/510 [00:00&lt;00:00, 1340.08it/s]
+ 82%|########2 |  : 420/510 [00:00&lt;00:00, 1342.58it/s]
+ 92%|#########1|  : 467/510 [00:00&lt;00:00, 1344.84it/s]
+100%|##########|  : 510/510 [00:00&lt;00:00, 1344.87it/s]
+100%|##########|  : 510/510 [00:00&lt;00:00, 1507.82it/s]
 Computing cluster p-values
 Done.
 </pre></div>
@@ -731,7 +731,7 @@ variances <a class="footnote-reference brackets" href="#id6" id="id4">1</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">titles</span></a><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathbf{C_</span><span class="si">{hat}</span><span class="s1">}$&#39;</span><span class="p">)</span>
 <a href="https://docs.python.org/3/library/functools.html#functools.partial" title="functools.partial" class="sphx-glr-backref-module-functools sphx-glr-backref-type-py-function"><span class="n">stat_fun_hat</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/functools.html#functools.partial" title="functools.partial" class="sphx-glr-backref-module-functools sphx-glr-backref-type-py-function"><span class="n">partial</span></a><span class="p">(</span><a href="../../generated/mne.stats.ttest_1samp_no_p.html#mne.stats.ttest_1samp_no_p" title="mne.stats.ttest_1samp_no_p" class="sphx-glr-backref-module-mne-stats sphx-glr-backref-type-py-function"><span class="n">ttest_1samp_no_p</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sigma</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sigma</span></a><span class="p">)</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_hat</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">clusters</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_values</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">H0</span></a> <span class="o">=</span> <a href="../../generated/mne.stats.permutation_cluster_1samp_test.html#mne.stats.permutation_cluster_1samp_test" title="mne.stats.permutation_cluster_1samp_test" class="sphx-glr-backref-module-mne-stats sphx-glr-backref-type-py-function"><span class="n">permutation_cluster_1samp_test</span></a><span class="p">(</span>
-    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">connectivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out_type</span><span class="o">=</span><span class="s1">&#39;mask&#39;</span><span class="p">,</span>
+    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">adjacency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out_type</span><span class="o">=</span><span class="s1">&#39;mask&#39;</span><span class="p">,</span>
     <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_permutations</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_permutations</span></a><span class="p">,</span> <span class="n">stat_fun</span><span class="o">=</span><a href="https://docs.python.org/3/library/functools.html#functools.partial" title="functools.partial" class="sphx-glr-backref-module-functools sphx-glr-backref-type-py-function"><span class="n">stat_fun_hat</span></a><span class="p">,</span> <span class="n">buffer_size</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_hat</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ones.html#numpy.ones" title="numpy.ones" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">ones</span></a><span class="p">((</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">width</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">width</span></a><span class="p">))</span>
 <span class="k">for</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cl</span></a><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">clusters</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_values</span></a><span class="p">):</span>
@@ -750,11 +750,10 @@ Found 1 clusters
 Permuting 510 times...
 
   0%|          |  : 0/510 [00:00&lt;?,       ?it/s]
- 30%|##9       |  : 152/510 [00:00&lt;00:00, 4452.24it/s]
- 60%|######    |  : 306/510 [00:00&lt;00:00, 4457.20it/s]
- 90%|########9 |  : 457/510 [00:00&lt;00:00, 4457.69it/s]
-100%|##########|  : 510/510 [00:00&lt;00:00, 4314.40it/s]
-100%|##########|  : 510/510 [00:00&lt;00:00, 4175.62it/s]
+ 29%|##9       |  : 150/510 [00:00&lt;00:00, 4392.74it/s]
+ 59%|#####9    |  : 303/510 [00:00&lt;00:00, 4398.52it/s]
+ 90%|########9 |  : 457/510 [00:00&lt;00:00, 4405.56it/s]
+100%|##########|  : 510/510 [00:00&lt;00:00, 4490.58it/s]
 Computing cluster p-values
 Done.
 </pre></div>
@@ -780,7 +779,7 @@ independently for significance rather than only as cluster groups.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">titles</span></a><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathbf{C_</span><span class="si">{TFCE}</span><span class="s1">}$&#39;</span><span class="p">)</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">threshold_tfce</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_tfce</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">_</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_tfce</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">H0</span></a> <span class="o">=</span> <a href="../../generated/mne.stats.permutation_cluster_1samp_test.html#mne.stats.permutation_cluster_1samp_test" title="mne.stats.permutation_cluster_1samp_test" class="sphx-glr-backref-module-mne-stats sphx-glr-backref-type-py-function"><span class="n">permutation_cluster_1samp_test</span></a><span class="p">(</span>
-    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">threshold_tfce</span></a><span class="p">,</span> <span class="n">connectivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">threshold_tfce</span></a><span class="p">,</span> <span class="n">adjacency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_permutations</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_permutations</span></a><span class="p">,</span> <span class="n">out_type</span><span class="o">=</span><span class="s1">&#39;mask&#39;</span><span class="p">)</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ts</span></a><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_tfce</span></a><span class="p">)</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ps</span></a><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_tfce</span></a><span class="p">)</span>
@@ -797,169 +796,154 @@ Found 1600 clusters
 Permuting 510 times...
 
   0%|          |  : 0/510 [00:00&lt;?,       ?it/s]
-  0%|          |  : 1/510 [00:00&lt;00:17,   28.91it/s]
-  1%|          |  : 4/510 [00:00&lt;00:16,   29.90it/s]
-  1%|1         |  : 6/510 [00:00&lt;00:16,   30.66it/s]
-  2%|1         |  : 8/510 [00:00&lt;00:15,   31.42it/s]
-  2%|1         |  : 10/510 [00:00&lt;00:15,   32.16it/s]
-  3%|2         |  : 13/510 [00:00&lt;00:14,   33.22it/s]
-  3%|3         |  : 17/510 [00:00&lt;00:14,   34.46it/s]
-  4%|3         |  : 20/510 [00:00&lt;00:13,   35.55it/s]
-  5%|4         |  : 23/510 [00:00&lt;00:13,   36.65it/s]
-  5%|5         |  : 26/510 [00:00&lt;00:12,   37.75it/s]
-  6%|5         |  : 29/510 [00:00&lt;00:12,   38.87it/s]
-  6%|6         |  : 33/510 [00:00&lt;00:11,   40.22it/s]
-  7%|7         |  : 36/510 [00:00&lt;00:11,   41.35it/s]
-  8%|7         |  : 39/510 [00:00&lt;00:11,   42.49it/s]
-  8%|8         |  : 42/510 [00:00&lt;00:10,   43.62it/s]
-  9%|8         |  : 45/510 [00:00&lt;00:10,   44.76it/s]
-  9%|9         |  : 48/510 [00:00&lt;00:10,   45.90it/s]
- 10%|#         |  : 52/510 [00:00&lt;00:09,   47.35it/s]
- 11%|#         |  : 55/510 [00:00&lt;00:09,   48.47it/s]
- 11%|#1        |  : 58/510 [00:00&lt;00:09,   49.60it/s]
- 12%|#1        |  : 61/510 [00:00&lt;00:08,   50.72it/s]
- 13%|#2        |  : 65/510 [00:00&lt;00:08,   52.21it/s]
- 13%|#3        |  : 68/510 [00:00&lt;00:08,   53.31it/s]
- 14%|#3        |  : 71/510 [00:00&lt;00:08,   54.39it/s]
- 15%|#4        |  : 74/510 [00:00&lt;00:07,   55.47it/s]
- 15%|#5        |  : 77/510 [00:00&lt;00:07,   56.53it/s]
- 16%|#5        |  : 81/510 [00:00&lt;00:07,   58.05it/s]
- 16%|#6        |  : 84/510 [00:00&lt;00:07,   59.07it/s]
- 17%|#7        |  : 87/510 [00:00&lt;00:07,   60.08it/s]
- 18%|#7        |  : 90/510 [00:01&lt;00:06,   61.06it/s]
- 18%|#8        |  : 93/510 [00:01&lt;00:06,   61.93it/s]
- 19%|#8        |  : 96/510 [00:01&lt;00:06,   62.87it/s]
- 19%|#9        |  : 99/510 [00:01&lt;00:06,   63.79it/s]
- 20%|##        |  : 102/510 [00:01&lt;00:06,   64.70it/s]
- 21%|##        |  : 105/510 [00:01&lt;00:06,   65.58it/s]
- 21%|##1       |  : 108/510 [00:01&lt;00:06,   66.45it/s]
- 22%|##1       |  : 111/510 [00:01&lt;00:05,   67.29it/s]
- 22%|##2       |  : 114/510 [00:01&lt;00:05,   68.11it/s]
- 23%|##2       |  : 116/510 [00:01&lt;00:05,   67.59it/s]
- 23%|##3       |  : 119/510 [00:01&lt;00:05,   68.40it/s]
- 24%|##3       |  : 121/510 [00:01&lt;00:05,   67.86it/s]
- 24%|##4       |  : 123/510 [00:01&lt;00:05,   67.37it/s]
- 25%|##4       |  : 126/510 [00:01&lt;00:05,   68.18it/s]
- 25%|##5       |  : 129/510 [00:01&lt;00:05,   68.97it/s]
- 26%|##5       |  : 132/510 [00:01&lt;00:05,   69.74it/s]
- 26%|##6       |  : 135/510 [00:01&lt;00:05,   70.49it/s]
- 27%|##7       |  : 138/510 [00:01&lt;00:05,   71.22it/s]
- 28%|##7       |  : 141/510 [00:01&lt;00:05,   71.93it/s]
- 28%|##8       |  : 145/510 [00:01&lt;00:04,   73.37it/s]
- 29%|##9       |  : 148/510 [00:01&lt;00:04,   74.01it/s]
- 30%|##9       |  : 151/510 [00:01&lt;00:04,   74.63it/s]
- 30%|###       |  : 154/510 [00:01&lt;00:04,   75.23it/s]
- 31%|###       |  : 157/510 [00:01&lt;00:04,   75.80it/s]
- 32%|###1      |  : 161/510 [00:01&lt;00:04,   77.19it/s]
- 32%|###2      |  : 164/510 [00:01&lt;00:04,   77.69it/s]
- 33%|###2      |  : 167/510 [00:01&lt;00:04,   78.17it/s]
- 33%|###3      |  : 170/510 [00:01&lt;00:04,   78.64it/s]
- 34%|###3      |  : 173/510 [00:01&lt;00:04,   79.09it/s]
- 35%|###4      |  : 176/510 [00:01&lt;00:04,   79.52it/s]
- 35%|###5      |  : 179/510 [00:02&lt;00:04,   79.93it/s]
- 36%|###5      |  : 182/510 [00:02&lt;00:04,   80.33it/s]
- 36%|###6      |  : 185/510 [00:02&lt;00:04,   80.70it/s]
- 37%|###6      |  : 188/510 [00:02&lt;00:03,   81.06it/s]
- 37%|###7      |  : 191/510 [00:02&lt;00:03,   81.41it/s]
- 38%|###8      |  : 194/510 [00:02&lt;00:03,   81.75it/s]
- 39%|###8      |  : 197/510 [00:02&lt;00:03,   82.07it/s]
- 39%|###9      |  : 200/510 [00:02&lt;00:03,   82.38it/s]
- 40%|###9      |  : 203/510 [00:02&lt;00:03,   82.66it/s]
- 40%|####      |  : 206/510 [00:02&lt;00:03,   82.94it/s]
- 41%|####1     |  : 210/510 [00:02&lt;00:03,   84.20it/s]
- 42%|####1     |  : 213/510 [00:02&lt;00:03,   84.41it/s]
- 42%|####2     |  : 216/510 [00:02&lt;00:03,   84.63it/s]
- 43%|####2     |  : 219/510 [00:02&lt;00:03,   84.82it/s]
- 44%|####3     |  : 222/510 [00:02&lt;00:03,   85.01it/s]
- 44%|####4     |  : 225/510 [00:02&lt;00:03,   85.19it/s]
- 45%|####4     |  : 229/510 [00:02&lt;00:03,   86.40it/s]
- 45%|####5     |  : 232/510 [00:02&lt;00:03,   86.45it/s]
- 46%|####5     |  : 234/510 [00:02&lt;00:03,   84.48it/s]
- 46%|####6     |  : 237/510 [00:02&lt;00:03,   84.69it/s]
- 47%|####7     |  : 240/510 [00:02&lt;00:03,   84.88it/s]
- 48%|####7     |  : 243/510 [00:02&lt;00:03,   85.05it/s]
- 48%|####8     |  : 247/510 [00:02&lt;00:03,   86.26it/s]
- 49%|####9     |  : 250/510 [00:02&lt;00:03,   86.38it/s]
- 50%|####9     |  : 253/510 [00:02&lt;00:02,   86.50it/s]
- 50%|#####     |  : 256/510 [00:02&lt;00:02,   86.61it/s]
- 51%|#####     |  : 260/510 [00:02&lt;00:02,   87.78it/s]
- 51%|#####1    |  : 262/510 [00:02&lt;00:02,   85.65it/s]
- 52%|#####1    |  : 265/510 [00:02&lt;00:02,   85.80it/s]
- 53%|#####2    |  : 269/510 [00:03&lt;00:02,   86.99it/s]
- 53%|#####3    |  : 272/510 [00:03&lt;00:02,   87.07it/s]
- 54%|#####3    |  : 275/510 [00:03&lt;00:02,   87.15it/s]
- 55%|#####4    |  : 279/510 [00:03&lt;00:02,   88.31it/s]
- 55%|#####5    |  : 282/510 [00:03&lt;00:02,   88.33it/s]
- 56%|#####5    |  : 285/510 [00:03&lt;00:02,   88.35it/s]
- 57%|#####6    |  : 289/510 [00:03&lt;00:02,   89.48it/s]
- 57%|#####7    |  : 292/510 [00:03&lt;00:02,   89.45it/s]
- 58%|#####8    |  : 296/510 [00:03&lt;00:02,   90.54it/s]
- 59%|#####8    |  : 299/510 [00:03&lt;00:02,   90.46it/s]
- 59%|#####9    |  : 302/510 [00:03&lt;00:02,   90.36it/s]
- 60%|######    |  : 306/510 [00:03&lt;00:02,   91.45it/s]
- 61%|######    |  : 309/510 [00:03&lt;00:02,   91.31it/s]
- 61%|######    |  : 311/510 [00:03&lt;00:02,   88.78it/s]
- 62%|######1   |  : 314/510 [00:03&lt;00:02,   88.78it/s]
- 62%|######2   |  : 317/510 [00:03&lt;00:02,   88.78it/s]
- 63%|######2   |  : 320/510 [00:03&lt;00:02,   88.77it/s]
- 63%|######3   |  : 323/510 [00:03&lt;00:02,   88.76it/s]
- 64%|######4   |  : 327/510 [00:03&lt;00:02,   89.88it/s]
- 65%|######4   |  : 330/510 [00:03&lt;00:02,   89.82it/s]
- 65%|######5   |  : 333/510 [00:03&lt;00:01,   89.77it/s]
- 66%|######6   |  : 337/510 [00:03&lt;00:01,   90.81it/s]
- 67%|######6   |  : 340/510 [00:03&lt;00:01,   90.70it/s]
- 67%|######7   |  : 343/510 [00:03&lt;00:01,   90.60it/s]
- 68%|######7   |  : 346/510 [00:03&lt;00:01,   90.51it/s]
- 69%|######8   |  : 350/510 [00:03&lt;00:01,   91.59it/s]
- 69%|######9   |  : 353/510 [00:03&lt;00:01,   91.44it/s]
- 70%|#######   |  : 357/510 [00:03&lt;00:01,   92.49it/s]
- 71%|#######   |  : 360/510 [00:03&lt;00:01,   92.30it/s]
- 71%|#######1  |  : 364/510 [00:03&lt;00:01,   93.33it/s]
- 72%|#######1  |  : 367/510 [00:04&lt;00:01,   93.07it/s]
- 73%|#######2  |  : 371/510 [00:04&lt;00:01,   94.06it/s]
- 73%|#######3  |  : 374/510 [00:04&lt;00:01,   93.74it/s]
- 74%|#######3  |  : 377/510 [00:04&lt;00:01,   93.48it/s]
- 75%|#######4  |  : 380/510 [00:04&lt;00:01,   93.23it/s]
- 75%|#######5  |  : 384/510 [00:04&lt;00:01,   94.22it/s]
- 76%|#######5  |  : 387/510 [00:04&lt;00:01,   93.93it/s]
- 76%|#######6  |  : 390/510 [00:04&lt;00:01,   93.66it/s]
- 77%|#######7  |  : 393/510 [00:04&lt;00:01,   93.41it/s]
- 78%|#######7  |  : 396/510 [00:04&lt;00:01,   93.17it/s]
- 78%|#######8  |  : 399/510 [00:04&lt;00:01,   92.94it/s]
- 79%|#######9  |  : 403/510 [00:04&lt;00:01,   93.95it/s]
- 80%|#######9  |  : 407/510 [00:04&lt;00:01,   94.83it/s]
- 80%|########  |  : 410/510 [00:04&lt;00:01,   94.51it/s]
- 81%|########1 |  : 414/510 [00:04&lt;00:01,   95.43it/s]
- 82%|########1 |  : 417/510 [00:04&lt;00:00,   95.08it/s]
- 83%|########2 |  : 421/510 [00:04&lt;00:00,   96.02it/s]
- 83%|########3 |  : 425/510 [00:04&lt;00:00,   96.93it/s]
- 84%|########3 |  : 428/510 [00:04&lt;00:00,   96.48it/s]
- 85%|########4 |  : 432/510 [00:04&lt;00:00,   97.28it/s]
- 85%|########5 |  : 435/510 [00:04&lt;00:00,   96.81it/s]
- 86%|########5 |  : 438/510 [00:04&lt;00:00,   96.38it/s]
- 87%|########6 |  : 442/510 [00:04&lt;00:00,   97.21it/s]
- 87%|########7 |  : 445/510 [00:04&lt;00:00,   96.75it/s]
- 88%|########8 |  : 449/510 [00:04&lt;00:00,   97.64it/s]
- 89%|########8 |  : 452/510 [00:04&lt;00:00,   97.16it/s]
- 89%|########9 |  : 456/510 [00:04&lt;00:00,   98.04it/s]
- 90%|########9 |  : 458/510 [00:04&lt;00:00,   94.70it/s]
- 90%|######### |  : 461/510 [00:04&lt;00:00,   94.39it/s]
- 91%|######### |  : 464/510 [00:05&lt;00:00,   94.09it/s]
- 92%|#########1|  : 467/510 [00:05&lt;00:00,   93.79it/s]
- 92%|#########2|  : 470/510 [00:05&lt;00:00,   93.46it/s]
- 93%|#########2|  : 473/510 [00:05&lt;00:00,   93.22it/s]
- 94%|#########3|  : 477/510 [00:05&lt;00:00,   94.21it/s]
- 94%|#########4|  : 480/510 [00:05&lt;00:00,   93.92it/s]
- 95%|#########4|  : 483/510 [00:05&lt;00:00,   93.65it/s]
- 95%|#########5|  : 487/510 [00:05&lt;00:00,   94.63it/s]
- 96%|#########6|  : 491/510 [00:05&lt;00:00,   95.55it/s]
- 97%|#########6|  : 494/510 [00:05&lt;00:00,   95.18it/s]
- 97%|#########7|  : 497/510 [00:05&lt;00:00,   94.84it/s]
- 98%|#########8|  : 500/510 [00:05&lt;00:00,   94.52it/s]
- 99%|#########8|  : 504/510 [00:05&lt;00:00,   95.48it/s]
- 99%|#########9|  : 507/510 [00:05&lt;00:00,   95.13it/s]
-100%|##########|  : 510/510 [00:05&lt;00:00,   94.92it/s]
-100%|##########|  : 510/510 [00:05&lt;00:00,   92.91it/s]
+  1%|          |  : 3/510 [00:00&lt;00:05,   87.65it/s]
+  1%|1         |  : 6/510 [00:00&lt;00:05,   87.69it/s]
+  2%|1         |  : 10/510 [00:00&lt;00:05,   88.83it/s]
+  3%|2         |  : 13/510 [00:00&lt;00:05,   88.82it/s]
+  3%|3         |  : 17/510 [00:00&lt;00:05,   89.94it/s]
+  4%|3         |  : 20/510 [00:00&lt;00:05,   89.86it/s]
+  5%|4         |  : 24/510 [00:00&lt;00:05,   90.96it/s]
+  5%|5         |  : 28/510 [00:00&lt;00:05,   92.03it/s]
+  6%|6         |  : 31/510 [00:00&lt;00:05,   91.86it/s]
+  7%|6         |  : 35/510 [00:00&lt;00:05,   92.89it/s]
+  8%|7         |  : 39/510 [00:00&lt;00:05,   93.90it/s]
+  8%|8         |  : 42/510 [00:00&lt;00:04,   93.64it/s]
+  9%|9         |  : 46/510 [00:00&lt;00:04,   94.63it/s]
+ 10%|9         |  : 49/510 [00:00&lt;00:04,   94.30it/s]
+ 10%|#         |  : 53/510 [00:00&lt;00:04,   95.27it/s]
+ 11%|#         |  : 56/510 [00:00&lt;00:04,   94.92it/s]
+ 12%|#1        |  : 60/510 [00:00&lt;00:04,   95.86it/s]
+ 13%|#2        |  : 64/510 [00:00&lt;00:04,   96.78it/s]
+ 13%|#3        |  : 67/510 [00:00&lt;00:04,   96.34it/s]
+ 14%|#3        |  : 71/510 [00:00&lt;00:04,   97.25it/s]
+ 15%|#4        |  : 75/510 [00:00&lt;00:04,   98.11it/s]
+ 15%|#5        |  : 78/510 [00:00&lt;00:04,   97.58it/s]
+ 16%|#6        |  : 82/510 [00:00&lt;00:04,   98.44it/s]
+ 17%|#6        |  : 85/510 [00:00&lt;00:04,   97.90it/s]
+ 17%|#7        |  : 89/510 [00:00&lt;00:04,   98.76it/s]
+ 18%|#8        |  : 93/510 [00:00&lt;00:04,   99.59it/s]
+ 19%|#9        |  : 97/510 [00:00&lt;00:04,  100.38it/s]
+ 20%|#9        |  : 101/510 [00:00&lt;00:04,  101.15it/s]
+ 20%|##        |  : 104/510 [00:00&lt;00:04,  100.44it/s]
+ 21%|##1       |  : 108/510 [00:01&lt;00:03,  101.21it/s]
+ 22%|##1       |  : 112/510 [00:01&lt;00:03,  101.95it/s]
+ 23%|##2       |  : 115/510 [00:01&lt;00:03,  101.20it/s]
+ 23%|##3       |  : 119/510 [00:01&lt;00:03,  101.92it/s]
+ 24%|##3       |  : 122/510 [00:01&lt;00:03,  101.18it/s]
+ 25%|##4       |  : 127/510 [00:01&lt;00:03,  102.80it/s]
+ 25%|##5       |  : 130/510 [00:01&lt;00:03,  102.00it/s]
+ 26%|##6       |  : 134/510 [00:01&lt;00:03,  102.71it/s]
+ 27%|##7       |  : 138/510 [00:01&lt;00:03,  103.39it/s]
+ 28%|##7       |  : 141/510 [00:01&lt;00:03,  102.54it/s]
+ 28%|##8       |  : 145/510 [00:01&lt;00:03,  103.23it/s]
+ 29%|##9       |  : 149/510 [00:01&lt;00:03,  103.89it/s]
+ 30%|###       |  : 153/510 [00:01&lt;00:03,  104.51it/s]
+ 31%|###       |  : 156/510 [00:01&lt;00:03,  103.56it/s]
+ 31%|###1      |  : 160/510 [00:01&lt;00:03,  104.19it/s]
+ 32%|###2      |  : 164/510 [00:01&lt;00:03,  104.81it/s]
+ 33%|###2      |  : 167/510 [00:01&lt;00:03,  103.85it/s]
+ 34%|###3      |  : 171/510 [00:01&lt;00:03,  104.47it/s]
+ 34%|###4      |  : 174/510 [00:01&lt;00:03,  103.53it/s]
+ 35%|###4      |  : 178/510 [00:01&lt;00:03,  104.16it/s]
+ 36%|###5      |  : 182/510 [00:01&lt;00:03,  104.77it/s]
+ 36%|###6      |  : 185/510 [00:01&lt;00:03,  103.80it/s]
+ 37%|###7      |  : 189/510 [00:01&lt;00:03,  104.43it/s]
+ 38%|###7      |  : 193/510 [00:01&lt;00:03,  105.02it/s]
+ 39%|###8      |  : 197/510 [00:01&lt;00:02,  105.59it/s]
+ 39%|###9      |  : 201/510 [00:01&lt;00:02,  106.14it/s]
+ 40%|####      |  : 205/510 [00:01&lt;00:02,  106.66it/s]
+ 41%|####      |  : 208/510 [00:01&lt;00:02,  105.57it/s]
+ 41%|####1     |  : 211/510 [00:01&lt;00:02,  104.45it/s]
+ 42%|####2     |  : 215/510 [00:01&lt;00:02,  105.05it/s]
+ 43%|####2     |  : 218/510 [00:02&lt;00:02,  104.08it/s]
+ 43%|####3     |  : 221/510 [00:02&lt;00:02,  103.16it/s]
+ 44%|####4     |  : 225/510 [00:02&lt;00:02,  103.81it/s]
+ 45%|####4     |  : 229/510 [00:02&lt;00:02,  104.39it/s]
+ 45%|####5     |  : 232/510 [00:02&lt;00:02,  103.46it/s]
+ 46%|####6     |  : 235/510 [00:02&lt;00:02,  102.60it/s]
+ 47%|####6     |  : 238/510 [00:02&lt;00:02,  101.81it/s]
+ 47%|####7     |  : 242/510 [00:02&lt;00:02,  102.53it/s]
+ 48%|####8     |  : 246/510 [00:02&lt;00:02,  103.22it/s]
+ 49%|####8     |  : 249/510 [00:02&lt;00:02,  102.39it/s]
+ 50%|####9     |  : 253/510 [00:02&lt;00:02,  103.03it/s]
+ 50%|#####     |  : 256/510 [00:02&lt;00:02,  102.20it/s]
+ 51%|#####     |  : 260/510 [00:02&lt;00:02,  102.90it/s]
+ 52%|#####1    |  : 263/510 [00:02&lt;00:02,  102.09it/s]
+ 52%|#####2    |  : 267/510 [00:02&lt;00:02,  102.80it/s]
+ 53%|#####3    |  : 271/510 [00:02&lt;00:02,  103.48it/s]
+ 54%|#####3    |  : 275/510 [00:02&lt;00:02,  104.11it/s]
+ 55%|#####4    |  : 278/510 [00:02&lt;00:02,  103.20it/s]
+ 55%|#####4    |  : 280/510 [00:02&lt;00:02,   99.50it/s]
+ 55%|#####5    |  : 282/510 [00:02&lt;00:02,   96.22it/s]
+ 56%|#####5    |  : 285/510 [00:02&lt;00:02,   95.80it/s]
+ 56%|#####6    |  : 288/510 [00:02&lt;00:02,   95.39it/s]
+ 57%|#####7    |  : 291/510 [00:02&lt;00:02,   95.04it/s]
+ 57%|#####7    |  : 293/510 [00:02&lt;00:02,   92.22it/s]
+ 58%|#####8    |  : 297/510 [00:02&lt;00:02,   93.25it/s]
+ 59%|#####8    |  : 300/510 [00:02&lt;00:02,   93.01it/s]
+ 60%|#####9    |  : 304/510 [00:02&lt;00:02,   94.01it/s]
+ 60%|######    |  : 307/510 [00:02&lt;00:02,   93.72it/s]
+ 61%|######    |  : 311/510 [00:02&lt;00:02,   94.70it/s]
+ 62%|######1   |  : 314/510 [00:03&lt;00:02,   94.39it/s]
+ 62%|######2   |  : 318/510 [00:03&lt;00:02,   95.35it/s]
+ 63%|######3   |  : 322/510 [00:03&lt;00:01,   96.27it/s]
+ 64%|######3   |  : 326/510 [00:03&lt;00:01,   97.18it/s]
+ 65%|######4   |  : 330/510 [00:03&lt;00:01,   98.06it/s]
+ 65%|######5   |  : 333/510 [00:03&lt;00:01,   97.54it/s]
+ 66%|######5   |  : 335/510 [00:03&lt;00:01,   94.48it/s]
+ 66%|######6   |  : 338/510 [00:03&lt;00:01,   94.18it/s]
+ 67%|######7   |  : 342/510 [00:03&lt;00:01,   95.13it/s]
+ 68%|######7   |  : 346/510 [00:03&lt;00:01,   96.08it/s]
+ 69%|######8   |  : 350/510 [00:03&lt;00:01,   96.98it/s]
+ 69%|######9   |  : 353/510 [00:03&lt;00:01,   96.54it/s]
+ 70%|######9   |  : 355/510 [00:03&lt;00:01,   93.59it/s]
+ 70%|#######   |  : 358/510 [00:03&lt;00:01,   93.34it/s]
+ 71%|#######   |  : 362/510 [00:03&lt;00:01,   94.34it/s]
+ 72%|#######1  |  : 366/510 [00:03&lt;00:01,   95.31it/s]
+ 73%|#######2  |  : 370/510 [00:03&lt;00:01,   96.25it/s]
+ 73%|#######3  |  : 373/510 [00:03&lt;00:01,   95.85it/s]
+ 74%|#######3  |  : 377/510 [00:03&lt;00:01,   96.77it/s]
+ 75%|#######4  |  : 381/510 [00:03&lt;00:01,   97.66it/s]
+ 75%|#######5  |  : 384/510 [00:03&lt;00:01,   97.18it/s]
+ 76%|#######6  |  : 388/510 [00:03&lt;00:01,   98.06it/s]
+ 77%|#######6  |  : 392/510 [00:03&lt;00:01,   98.90it/s]
+ 78%|#######7  |  : 396/510 [00:03&lt;00:01,   99.73it/s]
+ 78%|#######8  |  : 399/510 [00:03&lt;00:01,   99.12it/s]
+ 79%|#######9  |  : 403/510 [00:03&lt;00:01,   99.92it/s]
+ 80%|#######9  |  : 406/510 [00:03&lt;00:01,   99.25it/s]
+ 80%|########  |  : 410/510 [00:03&lt;00:00,  100.05it/s]
+ 81%|########1 |  : 414/510 [00:03&lt;00:00,  100.83it/s]
+ 82%|########1 |  : 418/510 [00:03&lt;00:00,  101.58it/s]
+ 83%|########2 |  : 422/510 [00:04&lt;00:00,  102.30it/s]
+ 83%|########3 |  : 425/510 [00:04&lt;00:00,  101.53it/s]
+ 84%|########4 |  : 429/510 [00:04&lt;00:00,  102.26it/s]
+ 85%|########4 |  : 432/510 [00:04&lt;00:00,  101.49it/s]
+ 85%|########5 |  : 436/510 [00:04&lt;00:00,  102.22it/s]
+ 86%|########6 |  : 439/510 [00:04&lt;00:00,  101.45it/s]
+ 87%|########6 |  : 443/510 [00:04&lt;00:00,  102.17it/s]
+ 87%|########7 |  : 446/510 [00:04&lt;00:00,  101.41it/s]
+ 88%|########8 |  : 450/510 [00:04&lt;00:00,  102.15it/s]
+ 89%|########8 |  : 452/510 [00:04&lt;00:00,   98.57it/s]
+ 89%|########9 |  : 455/510 [00:04&lt;00:00,   98.00it/s]
+ 90%|########9 |  : 457/510 [00:04&lt;00:00,   94.88it/s]
+ 90%|######### |  : 461/510 [00:04&lt;00:00,   95.83it/s]
+ 91%|######### |  : 464/510 [00:04&lt;00:00,   95.46it/s]
+ 92%|#########1|  : 467/510 [00:04&lt;00:00,   95.06it/s]
+ 92%|#########2|  : 471/510 [00:04&lt;00:00,   96.00it/s]
+ 93%|#########3|  : 475/510 [00:04&lt;00:00,   96.90it/s]
+ 94%|#########3|  : 478/510 [00:04&lt;00:00,   96.45it/s]
+ 94%|#########4|  : 481/510 [00:04&lt;00:00,   96.03it/s]
+ 95%|#########5|  : 485/510 [00:04&lt;00:00,   96.94it/s]
+ 95%|#########5|  : 487/510 [00:04&lt;00:00,   93.93it/s]
+ 96%|#########6|  : 490/510 [00:04&lt;00:00,   93.67it/s]
+ 97%|#########6|  : 494/510 [00:04&lt;00:00,   94.65it/s]
+ 97%|#########7|  : 497/510 [00:04&lt;00:00,   94.32it/s]
+ 98%|#########7|  : 499/510 [00:04&lt;00:00,   91.58it/s]
+ 98%|#########8|  : 502/510 [00:04&lt;00:00,   91.42it/s]
+ 99%|#########8|  : 504/510 [00:04&lt;00:00,   88.99it/s]
+ 99%|#########9|  : 507/510 [00:04&lt;00:00,   88.98it/s]
+100%|##########|  : 510/510 [00:04&lt;00:00,   90.04it/s]
+100%|##########|  : 510/510 [00:04&lt;00:00,  102.62it/s]
 Computing cluster p-values
 Done.
 </pre></div>
@@ -967,7 +951,7 @@ Done.
 <p>We can also combine TFCE and the “hat” correction:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">titles</span></a><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathbf{C_{hat,TFCE}}$&#39;</span><span class="p">)</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_tfce_hat</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">_</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_tfce_hat</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">H0</span></a> <span class="o">=</span> <a href="../../generated/mne.stats.permutation_cluster_1samp_test.html#mne.stats.permutation_cluster_1samp_test" title="mne.stats.permutation_cluster_1samp_test" class="sphx-glr-backref-module-mne-stats sphx-glr-backref-type-py-function"><span class="n">permutation_cluster_1samp_test</span></a><span class="p">(</span>
-    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">threshold_tfce</span></a><span class="p">,</span> <span class="n">connectivity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out_type</span><span class="o">=</span><span class="s1">&#39;mask&#39;</span><span class="p">,</span>
+    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">threshold_tfce</span></a><span class="p">,</span> <span class="n">adjacency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out_type</span><span class="o">=</span><span class="s1">&#39;mask&#39;</span><span class="p">,</span>
     <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_permutations</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_permutations</span></a><span class="p">,</span> <span class="n">stat_fun</span><span class="o">=</span><a href="https://docs.python.org/3/library/functools.html#functools.partial" title="functools.partial" class="sphx-glr-backref-module-functools sphx-glr-backref-type-py-function"><span class="n">stat_fun_hat</span></a><span class="p">,</span> <span class="n">buffer_size</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ts</span></a><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_tfce_hat</span></a><span class="p">)</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ps</span></a><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_tfce_hat</span></a><span class="p">)</span>
@@ -984,96 +968,82 @@ Found 1600 clusters
 Permuting 510 times...
 
   0%|          |  : 0/510 [00:00&lt;?,       ?it/s]
-  1%|          |  : 5/510 [00:00&lt;00:03,  146.60it/s]
-  2%|2         |  : 11/510 [00:00&lt;00:03,  147.88it/s]
-  4%|3         |  : 18/510 [00:00&lt;00:03,  150.02it/s]
-  5%|4         |  : 25/510 [00:00&lt;00:03,  152.12it/s]
-  6%|6         |  : 32/510 [00:00&lt;00:03,  154.14it/s]
-  7%|7         |  : 37/510 [00:00&lt;00:03,  153.81it/s]
-  9%|8         |  : 45/510 [00:00&lt;00:02,  156.55it/s]
- 10%|#         |  : 51/510 [00:00&lt;00:02,  157.46it/s]
- 11%|#1        |  : 57/510 [00:00&lt;00:02,  158.36it/s]
- 12%|#2        |  : 63/510 [00:00&lt;00:02,  159.22it/s]
- 14%|#3        |  : 70/510 [00:00&lt;00:02,  161.00it/s]
- 15%|#4        |  : 75/510 [00:00&lt;00:02,  160.29it/s]
- 16%|#6        |  : 82/510 [00:00&lt;00:02,  162.13it/s]
- 17%|#7        |  : 87/510 [00:00&lt;00:02,  161.24it/s]
- 18%|#8        |  : 92/510 [00:00&lt;00:02,  160.52it/s]
- 19%|#9        |  : 97/510 [00:00&lt;00:02,  159.81it/s]
- 20%|##        |  : 103/510 [00:00&lt;00:02,  160.45it/s]
- 21%|##1       |  : 108/510 [00:00&lt;00:02,  159.73it/s]
- 22%|##2       |  : 113/510 [00:00&lt;00:02,  159.07it/s]
- 23%|##2       |  : 117/510 [00:00&lt;00:02,  156.35it/s]
- 24%|##3       |  : 122/510 [00:00&lt;00:02,  155.91it/s]
- 25%|##5       |  : 128/510 [00:00&lt;00:02,  156.79it/s]
- 26%|##6       |  : 133/510 [00:00&lt;00:02,  156.31it/s]
- 27%|##7       |  : 139/510 [00:00&lt;00:02,  157.25it/s]
- 29%|##8       |  : 146/510 [00:00&lt;00:02,  159.17it/s]
- 30%|##9       |  : 152/510 [00:00&lt;00:02,  160.00it/s]
- 31%|###       |  : 158/510 [00:00&lt;00:02,  160.80it/s]
- 32%|###2      |  : 165/510 [00:00&lt;00:02,  162.62it/s]
- 34%|###3      |  : 172/510 [00:00&lt;00:02,  164.35it/s]
- 35%|###5      |  : 179/510 [00:01&lt;00:01,  166.07it/s]
- 36%|###6      |  : 186/510 [00:01&lt;00:01,  167.62it/s]
- 38%|###7      |  : 192/510 [00:01&lt;00:01,  168.08it/s]
- 39%|###8      |  : 197/510 [00:01&lt;00:01,  166.95it/s]
- 39%|###9      |  : 201/510 [00:01&lt;00:01,  163.58it/s]
- 41%|####      |  : 207/510 [00:01&lt;00:01,  164.23it/s]
- 42%|####1     |  : 213/510 [00:01&lt;00:01,  164.84it/s]
- 43%|####2     |  : 217/510 [00:01&lt;00:01,  161.60it/s]
- 44%|####3     |  : 224/510 [00:01&lt;00:01,  163.40it/s]
- 45%|####4     |  : 229/510 [00:01&lt;00:01,  162.56it/s]
- 46%|####6     |  : 235/510 [00:01&lt;00:01,  163.24it/s]
- 47%|####7     |  : 241/510 [00:01&lt;00:01,  163.91it/s]
- 48%|####8     |  : 247/510 [00:01&lt;00:01,  164.55it/s]
- 50%|####9     |  : 253/510 [00:01&lt;00:01,  165.17it/s]
- 51%|#####     |  : 260/510 [00:01&lt;00:01,  166.87it/s]
- 52%|#####2    |  : 267/510 [00:01&lt;00:01,  168.51it/s]
- 54%|#####3    |  : 273/510 [00:01&lt;00:01,  168.95it/s]
- 55%|#####4    |  : 280/510 [00:01&lt;00:01,  170.53it/s]
- 56%|#####6    |  : 286/510 [00:01&lt;00:01,  170.86it/s]
- 57%|#####7    |  : 292/510 [00:01&lt;00:01,  171.18it/s]
- 58%|#####8    |  : 298/510 [00:01&lt;00:01,  171.48it/s]
- 60%|#####9    |  : 304/510 [00:01&lt;00:01,  171.65it/s]
- 61%|######    |  : 310/510 [00:01&lt;00:01,  171.92it/s]
- 62%|######1   |  : 314/510 [00:01&lt;00:01,  168.12it/s]
- 62%|######2   |  : 318/510 [00:01&lt;00:01,  164.68it/s]
- 64%|######3   |  : 324/510 [00:01&lt;00:01,  165.28it/s]
- 65%|######4   |  : 330/510 [00:01&lt;00:01,  165.83it/s]
- 66%|######5   |  : 336/510 [00:01&lt;00:01,  166.39it/s]
- 67%|######7   |  : 342/510 [00:01&lt;00:01,  166.92it/s]
- 68%|######8   |  : 347/510 [00:01&lt;00:00,  165.87it/s]
- 69%|######9   |  : 353/510 [00:02&lt;00:00,  166.41it/s]
- 70%|#######   |  : 358/510 [00:02&lt;00:00,  165.39it/s]
- 71%|#######1  |  : 363/510 [00:02&lt;00:00,  164.38it/s]
- 72%|#######1  |  : 367/510 [00:02&lt;00:00,  160.90it/s]
- 73%|#######2  |  : 371/510 [00:02&lt;00:00,  158.02it/s]
- 74%|#######3  |  : 376/510 [00:02&lt;00:00,  157.48it/s]
- 75%|#######4  |  : 382/510 [00:02&lt;00:00,  158.38it/s]
- 76%|#######6  |  : 388/510 [00:02&lt;00:00,  159.24it/s]
- 77%|#######7  |  : 395/510 [00:02&lt;00:00,  161.11it/s]
- 79%|#######8  |  : 401/510 [00:02&lt;00:00,  161.87it/s]
- 80%|#######9  |  : 406/510 [00:02&lt;00:00,  161.10it/s]
- 80%|########  |  : 409/510 [00:02&lt;00:00,  154.34it/s]
- 81%|########1 |  : 414/510 [00:02&lt;00:00,  154.02it/s]
- 82%|########1 |  : 418/510 [00:02&lt;00:00,  151.71it/s]
- 83%|########3 |  : 424/510 [00:02&lt;00:00,  152.82it/s]
- 84%|########4 |  : 430/510 [00:02&lt;00:00,  153.90it/s]
- 85%|########5 |  : 435/510 [00:02&lt;00:00,  153.39it/s]
- 86%|########6 |  : 440/510 [00:02&lt;00:00,  153.11it/s]
- 87%|########7 |  : 446/510 [00:02&lt;00:00,  154.17it/s]
- 88%|########8 |  : 451/510 [00:02&lt;00:00,  153.85it/s]
- 90%|########9 |  : 458/510 [00:02&lt;00:00,  155.80it/s]
- 91%|######### |  : 464/510 [00:02&lt;00:00,  156.76it/s]
- 92%|#########2|  : 470/510 [00:02&lt;00:00,  157.68it/s]
- 93%|#########3|  : 476/510 [00:02&lt;00:00,  158.58it/s]
- 95%|#########4|  : 482/510 [00:02&lt;00:00,  159.44it/s]
- 96%|#########5|  : 488/510 [00:02&lt;00:00,  160.18it/s]
- 97%|#########6|  : 494/510 [00:02&lt;00:00,  160.96it/s]
- 98%|#########7|  : 499/510 [00:02&lt;00:00,  160.27it/s]
- 99%|#########9|  : 505/510 [00:02&lt;00:00,  161.05it/s]
-100%|##########|  : 510/510 [00:03&lt;00:00,  162.25it/s]
-100%|##########|  : 510/510 [00:03&lt;00:00,  169.47it/s]
+  1%|          |  : 4/510 [00:00&lt;00:04,  116.50it/s]
+  2%|1         |  : 9/510 [00:00&lt;00:04,  117.74it/s]
+  3%|3         |  : 16/510 [00:00&lt;00:04,  120.33it/s]
+  5%|4         |  : 23/510 [00:00&lt;00:03,  122.91it/s]
+  6%|6         |  : 31/510 [00:00&lt;00:03,  125.89it/s]
+  7%|7         |  : 37/510 [00:00&lt;00:03,  127.74it/s]
+  9%|8         |  : 45/510 [00:00&lt;00:03,  130.75it/s]
+ 10%|#         |  : 51/510 [00:00&lt;00:03,  132.48it/s]
+ 11%|#1        |  : 57/510 [00:00&lt;00:03,  134.16it/s]
+ 13%|#2        |  : 65/510 [00:00&lt;00:03,  137.12it/s]
+ 14%|#4        |  : 72/510 [00:00&lt;00:03,  139.47it/s]
+ 15%|#5        |  : 79/510 [00:00&lt;00:03,  141.72it/s]
+ 17%|#6        |  : 85/510 [00:00&lt;00:02,  143.17it/s]
+ 18%|#8        |  : 93/510 [00:00&lt;00:02,  146.03it/s]
+ 20%|#9        |  : 100/510 [00:00&lt;00:02,  148.22it/s]
+ 21%|##        |  : 107/510 [00:00&lt;00:02,  150.35it/s]
+ 22%|##2       |  : 114/510 [00:00&lt;00:02,  152.45it/s]
+ 24%|##3       |  : 121/510 [00:00&lt;00:02,  154.48it/s]
+ 25%|##5       |  : 128/510 [00:00&lt;00:02,  156.47it/s]
+ 26%|##6       |  : 135/510 [00:00&lt;00:02,  158.40it/s]
+ 28%|##7       |  : 142/510 [00:00&lt;00:02,  160.29it/s]
+ 29%|##9       |  : 149/510 [00:00&lt;00:02,  162.12it/s]
+ 31%|###       |  : 156/510 [00:00&lt;00:02,  163.89it/s]
+ 32%|###1      |  : 163/510 [00:00&lt;00:02,  165.61it/s]
+ 33%|###3      |  : 170/510 [00:00&lt;00:02,  167.29it/s]
+ 35%|###4      |  : 177/510 [00:00&lt;00:01,  168.92it/s]
+ 36%|###6      |  : 185/510 [00:00&lt;00:01,  171.36it/s]
+ 38%|###7      |  : 192/510 [00:00&lt;00:01,  172.85it/s]
+ 39%|###8      |  : 198/510 [00:00&lt;00:01,  173.07it/s]
+ 40%|####      |  : 205/510 [00:01&lt;00:01,  174.52it/s]
+ 42%|####1     |  : 213/510 [00:01&lt;00:01,  176.80it/s]
+ 43%|####3     |  : 220/510 [00:01&lt;00:01,  178.10it/s]
+ 45%|####4     |  : 227/510 [00:01&lt;00:01,  179.34it/s]
+ 45%|####5     |  : 231/510 [00:01&lt;00:01,  174.84it/s]
+ 46%|####6     |  : 236/510 [00:01&lt;00:01,  173.28it/s]
+ 47%|####7     |  : 240/510 [00:01&lt;00:01,  169.37it/s]
+ 48%|####7     |  : 244/510 [00:01&lt;00:01,  165.58it/s]
+ 49%|####9     |  : 250/510 [00:01&lt;00:01,  166.15it/s]
+ 50%|#####     |  : 257/510 [00:01&lt;00:01,  167.82it/s]
+ 52%|#####1    |  : 264/510 [00:01&lt;00:01,  169.41it/s]
+ 53%|#####3    |  : 271/510 [00:01&lt;00:01,  170.96it/s]
+ 55%|#####4    |  : 279/510 [00:01&lt;00:01,  173.37it/s]
+ 56%|#####6    |  : 286/510 [00:01&lt;00:01,  174.79it/s]
+ 57%|#####7    |  : 293/510 [00:01&lt;00:01,  176.15it/s]
+ 59%|#####8    |  : 300/510 [00:01&lt;00:01,  177.48it/s]
+ 60%|######    |  : 307/510 [00:01&lt;00:01,  178.76it/s]
+ 61%|######1   |  : 313/510 [00:01&lt;00:01,  178.68it/s]
+ 63%|######2   |  : 320/510 [00:01&lt;00:01,  179.92it/s]
+ 64%|######4   |  : 327/510 [00:01&lt;00:01,  181.11it/s]
+ 65%|######5   |  : 334/510 [00:01&lt;00:00,  182.26it/s]
+ 67%|######7   |  : 342/510 [00:01&lt;00:00,  184.36it/s]
+ 68%|######8   |  : 349/510 [00:01&lt;00:00,  185.37it/s]
+ 70%|######9   |  : 356/510 [00:01&lt;00:00,  186.34it/s]
+ 71%|#######1  |  : 363/510 [00:01&lt;00:00,  187.26it/s]
+ 73%|#######2  |  : 371/510 [00:01&lt;00:00,  189.21it/s]
+ 74%|#######4  |  : 378/510 [00:01&lt;00:00,  190.04it/s]
+ 75%|#######5  |  : 385/510 [00:01&lt;00:00,  190.82it/s]
+ 77%|#######7  |  : 393/510 [00:01&lt;00:00,  192.68it/s]
+ 78%|#######8  |  : 400/510 [00:01&lt;00:00,  193.35it/s]
+ 80%|#######9  |  : 407/510 [00:02&lt;00:00,  193.99it/s]
+ 81%|########1 |  : 414/510 [00:02&lt;00:00,  194.62it/s]
+ 83%|########2 |  : 421/510 [00:02&lt;00:00,  195.22it/s]
+ 84%|########4 |  : 429/510 [00:02&lt;00:00,  196.95it/s]
+ 85%|########5 |  : 436/510 [00:02&lt;00:00,  197.44it/s]
+ 87%|########6 |  : 442/510 [00:02&lt;00:00,  195.97it/s]
+ 88%|########8 |  : 449/510 [00:02&lt;00:00,  196.49it/s]
+ 90%|########9 |  : 457/510 [00:02&lt;00:00,  198.14it/s]
+ 91%|######### |  : 464/510 [00:02&lt;00:00,  198.31it/s]
+ 92%|#########2|  : 470/510 [00:02&lt;00:00,  197.17it/s]
+ 94%|#########3|  : 477/510 [00:02&lt;00:00,  197.66it/s]
+ 95%|#########4|  : 483/510 [00:02&lt;00:00,  196.56it/s]
+ 96%|#########5|  : 489/510 [00:02&lt;00:00,  195.50it/s]
+ 97%|#########7|  : 496/510 [00:02&lt;00:00,  196.06it/s]
+ 99%|#########8|  : 503/510 [00:02&lt;00:00,  196.42it/s]
+100%|#########9|  : 509/510 [00:02&lt;00:00,  195.35it/s]
+100%|##########|  : 510/510 [00:02&lt;00:00,  200.47it/s]
 Computing cluster p-values
 Done.
 </pre></div>
@@ -1199,27 +1169,27 @@ continuous predictors.</p>
 <h3><a class="toc-backref" href="#id25">Non-parametric methods</a><a class="headerlink" href="#non-parametric-methods" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="simple">
-<dt><a class="reference internal" href="../../generated/mne.stats.permutation_cluster_test.html#mne.stats.permutation_cluster_test" title="mne.stats.permutation_cluster_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.permutation_cluster_test()</span></code></a></dt><dd><p>Unpaired contrasts with connectivity.</p>
+<dt><a class="reference internal" href="../../generated/mne.stats.permutation_cluster_test.html#mne.stats.permutation_cluster_test" title="mne.stats.permutation_cluster_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.permutation_cluster_test()</span></code></a></dt><dd><p>Unpaired contrasts with clustering.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><a class="reference internal" href="../../generated/mne.stats.spatio_temporal_cluster_test.html#mne.stats.spatio_temporal_cluster_test" title="mne.stats.spatio_temporal_cluster_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.spatio_temporal_cluster_test()</span></code></a></dt><dd><p>Unpaired contrasts with spatio-temporal connectivity.</p>
+<dt><a class="reference internal" href="../../generated/mne.stats.spatio_temporal_cluster_test.html#mne.stats.spatio_temporal_cluster_test" title="mne.stats.spatio_temporal_cluster_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.spatio_temporal_cluster_test()</span></code></a></dt><dd><p>Unpaired contrasts with spatio-temporal clustering.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><a class="reference internal" href="../../generated/mne.stats.permutation_t_test.html#mne.stats.permutation_t_test" title="mne.stats.permutation_t_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.permutation_t_test()</span></code></a></dt><dd><p>Paired contrast with no connectivity.</p>
+<dt><a class="reference internal" href="../../generated/mne.stats.permutation_t_test.html#mne.stats.permutation_t_test" title="mne.stats.permutation_t_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.permutation_t_test()</span></code></a></dt><dd><p>Paired contrast with no clustering.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><a class="reference internal" href="../../generated/mne.stats.permutation_cluster_1samp_test.html#mne.stats.permutation_cluster_1samp_test" title="mne.stats.permutation_cluster_1samp_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.permutation_cluster_1samp_test()</span></code></a></dt><dd><p>Paired contrasts with connectivity.</p>
+<dt><a class="reference internal" href="../../generated/mne.stats.permutation_cluster_1samp_test.html#mne.stats.permutation_cluster_1samp_test" title="mne.stats.permutation_cluster_1samp_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.permutation_cluster_1samp_test()</span></code></a></dt><dd><p>Paired contrasts with clustering.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><a class="reference internal" href="../../generated/mne.stats.spatio_temporal_cluster_1samp_test.html#mne.stats.spatio_temporal_cluster_1samp_test" title="mne.stats.spatio_temporal_cluster_1samp_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.spatio_temporal_cluster_1samp_test()</span></code></a></dt><dd><p>Paired contrasts with spatio-temporal connectivity.</p>
+<dt><a class="reference internal" href="../../generated/mne.stats.spatio_temporal_cluster_1samp_test.html#mne.stats.spatio_temporal_cluster_1samp_test" title="mne.stats.spatio_temporal_cluster_1samp_test"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.stats.spatio_temporal_cluster_1samp_test()</span></code></a></dt><dd><p>Paired contrasts with spatio-temporal clustering.</p>
 </dd>
 </dl>
 </li>
@@ -1251,7 +1221,7 @@ addressing problems of smoothing, threshold dependence, and
 localisation in cluster inference”, NeuroImage 44 (2009) 83-98.</p>
 </dd>
 </dl>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  37.139 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  34.604 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-discussions-plot-background-statistics-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">

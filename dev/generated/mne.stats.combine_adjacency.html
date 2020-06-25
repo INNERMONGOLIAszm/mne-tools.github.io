@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mne.channels.read_ch_connectivity &#8212; MNE 0.21.dev0 documentation</title>
+    <title>mne.stats.combine_adjacency &#8212; MNE 0.21.dev0 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -171,56 +171,48 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
   <div class="row">
     <div class="body col-md-12 content" role="main">
       
-  <div class="section" id="mne-channels-read-ch-connectivity">
-<h1>mne.channels.read_ch_connectivity<a class="headerlink" href="#mne-channels-read-ch-connectivity" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mne-stats-combine-adjacency">
+<h1>mne.stats.combine_adjacency<a class="headerlink" href="#mne-stats-combine-adjacency" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="mne.channels.read_ch_connectivity">
-<code class="sig-prename descclassname">mne.channels.</code><code class="sig-name descname">read_ch_connectivity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">picks</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L1115-L1176"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.channels.read_ch_connectivity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parse FieldTrip neighbors .mat file.</p>
-<p>More information on these neighbor definitions can be found on the related
-<a class="reference external" href="http://www.fieldtriptoolbox.org/template/neighbours/">FieldTrip documentation pages</a>.</p>
+<dt id="mne.stats.combine_adjacency">
+<code class="sig-prename descclassname">mne.stats.</code><code class="sig-name descname">combine_adjacency</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">structure</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/stats/_adjacency.py#L14-L93"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.stats.combine_adjacency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a sparse binary adjacency/neighbors matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>fname</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>The file name. Example: ‘neuromag306mag’, ‘neuromag306planar’,
-‘ctf275’, ‘biosemi64’, etc.</p>
+<dt><strong>*structure</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></span></dt><dd><p>The adjacency along each dimension. Each entry can be:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ndarray or sparse matrix</dt><dd><p>A square binary adjacency matrix for the given dimension.</p>
 </dd>
-<dt><strong>picks</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#slice" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Channels to include. Slices and lists of integers will be
-interpreted as channel indices. In lists, channel <em>type</em> strings
-(e.g., <code class="docutils literal notranslate"><span class="pre">['meg',</span> <span class="pre">'eeg']</span></code>) will pick channels of those
-types, channel <em>name</em> strings (e.g., <code class="docutils literal notranslate"><span class="pre">['MEG0111',</span> <span class="pre">'MEG2623']</span></code>
-will pick the given channels. Can also be the string values
-“all” to pick all channels, or “data” to pick <a class="reference internal" href="../glossary.html#term-data-channels"><span class="xref std std-term">data channels</span></a>.
-None (default) will pick all channels.
-Picks Must match the template.</p>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>int</dt><dd><p>The number of elements along the given dimension. A lattice
+adjacency will be generated.</p>
+</dd>
+</dl>
+</li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ch_connectivity</strong><span class="classifier"><a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="(in SciPy v1.6.0.dev0+4bf5b9f)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse.csr_matrix</span></code></a>, shape (n_channels, n_channels)</span></dt><dd><p>The connectivity matrix.</p>
-</dd>
-<dt><strong>ch_names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></span></dt><dd><p>The list of channel names present in connectivity matrix.</p>
+<dt><strong>adjacency</strong><span class="classifier"><a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="(in SciPy v1.6.0.dev0+e423817)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse.coo_matrix</span></code></a>, shape (n_features, n_features)</span></dt><dd><p>The adjacency matrix.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference internal" href="mne.channels.find_ch_connectivity.html#mne.channels.find_ch_connectivity" title="mne.channels.find_ch_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_ch_connectivity</span></code></a></dt><dd></dd>
-</dl>
-</div>
-<p class="rubric">Notes</p>
-<p>This function is closely related to <a class="reference internal" href="mne.channels.find_ch_connectivity.html#mne.channels.find_ch_connectivity" title="mne.channels.find_ch_connectivity"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_ch_connectivity()</span></code></a>. If you
-don’t know the correct file for the neighbor definitions,
-<a class="reference internal" href="mne.channels.find_ch_connectivity.html#mne.channels.find_ch_connectivity" title="mne.channels.find_ch_connectivity"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_ch_connectivity()</span></code></a> can compute the connectivity matrix from 2d
-sensor locations.</p>
 </dd></dl>
 
-<div class="section" id="examples-using-mne-channels-read-ch-connectivity">
-<span id="sphx-glr-backreferences-mne-channels-read-ch-connectivity"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.channels.read_ch_connectivity</span></code><a class="headerlink" href="#examples-using-mne-channels-read-ch-connectivity" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-clear"></div></div>
+<div class="section" id="examples-using-mne-stats-combine-adjacency">
+<span id="sphx-glr-backreferences-mne-stats-combine-adjacency"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.stats.combine_adjacency</span></code><a class="headerlink" href="#examples-using-mne-stats-combine-adjacency" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="This script shows how to estimate significant clusters in time-frequency power estimates. It us..."><div class="figure align-default" id="id1">
+<img alt="Non-parametric 1 sample cluster statistic on single trial power" src="../_images/sphx_glr_plot_stats_cluster_1samp_test_time_frequency_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/stats-sensor-space/plot_stats_cluster_1samp_test_time_frequency.html#sphx-glr-auto-tutorials-stats-sensor-space-plot-stats-cluster-1samp-test-time-frequency-py"><span class="std std-ref">Non-parametric 1 sample cluster statistic on single trial power</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="sphx-glr-clear"></div></div>
 </div>
 
 

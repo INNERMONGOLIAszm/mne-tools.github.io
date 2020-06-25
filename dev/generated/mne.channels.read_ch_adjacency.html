@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mne.spatio_temporal_dist_connectivity &#8212; MNE 0.21.dev0 documentation</title>
+    <title>mne.channels.read_ch_adjacency &#8212; MNE 0.21.dev0 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -171,45 +171,55 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
   <div class="row">
     <div class="body col-md-12 content" role="main">
       
-  <div class="section" id="mne-spatio-temporal-dist-connectivity">
-<h1>mne.spatio_temporal_dist_connectivity<a class="headerlink" href="#mne-spatio-temporal-dist-connectivity" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mne-channels-read-ch-adjacency">
+<h1>mne.channels.read_ch_adjacency<a class="headerlink" href="#mne-channels-read-ch-adjacency" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="mne.spatio_temporal_dist_connectivity">
-<code class="sig-prename descclassname">mne.</code><code class="sig-name descname">spatio_temporal_dist_connectivity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em>, <em class="sig-param"><span class="n">n_times</span></em>, <em class="sig-param"><span class="n">dist</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/source_estimate.py#L2667-L2704"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.spatio_temporal_dist_connectivity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute connectivity from distances in a source space and time instants.</p>
+<dt id="mne.channels.read_ch_adjacency">
+<code class="sig-prename descclassname">mne.channels.</code><code class="sig-name descname">read_ch_adjacency</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">picks</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L1115-L1176"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.channels.read_ch_adjacency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse FieldTrip neighbors .mat file.</p>
+<p>More information on these neighbor definitions can be found on the related
+<a class="reference external" href="http://www.fieldtriptoolbox.org/template/neighbours/">FieldTrip documentation pages</a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>src</strong><span class="classifier">instance of <a class="reference internal" href="mne.SourceSpaces.html#mne.SourceSpaces" title="mne.SourceSpaces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SourceSpaces</span></code></a></span></dt><dd><p>The source space must have distances between vertices computed, such
-that src[‘dist’] exists and is useful. This can be obtained
-with a call to <a class="reference internal" href="mne.setup_source_space.html#mne.setup_source_space" title="mne.setup_source_space"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.setup_source_space()</span></code></a> with the
-<code class="docutils literal notranslate"><span class="pre">add_dist=True</span></code> option.</p>
+<dt><strong>fname</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>The file name. Example: ‘neuromag306mag’, ‘neuromag306planar’,
+‘ctf275’, ‘biosemi64’, etc.</p>
 </dd>
-<dt><strong>n_times</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of time points.</p>
-</dd>
-<dt><strong>dist</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Maximal geodesic distance (in m) between vertices in the
-source space to consider neighbors.</p>
-</dd>
-<dt><strong>verbose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>If not None, override default verbose level (see <a class="reference internal" href="mne.verbose.html#mne.verbose" title="mne.verbose"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
-and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configure_mne.html#tut-logging"><span class="std std-ref">Logging documentation</span></a> for more).</p>
+<dt><strong>picks</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#slice" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Channels to include. Slices and lists of integers will be
+interpreted as channel indices. In lists, channel <em>type</em> strings
+(e.g., <code class="docutils literal notranslate"><span class="pre">['meg',</span> <span class="pre">'eeg']</span></code>) will pick channels of those
+types, channel <em>name</em> strings (e.g., <code class="docutils literal notranslate"><span class="pre">['MEG0111',</span> <span class="pre">'MEG2623']</span></code>
+will pick the given channels. Can also be the string values
+“all” to pick all channels, or “data” to pick <a class="reference internal" href="../glossary.html#term-data-channels"><span class="xref std std-term">data channels</span></a>.
+None (default) will pick all channels.
+Picks Must match the template.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>connectivity</strong><span class="classifier"><a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="(in SciPy v1.6.0.dev0+4bf5b9f)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coo_matrix</span></code></a></span></dt><dd><p>The connectivity matrix describing the spatio-temporal
-graph structure. If N is the number of vertices in the
-source space, the N first nodes in the graph are the
-vertices are time 1, the nodes from 2 to 2N are the vertices
-during time 2, etc.</p>
+<dt><strong>ch_adjacency</strong><span class="classifier"><a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="(in SciPy v1.6.0.dev0+e423817)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse.csr_matrix</span></code></a>, shape (n_channels, n_channels)</span></dt><dd><p>The adjacency matrix.</p>
+</dd>
+<dt><strong>ch_names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></span></dt><dd><p>The list of channel names present in adjacency matrix.</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="mne.channels.find_ch_adjacency.html#mne.channels.find_ch_adjacency" title="mne.channels.find_ch_adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_ch_adjacency</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>This function is closely related to <a class="reference internal" href="mne.channels.find_ch_adjacency.html#mne.channels.find_ch_adjacency" title="mne.channels.find_ch_adjacency"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_ch_adjacency()</span></code></a>. If you
+don’t know the correct file for the neighbor definitions,
+<a class="reference internal" href="mne.channels.find_ch_adjacency.html#mne.channels.find_ch_adjacency" title="mne.channels.find_ch_adjacency"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_ch_adjacency()</span></code></a> can compute the adjacency matrix from 2d
+sensor locations.</p>
 </dd></dl>
 
-<div class="section" id="examples-using-mne-spatio-temporal-dist-connectivity">
-<span id="sphx-glr-backreferences-mne-spatio-temporal-dist-connectivity"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.spatio_temporal_dist_connectivity</span></code><a class="headerlink" href="#examples-using-mne-spatio-temporal-dist-connectivity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="examples-using-mne-channels-read-ch-adjacency">
+<span id="sphx-glr-backreferences-mne-channels-read-ch-adjacency"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.channels.read_ch_adjacency</span></code><a class="headerlink" href="#examples-using-mne-channels-read-ch-adjacency" title="Permalink to this headline">¶</a></h2>
 <div class="sphx-glr-clear"></div></div>
 </div>
 

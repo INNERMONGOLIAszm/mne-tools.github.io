@@ -451,9 +451,9 @@ it so condition1 &gt; condition2 shows up as “red blobs” (instead of blue).<
 <div class="section" id="compute-statistic">
 <h2>Compute statistic<a class="headerlink" href="#compute-statistic" title="Permalink to this headline">¶</a></h2>
 <p>To use an algorithm optimized for spatio-temporal clustering, we
-just pass the spatial connectivity matrix (instead of spatio-temporal)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Computing connectivity.&#39;</span><span class="p">)</span>
-<a href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="scipy.sparse.coo_matrix" class="sphx-glr-backref-module-scipy-sparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">connectivity</span></a> <span class="o">=</span> <a href="../../generated/mne.spatial_src_connectivity.html#mne.spatial_src_connectivity" title="mne.spatial_src_connectivity" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">spatial_src_connectivity</span></a><span class="p">(</span><a href="../../generated/mne.SourceSpaces.html#mne.SourceSpaces" title="mne.SourceSpaces" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">src</span></a><span class="p">)</span>
+just pass the spatial adjacency matrix (instead of spatio-temporal)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Computing adjacency.&#39;</span><span class="p">)</span>
+<a href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="scipy.sparse.coo_matrix" class="sphx-glr-backref-module-scipy-sparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">adjacency</span></a> <span class="o">=</span> <a href="../../generated/mne.spatial_src_adjacency.html#mne.spatial_src_adjacency" title="mne.spatial_src_adjacency" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">spatial_src_adjacency</span></a><span class="p">(</span><a href="../../generated/mne.SourceSpaces.html#mne.SourceSpaces" title="mne.SourceSpaces" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">src</span></a><span class="p">)</span>
 
 <span class="c1">#    Note that X needs to be a multi-dimensional array of shape</span>
 <span class="c1">#    samples (subjects) x time x space, so we permute dimensions</span>
@@ -465,7 +465,7 @@ just pass the spatial connectivity matrix (instead of spatio-temporal)</p>
 <span class="n">t_threshold</span> <span class="o">=</span> <span class="o">-</span><a href="https://scipy.github.io/devdocs/generated/scipy.stats.rv_continuous.ppf.html#scipy.stats.rv_continuous.ppf" title="scipy.stats.rv_continuous.ppf" class="sphx-glr-backref-module-scipy-stats sphx-glr-backref-type-py-method"><span class="n">stats</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p_threshold</span></a> <span class="o">/</span> <span class="mf">2.</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_subjects</span></a> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Clustering.&#39;</span><span class="p">)</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">T_obs</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">clusters</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cluster_p_values</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">H0</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">clu</span></a> <span class="o">=</span> \
-    <a href="../../generated/mne.stats.spatio_temporal_cluster_1samp_test.html#mne.stats.spatio_temporal_cluster_1samp_test" title="mne.stats.spatio_temporal_cluster_1samp_test" class="sphx-glr-backref-module-mne-stats sphx-glr-backref-type-py-function"><span class="n">spatio_temporal_cluster_1samp_test</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <a href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="scipy.sparse.coo_matrix" class="sphx-glr-backref-module-scipy-sparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">connectivity</span></a><span class="o">=</span><a href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="scipy.sparse.coo_matrix" class="sphx-glr-backref-module-scipy-sparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">connectivity</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <a href="../../generated/mne.stats.spatio_temporal_cluster_1samp_test.html#mne.stats.spatio_temporal_cluster_1samp_test" title="mne.stats.spatio_temporal_cluster_1samp_test" class="sphx-glr-backref-module-mne-stats sphx-glr-backref-type-py-function"><span class="n">spatio_temporal_cluster_1samp_test</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <a href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="scipy.sparse.coo_matrix" class="sphx-glr-backref-module-scipy-sparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">adjacency</span></a><span class="o">=</span><a href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="scipy.sparse.coo_matrix" class="sphx-glr-backref-module-scipy-sparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">adjacency</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                                        <span class="n">threshold</span><span class="o">=</span><span class="n">t_threshold</span><span class="p">,</span> <span class="n">buffer_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                        <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1">#    Now select the clusters that are sig. at p &lt; 0.05 (note that this value</span>
@@ -474,8 +474,8 @@ just pass the spatial connectivity matrix (instead of spatio-temporal)</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computing connectivity.
--- number of connected vertices : 20484
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computing adjacency.
+-- number of adjacent vertices : 20484
 Clustering.
 stat_fun(H1): min=-25.828905 max=32.550985
 Running initial clustering
@@ -483,52 +483,56 @@ Found 345 clusters
 Permuting 63 times (exact test)...
 
   0%|          |  : 0/63 [00:00&lt;?,       ?it/s]
-  2%|1         |  : 1/63 [00:00&lt;00:02,   29.28it/s]
-  3%|3         |  : 2/63 [00:00&lt;00:02,   29.30it/s]
-  6%|6         |  : 4/63 [00:00&lt;00:01,   30.06it/s]
-  8%|7         |  : 5/63 [00:00&lt;00:01,   30.04it/s]
- 10%|9         |  : 6/63 [00:00&lt;00:01,   30.01it/s]
- 13%|#2        |  : 8/63 [00:00&lt;00:01,   30.77it/s]
- 14%|#4        |  : 9/63 [00:00&lt;00:01,   30.71it/s]
- 17%|#7        |  : 11/63 [00:00&lt;00:01,   31.47it/s]
- 19%|#9        |  : 12/63 [00:00&lt;00:01,   31.37it/s]
- 22%|##2       |  : 14/63 [00:00&lt;00:01,   32.13it/s]
- 24%|##3       |  : 15/63 [00:00&lt;00:01,   31.99it/s]
- 25%|##5       |  : 16/63 [00:00&lt;00:01,   31.87it/s]
- 29%|##8       |  : 18/63 [00:00&lt;00:01,   32.62it/s]
- 30%|###       |  : 19/63 [00:00&lt;00:01,   32.46it/s]
- 33%|###3      |  : 21/63 [00:00&lt;00:01,   33.21it/s]
- 35%|###4      |  : 22/63 [00:00&lt;00:01,   33.00it/s]
- 37%|###6      |  : 23/63 [00:00&lt;00:01,   32.81it/s]
- 40%|###9      |  : 25/63 [00:00&lt;00:01,   33.56it/s]
- 41%|####1     |  : 26/63 [00:00&lt;00:01,   33.33it/s]
- 44%|####4     |  : 28/63 [00:00&lt;00:01,   34.08it/s]
- 46%|####6     |  : 29/63 [00:00&lt;00:01,   33.82it/s]
- 49%|####9     |  : 31/63 [00:00&lt;00:00,   34.56it/s]
- 51%|#####     |  : 32/63 [00:00&lt;00:00,   34.28it/s]
- 52%|#####2    |  : 33/63 [00:00&lt;00:00,   34.01it/s]
- 56%|#####5    |  : 35/63 [00:00&lt;00:00,   34.75it/s]
- 57%|#####7    |  : 36/63 [00:00&lt;00:00,   34.45it/s]
- 60%|######    |  : 38/63 [00:00&lt;00:00,   35.19it/s]
- 62%|######1   |  : 39/63 [00:00&lt;00:00,   34.86it/s]
- 65%|######5   |  : 41/63 [00:00&lt;00:00,   35.59it/s]
- 67%|######6   |  : 42/63 [00:01&lt;00:00,   35.23it/s]
- 68%|######8   |  : 43/63 [00:01&lt;00:00,   34.90it/s]
- 71%|#######1  |  : 45/63 [00:01&lt;00:00,   35.63it/s]
- 73%|#######3  |  : 46/63 [00:01&lt;00:00,   35.28it/s]
- 76%|#######6  |  : 48/63 [00:01&lt;00:00,   36.00it/s]
- 78%|#######7  |  : 49/63 [00:01&lt;00:00,   35.62it/s]
- 79%|#######9  |  : 50/63 [00:01&lt;00:00,   35.26it/s]
- 83%|########2 |  : 52/63 [00:01&lt;00:00,   35.99it/s]
- 84%|########4 |  : 53/63 [00:01&lt;00:00,   35.61it/s]
- 86%|########5 |  : 54/63 [00:01&lt;00:00,   35.25it/s]
- 89%|########8 |  : 56/63 [00:01&lt;00:00,   35.98it/s]
- 90%|######### |  : 57/63 [00:01&lt;00:00,   35.60it/s]
- 92%|#########2|  : 58/63 [00:01&lt;00:00,   35.23it/s]
- 95%|#########5|  : 60/63 [00:01&lt;00:00,   35.96it/s]
- 97%|#########6|  : 61/63 [00:01&lt;00:00,   35.58it/s]
-100%|##########|  : 63/63 [00:01&lt;00:00,   36.44it/s]
-100%|##########|  : 63/63 [00:01&lt;00:00,   41.54it/s]
+  2%|1         |  : 1/63 [00:00&lt;00:04,   14.75it/s]
+  3%|3         |  : 2/63 [00:00&lt;00:04,   15.13it/s]
+  5%|4         |  : 3/63 [00:00&lt;00:03,   15.51it/s]
+  8%|7         |  : 5/63 [00:00&lt;00:03,   16.10it/s]
+ 10%|9         |  : 6/63 [00:00&lt;00:03,   16.47it/s]
+ 11%|#1        |  : 7/63 [00:00&lt;00:03,   16.85it/s]
+ 14%|#4        |  : 9/63 [00:00&lt;00:03,   17.47it/s]
+ 16%|#5        |  : 10/63 [00:00&lt;00:02,   17.83it/s]
+ 17%|#7        |  : 11/63 [00:00&lt;00:02,   18.20it/s]
+ 19%|#9        |  : 12/63 [00:00&lt;00:02,   18.55it/s]
+ 22%|##2       |  : 14/63 [00:00&lt;00:02,   19.21it/s]
+ 24%|##3       |  : 15/63 [00:00&lt;00:02,   19.55it/s]
+ 25%|##5       |  : 16/63 [00:00&lt;00:02,   19.89it/s]
+ 29%|##8       |  : 18/63 [00:00&lt;00:02,   20.57it/s]
+ 30%|###       |  : 19/63 [00:00&lt;00:02,   20.89it/s]
+ 32%|###1      |  : 20/63 [00:00&lt;00:02,   21.20it/s]
+ 33%|###3      |  : 21/63 [00:00&lt;00:01,   21.50it/s]
+ 37%|###6      |  : 23/63 [00:00&lt;00:01,   22.21it/s]
+ 38%|###8      |  : 24/63 [00:00&lt;00:01,   22.49it/s]
+ 40%|###9      |  : 25/63 [00:00&lt;00:01,   22.76it/s]
+ 43%|####2     |  : 27/63 [00:00&lt;00:01,   23.48it/s]
+ 44%|####4     |  : 28/63 [00:00&lt;00:01,   23.73it/s]
+ 46%|####6     |  : 29/63 [00:00&lt;00:01,   23.96it/s]
+ 49%|####9     |  : 31/63 [00:00&lt;00:01,   24.70it/s]
+ 51%|#####     |  : 32/63 [00:00&lt;00:01,   24.91it/s]
+ 52%|#####2    |  : 33/63 [00:00&lt;00:01,   25.11it/s]
+ 54%|#####3    |  : 34/63 [00:00&lt;00:01,   25.30it/s]
+ 57%|#####7    |  : 36/63 [00:00&lt;00:01,   26.04it/s]
+ 59%|#####8    |  : 37/63 [00:01&lt;00:00,   26.20it/s]
+ 60%|######    |  : 38/63 [00:01&lt;00:00,   26.36it/s]
+ 63%|######3   |  : 40/63 [00:01&lt;00:00,   27.11it/s]
+ 65%|######5   |  : 41/63 [00:01&lt;00:00,   27.22it/s]
+ 67%|######6   |  : 42/63 [00:01&lt;00:00,   27.33it/s]
+ 68%|######8   |  : 43/63 [00:01&lt;00:00,   27.44it/s]
+ 71%|#######1  |  : 45/63 [00:01&lt;00:00,   28.19it/s]
+ 73%|#######3  |  : 46/63 [00:01&lt;00:00,   28.26it/s]
+ 75%|#######4  |  : 47/63 [00:01&lt;00:00,   28.33it/s]
+ 76%|#######6  |  : 48/63 [00:01&lt;00:00,   28.39it/s]
+ 79%|#######9  |  : 50/63 [00:01&lt;00:00,   29.15it/s]
+ 81%|########  |  : 51/63 [00:01&lt;00:00,   29.17it/s]
+ 83%|########2 |  : 52/63 [00:01&lt;00:00,   29.18it/s]
+ 84%|########4 |  : 53/63 [00:01&lt;00:00,   29.20it/s]
+ 87%|########7 |  : 55/63 [00:01&lt;00:00,   29.95it/s]
+ 89%|########8 |  : 56/63 [00:01&lt;00:00,   29.93it/s]
+ 90%|######### |  : 57/63 [00:01&lt;00:00,   29.91it/s]
+ 94%|#########3|  : 59/63 [00:01&lt;00:00,   30.67it/s]
+ 95%|#########5|  : 60/63 [00:01&lt;00:00,   30.61it/s]
+ 97%|#########6|  : 61/63 [00:01&lt;00:00,   30.55it/s]
+ 98%|#########8|  : 62/63 [00:01&lt;00:00,   30.50it/s]
+100%|##########|  : 63/63 [00:01&lt;00:00,   37.15it/s]
 Computing cluster p-values
 Done.
 </pre></div>
@@ -560,8 +564,8 @@ Done.
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Visualizing clusters.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.234 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  60 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  18.828 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-stats-source-space-plot-stats-cluster-spatio-temporal-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/7352f0e8340cd39df5a7ba6354ec1427/plot_stats_cluster_spatio_temporal.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_stats_cluster_spatio_temporal.py</span></code></a></p>

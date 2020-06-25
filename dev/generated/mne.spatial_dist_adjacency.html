@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mne.spatial_tris_connectivity &#8212; MNE 0.21.dev0 documentation</title>
+    <title>mne.spatial_dist_adjacency &#8212; MNE 0.21.dev0 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -171,19 +171,22 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
   <div class="row">
     <div class="body col-md-12 content" role="main">
       
-  <div class="section" id="mne-spatial-tris-connectivity">
-<h1>mne.spatial_tris_connectivity<a class="headerlink" href="#mne-spatial-tris-connectivity" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mne-spatial-dist-adjacency">
+<h1>mne.spatial_dist_adjacency<a class="headerlink" href="#mne-spatial-dist-adjacency" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="mne.spatial_tris_connectivity">
-<code class="sig-prename descclassname">mne.</code><code class="sig-name descname">spatial_tris_connectivity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tris</span></em>, <em class="sig-param"><span class="n">remap_vertices</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/source_estimate.py#L2730-L2748"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.spatial_tris_connectivity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute connectivity from triangles.</p>
+<dt id="mne.spatial_dist_adjacency">
+<code class="sig-prename descclassname">mne.</code><code class="sig-name descname">spatial_dist_adjacency</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em>, <em class="sig-param"><span class="n">dist</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/source_estimate.py#L2751-L2772"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.spatial_dist_adjacency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute adjacency from distances in a source space.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>tris</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>N x 3 array defining triangles.</p>
+<dt><strong>src</strong><span class="classifier">instance of <a class="reference internal" href="mne.SourceSpaces.html#mne.SourceSpaces" title="mne.SourceSpaces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SourceSpaces</span></code></a></span></dt><dd><p>The source space must have distances between vertices computed, such
+that src[‘dist’] exists and is useful. This can be obtained
+with a call to <a class="reference internal" href="mne.setup_source_space.html#mne.setup_source_space" title="mne.setup_source_space"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.setup_source_space()</span></code></a> with the
+<code class="docutils literal notranslate"><span class="pre">add_dist=True</span></code> option.</p>
 </dd>
-<dt><strong>remap_vertices</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Reassign vertex indices based on unique values. Useful
-to process a subset of triangles. Defaults to False.</p>
+<dt><strong>dist</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Maximal geodesic distance (in m) between vertices in the
+source space to consider neighbors.</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>If not None, override default verbose level (see <a class="reference internal" href="mne.verbose.html#mne.verbose" title="mne.verbose"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
 and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configure_mne.html#tut-logging"><span class="std std-ref">Logging documentation</span></a> for more).</p>
@@ -192,15 +195,15 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>connectivity</strong><span class="classifier"><a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="(in SciPy v1.6.0.dev0+4bf5b9f)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coo_matrix</span></code></a></span></dt><dd><p>The connectivity matrix describing the spatial graph structure.</p>
+<dt><strong>adjacency</strong><span class="classifier"><a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.sparse.coo_matrix.html#scipy.sparse.coo_matrix" title="(in SciPy v1.6.0.dev0+e423817)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coo_matrix</span></code></a></span></dt><dd><p>The adjacency matrix describing the spatial graph structure.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </dd></dl>
 
-<div class="section" id="examples-using-mne-spatial-tris-connectivity">
-<span id="sphx-glr-backreferences-mne-spatial-tris-connectivity"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.spatial_tris_connectivity</span></code><a class="headerlink" href="#examples-using-mne-spatial-tris-connectivity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="examples-using-mne-spatial-dist-adjacency">
+<span id="sphx-glr-backreferences-mne-spatial-dist-adjacency"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne.spatial_dist_adjacency</span></code><a class="headerlink" href="#examples-using-mne-spatial-dist-adjacency" title="Permalink to this headline">¶</a></h2>
 <div class="sphx-glr-clear"></div></div>
 </div>
 

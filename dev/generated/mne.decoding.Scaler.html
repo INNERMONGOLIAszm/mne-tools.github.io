@@ -220,38 +220,38 @@ if <code class="docutils literal notranslate"><span class="pre">scalings</span><
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.decoding.Scaler.__hash__" title="mne.decoding.Scaler.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(self, /)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.decoding.Scaler.__hash__" title="mne.decoding.Scaler.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(/)</p></td>
 <td><p>Return hash(self).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.decoding.Scaler.fit" title="mne.decoding.Scaler.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, epochs_data[, y])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.decoding.Scaler.fit" title="mne.decoding.Scaler.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(epochs_data[, y])</p></td>
 <td><p>Standardize data across channels.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.decoding.Scaler.fit_transform" title="mne.decoding.Scaler.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, epochs_data[, y])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.decoding.Scaler.fit_transform" title="mne.decoding.Scaler.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(epochs_data[, y])</p></td>
 <td><p>Fit to data, then transform it.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.decoding.Scaler.get_params" title="mne.decoding.Scaler.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.decoding.Scaler.get_params" title="mne.decoding.Scaler.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>([deep])</p></td>
 <td><p>Get parameters for this estimator.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.decoding.Scaler.inverse_transform" title="mne.decoding.Scaler.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, epochs_data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.decoding.Scaler.inverse_transform" title="mne.decoding.Scaler.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(epochs_data)</p></td>
 <td><p>Invert standardization of data across channels.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.decoding.Scaler.set_params" title="mne.decoding.Scaler.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.decoding.Scaler.set_params" title="mne.decoding.Scaler.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(**params)</p></td>
 <td><p>Set the parameters of this estimator.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.decoding.Scaler.transform" title="mne.decoding.Scaler.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, epochs_data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.decoding.Scaler.transform" title="mne.decoding.Scaler.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(epochs_data)</p></td>
 <td><p>Standardize data across channels.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt id="mne.decoding.Scaler.__hash__">
-<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="o">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne.decoding.Scaler.__hash__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.decoding.Scaler.__hash__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return hash(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mne.decoding.Scaler.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/transformer.py#L132-L152"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epochs_data</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/transformer.py#L132-L152"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standardize data across channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -278,7 +278,7 @@ if <code class="docutils literal notranslate"><span class="pre">scalings</span><
 
 <dl class="py method">
 <dt id="mne.decoding.Scaler.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/transformer.py#L181-L205"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epochs_data</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/transformer.py#L181-L205"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit to data, then transform it.</p>
 <p>Fits transformer to epochs_data and y and returns a transformed version
 of epochs_data.</p>
@@ -311,7 +311,7 @@ memory usage may be large with big data.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.Scaler.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">deep</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L481-L516"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deep</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L481-L516"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -332,7 +332,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.Scaler.inverse_transform">
-<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/transformer.py#L207-L227"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epochs_data</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/transformer.py#L207-L227"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invert standardization of data across channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -360,7 +360,7 @@ memory usage may be large with big data.</p>
 
 <dl class="py method">
 <dt id="mne.decoding.Scaler.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L518-L552"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L518-L552"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.
 The method works on simple estimators as well as on nested objects
 (such as pipelines). The latter have parameters of the form
@@ -373,7 +373,7 @@ self</p>
 
 <dl class="py method">
 <dt id="mne.decoding.Scaler.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">epochs_data</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/transformer.py#L154-L179"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epochs_data</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/decoding/transformer.py#L154-L179"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.decoding.Scaler.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standardize data across channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>

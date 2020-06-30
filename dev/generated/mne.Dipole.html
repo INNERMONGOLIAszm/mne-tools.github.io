@@ -245,35 +245,35 @@ position is fixed as a function of time, use <a class="reference internal" href=
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.Dipole.__getitem__" title="mne.Dipole.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code></a>(self, item)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.Dipole.__getitem__" title="mne.Dipole.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code></a>(item)</p></td>
 <td><p>Get a time slice.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.Dipole.__hash__" title="mne.Dipole.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(self, /)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.Dipole.__hash__" title="mne.Dipole.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(/)</p></td>
 <td><p>Return hash(self).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.Dipole.__len__" title="mne.Dipole.__len__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__len__</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.Dipole.__len__" title="mne.Dipole.__len__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__len__</span></code></a>()</p></td>
 <td><p>Return the number of dipoles.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.Dipole.copy" title="mne.Dipole.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.Dipole.copy" title="mne.Dipole.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
 <td><p>Copy the Dipoles object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.Dipole.crop" title="mne.Dipole.crop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crop</span></code></a>(self[, tmin, tmax, include_tmax])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.Dipole.crop" title="mne.Dipole.crop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crop</span></code></a>([tmin, tmax, include_tmax])</p></td>
 <td><p>Crop data to a given time interval.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.Dipole.plot_amplitudes" title="mne.Dipole.plot_amplitudes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_amplitudes</span></code></a>(self[, color, show])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.Dipole.plot_amplitudes" title="mne.Dipole.plot_amplitudes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_amplitudes</span></code></a>([color, show])</p></td>
 <td><p>Plot the dipole amplitudes as a function of time.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.Dipole.plot_locations" title="mne.Dipole.plot_locations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_locations</span></code></a>(self, trans, subject[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.Dipole.plot_locations" title="mne.Dipole.plot_locations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_locations</span></code></a>(trans, subject[, …])</p></td>
 <td><p>Plot dipole locations in 3d.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.Dipole.save" title="mne.Dipole.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(self, fname[, overwrite])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.Dipole.save" title="mne.Dipole.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(fname[, overwrite])</p></td>
 <td><p>Save dipole in a .dip or .bdip file.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt id="mne.Dipole.__getitem__">
-<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L285-L315"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.__getitem__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L285-L315"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.__getitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a time slice.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -293,13 +293,13 @@ position is fixed as a function of time, use <a class="reference internal" href=
 
 <dl class="py method">
 <dt id="mne.Dipole.__hash__">
-<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="o">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Dipole.__hash__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.Dipole.__hash__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return hash(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mne.Dipole.__len__">
-<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L317-L333"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.__len__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L317-L333"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.__len__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of dipoles.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -319,7 +319,7 @@ position is fixed as a function of time, use <a class="reference internal" href=
 
 <dl class="py method">
 <dt id="mne.Dipole.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L171-L179"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L171-L179"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy the Dipoles object.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -333,7 +333,7 @@ position is fixed as a function of time, use <a class="reference internal" href=
 
 <dl class="py method">
 <dt id="mne.Dipole.crop">
-<code class="sig-name descname">crop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">tmin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tmax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_tmax</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L141-L169"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.crop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">crop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tmin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tmax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_tmax</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L141-L169"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.crop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Crop data to a given time interval.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -370,7 +370,7 @@ Python indexing typically works).</p>
 
 <dl class="py method">
 <dt id="mne.Dipole.plot_amplitudes">
-<code class="sig-name descname">plot_amplitudes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'k'</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L267-L283"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.plot_amplitudes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">plot_amplitudes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'k'</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L267-L283"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.plot_amplitudes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the dipole amplitudes as a function of time.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -392,7 +392,7 @@ Python indexing typically works).</p>
 
 <dl class="py method">
 <dt id="mne.Dipole.plot_locations">
-<code class="sig-name descname">plot_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">trans</span></em>, <em class="sig-param"><span class="n">subject</span></em>, <em class="sig-param"><span class="n">subjects_dir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'orthoview'</span></em>, <em class="sig-param"><span class="n">coord_frame</span><span class="o">=</span><span class="default_value">'mri'</span></em>, <em class="sig-param"><span class="n">idx</span><span class="o">=</span><span class="default_value">'gof'</span></em>, <em class="sig-param"><span class="n">show_all</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">block</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">0.005</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">1.0, 0.0, 0.0</span></em>, <em class="sig-param"><span class="n">fig</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L181-L265"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.plot_locations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">plot_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">trans</span></em>, <em class="sig-param"><span class="n">subject</span></em>, <em class="sig-param"><span class="n">subjects_dir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'orthoview'</span></em>, <em class="sig-param"><span class="n">coord_frame</span><span class="o">=</span><span class="default_value">'mri'</span></em>, <em class="sig-param"><span class="n">idx</span><span class="o">=</span><span class="default_value">'gof'</span></em>, <em class="sig-param"><span class="n">show_all</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">block</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">0.005</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">1.0, 0.0, 0.0</span></em>, <em class="sig-param"><span class="n">fig</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L181-L265"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.plot_locations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot dipole locations in 3d.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -499,7 +499,7 @@ orientation etc.) will be shown. Defaults to <code class="docutils literal notra
 
 <dl class="py method">
 <dt id="mne.Dipole.save">
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L117-L139"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/dipole.py#L117-L139"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Dipole.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save dipole in a .dip or .bdip file.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>

@@ -211,7 +211,7 @@ transform <a class="footnote-reference brackets" href="#avantsetal2008" id="id1"
 </dd>
 <dt><strong>xhemi</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Morph across hemisphere.</p>
 </dd>
-<dt><strong>morph_mat</strong><span class="classifier"><a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="(in SciPy v1.6.0.dev0+e423817)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse.csr_matrix</span></code></a></span></dt><dd><p>The sparse surface morphing matrix for spherical surface
+<dt><strong>morph_mat</strong><span class="classifier"><a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="(in SciPy v1.6.0.dev0+fd6f6d6)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.sparse.csr_matrix</span></code></a></span></dt><dd><p>The sparse surface morphing matrix for spherical surface
 based morphing <a class="footnote-reference brackets" href="#greveetal2013" id="id2">2</a>.</p>
 </dd>
 <dt><strong>vertices_to</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The destination surface vertices.</p>
@@ -255,26 +255,26 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.SourceMorph.__hash__" title="mne.SourceMorph.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(self, /)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.SourceMorph.__hash__" title="mne.SourceMorph.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(/)</p></td>
 <td><p>Return hash(self).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.SourceMorph.apply" title="mne.SourceMorph.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(self, stc_from[, output, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.SourceMorph.apply" title="mne.SourceMorph.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(stc_from[, output, mri_resolution, …])</p></td>
 <td><p>Morph source space data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.SourceMorph.save" title="mne.SourceMorph.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(self, fname[, overwrite, verbose])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.SourceMorph.save" title="mne.SourceMorph.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(fname[, overwrite, verbose])</p></td>
 <td><p>Save the morph for source estimates to a file.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt id="mne.SourceMorph.__hash__">
-<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="o">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne.SourceMorph.__hash__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.SourceMorph.__hash__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return hash(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mne.SourceMorph.apply">
-<code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">stc_from</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'stc'</span></em>, <em class="sig-param"><span class="n">mri_resolution</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">mri_space</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/morph.py#L394-L447"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.SourceMorph.apply" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stc_from</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'stc'</span></em>, <em class="sig-param"><span class="n">mri_resolution</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">mri_space</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/morph.py#L394-L447"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.SourceMorph.apply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Morph source space data.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -337,7 +337,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 
 <dl class="py method">
 <dt id="mne.SourceMorph.save">
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/morph.py#L502-L523"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.SourceMorph.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/morph.py#L502-L523"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.SourceMorph.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the morph for source estimates to a file.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>

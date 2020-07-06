@@ -277,8 +277,8 @@ correcting for multiple tests.
 MNE offers various methods for this; amongst them, cluster-based permutation
 methods allow deriving power from the spatio-temoral correlation structure
 of the data. Here, we use TFCE.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate statistical thresholds</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">con</span></a> <span class="o">=</span> <a href="../../generated/mne.channels.find_ch_adjacency.html#mne.channels.find_ch_adjacency" title="mne.channels.find_ch_adjacency" class="sphx-glr-backref-module-mne-channels sphx-glr-backref-type-py-function"><span class="n">find_ch_adjacency</span></a><span class="p">(</span><a href="../../generated/mne.Info.html#mne.Info" title="mne.Info" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span><span class="o">.</span><span class="n">info</span></a><span class="p">,</span> <span class="s2">&quot;eeg&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate adjacency matrix between sensors from their locations</span>
+<a href="https://scipy.github.io/devdocs/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="scipy.sparse.csr_matrix" class="sphx-glr-backref-module-scipy-sparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">adjacency</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">_</span></a> <span class="o">=</span> <a href="../../generated/mne.channels.find_ch_adjacency.html#mne.channels.find_ch_adjacency" title="mne.channels.find_ch_adjacency" class="sphx-glr-backref-module-mne-channels sphx-glr-backref-type-py-function"><span class="n">find_ch_adjacency</span></a><span class="p">(</span><a href="../../generated/mne.Info.html#mne.Info" title="mne.Info" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span><span class="o">.</span><span class="n">info</span></a><span class="p">,</span> <span class="s2">&quot;eeg&quot;</span><span class="p">)</span>
 
 <span class="c1"># Extract data: transpose because the cluster test requires channels to be last</span>
 <span class="c1"># In this case, inference is done over items. In the same manner, we could</span>
@@ -287,8 +287,10 @@ of the data. Here, we use TFCE.</p>
      <a href="../../generated/mne.BaseEpochs.html#mne.BaseEpochs.get_data" title="mne.BaseEpochs.get_data" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">short_words</span><span class="o">.</span><span class="n">get_data</span></a><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tfce</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">start</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">step</span><span class="o">=.</span><span class="mi">2</span><span class="p">)</span>
 
+<span class="c1"># Calculate statistical thresholds</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_obs</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">clusters</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cluster_pv</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">h0</span></a> <span class="o">=</span> <a href="../../generated/mne.stats.spatio_temporal_cluster_test.html#mne.stats.spatio_temporal_cluster_test" title="mne.stats.spatio_temporal_cluster_test" class="sphx-glr-backref-module-mne-stats sphx-glr-backref-type-py-function"><span class="n">spatio_temporal_cluster_test</span></a><span class="p">(</span>
-    <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tfce</span></a><span class="p">,</span> <span class="n">n_permutations</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># a more standard number would be 1000+</span>
+    <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">tfce</span></a><span class="p">,</span> <a href="https://scipy.github.io/devdocs/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="scipy.sparse.csr_matrix" class="sphx-glr-backref-module-scipy-sparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">adjacency</span></a><span class="o">=</span><a href="https://scipy.github.io/devdocs/generated/scipy.sparse.csr_matrix.html#scipy.sparse.csr_matrix" title="scipy.sparse.csr_matrix" class="sphx-glr-backref-module-scipy-sparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">adjacency</span></a><span class="p">,</span>
+    <span class="n">n_permutations</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># a more standard number would be 1000+</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">significant_points</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cluster_pv</span></a><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_obs</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">05</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">significant_points</span></a><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot; points selected by TFCE ...&quot;</span><span class="p">)</span>
 </pre></div>
@@ -303,109 +305,109 @@ Found 7424 clusters
 Permuting 99 times...
 
   0%|          |  : 0/99 [00:00&lt;?,       ?it/s]
-  1%|1         |  : 1/99 [00:00&lt;00:23,    4.23it/s]
-  2%|2         |  : 2/99 [00:00&lt;00:22,    4.27it/s]
-  3%|3         |  : 3/99 [00:00&lt;00:22,    4.33it/s]
-  4%|4         |  : 4/99 [00:00&lt;00:21,    4.35it/s]
-  5%|5         |  : 5/99 [00:01&lt;00:21,    4.35it/s]
-  6%|6         |  : 6/99 [00:01&lt;00:21,    4.34it/s]
-  7%|7         |  : 7/99 [00:01&lt;00:20,    4.40it/s]
-  8%|8         |  : 8/99 [00:01&lt;00:20,    4.46it/s]
-  9%|9         |  : 9/99 [00:01&lt;00:20,    4.48it/s]
- 10%|#         |  : 10/99 [00:01&lt;00:19,    4.53it/s]
- 11%|#1        |  : 11/99 [00:02&lt;00:19,    4.55it/s]
- 12%|#2        |  : 12/99 [00:02&lt;00:18,    4.61it/s]
- 13%|#3        |  : 13/99 [00:02&lt;00:18,    4.62it/s]
- 14%|#4        |  : 14/99 [00:02&lt;00:18,    4.64it/s]
- 15%|#5        |  : 15/99 [00:02&lt;00:18,    4.62it/s]
- 16%|#6        |  : 16/99 [00:03&lt;00:17,    4.63it/s]
- 17%|#7        |  : 17/99 [00:03&lt;00:17,    4.64it/s]
- 18%|#8        |  : 18/99 [00:03&lt;00:17,    4.73it/s]
- 19%|#9        |  : 19/99 [00:03&lt;00:16,    4.74it/s]
- 20%|##        |  : 20/99 [00:03&lt;00:16,    4.75it/s]
- 21%|##1       |  : 21/99 [00:04&lt;00:16,    4.80it/s]
- 22%|##2       |  : 22/99 [00:04&lt;00:16,    4.81it/s]
- 23%|##3       |  : 23/99 [00:04&lt;00:15,    4.85it/s]
- 24%|##4       |  : 24/99 [00:04&lt;00:15,    4.86it/s]
- 25%|##5       |  : 25/99 [00:04&lt;00:15,    4.90it/s]
- 26%|##6       |  : 26/99 [00:05&lt;00:14,    4.94it/s]
- 27%|##7       |  : 27/99 [00:05&lt;00:14,    4.94it/s]
- 28%|##8       |  : 28/99 [00:05&lt;00:14,    4.99it/s]
- 29%|##9       |  : 29/99 [00:05&lt;00:14,    4.98it/s]
- 30%|###       |  : 30/99 [00:05&lt;00:13,    5.02it/s]
- 31%|###1      |  : 31/99 [00:05&lt;00:13,    5.02it/s]
- 32%|###2      |  : 32/99 [00:06&lt;00:13,    5.06it/s]
- 33%|###3      |  : 33/99 [00:06&lt;00:12,    5.10it/s]
- 34%|###4      |  : 34/99 [00:06&lt;00:12,    5.13it/s]
- 35%|###5      |  : 35/99 [00:06&lt;00:12,    5.12it/s]
- 36%|###6      |  : 36/99 [00:06&lt;00:12,    5.11it/s]
- 37%|###7      |  : 37/99 [00:07&lt;00:12,    5.15it/s]
- 38%|###8      |  : 38/99 [00:07&lt;00:11,    5.13it/s]
- 39%|###9      |  : 39/99 [00:07&lt;00:11,    5.12it/s]
- 40%|####      |  : 40/99 [00:07&lt;00:11,    5.11it/s]
- 41%|####1     |  : 41/99 [00:07&lt;00:11,    5.11it/s]
- 42%|####2     |  : 42/99 [00:08&lt;00:11,    5.14it/s]
- 43%|####3     |  : 43/99 [00:08&lt;00:10,    5.13it/s]
- 44%|####4     |  : 44/99 [00:08&lt;00:10,    5.17it/s]
- 45%|####5     |  : 45/99 [00:08&lt;00:10,    5.20it/s]
- 46%|####6     |  : 46/99 [00:08&lt;00:10,    5.23it/s]
- 47%|####7     |  : 47/99 [00:08&lt;00:09,    5.22it/s]
- 48%|####8     |  : 48/99 [00:09&lt;00:09,    5.20it/s]
- 49%|####9     |  : 49/99 [00:09&lt;00:09,    5.19it/s]
- 51%|#####     |  : 50/99 [00:09&lt;00:09,    5.17it/s]
- 52%|#####1    |  : 51/99 [00:09&lt;00:09,    5.20it/s]
- 53%|#####2    |  : 52/99 [00:09&lt;00:08,    5.24it/s]
- 54%|#####3    |  : 53/99 [00:10&lt;00:08,    5.22it/s]
- 55%|#####4    |  : 54/99 [00:10&lt;00:08,    5.25it/s]
- 56%|#####5    |  : 55/99 [00:10&lt;00:08,    5.24it/s]
- 57%|#####6    |  : 56/99 [00:10&lt;00:08,    5.21it/s]
- 58%|#####7    |  : 57/99 [00:10&lt;00:08,    5.20it/s]
- 59%|#####8    |  : 58/99 [00:11&lt;00:07,    5.14it/s]
- 60%|#####9    |  : 59/99 [00:11&lt;00:07,    5.18it/s]
- 61%|######    |  : 60/99 [00:11&lt;00:07,    5.21it/s]
- 62%|######1   |  : 61/99 [00:11&lt;00:07,    5.20it/s]
- 63%|######2   |  : 62/99 [00:11&lt;00:07,    5.23it/s]
- 64%|######3   |  : 63/99 [00:12&lt;00:06,    5.21it/s]
- 65%|######4   |  : 64/99 [00:12&lt;00:06,    5.25it/s]
- 66%|######5   |  : 65/99 [00:12&lt;00:06,    5.28it/s]
- 67%|######6   |  : 66/99 [00:12&lt;00:06,    5.31it/s]
- 68%|######7   |  : 67/99 [00:12&lt;00:06,    5.28it/s]
- 69%|######8   |  : 68/99 [00:12&lt;00:05,    5.36it/s]
- 70%|######9   |  : 69/99 [00:13&lt;00:05,    5.29it/s]
- 71%|#######   |  : 70/99 [00:13&lt;00:05,    5.27it/s]
- 72%|#######1  |  : 71/99 [00:13&lt;00:05,    5.30it/s]
- 73%|#######2  |  : 72/99 [00:13&lt;00:05,    5.23it/s]
- 74%|#######3  |  : 73/99 [00:13&lt;00:04,    5.21it/s]
- 75%|#######4  |  : 74/99 [00:14&lt;00:04,    5.20it/s]
- 76%|#######5  |  : 75/99 [00:14&lt;00:04,    5.23it/s]
- 77%|#######6  |  : 76/99 [00:14&lt;00:04,    5.22it/s]
- 78%|#######7  |  : 77/99 [00:14&lt;00:04,    5.20it/s]
- 79%|#######8  |  : 78/99 [00:14&lt;00:04,    5.19it/s]
- 80%|#######9  |  : 79/99 [00:15&lt;00:03,    5.18it/s]
- 81%|########  |  : 80/99 [00:15&lt;00:03,    5.17it/s]
- 82%|########1 |  : 81/99 [00:15&lt;00:03,    5.16it/s]
- 83%|########2 |  : 82/99 [00:15&lt;00:03,    5.19it/s]
- 84%|########3 |  : 83/99 [00:15&lt;00:03,    5.22it/s]
- 85%|########4 |  : 84/99 [00:16&lt;00:02,    5.21it/s]
- 86%|########5 |  : 85/99 [00:16&lt;00:02,    5.24it/s]
- 87%|########6 |  : 86/99 [00:16&lt;00:02,    5.23it/s]
- 88%|########7 |  : 87/99 [00:16&lt;00:02,    5.21it/s]
- 89%|########8 |  : 88/99 [00:16&lt;00:02,    5.20it/s]
- 90%|########9 |  : 89/99 [00:16&lt;00:01,    5.23it/s]
- 91%|######### |  : 90/99 [00:17&lt;00:01,    5.26it/s]
- 92%|#########1|  : 91/99 [00:17&lt;00:01,    5.24it/s]
- 93%|#########2|  : 92/99 [00:17&lt;00:01,    5.22it/s]
- 94%|#########3|  : 93/99 [00:17&lt;00:01,    5.21it/s]
- 95%|#########4|  : 94/99 [00:17&lt;00:00,    5.24it/s]
- 96%|#########5|  : 95/99 [00:18&lt;00:00,    5.27it/s]
- 97%|#########6|  : 96/99 [00:18&lt;00:00,    5.26it/s]
- 98%|#########7|  : 97/99 [00:18&lt;00:00,    5.33it/s]
- 99%|#########8|  : 98/99 [00:18&lt;00:00,    5.35it/s]
-100%|##########|  : 99/99 [00:18&lt;00:00,    5.35it/s]
-100%|##########|  : 99/99 [00:18&lt;00:00,    5.27it/s]
+  1%|1         |  : 1/99 [00:00&lt;01:16,    1.29it/s]
+  2%|2         |  : 2/99 [00:01&lt;01:13,    1.32it/s]
+  3%|3         |  : 3/99 [00:01&lt;01:11,    1.34it/s]
+  4%|4         |  : 4/99 [00:02&lt;01:10,    1.35it/s]
+  5%|5         |  : 5/99 [00:03&lt;01:10,    1.34it/s]
+  6%|6         |  : 6/99 [00:03&lt;01:09,    1.34it/s]
+  7%|7         |  : 7/99 [00:04&lt;01:08,    1.35it/s]
+  8%|8         |  : 8/99 [00:05&lt;01:05,    1.38it/s]
+  9%|9         |  : 9/99 [00:05&lt;01:04,    1.40it/s]
+ 10%|#         |  : 10/99 [00:06&lt;01:03,    1.41it/s]
+ 11%|#1        |  : 11/99 [00:06&lt;01:01,    1.43it/s]
+ 12%|#2        |  : 12/99 [00:07&lt;00:59,    1.46it/s]
+ 13%|#3        |  : 13/99 [00:07&lt;00:58,    1.46it/s]
+ 14%|#4        |  : 14/99 [00:08&lt;00:57,    1.48it/s]
+ 15%|#5        |  : 15/99 [00:09&lt;00:58,    1.44it/s]
+ 16%|#6        |  : 16/99 [00:09&lt;00:57,    1.45it/s]
+ 17%|#7        |  : 17/99 [00:10&lt;00:56,    1.46it/s]
+ 18%|#8        |  : 18/99 [00:10&lt;00:54,    1.50it/s]
+ 19%|#9        |  : 19/99 [00:11&lt;00:53,    1.50it/s]
+ 20%|##        |  : 20/99 [00:12&lt;00:52,    1.51it/s]
+ 21%|##1       |  : 21/99 [00:13&lt;00:52,    1.47it/s]
+ 22%|##2       |  : 22/99 [00:13&lt;00:51,    1.48it/s]
+ 23%|##3       |  : 23/99 [00:14&lt;00:51,    1.48it/s]
+ 24%|##4       |  : 24/99 [00:15&lt;00:50,    1.48it/s]
+ 25%|##5       |  : 25/99 [00:15&lt;00:49,    1.50it/s]
+ 26%|##6       |  : 26/99 [00:16&lt;00:48,    1.51it/s]
+ 27%|##7       |  : 27/99 [00:16&lt;00:48,    1.50it/s]
+ 28%|##8       |  : 28/99 [00:17&lt;00:46,    1.52it/s]
+ 29%|##9       |  : 29/99 [00:18&lt;00:46,    1.51it/s]
+ 30%|###       |  : 30/99 [00:18&lt;00:45,    1.52it/s]
+ 31%|###1      |  : 31/99 [00:19&lt;00:44,    1.53it/s]
+ 32%|###2      |  : 32/99 [00:19&lt;00:42,    1.57it/s]
+ 33%|###3      |  : 33/99 [00:20&lt;00:41,    1.59it/s]
+ 34%|###4      |  : 34/99 [00:20&lt;00:40,    1.62it/s]
+ 35%|###5      |  : 35/99 [00:21&lt;00:39,    1.61it/s]
+ 36%|###6      |  : 36/99 [00:21&lt;00:38,    1.63it/s]
+ 37%|###7      |  : 37/99 [00:22&lt;00:38,    1.60it/s]
+ 38%|###8      |  : 38/99 [00:23&lt;00:38,    1.59it/s]
+ 39%|###9      |  : 39/99 [00:23&lt;00:37,    1.59it/s]
+ 40%|####      |  : 40/99 [00:24&lt;00:37,    1.57it/s]
+ 41%|####1     |  : 41/99 [00:25&lt;00:37,    1.57it/s]
+ 42%|####2     |  : 42/99 [00:25&lt;00:36,    1.58it/s]
+ 43%|####3     |  : 43/99 [00:26&lt;00:35,    1.60it/s]
+ 44%|####4     |  : 44/99 [00:26&lt;00:33,    1.62it/s]
+ 45%|####5     |  : 45/99 [00:27&lt;00:33,    1.63it/s]
+ 46%|####6     |  : 46/99 [00:27&lt;00:31,    1.66it/s]
+ 47%|####7     |  : 47/99 [00:28&lt;00:31,    1.64it/s]
+ 48%|####8     |  : 48/99 [00:29&lt;00:31,    1.60it/s]
+ 49%|####9     |  : 49/99 [00:30&lt;00:31,    1.58it/s]
+ 51%|#####     |  : 50/99 [00:30&lt;00:30,    1.61it/s]
+ 52%|#####1    |  : 51/99 [00:31&lt;00:29,    1.61it/s]
+ 53%|#####2    |  : 52/99 [00:31&lt;00:28,    1.63it/s]
+ 54%|#####3    |  : 53/99 [00:32&lt;00:28,    1.64it/s]
+ 55%|#####4    |  : 54/99 [00:32&lt;00:27,    1.63it/s]
+ 56%|#####5    |  : 55/99 [00:33&lt;00:26,    1.65it/s]
+ 57%|#####6    |  : 56/99 [00:33&lt;00:26,    1.65it/s]
+ 58%|#####7    |  : 57/99 [00:34&lt;00:25,    1.62it/s]
+ 59%|#####8    |  : 58/99 [00:35&lt;00:26,    1.56it/s]
+ 60%|#####9    |  : 59/99 [00:36&lt;00:25,    1.54it/s]
+ 61%|######    |  : 60/99 [00:36&lt;00:24,    1.57it/s]
+ 62%|######1   |  : 61/99 [00:37&lt;00:23,    1.60it/s]
+ 63%|######2   |  : 62/99 [00:37&lt;00:22,    1.61it/s]
+ 64%|######3   |  : 63/99 [00:38&lt;00:22,    1.63it/s]
+ 65%|######4   |  : 64/99 [00:39&lt;00:21,    1.62it/s]
+ 66%|######5   |  : 65/99 [00:39&lt;00:20,    1.66it/s]
+ 67%|######6   |  : 66/99 [00:40&lt;00:19,    1.66it/s]
+ 68%|######7   |  : 67/99 [00:40&lt;00:19,    1.64it/s]
+ 69%|######8   |  : 68/99 [00:41&lt;00:18,    1.67it/s]
+ 70%|######9   |  : 69/99 [00:41&lt;00:18,    1.64it/s]
+ 71%|#######   |  : 70/99 [00:42&lt;00:18,    1.61it/s]
+ 72%|#######1  |  : 71/99 [00:43&lt;00:17,    1.59it/s]
+ 73%|#######2  |  : 72/99 [00:44&lt;00:17,    1.56it/s]
+ 74%|#######3  |  : 73/99 [00:45&lt;00:16,    1.55it/s]
+ 75%|#######4  |  : 74/99 [00:45&lt;00:16,    1.54it/s]
+ 76%|#######5  |  : 75/99 [00:46&lt;00:15,    1.56it/s]
+ 77%|#######6  |  : 76/99 [00:47&lt;00:15,    1.53it/s]
+ 78%|#######7  |  : 77/99 [00:47&lt;00:14,    1.54it/s]
+ 79%|#######8  |  : 78/99 [00:48&lt;00:13,    1.51it/s]
+ 80%|#######9  |  : 79/99 [00:49&lt;00:13,    1.51it/s]
+ 81%|########  |  : 80/99 [00:50&lt;00:12,    1.51it/s]
+ 82%|########1 |  : 81/99 [00:50&lt;00:11,    1.51it/s]
+ 83%|########2 |  : 82/99 [00:51&lt;00:11,    1.53it/s]
+ 84%|########3 |  : 83/99 [00:51&lt;00:10,    1.55it/s]
+ 85%|########4 |  : 84/99 [00:52&lt;00:09,    1.55it/s]
+ 86%|########5 |  : 85/99 [00:52&lt;00:08,    1.57it/s]
+ 87%|########6 |  : 86/99 [00:53&lt;00:08,    1.55it/s]
+ 88%|########7 |  : 87/99 [00:54&lt;00:07,    1.55it/s]
+ 89%|########8 |  : 88/99 [00:54&lt;00:07,    1.55it/s]
+ 90%|########9 |  : 89/99 [00:55&lt;00:06,    1.55it/s]
+ 91%|######### |  : 90/99 [00:55&lt;00:05,    1.58it/s]
+ 92%|#########1|  : 91/99 [00:56&lt;00:04,    1.60it/s]
+ 93%|#########2|  : 92/99 [00:57&lt;00:04,    1.59it/s]
+ 94%|#########3|  : 93/99 [00:58&lt;00:03,    1.53it/s]
+ 95%|#########4|  : 94/99 [00:58&lt;00:03,    1.54it/s]
+ 96%|#########5|  : 95/99 [00:59&lt;00:02,    1.57it/s]
+ 97%|#########6|  : 96/99 [00:59&lt;00:01,    1.56it/s]
+ 98%|#########7|  : 97/99 [01:00&lt;00:01,    1.60it/s]
+ 99%|#########8|  : 98/99 [01:00&lt;00:00,    1.60it/s]
+100%|##########|  : 99/99 [01:01&lt;00:00,    1.62it/s]
+100%|##########|  : 99/99 [01:01&lt;00:00,    1.61it/s]
 Computing cluster p-values
 Done.
-1461 points selected by TFCE ...
+1433 points selected by TFCE ...
 </pre></div>
 </div>
 <p>The results of these mass univariate analyses can be visualised by plotting
@@ -438,7 +440,7 @@ effects on the head.</p>
 <ul class="sphx-glr-horizontal">
 <li><img alt="0.212 s, 0.324 s, 0.440 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_stats_cluster_erp_001.png" />
 </li>
-<li><img alt="Left (8 channels, 82.3% of points masked), Left (13 channels, 79% of points masked), Left (8 channels, 80.5% of points masked)" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_stats_cluster_erp_002.png" />
+<li><img alt="Left (8 channels, 83.6% of points masked), Left (13 channels, 79.3% of points masked), Left (8 channels, 80% of points masked)" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_stats_cluster_erp_002.png" />
 </li>
 </ul>
 <div class="section" id="references">
@@ -455,8 +457,8 @@ addressing problems of smoothing, threshold dependence, and
 localisation in cluster inference”, NeuroImage 44 (2009) 83-98.</p>
 </dd>
 </dl>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  27.732 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  117 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  11.095 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  171 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-stats-sensor-space-plot-stats-cluster-erp-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/7cd9da31f4919bf3c1d4f47b0b6781e9/plot_stats_cluster_erp.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_stats_cluster_erp.py</span></code></a></p>

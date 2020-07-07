@@ -223,7 +223,7 @@ used.</p>
 <td><p>Return len(self).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne.transforms.Transform.clear" title="mne.transforms.Transform.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
-<td><p>Remove all items from D.</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mne.transforms.Transform.copy" title="mne.transforms.Transform.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
 <td><p>Make a copy of the transform.</p></td>
@@ -235,13 +235,13 @@ used.</p>
 <td><p>Return the value for key if key is in the dictionary, else default.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne.transforms.Transform.items" title="mne.transforms.Transform.items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code></a>()</p></td>
-<td><p>A set-like object providing a view on D’s items.</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mne.transforms.Transform.keys" title="mne.transforms.Transform.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>()</p></td>
-<td><p>A set-like object providing a view on D’s keys.</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne.transforms.Transform.pop" title="mne.transforms.Transform.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(k[,d])</p></td>
-<td><p>Remove specified key and return the corresponding value.</p></td>
+<td><p>If key is not found, d is returned if given, otherwise KeyError is raised</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mne.transforms.Transform.popitem" title="mne.transforms.Transform.popitem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popitem</span></code></a>(/)</p></td>
 <td><p>Remove and return a (key, value) pair as a 2-tuple.</p></td>
@@ -253,10 +253,10 @@ used.</p>
 <td><p>Insert key with a value of default if key is not in the dictionary.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne.transforms.Transform.update" title="mne.transforms.Transform.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>([E, ]**F)</p></td>
-<td><p>Update D from dict/iterable E and F.</p></td>
+<td><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v In either case, this is followed by: for k in F:  D[k] = F[k]</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mne.transforms.Transform.values" title="mne.transforms.Transform.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>()</p></td>
-<td><p>An object providing a view on D’s values.</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -286,9 +286,8 @@ used.</p>
 
 <dl class="py method">
 <dt id="mne.transforms.Transform.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1101-L1106"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.transforms.Transform.clear" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove all items from D.</p>
-</dd></dl>
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None.  Remove all items from D.<a class="headerlink" href="#mne.transforms.Transform.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="mne.transforms.Transform.copy">
@@ -316,21 +315,18 @@ used.</p>
 
 <dl class="py method">
 <dt id="mne.transforms.Transform.items">
-<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)">object</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1114-L1119"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.transforms.Transform.items" title="Permalink to this definition">¶</a></dt>
-<dd><p>A set-like object providing a view on D’s items.</p>
-</dd></dl>
+<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s items<a class="headerlink" href="#mne.transforms.Transform.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="mne.transforms.Transform.keys">
-<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)">object</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1121-L1126"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.transforms.Transform.keys" title="Permalink to this definition">¶</a></dt>
-<dd><p>A set-like object providing a view on D’s keys.</p>
-</dd></dl>
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s keys<a class="headerlink" href="#mne.transforms.Transform.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="mne.transforms.Transform.pop">
-<code class="sig-name descname">pop</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)">object</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1128-L1134"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.transforms.Transform.pop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove specified key and return the corresponding value.
-If key is not found, d is returned if given, otherwise KeyError is raised.</p>
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; v, remove specified key and return the corresponding value.<a class="headerlink" href="#mne.transforms.Transform.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised</p>
 </dd></dl>
 
 <dl class="py method">
@@ -370,18 +366,16 @@ Raises KeyError if the dict is empty.</p>
 
 <dl class="py method">
 <dt id="mne.transforms.Transform.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1136-L1144"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.transforms.Transform.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update D from dict/iterable E and F.
-If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from dict/iterable E and F.<a class="headerlink" href="#mne.transforms.Transform.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
 If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
 In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mne.transforms.Transform.values">
-<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)">object</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1146-L1151"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.transforms.Transform.values" title="Permalink to this definition">¶</a></dt>
-<dd><p>An object providing a view on D’s values.</p>
-</dd></dl>
+<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; an object providing a view on D’s values<a class="headerlink" href="#mne.transforms.Transform.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 

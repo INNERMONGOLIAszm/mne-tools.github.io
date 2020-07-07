@@ -506,39 +506,39 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img2aa31183c4f841a99f2a2d84b2c9d763">
+  <img id="_anim_imgf4fc5c2c8d17484882e989248212ed64">
   <div class="anim-controls">
-    <input id="_anim_slider2aa31183c4f841a99f2a2d84b2c9d763" type="range" class="anim-slider"
+    <input id="_anim_sliderf4fc5c2c8d17484882e989248212ed64" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim2aa31183c4f841a99f2a2d84b2c9d763.set_frame(parseInt(this.value));"></input>
+           oninput="animf4fc5c2c8d17484882e989248212ed64.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button onclick="anim2aa31183c4f841a99f2a2d84b2c9d763.slower()"><i class="fa fa-minus"></i></button>
-      <button onclick="anim2aa31183c4f841a99f2a2d84b2c9d763.first_frame()"><i class="fa fa-fast-backward">
+      <button onclick="animf4fc5c2c8d17484882e989248212ed64.slower()"><i class="fa fa-minus"></i></button>
+      <button onclick="animf4fc5c2c8d17484882e989248212ed64.first_frame()"><i class="fa fa-fast-backward">
           </i></button>
-      <button onclick="anim2aa31183c4f841a99f2a2d84b2c9d763.previous_frame()">
+      <button onclick="animf4fc5c2c8d17484882e989248212ed64.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button onclick="anim2aa31183c4f841a99f2a2d84b2c9d763.reverse_animation()">
+      <button onclick="animf4fc5c2c8d17484882e989248212ed64.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button onclick="anim2aa31183c4f841a99f2a2d84b2c9d763.pause_animation()"><i class="fa fa-pause">
+      <button onclick="animf4fc5c2c8d17484882e989248212ed64.pause_animation()"><i class="fa fa-pause">
           </i></button>
-      <button onclick="anim2aa31183c4f841a99f2a2d84b2c9d763.play_animation()"><i class="fa fa-play"></i>
+      <button onclick="animf4fc5c2c8d17484882e989248212ed64.play_animation()"><i class="fa fa-play"></i>
           </button>
-      <button onclick="anim2aa31183c4f841a99f2a2d84b2c9d763.next_frame()"><i class="fa fa-step-forward">
+      <button onclick="animf4fc5c2c8d17484882e989248212ed64.next_frame()"><i class="fa fa-step-forward">
           </i></button>
-      <button onclick="anim2aa31183c4f841a99f2a2d84b2c9d763.last_frame()"><i class="fa fa-fast-forward">
+      <button onclick="animf4fc5c2c8d17484882e989248212ed64.last_frame()"><i class="fa fa-fast-forward">
           </i></button>
-      <button onclick="anim2aa31183c4f841a99f2a2d84b2c9d763.faster()"><i class="fa fa-plus"></i></button>
+      <button onclick="animf4fc5c2c8d17484882e989248212ed64.faster()"><i class="fa fa-plus"></i></button>
     </div>
-    <form action="#n" name="_anim_loop_select2aa31183c4f841a99f2a2d84b2c9d763" class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_2aa31183c4f841a99f2a2d84b2c9d763"
+    <form action="#n" name="_anim_loop_selectf4fc5c2c8d17484882e989248212ed64" class="anim-state">
+      <input type="radio" name="state" value="once" id="_anim_radio1_f4fc5c2c8d17484882e989248212ed64"
              >
-      <label for="_anim_radio1_2aa31183c4f841a99f2a2d84b2c9d763">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_2aa31183c4f841a99f2a2d84b2c9d763"
+      <label for="_anim_radio1_f4fc5c2c8d17484882e989248212ed64">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_f4fc5c2c8d17484882e989248212ed64"
              checked>
-      <label for="_anim_radio2_2aa31183c4f841a99f2a2d84b2c9d763">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_2aa31183c4f841a99f2a2d84b2c9d763"
+      <label for="_anim_radio2_f4fc5c2c8d17484882e989248212ed64">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_f4fc5c2c8d17484882e989248212ed64"
              >
-      <label for="_anim_radio3_2aa31183c4f841a99f2a2d84b2c9d763">Reflect</label>
+      <label for="_anim_radio3_f4fc5c2c8d17484882e989248212ed64">Reflect</label>
     </form>
   </div>
 </div>
@@ -548,9 +548,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img2aa31183c4f841a99f2a2d84b2c9d763";
-    var slider_id = "_anim_slider2aa31183c4f841a99f2a2d84b2c9d763";
-    var loop_select_id = "_anim_loop_select2aa31183c4f841a99f2a2d84b2c9d763";
+    var img_id = "_anim_imgf4fc5c2c8d17484882e989248212ed64";
+    var slider_id = "_anim_sliderf4fc5c2c8d17484882e989248212ed64";
+    var loop_select_id = "_anim_loop_selectf4fc5c2c8d17484882e989248212ed64";
     var frames = new Array(11);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAH0CAYAAADhUFPUAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz\
@@ -15466,13 +15466,13 @@ CIKwGRIsgiAIgiAImyHBIgiCIAiCsJn/B9fbfsQiX2mnAAAAAElFTkSuQmCC\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim2aa31183c4f841a99f2a2d84b2c9d763 = new Animation(frames, img_id, slider_id, 500.0,
+        animf4fc5c2c8d17484882e989248212ed64 = new Animation(frames, img_id, slider_id, 500.0,
                                  loop_select_id);
     }, 0);
   })()
 </script></div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.349 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  9 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  15.647 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  8 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-visualization-plot-evoked-topomap-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9e3503f1d4e831b7b292f1805e5c540b/plot_evoked_topomap.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_evoked_topomap.py</span></code></a></p>

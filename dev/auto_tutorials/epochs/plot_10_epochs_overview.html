@@ -367,11 +367,11 @@ the end of the (cropped) raw file to accommodate our requested <code class="docu
 0.7 seconds, so the final epoch was dropped because it was too short. Here
 are the <code class="docutils literal notranslate"><span class="pre">drop_log</span></code> entries for the last 4 epochs (empty lists indicate
 epochs that were <em>not</em> dropped):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span><span class="o">.</span><span class="n">drop_log</span></a><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span><span class="o">.</span><span class="n">drop_log</span></a><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[[], [], [], [&#39;TOO_SHORT&#39;]]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>((), (), (), (&#39;TOO_SHORT&#39;,))
 </pre></div>
 </div>
 <div class="admonition note">
@@ -739,8 +739,8 @@ integer index as the iterator:</p>
 &lt;class &#39;mne.epochs.Epochs&#39;&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  29.756 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  546 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  22.988 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  566 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-epochs-plot-10-epochs-overview-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/11cc934cdbe273255530f1b3a66342e6/plot_10_epochs_overview.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_10_epochs_overview.py</span></code></a></p>

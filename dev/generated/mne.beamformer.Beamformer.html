@@ -175,7 +175,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.beamformer.Beamformer<a class="headerlink" href="#mne-beamformer-beamformer" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mne.beamformer.Beamformer">
-<em class="property">class </em><code class="sig-prename descclassname">mne.beamformer.</code><code class="sig-name descname">Beamformer</code><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L410-L471"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mne.beamformer.</code><code class="sig-name descname">Beamformer</code><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L409-L470"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer" title="Permalink to this definition">¶</a></dt>
 <dd><p>A computed beamformer.</p>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -201,7 +201,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <td><p>Return len(self).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne.beamformer.Beamformer.clear" title="mne.beamformer.Beamformer.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
-<td><p>Remove all items from D.</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mne.beamformer.Beamformer.copy" title="mne.beamformer.Beamformer.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
 <td><p>Copy the beamformer.</p></td>
@@ -213,13 +213,13 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <td><p>Return the value for key if key is in the dictionary, else default.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne.beamformer.Beamformer.items" title="mne.beamformer.Beamformer.items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code></a>()</p></td>
-<td><p>A set-like object providing a view on D’s items.</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mne.beamformer.Beamformer.keys" title="mne.beamformer.Beamformer.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>()</p></td>
-<td><p>A set-like object providing a view on D’s keys.</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne.beamformer.Beamformer.pop" title="mne.beamformer.Beamformer.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(k[,d])</p></td>
-<td><p>Remove specified key and return the corresponding value.</p></td>
+<td><p>If key is not found, d is returned if given, otherwise KeyError is raised</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mne.beamformer.Beamformer.popitem" title="mne.beamformer.Beamformer.popitem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popitem</span></code></a>(/)</p></td>
 <td><p>Remove and return a (key, value) pair as a 2-tuple.</p></td>
@@ -231,10 +231,10 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <td><p>Insert key with a value of default if key is not in the dictionary.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne.beamformer.Beamformer.update" title="mne.beamformer.Beamformer.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>([E, ]**F)</p></td>
-<td><p>Update D from dict/iterable E and F.</p></td>
+<td><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v In either case, this is followed by: for k in F:  D[k] = F[k]</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mne.beamformer.Beamformer.values" title="mne.beamformer.Beamformer.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>()</p></td>
-<td><p>An object providing a view on D’s values.</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -264,13 +264,12 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1101-L1106"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.clear" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove all items from D.</p>
-</dd></dl>
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None.  Remove all items from D.<a class="headerlink" href="#mne.beamformer.Beamformer.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L418-L426"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L417-L425"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy the beamformer.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -296,21 +295,18 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.items">
-<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)">object</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1114-L1119"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.items" title="Permalink to this definition">¶</a></dt>
-<dd><p>A set-like object providing a view on D’s items.</p>
-</dd></dl>
+<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s items<a class="headerlink" href="#mne.beamformer.Beamformer.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.keys">
-<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)">object</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1121-L1126"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.keys" title="Permalink to this definition">¶</a></dt>
-<dd><p>A set-like object providing a view on D’s keys.</p>
-</dd></dl>
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D’s keys<a class="headerlink" href="#mne.beamformer.Beamformer.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.pop">
-<code class="sig-name descname">pop</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)">object</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1128-L1134"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.pop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove specified key and return the corresponding value.
-If key is not found, d is returned if given, otherwise KeyError is raised.</p>
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="optional">[</span>, <em class="sig-param">d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; v, remove specified key and return the corresponding value.<a class="headerlink" href="#mne.beamformer.Beamformer.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised</p>
 </dd></dl>
 
 <dl class="py method">
@@ -323,7 +319,7 @@ Raises KeyError if the dict is empty.</p>
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.save">
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L448-L471"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L447-L470"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the beamformer filter.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -350,18 +346,16 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1136-L1144"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update D from dict/iterable E and F.
-If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from dict/iterable E and F.<a class="headerlink" href="#mne.beamformer.Beamformer.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
 If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
 In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.values">
-<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)">object</a><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/fixes.py#L1146-L1151"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.values" title="Permalink to this definition">¶</a></dt>
-<dd><p>An object providing a view on D’s values.</p>
-</dd></dl>
+<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; an object providing a view on D’s values<a class="headerlink" href="#mne.beamformer.Beamformer.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 

@@ -198,14 +198,13 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <span class="kn">import</span> <span class="nn">mne</span>
 </pre></div>
 </div>
-<p>Instead of creating the <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a> object from an
-<a class="reference internal" href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-class docutils literal notranslate"><span class="pre">Epochs</span></code></a> object, we’ll load an existing <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a>
-object from disk. Remember, the <code class="file docutils literal notranslate"><span class="pre">.fif</span></code> format can store multiple
-<a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a> objects, so we’ll end up with a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> of
-<a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a> objects after loading. Recall also from the
-<a class="reference internal" href="plot_10_evoked_overview.html#tut-section-load-evk"><span class="std std-ref">Loading and saving Evoked data</span></a> section of <a class="reference internal" href="plot_10_evoked_overview.html#tut-evoked-class"><span class="std std-ref">the introductory Evoked tutorial</span></a> that the sample <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a> objects have not
-been baseline-corrected and have unapplied projectors, so we’ll take care of
-that when loading:</p>
+<p>Instead of creating the <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a> object from an <a class="reference internal" href="../../generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Epochs</span></code></a> object,
+we’ll load an existing <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a> object from disk. Remember, the
+<code class="file docutils literal notranslate"><span class="pre">.fif</span></code> format can store multiple <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a> objects, so we’ll end up
+with a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a> objects after loading. Recall also from the
+<a class="reference internal" href="plot_10_evoked_overview.html#tut-section-load-evk"><span class="std std-ref">Loading and saving Evoked data</span></a> section of <a class="reference internal" href="plot_10_evoked_overview.html#tut-evoked-class"><span class="std std-ref">the introductory Evoked tutorial</span></a> that the sample <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a> objects have not been
+baseline-corrected and have unapplied projectors, so we’ll take care of that
+when loading:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sample_data_folder</span></a> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path" class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sample_data_evk_file</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sample_data_folder</span></a><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span>
                                     <span class="s1">&#39;sample_audvis-ave.fif&#39;</span><span class="p">)</span>
@@ -308,9 +307,9 @@ figure for each channel type:</p>
 <ul class="sphx-glr-horizontal">
 <li><img alt="0.093 s, 0.185 s, 0.340 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_20_visualize_evoked_006.png" />
 </li>
-<li><img alt="0.090 s, 0.171 s, 0.260 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_20_visualize_evoked_007.png" />
+<li><img alt="0.093 s, 0.181 s, 0.433 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_20_visualize_evoked_007.png" />
 </li>
-<li><img alt="0.093 s, 0.181 s, 0.433 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_20_visualize_evoked_008.png" />
+<li><img alt="0.090 s, 0.171 s, 0.260 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_20_visualize_evoked_008.png" />
 </li>
 </ul>
 <p>Like <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked.plot_topomap" title="mne.Evoked.plot_topomap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plot_topomap()</span></code></a> you can specify the <code class="docutils literal notranslate"><span class="pre">times</span></code> at which
@@ -360,10 +359,10 @@ combining channels using &quot;gfp&quot;
 combining channels using &quot;gfp&quot;
 combining channels using &quot;gfp&quot;
 combining channels using &quot;gfp&quot;
-combining channels using &quot;&lt;function custom_func at 0x7f8b0c7bd8b0&gt;&quot;
-combining channels using &quot;&lt;function custom_func at 0x7f8b0c7bd8b0&gt;&quot;
-combining channels using &quot;&lt;function custom_func at 0x7f8b0c7bd8b0&gt;&quot;
-combining channels using &quot;&lt;function custom_func at 0x7f8b0c7bd8b0&gt;&quot;
+combining channels using &quot;&lt;function custom_func at 0x7fb5388e9700&gt;&quot;
+combining channels using &quot;&lt;function custom_func at 0x7fb5388e9700&gt;&quot;
+combining channels using &quot;&lt;function custom_func at 0x7fb5388e9700&gt;&quot;
+combining channels using &quot;&lt;function custom_func at 0x7fb5388e9700&gt;&quot;
 </pre></div>
 </div>
 <p>One nice feature of <a class="reference internal" href="../../generated/mne.viz.plot_compare_evokeds.html#mne.viz.plot_compare_evokeds" title="mne.viz.plot_compare_evokeds"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_compare_evokeds()</span></code></a> is that when
@@ -509,8 +508,8 @@ Field mapping data ready
     The map will have average electrode reference
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  47.908 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  81 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  49.020 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  65 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-evoked-plot-20-visualize-evoked-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8683a99a389b4ce3b625ed84350fce55/plot_20_visualize_evoked.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_20_visualize_evoked.py</span></code></a></p>

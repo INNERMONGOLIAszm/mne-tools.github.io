@@ -217,13 +217,18 @@ consisting of:</p>
 You can view the specification hosted on the
 <a class="reference external" href="https://www.brainproducts.com/productdetails.php?id=21&amp;tab=5">Brain Products website</a></p>
 <p>BrainVision EEG files can be read in using <a class="reference internal" href="../../generated/mne.io.read_raw_brainvision.html#mne.io.read_raw_brainvision" title="mne.io.read_raw_brainvision"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.io.read_raw_brainvision()</span></code></a>
-with the .vhdr header file as an input.</p>
+with the <code class="docutils literal notranslate"><span class="pre">.vhdr</span></code> header file as an input.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Renaming BrainVision files can be problematic due to their
 multifile structure. See this
-<a class="reference external" href="https://mne.tools/mne-bids/stable/auto_examples/rename_brainvision_files.html">example</a>
+<a class="reference external" href="https://mne.tools/mne-bids/stable/auto_examples/rename_brainvision_files.html#sphx-glr-auto-examples-rename-brainvision-files-py">example</a>
 for an instruction.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For <em>writing</em> BrainVision files, you can use the Python package
+<a class="reference external" href="https://pypi.org/project/pybv/">pybv</a>.</p>
 </div>
 </div>
 <div class="section" id="european-data-format-edf">

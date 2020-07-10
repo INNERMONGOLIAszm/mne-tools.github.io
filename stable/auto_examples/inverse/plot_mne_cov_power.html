@@ -271,7 +271,7 @@ Done.
 Using cross-validation to select the best estimator.
 Number of samples used : 36000
 log-likelihood on unseen data (descending order):
-   shrunk: -1588.482
+   shrunk: -1588.456
    empirical: -1589.805
 selecting best estimator: shrunk
 [done]
@@ -429,7 +429,7 @@ Done.
 Using cross-validation to select the best estimator.
 Number of samples used : 7440
 log-likelihood on unseen data (descending order):
-   shrunk: -1308.076
+   shrunk: -1308.077
    empirical: -1344.171
 selecting best estimator: shrunk
 [done]
@@ -447,7 +447,7 @@ Done.
 Using cross-validation to select the best estimator.
 Number of samples used : 7440
 log-likelihood on unseen data (descending order):
-   shrunk: -1312.728
+   shrunk: -1314.135
    empirical: -1350.783
 selecting best estimator: shrunk
 [done]
@@ -498,7 +498,7 @@ by the baseline covariance:</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>    Created an SSP operator (subspace dimension = 3)
 Computing rank from covariance with rank=None
-    Using tolerance 1.3e-13 (2.2e-16 eps * 305 dim * 2  max singular value)
+    Using tolerance 1.4e-13 (2.2e-16 eps * 305 dim * 2  max singular value)
     Estimated rank (mag + grad): 302
     MEG: rank 302 computed from 305 data channels with 3 projectors
     Setting small MEG eigenvalues to zero (without PCA)
@@ -550,15 +550,15 @@ Applying loose dipole orientations. Loose value of 0.2.
 Whitening the forward solution.
     Created an SSP operator (subspace dimension = 3)
 Computing rank from covariance with rank=None
-    Using tolerance 1.3e-13 (2.2e-16 eps * 305 dim * 2  max singular value)
+    Using tolerance 1.4e-13 (2.2e-16 eps * 305 dim * 2  max singular value)
     Estimated rank (mag + grad): 302
     MEG: rank 302 computed from 305 data channels with 3 projectors
     Setting small MEG eigenvalues to zero (without PCA)
 Creating the source covariance matrix
 Adjusting source covariance matrix.
 Computing SVD of whitened and weighted lead field matrix.
-    largest singular value = 6.40091
-    scaling factor to adjust the trace = 5.3041e+19
+    largest singular value = 6.38809
+    scaling factor to adjust the trace = 5.27749e+19
 </pre></div>
 </div>
 <p>Project our data and baseline covariance to source space:</p>
@@ -581,7 +581,7 @@ Applying inverse operator to &quot;cov&quot;...
     Computing inverse...
     Eigenleads need to be weighted ...
     Computing residual...
-    Explained  37.3% variance
+    Explained  37.2% variance
     dSPM...
     Combining the current components...
 [done]
@@ -597,7 +597,7 @@ Applying inverse operator to &quot;cov&quot;...
     Computing inverse...
     Eigenleads need to be weighted ...
     Computing residual...
-    Explained  37.3% variance
+    Explained  37.2% variance
     dSPM...
     Combining the current components...
 [done]
@@ -611,11 +611,11 @@ Applying inverse operator to &quot;cov&quot;...
 </div>
 <img alt="plot mne cov power" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_mne_cov_power_009.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using control points [1.13662134 1.50148507 2.14275976]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using control points [1.13405797 1.49777712 2.14096143]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  43.269 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  92 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  38.983 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  436 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-inverse-plot-mne-cov-power-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/4d86330aa1188a8c79a3fbf37b4c950d/plot_mne_cov_power.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_mne_cov_power.py</span></code></a></p>
@@ -667,7 +667,7 @@ Applying inverse operator to &quot;cov&quot;...
       <li><a href="../../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-13.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-07-10.</p>
   </div>
 </footer>
   <script src="https://mne.tools/versionwarning.js"></script>

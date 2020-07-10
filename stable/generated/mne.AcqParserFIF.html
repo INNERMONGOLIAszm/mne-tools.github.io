@@ -240,23 +240,23 @@ Note that mne does not support all DACQ rejection criteria
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.AcqParserFIF.__getitem__" title="mne.AcqParserFIF.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code></a>(self, item)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.AcqParserFIF.__getitem__" title="mne.AcqParserFIF.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code></a>(item)</p></td>
 <td><p>Return an averaging category, or list of categories.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.AcqParserFIF.__hash__" title="mne.AcqParserFIF.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(self, /)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.AcqParserFIF.__hash__" title="mne.AcqParserFIF.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(/)</p></td>
 <td><p>Return hash(self).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.AcqParserFIF.__len__" title="mne.AcqParserFIF.__len__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__len__</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.AcqParserFIF.__len__" title="mne.AcqParserFIF.__len__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__len__</span></code></a>()</p></td>
 <td><p>Return number of averaging categories marked active in DACQ.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.AcqParserFIF.get_condition" title="mne.AcqParserFIF.get_condition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_condition</span></code></a>(self, raw[, condition, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.AcqParserFIF.get_condition" title="mne.AcqParserFIF.get_condition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_condition</span></code></a>(raw[, condition, …])</p></td>
 <td><p>Get averaging parameters for a condition (averaging category).</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt id="mne.AcqParserFIF.__getitem__">
-<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/event.py#L1084-L1142"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.AcqParserFIF.__getitem__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/event.py#L1084-L1142"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.AcqParserFIF.__getitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an averaging category, or list of categories.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -311,13 +311,13 @@ by the user after collecting the epochs.</p>
 
 <dl class="py method">
 <dt id="mne.AcqParserFIF.__hash__">
-<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.AcqParserFIF.__hash__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.AcqParserFIF.__hash__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return hash(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mne.AcqParserFIF.__len__">
-<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/event.py#L1144-L1146"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.AcqParserFIF.__len__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/event.py#L1144-L1146"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.AcqParserFIF.__len__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return number of averaging categories marked active in DACQ.</p>
 </dd></dl>
 
@@ -337,7 +337,7 @@ by the user after collecting the epochs.</p>
 
 <dl class="py method">
 <dt id="mne.AcqParserFIF.get_condition">
-<code class="sig-name descname">get_condition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">raw</span></em>, <em class="sig-param"><span class="n">condition</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stim_channel</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uint_cast</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mask_type</span><span class="o">=</span><span class="default_value">'and'</span></em>, <em class="sig-param"><span class="n">delayed_lookup</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/event.py#L1319-L1417"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.AcqParserFIF.get_condition" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_condition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw</span></em>, <em class="sig-param"><span class="n">condition</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stim_channel</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uint_cast</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mask_type</span><span class="o">=</span><span class="default_value">'and'</span></em>, <em class="sig-param"><span class="n">delayed_lookup</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/event.py#L1319-L1417"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.AcqParserFIF.get_condition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get averaging parameters for a condition (averaging category).</p>
 <p>Output is designed to be used with the Epochs class to extract the
 corresponding epochs.</p>
@@ -449,7 +449,7 @@ parameter to Epochs.</p>
       <li><a href="../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-13.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-07-10.</p>
   </div>
 </footer>
   <script src="https://mne.tools/versionwarning.js"></script>

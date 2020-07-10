@@ -220,26 +220,26 @@ class directly if you’re constructing a new layout.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.channels.Layout.__hash__" title="mne.channels.Layout.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(self, /)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.channels.Layout.__hash__" title="mne.channels.Layout.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a>(/)</p></td>
 <td><p>Return hash(self).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mne.channels.Layout.plot" title="mne.channels.Layout.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(self[, picks, show])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne.channels.Layout.plot" title="mne.channels.Layout.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>([picks, show])</p></td>
 <td><p>Plot the sensor positions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne.channels.Layout.save" title="mne.channels.Layout.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(self, fname)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne.channels.Layout.save" title="mne.channels.Layout.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(fname)</p></td>
 <td><p>Save Layout to disk.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt id="mne.channels.Layout.__hash__">
-<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.channels.Layout.__hash__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__hash__</code><span class="sig-paren">(</span><em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#mne.channels.Layout.__hash__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return hash(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="mne.channels.Layout.plot">
-<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">picks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/channels/layout.py#L93-L113"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.channels.Layout.plot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">picks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/channels/layout.py#L93-L113"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.channels.Layout.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the sensor positions.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -253,7 +253,7 @@ interpreted as channel indices. None (default) will pick all channels.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>fig</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>Figure containing the sensor topography.</p>
+<dt><strong>fig</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>Figure containing the sensor topography.</p>
 </dd>
 </dl>
 </dd>
@@ -271,7 +271,7 @@ interpreted as channel indices. None (default) will pick all channels.</p>
 
 <dl class="py method">
 <dt id="mne.channels.Layout.save">
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">fname</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/channels/layout.py#L55-L86"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.channels.Layout.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/maint/0.20/mne/channels/layout.py#L55-L86"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.channels.Layout.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save Layout to disk.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -356,7 +356,7 @@ interpreted as channel indices. None (default) will pick all channels.</p>
       <li><a href="../overview/cite.html">Cite MNE</a></li>
       <li class="pull-right"><a href="#">Back to top</a></li>
     </ul>
-    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-06-13.</p>
+    <p>&copy; Copyright 2012-2020, MNE Developers. Last updated on 2020-07-10.</p>
   </div>
 </footer>
   <script src="https://mne.tools/versionwarning.js"></script>

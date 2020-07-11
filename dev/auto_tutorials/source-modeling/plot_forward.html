@@ -564,8 +564,8 @@ Checking that the sources are inside the surface and at least    5.0 mm away (wi
     Skipping interior check for 846 sources that fit inside a sphere of radius   43.6 mm
     Skipping solid angle check for 2 points using Qhull
 [Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:   13.3s remaining:    0.0s
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:   13.3s finished
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:   18.2s remaining:    0.0s
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:   18.2s finished
     2 source space points omitted because they are outside the inner skull surface.
     364 source space points omitted because of the    5.0-mm distance limit.
     Computing patch statistics...
@@ -573,8 +573,8 @@ Checking that the sources are inside the surface and at least    5.0 mm away (wi
     Skipping interior check for 875 sources that fit inside a sphere of radius   43.6 mm
     Skipping solid angle check for 0 points using Qhull
 [Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.2s remaining:    0.0s
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.2s finished
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.6s remaining:    0.0s
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.6s finished
     1 source space point omitted because it is outside the inner skull surface.
     331 source space point omitted because of the    5.0-mm distance limit.
     Computing patch statistics...
@@ -585,27 +585,44 @@ Setting up compensation data...
 
 Composing the field computation matrix...
 [Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:   10.4s remaining:    0.0s
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:   10.4s finished
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:   13.8s remaining:    0.0s
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:   13.8s finished
 [Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.1s remaining:    0.0s
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.1s finished
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.5s remaining:    0.0s
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.5s finished
 [Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.1s remaining:    0.0s
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.1s finished
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.4s remaining:    0.0s
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.4s finished
 [Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
 [Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    0.1s remaining:    0.0s
 [Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    0.1s finished
 Computing MEG at 7498 source locations (free orientations)...
 [Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.7s remaining:    0.0s
+[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.7s finished
+[Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
 [Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.3s remaining:    0.0s
 [Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.3s finished
-[Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.0s remaining:    0.0s
-[Parallel(n_jobs=2)]: Done   2 out of   2 | elapsed:    1.0s finished
 
 Finished.
 &lt;Forward | MEG channels: 306 | EEG channels: 0 | Source space: Surface with 7498 vertices | Source orientation: Free&gt;
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Forward computation can remove vertices that are too close to (or outside)
+the inner skull surface. For example, here we have gone from 8096 to 7498
+vertices in use. For many functions, such as
+<a class="reference internal" href="../../generated/mne.compute_source_morph.html#mne.compute_source_morph" title="mne.compute_source_morph"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.compute_source_morph()</span></code></a>, it is important to pass <code class="docutils literal notranslate"><span class="pre">fwd['src']</span></code>
+or <code class="docutils literal notranslate"><span class="pre">inv['src']</span></code> so that this removal is adequately accounted for.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Before: </span><span class="si">{</span><a href="../../generated/mne.SourceSpaces.html#mne.SourceSpaces" title="mne.SourceSpaces" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">src</span></a><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;After:  </span><span class="si">{</span><a href="../../generated/mne.Forward.html#mne.Forward" title="mne.Forward" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fwd</span></a><span class="p">[</span><span class="s2">&quot;src&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Before: &lt;SourceSpaces: [&lt;surface (lh), n_vertices=155407, n_used=4098&gt;, &lt;surface (rh), n_vertices=156866, n_used=4098&gt;] MRI (surface RAS) coords, subject &#39;sample&#39;&gt;
+After:  &lt;SourceSpaces: [&lt;surface (lh), n_vertices=155407, n_used=3732&gt;, &lt;surface (rh), n_vertices=156866, n_used=3766&gt;] head coords, subject &#39;sample&#39;&gt;
 </pre></div>
 </div>
 <p>We can explore the content of <code class="docutils literal notranslate"><span class="pre">fwd</span></code> to access the numpy array that contains
@@ -668,8 +685,8 @@ justify the claims that:</p>
 instead if a fixed/surface oriented orientation?</p>
 <p>Try this changing the mode parameter in <a class="reference internal" href="../../generated/mne.sensitivity_map.html#mne.sensitivity_map" title="mne.sensitivity_map"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.sensitivity_map()</span></code></a>
 accordingly. Why don’t we see any dipoles on the gyri?</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  56.863 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  599 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  50.616 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  608 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-source-modeling-plot-forward-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/bd434692997df3673512e1b5d850a809/plot_forward.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_forward.py</span></code></a></p>

@@ -198,8 +198,8 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 to render follow the filename conventions defined by MNE:</p>
 <table class="table-bordered midvalign docutils align-default">
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 84%" />
+<col style="width: 18%" />
+<col style="width: 82%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Data object</p></th>
@@ -222,13 +222,16 @@ to render follow the filename conventions defined by MNE:</p>
 <tr class="row-even"><td><p>covariance</p></td>
 <td><p>-cov.fif(.gz)</p></td>
 </tr>
-<tr class="row-odd"><td><p>trans</p></td>
+<tr class="row-odd"><td><p>SSP projectors</p></td>
+<td><p>-proj.fif(.gz)</p></td>
+</tr>
+<tr class="row-even"><td><p>trans</p></td>
 <td><p>-trans.fif(.gz)</p></td>
 </tr>
-<tr class="row-even"><td><p>forward</p></td>
+<tr class="row-odd"><td><p>forward</p></td>
 <td><p>-fwd.fif(.gz)</p></td>
 </tr>
-<tr class="row-odd"><td><p>inverse</p></td>
+<tr class="row-even"><td><p>inverse</p></td>
 <td><p>-inv.fif(.gz)</p></td>
 </tr>
 </tbody>
@@ -307,11 +310,13 @@ raw
 <p>This report yields a textual summary of the <a class="reference internal" href="../../generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-class docutils literal notranslate"><span class="pre">Raw</span></code></a> files
 selected by the pattern. For a slightly more useful report, we’ll ask for the
 power spectral density of the <a class="reference internal" href="../../generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-class docutils literal notranslate"><span class="pre">Raw</span></code></a> files, by passing
-<code class="docutils literal notranslate"><span class="pre">raw_psd=True</span></code> to the <a class="reference internal" href="../../generated/mne.Report.html#mne.Report" title="mne.Report"><code class="xref py py-class docutils literal notranslate"><span class="pre">Report</span></code></a> constructor. Let’s also refine
-our pattern to select only the filtered raw recording (omitting the
-unfiltered data and the empty-room noise recordings):</p>
+<code class="docutils literal notranslate"><span class="pre">raw_psd=True</span></code> to the <a class="reference internal" href="../../generated/mne.Report.html#mne.Report" title="mne.Report"><code class="xref py py-class docutils literal notranslate"><span class="pre">Report</span></code></a> constructor. We’ll also
+visualize the SSP projectors stored in the raw data’s <a class="reference internal" href="../../generated/mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Info</span></code></a> dictionary
+by setting <code class="docutils literal notranslate"><span class="pre">projs=True</span></code>. Lastly, let’s also refine our pattern to select
+only the filtered raw recording (omitting the unfiltered data and the
+empty-room noise recordings):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pattern</span></a> <span class="o">=</span> <span class="s1">&#39;sample_audvis_filt-0-40_raw.fif&#39;</span>
-<a href="../../generated/mne.Report.html#mne.Report" title="mne.Report" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">report</span></a> <span class="o">=</span> <a href="../../generated/mne.Report.html#mne.Report" title="mne.Report" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class"><span class="n">mne</span><span class="o">.</span><span class="n">Report</span></a><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">raw_psd</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="../../generated/mne.Report.html#mne.Report" title="mne.Report" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">report</span></a> <span class="o">=</span> <a href="../../generated/mne.Report.html#mne.Report" title="mne.Report" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class"><span class="n">mne</span><span class="o">.</span><span class="n">Report</span></a><span class="p">(</span><span class="n">raw_psd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">projs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a href="../../generated/mne.Report.html#mne.Report.parse_folder" title="mne.Report.parse_folder" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">report</span><span class="o">.</span><span class="n">parse_folder</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">path</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pattern</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pattern</span></a><span class="p">,</span> <span class="n">render_bem</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <a href="../../generated/mne.Report.html#mne.Report.save" title="mne.Report.save" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">report</span><span class="o">.</span><span class="n">save</span></a><span class="p">(</span><span class="s1">&#39;report_raw_psd.html&#39;</span><span class="p">)</span>
 </pre></div>
@@ -339,10 +344,60 @@ Current compensation grade : 0
 Effective window size : 13.639 (s)
 Effective window size : 13.639 (s)
 Effective window size : 13.639 (s)
+    Read a total of 4 projection items:
+        PCA-v1 (1 x 102)  idle
+        PCA-v2 (1 x 102)  idle
+        PCA-v3 (1 x 102)  idle
+        Average EEG reference (1 x 60)  idle
 Saving report to location /home/circleci/project/tutorials/misc/report_raw_psd.html
 Rendering : Table of Contents
 raw
  ... sample_audvis_filt-0-40_raw.fif
+</pre></div>
+</div>
+<p>The sample dataset also contains SSP projectors stored as <em>individual files</em>.
+To add them to a report, we also have to provide the path to a file
+containing an <a class="reference internal" href="../../generated/mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Info</span></code></a> dictionary, from which the channel locations can be
+read.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">info_fname</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">path</span></a><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span>
+                          <span class="s1">&#39;sample_audvis_filt-0-40_raw.fif&#39;</span><span class="p">)</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pattern</span></a> <span class="o">=</span> <span class="s1">&#39;sample_audvis_*proj.fif&#39;</span>
+<a href="../../generated/mne.Report.html#mne.Report" title="mne.Report" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">report</span></a> <span class="o">=</span> <a href="../../generated/mne.Report.html#mne.Report" title="mne.Report" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class"><span class="n">mne</span><span class="o">.</span><span class="n">Report</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">info_fname</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">info_fname</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="../../generated/mne.Report.html#mne.Report.parse_folder" title="mne.Report.parse_folder" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">report</span><span class="o">.</span><span class="n">parse_folder</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">path</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pattern</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pattern</span></a><span class="p">,</span> <span class="n">render_bem</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="../../generated/mne.Report.html#mne.Report.save" title="mne.Report.save" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">report</span><span class="o">.</span><span class="n">save</span></a><span class="p">(</span><span class="s1">&#39;report_proj.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="row docutils container">
+<p class="rubric">The <a class="reference external" href="report_proj.html">HTML document</a> written by <a class="reference internal" href="../../generated/mne.Report.html#mne.Report.save" title="mne.Report.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mne.Report.save()</span></code></a>:</p>
+<iframe class="sg_report" sandbox="allow-scripts" src="report_proj.html"></iframe></div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Embedding : jquery.js
+Embedding : jquery-ui.min.js
+Embedding : bootstrap.min.js
+Embedding : jquery-ui.min.css
+Embedding : bootstrap.min.css
+Iterating over 2 potential files (this may take some time)
+Rendering : /home/circleci/mne_data/MNE-sample-data/MEG/sample/sample_audvis_ecg-proj.fif
+    Read a total of 6 projection items:
+        ECG-planar-999--0.200-0.400-PCA-01 (1 x 203)  idle
+        ECG-planar-999--0.200-0.400-PCA-02 (1 x 203)  idle
+        ECG-axial-999--0.200-0.400-PCA-01 (1 x 102)  idle
+        ECG-axial-999--0.200-0.400-PCA-02 (1 x 102)  idle
+        ECG-eeg-999--0.200-0.400-PCA-01 (1 x 59)  idle
+        ECG-eeg-999--0.200-0.400-PCA-02 (1 x 59)  idle
+Rendering : /home/circleci/mne_data/MNE-sample-data/MEG/sample/sample_audvis_eog-proj.fif
+    Read a total of 6 projection items:
+        EOG-planar-998--0.200-0.200-PCA-01 (1 x 203)  idle
+        EOG-planar-998--0.200-0.200-PCA-02 (1 x 203)  idle
+        EOG-axial-998--0.200-0.200-PCA-01 (1 x 102)  idle
+        EOG-axial-998--0.200-0.200-PCA-02 (1 x 102)  idle
+        EOG-eeg-998--0.200-0.200-PCA-01 (1 x 59)  idle
+        EOG-eeg-998--0.200-0.200-PCA-02 (1 x 59)  idle
+Saving report to location /home/circleci/project/tutorials/misc/report_proj.html
+Rendering : Table of Contents
+ssp
+ ... sample_audvis_ecg-proj.fif
+ ... sample_audvis_eog-proj.fif
 </pre></div>
 </div>
 <p>This time we’ll pass a specific <code class="docutils literal notranslate"><span class="pre">subject</span></code> and <code class="docutils literal notranslate"><span class="pre">subjects_dir</span></code> (even though
@@ -403,7 +458,7 @@ evoked
 </pre></div>
 </div>
 <p>To render whitened <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a> files with baseline correction, add
-the noise covariance file. This will display ERP/F plots for both the
+the noise covariance file. This will display ERP/ERF plots for both the
 original and whitened <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evoked</span></code></a> objects, but scalp topomaps only
 for the original.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cov_fname</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">path</span></a><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_audvis-cov.fif&#39;</span><span class="p">)</span>
@@ -664,7 +719,7 @@ Saving report to location /home/circleci/project/tutorials/misc/report.h5
 </div>
 <p>With the context manager, the updated report is also automatically saved
 back to <code class="file docutils literal notranslate"><span class="pre">report.h5</span></code> upon leaving the block.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  50.688 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  50.559 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  136 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-misc-plot-report-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">

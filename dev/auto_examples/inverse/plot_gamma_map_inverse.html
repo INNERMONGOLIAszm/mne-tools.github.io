@@ -490,6 +490,17 @@ SSP projectors applied...
 <li><img alt="Residuals Gradiometers (203 channels)" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_gamma_map_inverse_004.png" />
 </li>
 </ul>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Removing projector &lt;Projection | PCA-v1, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | Average EEG reference, active : True, n_channels : 60&gt;
+Removing projector &lt;Projection | PCA-v1, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | Average EEG reference, active : True, n_channels : 60&gt;
+</pre></div>
+</div>
 <p>Generate stc from dipoles</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../generated/mne.SourceEstimate.html#mne.SourceEstimate" title="mne.SourceEstimate" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stc</span></a> <span class="o">=</span> <a href="../../generated/mne.inverse_sparse.make_stc_from_dipoles.html#mne.inverse_sparse.make_stc_from_dipoles" title="mne.inverse_sparse.make_stc_from_dipoles" class="sphx-glr-backref-module-mne-inverse_sparse sphx-glr-backref-type-py-function"><span class="n">make_stc_from_dipoles</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dipoles</span></a><span class="p">,</span> <a href="../../generated/mne.Forward.html#mne.Forward" title="mne.Forward" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">forward</span></a><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">])</span>
 </pre></div>
@@ -516,8 +527,8 @@ Show the sources as spheres scaled by their strength</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Total number of active sources: 4
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  21.677 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  414 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  24.722 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  412 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-inverse-plot-gamma-map-inverse-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/e7ce6b7675eed0a02366a95ddda6d472/plot_gamma_map_inverse.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_gamma_map_inverse.py</span></code></a></p>

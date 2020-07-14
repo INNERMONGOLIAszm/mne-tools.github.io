@@ -196,8 +196,8 @@ source space data in general.</p>
 </ul>
 </div>
 <p>As usual we’ll start by importing the necessary packages; for this tutorial
-that includes <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.0+3.g1660b1a1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> to handle loading the MRI images (MNE-Python also
-uses <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.0+3.g1660b1a1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> under the hood). We’ll also use a special <a class="reference external" href="https://matplotlib.org/api/patheffects_api.html#module-matplotlib.patheffects" title="(in Matplotlib v3.2.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">Matplotlib</span></code></a> function for adding outlines to text, so that text is
+that includes <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> to handle loading the MRI images (MNE-Python also
+uses <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> under the hood). We’ll also use a special <a class="reference external" href="https://matplotlib.org/api/patheffects_api.html#module-matplotlib.patheffects" title="(in Matplotlib v3.2.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">Matplotlib</span></code></a> function for adding outlines to text, so that text is
 readable on top of an MRI image.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
@@ -217,8 +217,8 @@ readable on top of an MRI image.</p>
 FreeSurfer convention, we look at <code class="file docutils literal notranslate"><span class="pre">T1.mgz</span></code>, which gets created from the
 original MRI <code class="file docutils literal notranslate"><span class="pre">sample/mri/orig/001.mgz</span></code> when you run the FreeSurfer
 command <a class="reference external" href="https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all">recon-all</a>.
-Here we use <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.0+3.g1660b1a1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> to load the T1 image, and the resulting object’s
-<a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.spatialimages.html#nibabel.spatialimages.SpatialImage.orthoview" title="(in NiBabel v3.1.0+3.g1660b1a1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">orthoview()</span></code></a> method to view it.</p>
+Here we use <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> to load the T1 image, and the resulting object’s
+<a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.spatialimages.html#nibabel.spatialimages.SpatialImage.orthoview" title="(in NiBabel v3.1.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">orthoview()</span></code></a> method to view it.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path" class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a><span class="p">,</span> <span class="s1">&#39;subjects&#39;</span><span class="p">)</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subject</span></a> <span class="o">=</span> <span class="s1">&#39;sample&#39;</span>
@@ -229,11 +229,11 @@ Here we use <a class="reference external" href="https://nipy.org/nibabel/referen
 </div>
 <img alt="plot background freesurfer mne" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_background_freesurfer_mne_001.png" />
 <p>Notice that the axes in the
-<a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.spatialimages.html#nibabel.spatialimages.SpatialImage.orthoview" title="(in NiBabel v3.1.0+3.g1660b1a1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">orthoview()</span></code></a> figure are labeled
+<a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.spatialimages.html#nibabel.spatialimages.SpatialImage.orthoview" title="(in NiBabel v3.1.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">orthoview()</span></code></a> figure are labeled
 L-R, S-I, and P-A. These reflect the standard RAS (right-anterior-superior)
 coordinate system that is widely used in MRI imaging. If you are unfamiliar
 with RAS coordinates, see the excellent nibabel tutorial
-<a class="reference external" href="https://nipy.org/nibabel/coordinate_systems.html" title="(in NiBabel v3.1.0+3.g1660b1a1)"><span>Coordinate systems and affines</span></a>.</p>
+<a class="reference external" href="https://nipy.org/nibabel/coordinate_systems.html" title="(in NiBabel v3.1.1)"><span>Coordinate systems and affines</span></a>.</p>
 <p>Nibabel already takes care of some coordinate frame transformations under the
 hood, so let’s do it manually so we understand what is happening. First let’s
 get our data as a 3D array and note that it’s already a standard size:</p>
@@ -270,7 +270,7 @@ the image’s <em>affine transformation</em>.</p>
 mismatch (the affine has shape <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">4)</span></code> because it includes a
 <em>translation</em>, which is applied separately).</p>
 </div>
-<p>We can use <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.0+3.g1660b1a1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> to examine this transformation, keeping in mind
+<p>We can use <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> to examine this transformation, keeping in mind
 that it processes everything in units of millimeters, unlike MNE where things
 are always in SI units (meters).</p>
 <p>This allows us to take an arbitrary voxel or slice of data and know where it
@@ -354,18 +354,18 @@ image, and annotate it in RAS space (rounded to the nearest millimeter):</p>
 into real-world RAS in millimeters.</p>
 <div class="section" id="mri-coordinates-in-mne-python-freesurfer-surface-ras">
 <h3><a class="toc-backref" href="#id2">“MRI coordinates” in MNE-Python: FreeSurfer surface RAS</a><a class="headerlink" href="#mri-coordinates-in-mne-python-freesurfer-surface-ras" title="Permalink to this headline">¶</a></h3>
-<p>While <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.0+3.g1660b1a1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> uses <strong>scanner RAS</strong> <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> coordinates,
+<p>While <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> uses <strong>scanner RAS</strong> <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> coordinates,
 FreeSurfer uses a slightly different coordinate frame: <strong>MRI surface RAS</strong>.
 The transform from voxels to the FreeSurfer MRI surface RAS coordinate frame
 is known in the <a class="reference external" href="https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems">FreeSurfer documentation</a> as <code class="docutils literal notranslate"><span class="pre">Torig</span></code>,
-and in nibabel as <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.freesurfer.html#nibabel.freesurfer.mghformat.MGHHeader.get_vox2ras_tkr" title="(in NiBabel v3.1.0+3.g1660b1a1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">vox2ras_tkr</span></code></a>. This
+and in nibabel as <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.freesurfer.html#nibabel.freesurfer.mghformat.MGHHeader.get_vox2ras_tkr" title="(in NiBabel v3.1.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">vox2ras_tkr</span></code></a>. This
 transformation sets the center of its coordinate frame in the middle of the
 conformed volume dimensions (<code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">/</span> <span class="pre">2.</span></code>) with the axes oriented along the
 axes of the volume itself. For more information, see
 <a class="reference internal" href="../../overview/implementation.html#coordinate-systems"><span class="std std-ref">MEG/EEG and MRI coordinate systems</span></a>.</p>
 <p>Since MNE-Python uses FreeSurfer extensively for surface computations (e.g.,
 white matter, inner/outer skull meshes), internally MNE-Python uses the
-Freeurfer surface RAS coordinate system (not the <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.0+3.g1660b1a1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> scanner RAS
+Freeurfer surface RAS coordinate system (not the <a class="reference external" href="https://nipy.org/nibabel/reference/nibabel.html#module-nibabel" title="(in NiBabel v3.1.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nibabel</span></code></a> scanner RAS
 system) for as many computations as possible, such as all source space
 and BEM mesh vertex definitions.</p>
 <p>Whenever you see “MRI coordinates” or “MRI coords” in MNE-Python’s
@@ -647,7 +647,7 @@ original, high-density mesh as well as our decimated mesh white surfaces.</p>
 <p>Some source space vertices can be removed during forward computation.
 See <a class="reference internal" href="plot_forward.html#tut-forward"><span class="std std-ref">Head model and forward computation</span></a> for more information.</p>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  30.732 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  31.605 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  19 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-source-modeling-plot-background-freesurfer-mne-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">

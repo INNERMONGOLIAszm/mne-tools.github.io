@@ -382,6 +382,12 @@ Created an SSP operator (subspace dimension = 3)
 Loading data for 10 events and 601 original time points ...
 0 bad epochs dropped
 Applying baseline correction (mode: mean)
+Removing projector &lt;Projection | PCA-v1, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v1, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : False, n_channels : 102&gt;
 </pre></div>
 </div>
 <p>Now we’ll do the same for the heartbeat artifacts, using
@@ -423,6 +429,12 @@ Created an SSP operator (subspace dimension = 3)
 Loading data for 59 events and 601 original time points ...
 0 bad epochs dropped
 Applying baseline correction (mode: mean)
+Removing projector &lt;Projection | PCA-v1, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v1, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : False, n_channels : 102&gt;
 </pre></div>
 </div>
 </div>
@@ -494,7 +506,7 @@ time this tutorial is built by our web servers.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fitting ICA to data using 364 channels (please be patient, this may take a while)
 Inferring max_pca_components from picks
 Selecting by number: 15 components
-Fitting ICA took 3.4s.
+Fitting ICA took 2.7s.
 </pre></div>
 </div>
 <p>Some optional parameters that we could have passed to the
@@ -844,7 +856,7 @@ resolves out a little better:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fitting ICA to data using 364 channels (please be patient, this may take a while)
 Inferring max_pca_components from picks
 Selecting by number: 30 components
-Fitting ICA took 13.0s.
+Fitting ICA took 2.7s.
 Reconstructing ECG signal from Magnetometers
 ... filtering ICA sources
 Setting up band-pass filter from 8 - 16 Hz
@@ -957,7 +969,7 @@ Creating raw.info structure...
 Fitting ICA to data using 64 channels (please be patient, this may take a while)
 Inferring max_pca_components from picks
 Selecting by number: 30 components
-Fitting ICA took 1.6s.
+Fitting ICA took 1.7s.
 Extracting EDF parameters from /home/circleci/mne_data/MNE-eegbci-data/files/eegmmidb/1.0.0/S002/S002R03.edf...
 EDF file detected
 Setting channel info structure...
@@ -965,7 +977,7 @@ Creating raw.info structure...
 Fitting ICA to data using 64 channels (please be patient, this may take a while)
 Inferring max_pca_components from picks
 Selecting by number: 30 components
-Fitting ICA took 0.9s.
+Fitting ICA took 1.2s.
 Extracting EDF parameters from /home/circleci/mne_data/MNE-eegbci-data/files/eegmmidb/1.0.0/S003/S003R03.edf...
 EDF file detected
 Setting channel info structure...
@@ -973,7 +985,7 @@ Creating raw.info structure...
 Fitting ICA to data using 64 channels (please be patient, this may take a while)
 Inferring max_pca_components from picks
 Selecting by number: 30 components
-Fitting ICA took 2.7s.
+Fitting ICA took 2.8s.
 Extracting EDF parameters from /home/circleci/mne_data/MNE-eegbci-data/files/eegmmidb/1.0.0/S004/S004R03.edf...
 EDF file detected
 Setting channel info structure...
@@ -1196,7 +1208,7 @@ for Complex Physiologic Signals. <em>Circulation</em> 101(23):e215-e220.
 <a class="reference external" href="https://doi.org/10.1161/01.CIR.101.23.e215">https://doi.org/10.1161/01.CIR.101.23.e215</a></p>
 </dd>
 </dl>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  27.602 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  15.423 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  628 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-preprocessing-plot-40-artifact-correction-ica-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">

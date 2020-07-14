@@ -275,11 +275,19 @@ generate scalp topographies at specific times or time spans using the
 </pre></div>
 </div>
 <img alt="0.050 s, 0.070 s, 0.090 s, 0.110 s, 0.130 s, fT" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_20_visualize_evoked_003.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Removing projector &lt;Projection | Average EEG reference, active : True, n_channels : 60&gt;
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evks</span></a><span class="p">[</span><span class="s1">&#39;aud/left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ch_type</span></a><span class="o">=</span><span class="s1">&#39;mag&#39;</span><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">times</span></a><span class="o">=</span><span class="mf">0.09</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;average from 40-140 ms&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="0.090 s, fT" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_20_visualize_evoked_004.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Removing projector &lt;Projection | Average EEG reference, active : True, n_channels : 60&gt;
+</pre></div>
+</div>
 <p>Additional examples of plotting scalp topographies can be found in
 <a class="reference internal" href="../../auto_examples/visualization/plot_evoked_topomap.html#ex-evoked-topomap"><span class="std std-ref">Plotting topographic maps of evoked data</span></a>.</p>
 </div>
@@ -312,6 +320,17 @@ figure for each channel type:</p>
 <li><img alt="0.093 s, 0.185 s, 0.340 s" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_20_visualize_evoked_008.png" />
 </li>
 </ul>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Removing projector &lt;Projection | Average EEG reference, active : True, n_channels : 60&gt;
+Removing projector &lt;Projection | PCA-v1, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v1, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | Average EEG reference, active : True, n_channels : 60&gt;
+</pre></div>
+</div>
 <p>Like <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked.plot_topomap" title="mne.Evoked.plot_topomap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plot_topomap()</span></code></a> you can specify the <code class="docutils literal notranslate"><span class="pre">times</span></code> at which
 you want the scalp topographies calculated, and you can customize the plot in
 various other ways as well. See <a class="reference internal" href="../../generated/mne.Evoked.html#mne.Evoked.plot_joint" title="mne.Evoked.plot_joint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mne.Evoked.plot_joint()</span></code></a> for details.</p>
@@ -359,10 +378,10 @@ combining channels using &quot;gfp&quot;
 combining channels using &quot;gfp&quot;
 combining channels using &quot;gfp&quot;
 combining channels using &quot;gfp&quot;
-combining channels using &quot;&lt;function custom_func at 0x7fee000280d0&gt;&quot;
-combining channels using &quot;&lt;function custom_func at 0x7fee000280d0&gt;&quot;
-combining channels using &quot;&lt;function custom_func at 0x7fee000280d0&gt;&quot;
-combining channels using &quot;&lt;function custom_func at 0x7fee000280d0&gt;&quot;
+combining channels using &quot;&lt;function custom_func at 0x7f67ec0deca0&gt;&quot;
+combining channels using &quot;&lt;function custom_func at 0x7f67ec0deca0&gt;&quot;
+combining channels using &quot;&lt;function custom_func at 0x7f67ec0deca0&gt;&quot;
+combining channels using &quot;&lt;function custom_func at 0x7f67ec0deca0&gt;&quot;
 </pre></div>
 </div>
 <p>One nice feature of <a class="reference internal" href="../../generated/mne.viz.plot_compare_evokeds.html#mne.viz.plot_compare_evokeds" title="mne.viz.plot_compare_evokeds"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_compare_evokeds()</span></code></a> is that when
@@ -484,13 +503,18 @@ the scalp field estimates from each.</p>
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using surface from /home/circleci/mne_data/MNE-sample-data/subjects/sample/bem/sample-5120-5120-5120-bem.fif.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Removing projector &lt;Projection | Average EEG reference, active : True, n_channels : 60&gt;
+Using surface from /home/circleci/mne_data/MNE-sample-data/subjects/sample/bem/sample-5120-5120-5120-bem.fif.
 Prepare MEG mapping...
 Computing dot products for 102 coils...
 Computing dot products for 2562 surface locations...
 Field mapping data ready
     Preparing the mapping matrix...
     Truncating at 57/102 components to omit less than 0.0001 (9.9e-05)
+Removing projector &lt;Projection | PCA-v1, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | Average EEG reference, active : True, n_channels : 60&gt;
 Using surface from /home/circleci/mne_data/MNE-sample-data/subjects/sample/bem/sample-5120-5120-5120-bem.fif.
 Prepare MEG mapping...
 Computing dot products for 203 coils...
@@ -498,6 +522,9 @@ Computing dot products for 2562 surface locations...
 Field mapping data ready
     Preparing the mapping matrix...
     Truncating at 166/203 components to omit less than 0.0001 (9.7e-05)
+Removing projector &lt;Projection | PCA-v1, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v2, active : True, n_channels : 102&gt;
+Removing projector &lt;Projection | PCA-v3, active : True, n_channels : 102&gt;
 Using surface from /home/circleci/mne_data/MNE-sample-data/subjects/sample/bem/sample-5120-5120-5120-bem.fif.
 Prepare EEG mapping...
 Computing dot products for 59 electrodes...
@@ -508,8 +535,8 @@ Field mapping data ready
     The map will have average electrode reference
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  44.781 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  67 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  47.925 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  130 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-evoked-plot-20-visualize-evoked-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8683a99a389b4ce3b625ed84350fce55/plot_20_visualize_evoked.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_20_visualize_evoked.py</span></code></a></p>

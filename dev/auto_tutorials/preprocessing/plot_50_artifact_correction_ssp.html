@@ -511,6 +511,12 @@ No baseline correction applied
 Created an SSP operator (subspace dimension = 3)
 Loading data for 283 events and 601 original time points ...
 0 bad epochs dropped
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-01, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-02, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-03, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-01, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-02, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-03, active : False, n_channels : 102&gt;
 </pre></div>
 </div>
 <p>Looks like the EEG channels are pretty spread out; let’s baseline-correct and
@@ -529,6 +535,12 @@ plot again:</p>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-01, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-02, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-03, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-01, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-02, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-03, active : False, n_channels : 102&gt;
 </pre></div>
 </div>
 <p>To compute SSP projectors for the heartbeat artifact, you can use
@@ -736,6 +748,24 @@ Created an SSP operator (subspace dimension = 9)
 Loading data for 46 events and 601 original time points ...
 0 bad epochs dropped
 Applying baseline correction (mode: mean)
+Removing projector &lt;Projection | planar-Raw-0.000-110.001-PCA-01, active : False, n_channels : 203&gt;
+Removing projector &lt;Projection | planar-Raw-0.000-110.001-PCA-02, active : False, n_channels : 203&gt;
+Removing projector &lt;Projection | planar-Raw-0.000-110.001-PCA-03, active : False, n_channels : 203&gt;
+Removing projector &lt;Projection | ECG-planar--0.200-0.400-PCA-01, active : False, n_channels : 203&gt;
+Removing projector &lt;Projection | ECG-eeg--0.200-0.400-PCA-01, active : False, n_channels : 59&gt;
+Removing projector &lt;Projection | planar-Raw-0.000-110.001-PCA-01, active : False, n_channels : 203&gt;
+Removing projector &lt;Projection | planar-Raw-0.000-110.001-PCA-02, active : False, n_channels : 203&gt;
+Removing projector &lt;Projection | planar-Raw-0.000-110.001-PCA-03, active : False, n_channels : 203&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-01, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-02, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-03, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | ECG-planar--0.200-0.400-PCA-01, active : False, n_channels : 203&gt;
+Removing projector &lt;Projection | ECG-axial--0.200-0.400-PCA-01, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-01, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-02, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | axial-Raw-0.000-110.001-PCA-03, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | ECG-axial--0.200-0.400-PCA-01, active : False, n_channels : 102&gt;
+Removing projector &lt;Projection | ECG-eeg--0.200-0.400-PCA-01, active : False, n_channels : 59&gt;
 </pre></div>
 </div>
 <p>Just like we did with the heartbeat artifact, we can compute SSP projectors
@@ -856,8 +886,8 @@ thus may be removing brain signal and should be discarded).</p>
 </dd>
 </dl>
 </p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  3.394 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  779 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  55.915 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  776 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-preprocessing-plot-50-artifact-correction-ssp-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c74914b0c84c9d59b74214e27afeb632/plot_50_artifact_correction_ssp.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_50_artifact_correction_ssp.py</span></code></a></p>

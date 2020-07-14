@@ -175,7 +175,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.beamformer.Beamformer<a class="headerlink" href="#mne-beamformer-beamformer" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mne.beamformer.Beamformer">
-<em class="property">class </em><code class="sig-prename descclassname">mne.beamformer.</code><code class="sig-name descname">Beamformer</code><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L406-L467"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mne.beamformer.</code><code class="sig-name descname">Beamformer</code><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L409-L470"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer" title="Permalink to this definition">¶</a></dt>
 <dd><p>A computed beamformer.</p>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -269,7 +269,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L414-L422"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L417-L425"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy the beamformer.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -319,7 +319,7 @@ Raises KeyError if the dict is empty.</p>
 
 <dl class="py method">
 <dt id="mne.beamformer.Beamformer.save">
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L444-L467"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/beamformer/_compute_beamformer.py#L447-L470"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.beamformer.Beamformer.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the beamformer filter.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -365,7 +365,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <img alt="Compute envelope correlations in volume source space" src="../_images/sphx_glr_plot_mne_inverse_envelope_correlation_volume_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/connectivity/plot_mne_inverse_envelope_correlation_volume.html#sphx-glr-auto-examples-connectivity-plot-mne-inverse-envelope-correlation-volume-py"><span class="std std-ref">Compute envelope correlations in volume source space</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Compute a Dynamic Imaging of Coherent Sources (DICS) GrossEtAl2001 filter from single-trial act..."><div class="figure align-default" id="id2">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Compute a Dynamic Imaging of Coherent Sources (DICS) [1]_ filter from single-trial activity to ..."><div class="figure align-default" id="id2">
 <img alt="Compute source power using DICS beamformer" src="../_images/sphx_glr_plot_dics_source_power_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_dics_source_power.html#sphx-glr-auto-examples-inverse-plot-dics-source-power-py"><span class="std std-ref">Compute source power using DICS beamformer</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>

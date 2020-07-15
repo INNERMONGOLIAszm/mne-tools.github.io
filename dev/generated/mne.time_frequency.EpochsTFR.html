@@ -175,7 +175,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.time_frequency.EpochsTFR<a class="headerlink" href="#mne-time-frequency-epochstfr" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="mne.time_frequency.EpochsTFR">
-<em class="property">class </em><code class="sig-prename descclassname">mne.time_frequency.</code><code class="sig-name descname">EpochsTFR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">times</span></em>, <em class="sig-param"><span class="n">freqs</span></em>, <em class="sig-param"><span class="n">comment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">events</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">event_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/time_frequency/tfr.py#L1957-L2073"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.time_frequency.EpochsTFR" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mne.time_frequency.</code><code class="sig-name descname">EpochsTFR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">times</span></em>, <em class="sig-param"><span class="n">freqs</span></em>, <em class="sig-param"><span class="n">comment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">events</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">event_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/time_frequency/tfr.py#L1961-L2077"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.time_frequency.EpochsTFR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Container for Time-Frequency data on epochs.</p>
 <p>Can for example store induced power at sensor level.</p>
 <dl class="field-list">
@@ -541,7 +541,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 
 <dl class="py method">
 <dt id="mne.time_frequency.EpochsTFR.average">
-<code class="sig-name descname">average</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/time_frequency/tfr.py#L2061-L2073"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.time_frequency.EpochsTFR.average" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">average</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/time_frequency/tfr.py#L2065-L2077"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.time_frequency.EpochsTFR.average" title="Permalink to this definition">¶</a></dt>
 <dd><p>Average the data across epochs.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -915,7 +915,7 @@ are dropped.</p>
 
 <dl class="py method">
 <dt id="mne.time_frequency.EpochsTFR.save">
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/time_frequency/tfr.py#L976-L986"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.time_frequency.EpochsTFR.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/time_frequency/tfr.py#L976-L990"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.time_frequency.EpochsTFR.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save TFR object to hdf5 file.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -927,6 +927,12 @@ are dropped.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="mne.time_frequency.read_tfrs.html#mne.time_frequency.read_tfrs" title="mne.time_frequency.read_tfrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_tfrs</span></code></a>, <a class="reference internal" href="mne.time_frequency.write_tfrs.html#mne.time_frequency.write_tfrs" title="mne.time_frequency.write_tfrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_tfrs</span></code></a></dt><dd></dd>
+</dl>
+</div>
 </dd></dl>
 
 </dd></dl>

@@ -698,7 +698,7 @@ raised.</p>
 
 <dl class="py method">
 <dt id="mne.VectorSourceEstimate.normal">
-<code class="sig-name descname">normal</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/utils/docs.py#L1709-L1711"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.VectorSourceEstimate.normal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">normal</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/utils/docs.py#L1716-L1718"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.VectorSourceEstimate.normal" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>DEPRECATED: stc.normal(src) is deprecated and will be removed in 0.22, use stc.project(“normal”, src)[0] instead</p>
@@ -824,7 +824,7 @@ milliseconds (“ms”).</p>
 </dd>
 <dt><strong>show_traces</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>If True, enable interactive picking of a point on the surface of the
 brain and plot it’s time course using the bottom 1/3 of the figure.
-This feature is only available with the PyVista 3d backend when
+This feature is only available with the PyVista 3d backend, and requires
 <code class="docutils literal notranslate"><span class="pre">time_viewer=True</span></code>. Defaults to ‘auto’, which will use True if and
 only if <code class="docutils literal notranslate"><span class="pre">time_viewer=True</span></code>, the backend is PyVista, and there is more
 than one time point.</p>
@@ -938,7 +938,7 @@ spaces and in the +Z / superior direction for volume source spaces.</p>
 Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
-<dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Window to use in resampling. See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+1d8b34b)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+<dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Window to use in resampling. See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+4e3d822)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of jobs to run in parallel (default 1).
 Requires the joblib package.</p>

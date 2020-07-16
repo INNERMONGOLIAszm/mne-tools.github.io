@@ -229,11 +229,10 @@ objects. Note that for this visualization to work, you must have <code class="do
 and <code class="docutils literal notranslate"><span class="pre">pysurfer</span></code> installed on your machine.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">initial_time</span></a> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="n">brain</span> <span class="o">=</span> <a href="../../generated/mne.VectorSourceEstimate.html#mne.VectorSourceEstimate.plot" title="mne.VectorSourceEstimate.plot" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">stc</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">initial_time</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">initial_time</span></a><span class="p">,</span>
-                 <span class="n">clim</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">pos_lims</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]),</span>
-                 <span class="n">time_viewer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                 <span class="n">clim</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">pos_lims</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
 </pre></div>
 </div>
-<img alt="plot visualize stc" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_visualize_stc_001.png" />
+<img alt="sample - lh" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_visualize_stc_001.png" />
 <p>Note that here we used <code class="docutils literal notranslate"><span class="pre">initial_time=0.1</span></code>, but we can also browse through
 time using <code class="docutils literal notranslate"><span class="pre">time_viewer=True</span></code>.</p>
 <p>In case <code class="docutils literal notranslate"><span class="pre">mayavi</span></code> is not available, we also offer a <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>
@@ -415,7 +414,7 @@ Extracting time courses for 194 labels (mode: mean)
          <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">initial_time</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">initial_time</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="plot visualize stc" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_visualize_stc_006.png" />
+<img alt="sample - lh" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_visualize_stc_006.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Reading inverse operator decomposition from /home/circleci/mne_data/MNE-sample-data/MEG/sample/sample_audvis-meg-oct-6-meg-inv.fif...
     Reading inverse operator info...
@@ -561,8 +560,8 @@ Projections have already been applied. Setting proj attribute to True.
 </pre></div>
 </div>
 <img alt="Dipole #1 / 1 &#64; 0.100s, GOF: 51.2%, 35.2nAm MRI: (-59.4, -25.3, 22.0) mm" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_visualize_stc_007.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  7.272 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  632 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  2.124 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  699 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-source-modeling-plot-visualize-stc-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/716ac38db7eb4a85b5f8b1e09260ba81/plot_visualize_stc.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_visualize_stc.py</span></code></a></p>

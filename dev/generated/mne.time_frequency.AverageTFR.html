@@ -772,7 +772,7 @@ minimum value is used.</p>
 <dt><strong>vmax</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The maximum value an the color scale. If vmax is None, the data
 maximum value is used.</p>
 </dd>
-<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a> | ‘interactive’ | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>)</span></dt><dd><p>The colormap to use. If tuple, the first value indicates the
+<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a> | ‘interactive’ | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>)</span></dt><dd><p>The colormap to use. If tuple, the first value indicates the
 colormap to use and the second value is a boolean defining
 interactivity. In interactive mode the colors are adjustable by
 clicking and dragging the colorbar with left and right mouse
@@ -798,7 +798,7 @@ the colorbar cannot be drawn. Defaults to True.</p>
 automatically create a title that lists up to 6 of the channels
 used in the figure.</p>
 </dd>
-<dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If list, the list must be a list of Axes of
+<dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If list, the list must be a list of Axes of
 the same length as the number of channels. If instance of Axes,
 there must be only one channel plotted.</p>
 </dd>
@@ -833,7 +833,7 @@ ignored otherwise.</p>
 </div>
 </div></blockquote>
 </dd>
-<dt><strong>mask_cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’</span></dt><dd><p>The colormap chosen for masked parts of the image (see below), if
+<dt><strong>mask_cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’</span></dt><dd><p>The colormap chosen for masked parts of the image (see below), if
 <code class="docutils literal notranslate"><span class="pre">mask</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>. If None, <code class="docutils literal notranslate"><span class="pre">cmap</span></code> is reused. Defaults to
 <code class="docutils literal notranslate"><span class="pre">'Greys'</span></code>. Not interactive. Otherwise, as <code class="docutils literal notranslate"><span class="pre">cmap</span></code>.</p>
 <blockquote>
@@ -863,7 +863,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>fig</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure containing the topography.</p>
+<dt><strong>fig</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure containing the topography.</p>
 </dd>
 </dl>
 </dd>
@@ -945,7 +945,7 @@ absolute minimum value is used.</p>
 topomaps, see <code class="docutils literal notranslate"><span class="pre">topomap_args</span></code>). If vmax is None, the data
 absolute maximum value is used.</p>
 </dd>
-<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a></span></dt><dd><p>The colormap to use.</p>
+<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a></span></dt><dd><p>The colormap to use.</p>
 </dd>
 <dt><strong>dB</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, 10*log10 is applied to the data to get dB.</p>
 </dd>
@@ -985,7 +985,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>fig</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure containing the topography.</p>
+<dt><strong>fig</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure containing the topography.</p>
 </dd>
 </dl>
 </dd>
@@ -1078,7 +1078,7 @@ maximum value is used.</p>
 <dt><strong>layout</strong><span class="classifier"><a class="reference internal" href="mne.channels.Layout.html#mne.channels.Layout" title="mne.channels.Layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layout</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Layout instance specifying sensor positions. If possible, the
 correct layout is inferred from the data.</p>
 </dd>
-<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>The colormap to use. Defaults to ‘RdBu_r’.</p>
+<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>The colormap to use. Defaults to ‘RdBu_r’.</p>
 </dd>
 <dt><strong>title</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Title of the figure.</p>
 </dd>
@@ -1093,12 +1093,12 @@ on the canvas.</p>
 </dd>
 <dt><strong>border</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Matplotlib borders style to be used for each sensor plot.</p>
 </dd>
-<dt><strong>fig_facecolor</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/colors_api.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">color</span></a></span></dt><dd><p>The figure face color. Defaults to black.</p>
+<dt><strong>fig_facecolor</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/colors_api.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">color</span></a></span></dt><dd><p>The figure face color. Defaults to black.</p>
 </dd>
 <dt><strong>fig_background</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> | <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>A background image for the figure. This must be a valid input to
-<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow</span></code></a>. Defaults to None.</p>
+<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow</span></code></a>. Defaults to None.</p>
 </dd>
-<dt><strong>font_color</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/colors_api.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">color</span></a></span></dt><dd><p>The color of tick labels in the colorbar. Defaults to white.</p>
+<dt><strong>font_color</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/colors_api.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">color</span></a></span></dt><dd><p>The color of tick labels in the colorbar. Defaults to white.</p>
 </dd>
 <dt><strong>yscale</strong><span class="classifier">‘auto’ (default) | ‘linear’ | ‘log’</span></dt><dd><p>The scale of y (frequency) axis. ‘linear’ gives linear y axis,
 ‘log’ leads to log-spaced y axis and ‘auto’ detects if frequencies
@@ -1108,7 +1108,7 @@ are log-spaced and only then sets the y axis to ‘log’.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>fig</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure containing the topography.</p>
+<dt><strong>fig</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure containing the topography.</p>
 </dd>
 </dl>
 </dd>
@@ -1180,7 +1180,7 @@ equals vmin(data). Defaults to None.</p>
 the maximum value is used. If callable, the output equals
 vmax(data). Defaults to None.</p>
 </dd>
-<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’ | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Colormap to use. If tuple, the first value indicates the colormap
+<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’ | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Colormap to use. If tuple, the first value indicates the colormap
 to use and the second value is a boolean defining interactivity. In
 interactive mode the colors are adjustable by clicking and dragging
 the colorbar with left and right mouse button. Left mouse button
@@ -1213,7 +1213,7 @@ only significant sensors will be shown.</p>
 </dd>
 <dt><strong>title</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Title. If None (default), no title is displayed.</p>
 </dd>
-<dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If None the axes is defined automatically.</p>
+<dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If None the axes is defined automatically.</p>
 </dd>
 <dt><strong>show</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Call pyplot.show() at the end.</p>
 </dd>
@@ -1250,7 +1250,7 @@ Currently the head radius does not affect plotting.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>fig</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure containing the topography.</p>
+<dt><strong>fig</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure containing the topography.</p>
 </dd>
 </dl>
 </dd>

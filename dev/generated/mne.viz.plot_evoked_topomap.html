@@ -202,7 +202,7 @@ at 0). If only one of <code class="docutils literal notranslate"><span class="pr
 accept a <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">array</span></code></a> of data and return a
 float.</p>
 </dd>
-<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’ | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Colormap to use. If tuple, the first value indicates the colormap to
+<dt><strong>cmap</strong><span class="classifier">matplotlib <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a> | (<a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">colormap</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>) | ‘interactive’ | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Colormap to use. If tuple, the first value indicates the colormap to
 use and the second value is a boolean defining interactivity. In
 interactive mode the colors are adjustable by clicking and dragging the
 colorbar with left and right mouse button. Left mouse button moves the
@@ -296,7 +296,7 @@ For example, 0.01 would translate into window that starts 5 ms before
 and ends 5 ms after a given time point. Defaults to None, which means
 no averaging.</p>
 </dd>
-<dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If list, the list must be a list of Axes of the
+<dt><strong>axes</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The axes to plot to. If list, the list must be a list of Axes of the
 same length as <code class="docutils literal notranslate"><span class="pre">times</span></code> (unless <code class="docutils literal notranslate"><span class="pre">times</span></code> is None). If instance of
 Axes, <code class="docutils literal notranslate"><span class="pre">times</span></code> must be a float or a list of one float.
 Defaults to None.</p>
@@ -373,7 +373,7 @@ and the number of rows. Not valid when times == ‘interactive’.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>fig</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure.</p>
+<dt><strong>fig</strong><span class="classifier">instance of <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v3.3.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a></span></dt><dd><p>The figure.</p>
 </dd>
 </dl>
 </dd>
@@ -383,8 +383,8 @@ and the number of rows. Not valid when times == ‘interactive’.</p>
 colorbar scale will only accurately reflect topomaps that are generated in
 the same call as the colorbar. Note also that the colorbar will not be
 resized automatically when <code class="docutils literal notranslate"><span class="pre">axes</span></code> are provided; use matplotlib’s
-<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.set_position.html#matplotlib.axes.Axes.set_position" title="(in Matplotlib v3.2.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">axes.set_position()</span></code></a> method or
-<a class="reference external" href="https://matplotlib.org/tutorials/intermediate/gridspec.html" title="(in Matplotlib v3.2.2)"><span class="xref std std-doc">gridspec</span></a> interface to
+<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.set_position.html#matplotlib.axes.Axes.set_position" title="(in Matplotlib v3.3.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">axes.set_position()</span></code></a> method or
+<a class="reference external" href="https://matplotlib.org/tutorials/intermediate/gridspec.html" title="(in Matplotlib v3.3.0)"><span class="xref std std-doc">gridspec</span></a> interface to
 adjust the colorbar size yourself.</p>
 </dd></dl>
 

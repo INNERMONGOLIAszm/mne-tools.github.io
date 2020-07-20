@@ -178,29 +178,34 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <div class="sphx-glr-example-title section" id="interpolate-bad-channels-for-meg-eeg-channels">
 <span id="sphx-glr-auto-examples-preprocessing-plot-interpolate-bad-channels-py"></span><h1>Interpolate bad channels for MEG/EEG channels<a class="headerlink" href="#interpolate-bad-channels-for-meg-eeg-channels" title="Permalink to this headline">¶</a></h1>
 <p>This example shows how to interpolate bad MEG/EEG channels</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Using spherical splines as described in <a class="footnote-reference brackets" href="#id2" id="id1">1</a> for EEG data.</p></li>
-<li><p>Using field interpolation for MEG data.</p></li>
+<ul class="simple">
+<li><p>Using spherical splines from <a class="footnote-reference brackets" href="#perrinetal1989" id="id1">1</a> for EEG data.</p></li>
+<li><p>Using field interpolation for MEG and EEG data.</p></li>
 </ul>
-</div></blockquote>
-<p>The bad channels will still be marked as bad. Only the data in those channels
-is removed.</p>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Perrin, F., Pernier, J., Bertrand, O. and Echallier, JF. (1989)
-Spherical splines for scalp potential and current density mapping.
-Electroencephalography and Clinical Neurophysiology, Feb; 72(2):184-7.</p>
-</dd>
-</dl>
-<ul class="sphx-glr-horizontal">
-<li><img alt="EEG (60 channels), Gradiometers (204 channels), Magnetometers (102 channels), EOG (1 channel)" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_interpolate_bad_channels_001.png" />
-</li>
-<li><img alt="EEG (60 channels), Gradiometers (204 channels), Magnetometers (102 channels), EOG (1 channel)" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_interpolate_bad_channels_002.png" />
-</li>
-</ul>
+<p>In this example, the bad channels will still be marked as bad.
+Only the data in those channels is replaced.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Denis A. Engemann &lt;denis.engemann@gmail.com&gt;</span>
+<span class="c1">#          Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># License: BSD (3-clause)</span>
+
+
+<span class="kn">import</span> <span class="nn">mne</span>
+<span class="kn">from</span> <span class="nn">mne.datasets</span> <span class="kn">import</span> <span class="n">sample</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path" class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
+
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis-ave.fif&#39;</span>
+<a href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked</span></a> <span class="o">=</span> <a href="../../generated/mne.read_evokeds.html#mne.read_evokeds" title="mne.read_evokeds" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">read_evokeds</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname</span></a><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="s1">&#39;Left Auditory&#39;</span><span class="p">,</span>
+                          <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># plot with bads</span>
+<a href="../../generated/mne.Evoked.html#mne.Evoked.plot" title="mne.Evoked.plot" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">evoked</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">picks</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span> <span class="s1">&#39;eeg&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="EEG (60 channels), Gradiometers (204 channels)" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_interpolate_bad_channels_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Reading /home/circleci/mne_data/MNE-sample-data/MEG/sample/sample_audvis-ave.fif ...
     Read a total of 4 projection items:
@@ -216,36 +221,53 @@ Projections have already been applied. Setting proj attribute to True.
 Applying baseline correction (mode: mean)
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Denis A. Engemann &lt;denis.engemann@gmail.com&gt;</span>
-<span class="c1">#          Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
-<span class="c1">#</span>
-<span class="c1"># License: BSD (3-clause)</span>
-
-<span class="kn">import</span> <span class="nn">mne</span>
-<span class="kn">from</span> <span class="nn">mne.datasets</span> <span class="kn">import</span> <span class="n">sample</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
-
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a> <span class="o">=</span> <a href="../../generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path" class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function"><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
-
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a> <span class="o">+</span> <span class="s1">&#39;/MEG/sample/sample_audvis-ave.fif&#39;</span>
-<a href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked</span></a> <span class="o">=</span> <a href="../../generated/mne.read_evokeds.html#mne.read_evokeds" title="mne.read_evokeds" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">read_evokeds</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname</span></a><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="s1">&#39;Left Auditory&#39;</span><span class="p">,</span>
-                          <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-
-<span class="c1"># plot with bads</span>
-<a href="../../generated/mne.Evoked.html#mne.Evoked.plot" title="mne.Evoked.plot" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">evoked</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">time_unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
-
-<span class="c1"># compute interpolation (also works with Raw and Epochs objects)</span>
-<a href="../../generated/mne.Evoked.html#mne.Evoked.interpolate_bads" title="mne.Evoked.interpolate_bads" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">evoked</span><span class="o">.</span><span class="n">interpolate_bads</span></a><span class="p">(</span><span class="n">reset_bads</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># plot interpolated (previous bads)</span>
-<a href="../../generated/mne.Evoked.html#mne.Evoked.plot" title="mne.Evoked.plot" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">evoked</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">time_unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<p>Compute interpolation (also works with Raw and Epochs objects)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked_interp</span></a> <span class="o">=</span> <a href="../../generated/mne.Evoked.html#mne.Evoked.copy" title="mne.Evoked.copy" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">evoked</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">interpolate_bads</span><span class="p">(</span><span class="n">reset_bads</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="../../generated/mne.Evoked.html#mne.Evoked.plot" title="mne.Evoked.plot" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">evoked_interp</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">picks</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span> <span class="s1">&#39;eeg&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.575 seconds)</p>
+<img alt="EEG (60 channels), Gradiometers (204 channels)" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_interpolate_bad_channels_002.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Interpolating bad channels
+    Automatic origin fit: head of radius 91.0 mm
+Computing interpolation matrix from 59 sensor positions
+Interpolating 1 sensors
+    Computing dot products for 305 MEG channels...
+    Computing cross products for 305 → 1 MEG channel...
+    Preparing the mapping matrix...
+    Truncating at 85/305 components to omit less than 0.0001 (9.4e-05)
+</pre></div>
+</div>
+<p>You can also use minimum-norm for EEG as well as MEG</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked_interp_mne</span></a> <span class="o">=</span> <a href="../../generated/mne.Evoked.html#mne.Evoked.copy" title="mne.Evoked.copy" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">evoked</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">interpolate_bads</span><span class="p">(</span>
+    <span class="n">reset_bads</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="s1">&#39;MNE&#39;</span><span class="p">),</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="../../generated/mne.Evoked.html#mne.Evoked.plot" title="mne.Evoked.plot" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method"><span class="n">evoked_interp_mne</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">picks</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span> <span class="s1">&#39;eeg&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="EEG (60 channels), Gradiometers (204 channels)" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_interpolate_bad_channels_003.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Interpolating bad channels
+    Automatic origin fit: head of radius 91.0 mm
+    Computing dot products for 305 MEG channels...
+    Computing cross products for 305 → 1 MEG channel...
+    Preparing the mapping matrix...
+    Truncating at 85/305 components to omit less than 0.0001 (9.4e-05)
+    Computing dot products for 59 EEG channels...
+    Computing cross products for 59 → 60 EEG channels...
+    Preparing the mapping matrix...
+    Truncating at 58/59 components and regularizing with α=1.0e-01
+    The map has an average electrode reference (60 channels)
+</pre></div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-footbibliography-auto_examples/preprocessing/plot_interpolate_bad_channels-0"><dl class="footnote brackets">
+<dt class="label" id="perrinetal1989"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>François M. Perrin, Jacques Pernier, Olivier M. Bertrand, and Jean Franćois Echallier. Spherical splines for scalp potential and current density mapping. <em>Electroencephalography and Clinical Neurophysiology</em>, 72(2):184–187, 1989. <a class="reference external" href="https://doi.org/10.1016/0013-4694(89)90180-6">doi:10.1016/0013-4694(89)90180-6</a>.</p>
+</dd>
+</dl>
+</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  12.383 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  8 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-preprocessing-plot-interpolate-bad-channels-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">

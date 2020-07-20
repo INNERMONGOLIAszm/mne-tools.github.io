@@ -175,7 +175,7 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.io.anonymize_info<a class="headerlink" href="#mne-io-anonymize-info" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mne.io.anonymize_info">
-<code class="sig-prename descclassname">mne.io.</code><code class="sig-name descname">anonymize_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">daysback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">keep_his</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L2098-L2280"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.io.anonymize_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne.io.</code><code class="sig-name descname">anonymize_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">daysback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">keep_his</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/io/meas_info.py#L2098-L2249"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.io.anonymize_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Anonymize measurement information in place.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -192,11 +192,12 @@ stay synchronized (e.g.,
 <dt><strong>info</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a>, instance of <a class="reference internal" href="mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Info</span></code></a></span></dt><dd><p>Measurement information for the dataset.</p>
 </dd>
 <dt><strong>daysback</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Number of days to subtract from all dates.
-If None (default) the date of service will be set to Jan 1ˢᵗ 2000.
-This parameter is ignored if <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span> <span class="pre">is</span> <span class="pre">None</span></code>.</p>
+If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), the acquisition date, <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code>,
+will be set to <code class="docutils literal notranslate"><span class="pre">January</span> <span class="pre">1ˢᵗ,</span> <span class="pre">2000</span></code>. This parameter is ignored if
+<code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (i.e., no acquisition date has been set).</p>
 </dd>
-<dt><strong>keep_his</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True his_id of subject_info will NOT be overwritten.
-Defaults to False.</p>
+<dt><strong>keep_his</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">his_id</span></code> of <code class="docutils literal notranslate"><span class="pre">subject_info</span></code> will <strong>not</strong> be overwritten.
+Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This could mean that <code class="docutils literal notranslate"><span class="pre">info</span></code> is not fully
@@ -210,13 +211,13 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>info</strong><span class="classifier">instance of <a class="reference internal" href="mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Info</span></code></a></span></dt><dd><p>Measurement information for the dataset.</p>
+<dt><strong>info</strong><span class="classifier">instance of <a class="reference internal" href="mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Info</span></code></a></span></dt><dd><p>The anonymized measurement information.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Removes potentially identifying information if it exist in <code class="docutils literal notranslate"><span class="pre">info</span></code>.
+<p>Removes potentially identifying information if it exists in <code class="docutils literal notranslate"><span class="pre">info</span></code>.
 Specifically for each of the following we use:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -246,17 +247,17 @@ to maintain the subject age.</p>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>proc_history</dt><dd><p>Dates use the meas_date logic, and experimenter a default string.</p>
+<dt>proc_history</dt><dd><p>Dates use the <code class="docutils literal notranslate"><span class="pre">meas_date</span></code> logic, and experimenter a default string.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>helium_info, device_info</dt><dd><p>Dates use the meas_date logic, meta info uses defaults.</p>
+<dt>helium_info, device_info</dt><dd><p>Dates use the <code class="docutils literal notranslate"><span class="pre">meas_date</span></code> logic, meta info uses defaults.</p>
 </dd>
 </dl>
 </li>
 </ul>
-<p>If <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code> is None, it will remain None during processing
+<p>If <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, it will remain <code class="docutils literal notranslate"><span class="pre">None</span></code> during processing
 the above fields.</p>
 <p>Operates in place.</p>
 </dd></dl>

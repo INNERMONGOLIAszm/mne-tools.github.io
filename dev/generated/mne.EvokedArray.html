@@ -432,7 +432,7 @@ prepended to the comment.</p>
 
 <dl class="py method">
 <dt id="mne.EvokedArray.add_channels">
-<code class="sig-name descname">add_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">add_list</span></em>, <em class="sig-param"><span class="n">force_update_info</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L910-L1005"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.add_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">add_list</span></em>, <em class="sig-param"><span class="n">force_update_info</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L925-L1020"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.add_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append new channels to the instance.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -566,26 +566,18 @@ Currently the head radius does not affect plotting.</p>
 
 <dl class="py method">
 <dt id="mne.EvokedArray.anonymize">
-<code class="sig-name descname">anonymize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">daysback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">keep_his</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L570-L578"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.anonymize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">anonymize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">daysback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">keep_his</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L570-L593"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.anonymize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Anonymize measurement information in place.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">info</span></code> is part of an object like
-<a class="reference internal" href="mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-class docutils literal notranslate"><span class="pre">raw.info</span></code></a>, you should directly use
-the method <a class="reference internal" href="mne.io.Raw.html#mne.io.Raw.anonymize" title="mne.io.Raw.anonymize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">raw.anonymize()</span></code></a>
-to ensure that all parts of the data are anonymized and
-stay synchronized (e.g.,
-<a class="reference internal" href="mne.Annotations.html#mne.Annotations" title="mne.Annotations"><code class="xref py py-class docutils literal notranslate"><span class="pre">raw.annotations</span></code></a>).</p>
-</div>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>daysback</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Number of days to subtract from all dates.
-If None (default) the date of service will be set to Jan 1ˢᵗ 2000.
-This parameter is ignored if <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span> <span class="pre">is</span> <span class="pre">None</span></code>.</p>
+If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), the acquisition date, <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code>,
+will be set to <code class="docutils literal notranslate"><span class="pre">January</span> <span class="pre">1ˢᵗ,</span> <span class="pre">2000</span></code>. This parameter is ignored if
+<code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (i.e., no acquisition date has been set).</p>
 </dd>
-<dt><strong>keep_his</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True his_id of subject_info will NOT be overwritten.
-Defaults to False.</p>
+<dt><strong>keep_his</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">his_id</span></code> of <code class="docutils literal notranslate"><span class="pre">subject_info</span></code> will <strong>not</strong> be overwritten.
+Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This could mean that <code class="docutils literal notranslate"><span class="pre">info</span></code> is not fully
@@ -599,13 +591,13 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>info</strong><span class="classifier">instance of <a class="reference internal" href="mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Info</span></code></a></span></dt><dd><p>Measurement information for the dataset.</p>
+<dt><strong>inst</strong><span class="classifier">instance of <a class="reference internal" href="mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Raw</span></code></a> | <a class="reference internal" href="mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Epochs</span></code></a> | <a class="reference internal" href="mne.Evoked.html#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a></span></dt><dd><p>The modified instance.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Removes potentially identifying information if it exist in <code class="docutils literal notranslate"><span class="pre">info</span></code>.
+<p>Removes potentially identifying information if it exists in <code class="docutils literal notranslate"><span class="pre">info</span></code>.
 Specifically for each of the following we use:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -635,24 +627,22 @@ to maintain the subject age.</p>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>proc_history</dt><dd><p>Dates use the meas_date logic, and experimenter a default string.</p>
+<dt>proc_history</dt><dd><p>Dates use the <code class="docutils literal notranslate"><span class="pre">meas_date</span></code> logic, and experimenter a default string.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>helium_info, device_info</dt><dd><p>Dates use the meas_date logic, meta info uses defaults.</p>
+<dt>helium_info, device_info</dt><dd><p>Dates use the <code class="docutils literal notranslate"><span class="pre">meas_date</span></code> logic, meta info uses defaults.</p>
 </dd>
 </dl>
 </li>
 </ul>
-<p>If <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code> is None, it will remain None during processing
+<p>If <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, it will remain <code class="docutils literal notranslate"><span class="pre">None</span></code> during processing
 the above fields.</p>
 <p>Operates in place.</p>
-<blockquote>
-<div><div class="versionadded">
+<div class="versionadded">
 <p><span class="versionmodified added">New in version 0.13.0.</span></p>
 </div>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -1045,7 +1035,7 @@ None (default) will pick good data channels.</p>
 
 <dl class="py method">
 <dt id="mne.EvokedArray.drop_channels">
-<code class="sig-name descname">drop_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L817-L861"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.drop_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">drop_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L832-L876"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.drop_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Drop channel(s).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1160,8 +1150,8 @@ suppression.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+e2d9a94)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+e2d9a94)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+283cdbb)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+283cdbb)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -1334,7 +1324,7 @@ return_amplitude is True.</p>
 
 <dl class="py method">
 <dt id="mne.EvokedArray.interpolate_bads">
-<code class="sig-name descname">interpolate_bads</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reset_bads</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'accurate'</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L1011-L1060"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.interpolate_bads" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">interpolate_bads</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reset_bads</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'accurate'</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L1026-L1102"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.interpolate_bads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate bad MEG and EEG channels.</p>
 <p>Operates in place.</p>
 <dl class="field-list">
@@ -1343,14 +1333,38 @@ return_amplitude is True.</p>
 <dt><strong>reset_bads</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, remove the bads from info.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Either <code class="docutils literal notranslate"><span class="pre">'accurate'</span></code> or <code class="docutils literal notranslate"><span class="pre">'fast'</span></code>, determines the quality of the
-Legendre polynomial expansion used for interpolation of MEG
-channels.</p>
+Legendre polynomial expansion used for interpolation of channels
+using the minimum-norm method.</p>
 </dd>
 <dt><strong>origin</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/glossary.html#term-array-like" title="(in NumPy v1.20.dev0)"><span>array_like</span></a>, shape (3,) | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Origin of the sphere in the head coordinate frame and in meters.
 Can be <code class="docutils literal notranslate"><span class="pre">'auto'</span></code> (default), which means a head-digitization-based
 origin fit.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.17.</span></p>
+</div>
+</dd>
+<dt><strong>method</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Method to use for each channel type.
+Currently only the key “eeg” has multiple options:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;spline&quot;</span></code> (default)</dt><dd><p>Use spherical spline interpolation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;MNE&quot;</span></code></dt><dd><p>Use minimum-norm projection to a sphere and back.
+This is the method used for MEG channels.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The value for “meg” is “MNE”, and the value for
+“fnirs” is “nearest”. The default (None) is thus an alias for:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">meg</span><span class="o">=</span><span class="s2">&quot;MNE&quot;</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="s2">&quot;spline&quot;</span><span class="p">,</span> <span class="n">fnirs</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.</span></p>
 </div>
 </dd>
 <dt><strong>verbose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>If not None, override default verbose level (see <a class="reference internal" href="mne.verbose.html#mne.verbose" title="mne.verbose"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
@@ -1379,7 +1393,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 
 <dl class="py method">
 <dt id="mne.EvokedArray.pick">
-<code class="sig-name descname">pick</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">picks</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L762-L780"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.pick" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pick</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">picks</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L777-L795"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.pick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pick a subset of channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1408,7 +1422,7 @@ types (e.g., exclude=”bads” when picks=”meg”).</p>
 
 <dl class="py method">
 <dt id="mne.EvokedArray.pick_channels">
-<code class="sig-name descname">pick_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em>, <em class="sig-param"><span class="n">ordered</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L727-L760"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.pick_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pick_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em>, <em class="sig-param"><span class="n">ordered</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L742-L775"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.pick_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pick some channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1449,7 +1463,7 @@ You can use <code class="docutils literal notranslate"><span class="pre">reorder
 
 <dl class="py method">
 <dt id="mne.EvokedArray.pick_types">
-<code class="sig-name descname">pick_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meg</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eeg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">stim</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">eog</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ecg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">emg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ref_meg</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">misc</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">resp</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">chpi</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">exci</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ias</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">syst</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">seeg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">dipole</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gof</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bio</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ecog</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">fnirs</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">csd</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">'bads'</span></em>, <em class="sig-param"><span class="n">selection</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L636-L725"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.pick_types" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pick_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meg</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eeg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">stim</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">eog</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ecg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">emg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ref_meg</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">misc</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">resp</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">chpi</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">exci</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ias</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">syst</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">seeg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">dipole</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gof</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bio</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ecog</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">fnirs</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">csd</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">'bads'</span></em>, <em class="sig-param"><span class="n">selection</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L651-L740"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.pick_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pick some channels by type and names.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2822,7 +2836,7 @@ that takes and returns a string.</p>
 
 <dl class="py method">
 <dt id="mne.EvokedArray.reorder_channels">
-<code class="sig-name descname">reorder_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L782-L815"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.reorder_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reorder_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L797-L830"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.reorder_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reorder channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2872,7 +2886,7 @@ Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
 <dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Frequency-domain window to use in resampling.
-See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+e2d9a94)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+283cdbb)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Number of jobs to run in parallel. Can be ‘cuda’ if <code class="docutils literal notranslate"><span class="pre">cupy</span></code>
 is installed properly.</p>
@@ -3129,7 +3143,7 @@ they are properly set in <code class="docutils literal notranslate"><span class=
 
 <dl class="py method">
 <dt id="mne.EvokedArray.set_meas_date">
-<code class="sig-name descname">set_meas_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meas_date</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L580-L630"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.set_meas_date" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_meas_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meas_date</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L595-L645"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.EvokedArray.set_meas_date" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the measurement start date.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>

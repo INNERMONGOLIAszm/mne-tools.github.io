@@ -437,7 +437,7 @@ prepended to the comment.</p>
 
 <dl class="py method">
 <dt id="mne.Evoked.add_channels">
-<code class="sig-name descname">add_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">add_list</span></em>, <em class="sig-param"><span class="n">force_update_info</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L910-L1005"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.add_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">add_list</span></em>, <em class="sig-param"><span class="n">force_update_info</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L925-L1020"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.add_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append new channels to the instance.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -580,26 +580,18 @@ Currently the head radius does not affect plotting.</p>
 
 <dl class="py method">
 <dt id="mne.Evoked.anonymize">
-<code class="sig-name descname">anonymize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">daysback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">keep_his</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L570-L578"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.anonymize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">anonymize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">daysback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">keep_his</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L570-L593"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.anonymize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Anonymize measurement information in place.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">info</span></code> is part of an object like
-<a class="reference internal" href="mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-class docutils literal notranslate"><span class="pre">raw.info</span></code></a>, you should directly use
-the method <a class="reference internal" href="mne.io.Raw.html#mne.io.Raw.anonymize" title="mne.io.Raw.anonymize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">raw.anonymize()</span></code></a>
-to ensure that all parts of the data are anonymized and
-stay synchronized (e.g.,
-<a class="reference internal" href="mne.Annotations.html#mne.Annotations" title="mne.Annotations"><code class="xref py py-class docutils literal notranslate"><span class="pre">raw.annotations</span></code></a>).</p>
-</div>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>daysback</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>Number of days to subtract from all dates.
-If None (default) the date of service will be set to Jan 1ˢᵗ 2000.
-This parameter is ignored if <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span> <span class="pre">is</span> <span class="pre">None</span></code>.</p>
+If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), the acquisition date, <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code>,
+will be set to <code class="docutils literal notranslate"><span class="pre">January</span> <span class="pre">1ˢᵗ,</span> <span class="pre">2000</span></code>. This parameter is ignored if
+<code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (i.e., no acquisition date has been set).</p>
 </dd>
-<dt><strong>keep_his</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True his_id of subject_info will NOT be overwritten.
-Defaults to False.</p>
+<dt><strong>keep_his</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">his_id</span></code> of <code class="docutils literal notranslate"><span class="pre">subject_info</span></code> will <strong>not</strong> be overwritten.
+Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This could mean that <code class="docutils literal notranslate"><span class="pre">info</span></code> is not fully
@@ -613,13 +605,13 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>info</strong><span class="classifier">instance of <a class="reference internal" href="mne.Info.html#mne.Info" title="mne.Info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Info</span></code></a></span></dt><dd><p>Measurement information for the dataset.</p>
+<dt><strong>inst</strong><span class="classifier">instance of <a class="reference internal" href="mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Raw</span></code></a> | <a class="reference internal" href="mne.Epochs.html#mne.Epochs" title="mne.Epochs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Epochs</span></code></a> | <a class="reference internal" href="#mne.Evoked" title="mne.Evoked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Evoked</span></code></a></span></dt><dd><p>The modified instance.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Removes potentially identifying information if it exist in <code class="docutils literal notranslate"><span class="pre">info</span></code>.
+<p>Removes potentially identifying information if it exists in <code class="docutils literal notranslate"><span class="pre">info</span></code>.
 Specifically for each of the following we use:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -649,24 +641,22 @@ to maintain the subject age.</p>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>proc_history</dt><dd><p>Dates use the meas_date logic, and experimenter a default string.</p>
+<dt>proc_history</dt><dd><p>Dates use the <code class="docutils literal notranslate"><span class="pre">meas_date</span></code> logic, and experimenter a default string.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>helium_info, device_info</dt><dd><p>Dates use the meas_date logic, meta info uses defaults.</p>
+<dt>helium_info, device_info</dt><dd><p>Dates use the <code class="docutils literal notranslate"><span class="pre">meas_date</span></code> logic, meta info uses defaults.</p>
 </dd>
 </dl>
 </li>
 </ul>
-<p>If <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code> is None, it will remain None during processing
+<p>If <code class="docutils literal notranslate"><span class="pre">info['meas_date']</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, it will remain <code class="docutils literal notranslate"><span class="pre">None</span></code> during processing
 the above fields.</p>
 <p>Operates in place.</p>
-<blockquote>
-<div><div class="versionadded">
+<div class="versionadded">
 <p><span class="versionmodified added">New in version 0.13.0.</span></p>
 </div>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -894,45 +884,49 @@ operates on. It also returns an EvokedArray instance.</p>
 </dd>
 </dl>
 <p class="rubric" id="sphx-glr-backreferences-mne-evoked-copy">Examples using <code class="docutils literal notranslate"><span class="pre">copy</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="Load evoked data and plot arrowmaps along with the topomap for selected time points. An arrowma..."><div class="figure align-default" id="id13">
+<div class="sphx-glr-thumbcontainer" tooltip="This example shows how to interpolate bad MEG/EEG channels"><div class="figure align-default" id="id13">
+<img alt="Interpolate bad channels for MEG/EEG channels" src="../_images/sphx_glr_plot_interpolate_bad_channels_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/preprocessing/plot_interpolate_bad_channels.html#sphx-glr-auto-examples-preprocessing-plot-interpolate-bad-channels-py"><span class="std std-ref">Interpolate bad channels for MEG/EEG channels</span></a></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Load evoked data and plot arrowmaps along with the topomap for selected time points. An arrowma..."><div class="figure align-default" id="id14">
 <img alt="Plotting topographic arrowmaps of evoked data" src="../_images/sphx_glr_plot_evoked_arrowmap_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/visualization/plot_evoked_arrowmap.html#sphx-glr-auto-examples-visualization-plot-evoked-arrowmap-py"><span class="std std-ref">Plotting topographic arrowmaps of evoked data</span></a></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/visualization/plot_evoked_arrowmap.html#sphx-glr-auto-examples-visualization-plot-evoked-arrowmap-py"><span class="std std-ref">Plotting topographic arrowmaps of evoked data</span></a></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here we compute the resting state from raw for data recorded using a Neuromag VectorView system..."><div class="figure align-default" id="id14">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here we compute the resting state from raw for data recorded using a Neuromag VectorView system..."><div class="figure align-default" id="id15">
 <img alt="Compute source power spectral density (PSD) of VectorView and OPM data" src="../_images/sphx_glr_plot_source_power_spectrum_opm_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/time_frequency/plot_source_power_spectrum_opm.html#sphx-glr-auto-examples-time-frequency-plot-source-power-spectrum-opm-py"><span class="std std-ref">Compute source power spectral density (PSD) of VectorView and OPM data</span></a></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/time_frequency/plot_source_power_spectrum_opm.html#sphx-glr-auto-examples-time-frequency-plot-source-power-spectrum-opm-py"><span class="std std-ref">Compute source power spectral density (PSD) of VectorView and OPM data</span></a></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute and plot source space SNR as in [1]_."><div class="figure align-default" id="id15">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute and plot source space SNR as in [1]_."><div class="figure align-default" id="id16">
 <img alt="Computing source space SNR" src="../_images/sphx_glr_plot_source_space_snr_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_source_space_snr.html#sphx-glr-auto-examples-inverse-plot-source-space-snr-py"><span class="std std-ref">Computing source space SNR</span></a></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_source_space_snr.html#sphx-glr-auto-examples-inverse-plot-source-space-snr-py"><span class="std std-ref">Computing source space SNR</span></a></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here we compute the evoked from raw for the Brainstorm tutorial dataset. For comparison, see [1..."><div class="figure align-default" id="id16">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here we compute the evoked from raw for the Brainstorm tutorial dataset. For comparison, see [1..."><div class="figure align-default" id="id17">
 <img alt="Brainstorm raw (median nerve) dataset" src="../_images/sphx_glr_plot_brainstorm_data_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/datasets/plot_brainstorm_data.html#sphx-glr-auto-examples-datasets-plot-brainstorm-data-py"><span class="std std-ref">Brainstorm raw (median nerve) dataset</span></a></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/datasets/plot_brainstorm_data.html#sphx-glr-auto-examples-datasets-plot-brainstorm-data-py"><span class="std std-ref">Brainstorm raw (median nerve) dataset</span></a></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example looks at high-frequency SEF responses."><div class="figure align-default" id="id17">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example looks at high-frequency SEF responses."><div class="figure align-default" id="id18">
 <img alt="HF-SEF dataset" src="../_images/sphx_glr_plot_hf_sef_data_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/datasets/plot_hf_sef_data.html#sphx-glr-auto-examples-datasets-plot-hf-sef-data-py"><span class="std std-ref">HF-SEF dataset</span></a></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/datasets/plot_hf_sef_data.html#sphx-glr-auto-examples-datasets-plot-hf-sef-data-py"><span class="std std-ref">HF-SEF dataset</span></a></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this dataset, electrical median nerve stimulation was delivered to the left wrist of the sub..."><div class="figure align-default" id="id18">
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this dataset, electrical median nerve stimulation was delivered to the left wrist of the sub..."><div class="figure align-default" id="id19">
 <img alt="Optically pumped magnetometer (OPM) data" src="../_images/sphx_glr_plot_opm_data_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/datasets/plot_opm_data.html#sphx-glr-auto-examples-datasets-plot-opm-data-py"><span class="std std-ref">Optically pumped magnetometer (OPM) data</span></a></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/datasets/plot_opm_data.html#sphx-glr-auto-examples-datasets-plot-opm-data-py"><span class="std std-ref">Optically pumped magnetometer (OPM) data</span></a></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id19">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id20">
 <img alt="The Evoked data structure: evoked/averaged data" src="../_images/sphx_glr_plot_10_evoked_overview_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Many methods in MNE, including source estimation and some classification algorithms, require co..."><div class="figure align-default" id="id20">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Many methods in MNE, including source estimation and some classification algorithms, require co..."><div class="figure align-default" id="id21">
 <img alt="Computing a covariance matrix" src="../_images/sphx_glr_plot_compute_covariance_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_compute_covariance.html#sphx-glr-auto-tutorials-source-modeling-plot-compute-covariance-py"><span class="std std-ref">Computing a covariance matrix</span></a></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_compute_covariance.html#sphx-glr-auto-tutorials-source-modeling-plot-compute-covariance-py"><span class="std std-ref">Computing a covariance matrix</span></a></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This shows how to fit a dipole [1]_ using mne-python."><div class="figure align-default" id="id21">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This shows how to fit a dipole [1]_ using mne-python."><div class="figure align-default" id="id22">
 <img alt="Source localization with equivalent current dipole (ECD) fit" src="../_images/sphx_glr_plot_dipole_fit_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_dipole_fit.html#sphx-glr-auto-tutorials-source-modeling-plot-dipole-fit-py"><span class="std std-ref">Source localization with equivalent current dipole (ECD) fit</span></a></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_dipole_fit.html#sphx-glr-auto-tutorials-source-modeling-plot-dipole-fit-py"><span class="std std-ref">Source localization with equivalent current dipole (ECD) fit</span></a></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here we read 4DBTi epochs data obtained with a spherical phantom using four different dipole lo..."><div class="figure align-default" id="id22">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here we read 4DBTi epochs data obtained with a spherical phantom using four different dipole lo..."><div class="figure align-default" id="id23">
 <img alt="4D Neuroimaging/BTi phantom dataset tutorial" src="../_images/sphx_glr_plot_phantom_4DBTi_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/sample-datasets/plot_phantom_4DBTi.html#sphx-glr-auto-tutorials-sample-datasets-plot-phantom-4dbti-py"><span class="std std-ref">4D Neuroimaging/BTi phantom dataset tutorial</span></a></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/sample-datasets/plot_phantom_4DBTi.html#sphx-glr-auto-tutorials-sample-datasets-plot-phantom-4dbti-py"><span class="std std-ref">4D Neuroimaging/BTi phantom dataset tutorial</span></a></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></dd></dl>
 
@@ -966,52 +960,52 @@ Python indexing typically works).</p>
 <p>Unlike Python slices, MNE time intervals include both their end points;
 crop(tmin, tmax) returns the interval tmin &lt;= t &lt;= tmax.</p>
 <p class="rubric" id="sphx-glr-backreferences-mne-evoked-crop">Examples using <code class="docutils literal notranslate"><span class="pre">crop</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example, MEG evoked data are plotted in an HTML slider."><div class="figure align-default" id="id23">
-<img alt="Make an MNE-Report with a Slider" src="../_images/sphx_glr_plot_make_report_thumb.svg" /><p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/visualization/plot_make_report.html#sphx-glr-auto-examples-visualization-plot-make-report-py"><span class="std std-ref">Make an MNE-Report with a Slider</span></a></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<div class="sphx-glr-thumbcontainer" tooltip="In this example, MEG evoked data are plotted in an HTML slider."><div class="figure align-default" id="id24">
+<img alt="Make an MNE-Report with a Slider" src="../_images/sphx_glr_plot_make_report_thumb.svg" /><p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/visualization/plot_make_report.html#sphx-glr-auto-examples-visualization-plot-make-report-py"><span class="std std-ref">Make an MNE-Report with a Slider</span></a></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The objective of this example is to show how to plug a custom inverse solver in MNE in order to..."><div class="figure align-default" id="id24">
+</div><div class="sphx-glr-thumbcontainer" tooltip="The objective of this example is to show how to plug a custom inverse solver in MNE in order to..."><div class="figure align-default" id="id25">
 <img alt="Source localization with a custom inverse solver" src="../_images/sphx_glr_plot_custom_inverse_solver_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_custom_inverse_solver.html#sphx-glr-auto-examples-inverse-plot-custom-inverse-solver-py"><span class="std std-ref">Source localization with a custom inverse solver</span></a></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_custom_inverse_solver.html#sphx-glr-auto-examples-inverse-plot-custom-inverse-solver-py"><span class="std std-ref">Source localization with a custom inverse solver</span></a></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="See [1]_ for details."><div class="figure align-default" id="id25">
+</div><div class="sphx-glr-thumbcontainer" tooltip="See [1]_ for details."><div class="figure align-default" id="id26">
 <img alt="Compute a sparse inverse solution using the Gamma-Map empirical Bayesian method" src="../_images/sphx_glr_plot_gamma_map_inverse_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_gamma_map_inverse.html#sphx-glr-auto-examples-inverse-plot-gamma-map-inverse-py"><span class="std std-ref">Compute a sparse inverse solution using the Gamma-Map empirical Bayesian method</span></a></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_gamma_map_inverse.html#sphx-glr-auto-examples-inverse-plot-gamma-map-inverse-py"><span class="std std-ref">Compute a sparse inverse solution using the Gamma-Map empirical Bayesian method</span></a></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Runs an (ir)MxNE (L1/L2 [1]_ or L0.5/L2 [2]_ mixed norm) inverse solver. L0.5/L2 is done with i..."><div class="figure align-default" id="id26">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Runs an (ir)MxNE (L1/L2 [1]_ or L0.5/L2 [2]_ mixed norm) inverse solver. L0.5/L2 is done with i..."><div class="figure align-default" id="id27">
 <img alt="Compute sparse inverse solution with mixed norm: MxNE and irMxNE" src="../_images/sphx_glr_plot_mixed_norm_inverse_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_mixed_norm_inverse.html#sphx-glr-auto-examples-inverse-plot-mixed-norm-inverse-py"><span class="std std-ref">Compute sparse inverse solution with mixed norm: MxNE and irMxNE</span></a></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_mixed_norm_inverse.html#sphx-glr-auto-examples-inverse-plot-mixed-norm-inverse-py"><span class="std std-ref">Compute sparse inverse solution with mixed norm: MxNE and irMxNE</span></a></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The iterative reweighted TF-MxNE solver is a distributed inverse method based on the TF-MxNE so..."><div class="figure align-default" id="id27">
+</div><div class="sphx-glr-thumbcontainer" tooltip="The iterative reweighted TF-MxNE solver is a distributed inverse method based on the TF-MxNE so..."><div class="figure align-default" id="id28">
 <img alt="Compute iterative reweighted TF-MxNE with multiscale time-frequency dictionary" src="../_images/sphx_glr_plot_multidict_reweighted_tfmxne_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_multidict_reweighted_tfmxne.html#sphx-glr-auto-examples-inverse-plot-multidict-reweighted-tfmxne-py"><span class="std std-ref">Compute iterative reweighted TF-MxNE with multiscale time-frequency dictionary</span></a></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_multidict_reweighted_tfmxne.html#sphx-glr-auto-examples-inverse-plot-multidict-reweighted-tfmxne-py"><span class="std std-ref">Compute iterative reweighted TF-MxNE with multiscale time-frequency dictionary</span></a></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Compute a Recursively Applied and Projected MUltiple Signal Classification (RAP-MUSIC) [1]_ on ..."><div class="figure align-default" id="id28">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Compute a Recursively Applied and Projected MUltiple Signal Classification (RAP-MUSIC) [1]_ on ..."><div class="figure align-default" id="id29">
 <img alt="Compute Rap-Music on evoked data" src="../_images/sphx_glr_plot_rap_music_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_rap_music.html#sphx-glr-auto-examples-inverse-plot-rap-music-py"><span class="std std-ref">Compute Rap-Music on evoked data</span></a></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_rap_music.html#sphx-glr-auto-examples-inverse-plot-rap-music-py"><span class="std std-ref">Compute Rap-Music on evoked data</span></a></span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The TF-MxNE solver is a distributed inverse method (like dSPM or sLORETA) that promotes focal (..."><div class="figure align-default" id="id29">
+</div><div class="sphx-glr-thumbcontainer" tooltip="The TF-MxNE solver is a distributed inverse method (like dSPM or sLORETA) that promotes focal (..."><div class="figure align-default" id="id30">
 <img alt="Compute MxNE with time-frequency sparse prior" src="../_images/sphx_glr_plot_time_frequency_mixed_norm_inverse_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_time_frequency_mixed_norm_inverse.html#sphx-glr-auto-examples-inverse-plot-time-frequency-mixed-norm-inverse-py"><span class="std std-ref">Compute MxNE with time-frequency sparse prior</span></a></span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_time_frequency_mixed_norm_inverse.html#sphx-glr-auto-examples-inverse-plot-time-frequency-mixed-norm-inverse-py"><span class="std std-ref">Compute MxNE with time-frequency sparse prior</span></a></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id30">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id31">
 <img alt="The Evoked data structure: evoked/averaged data" src="../_images/sphx_glr_plot_10_evoked_overview_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This shows how to fit a dipole [1]_ using mne-python."><div class="figure align-default" id="id31">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This shows how to fit a dipole [1]_ using mne-python."><div class="figure align-default" id="id32">
 <img alt="Source localization with equivalent current dipole (ECD) fit" src="../_images/sphx_glr_plot_dipole_fit_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_dipole_fit.html#sphx-glr-auto-tutorials-source-modeling-plot-dipole-fit-py"><span class="std std-ref">Source localization with equivalent current dipole (ECD) fit</span></a></span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_dipole_fit.html#sphx-glr-auto-tutorials-source-modeling-plot-dipole-fit-py"><span class="std std-ref">Source localization with equivalent current dipole (ECD) fit</span></a></span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial focuses on visualization of stcs."><div class="figure align-default" id="id32">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial focuses on visualization of stcs."><div class="figure align-default" id="id33">
 <img alt="Visualize source time courses" src="../_images/sphx_glr_plot_visualize_stc_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_visualize_stc.html#sphx-glr-auto-tutorials-source-modeling-plot-visualize-stc-py"><span class="std std-ref">Visualize source time courses</span></a></span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/source-modeling/plot_visualize_stc.html#sphx-glr-auto-tutorials-source-modeling-plot-visualize-stc-py"><span class="std std-ref">Visualize source time courses</span></a></span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This script shows how to estimate significant clusters in time-frequency power estimates. It us..."><div class="figure align-default" id="id33">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This script shows how to estimate significant clusters in time-frequency power estimates. It us..."><div class="figure align-default" id="id34">
 <img alt="Non-parametric 1 sample cluster statistic on single trial power" src="../_images/sphx_glr_plot_stats_cluster_1samp_test_time_frequency_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/stats-sensor-space/plot_stats_cluster_1samp_test_time_frequency.html#sphx-glr-auto-tutorials-stats-sensor-space-plot-stats-cluster-1samp-test-time-frequency-py"><span class="std std-ref">Non-parametric 1 sample cluster statistic on single trial power</span></a></span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/stats-sensor-space/plot_stats_cluster_1samp_test_time_frequency.html#sphx-glr-auto-tutorials-stats-sensor-space-plot-stats-cluster-1samp-test-time-frequency-py"><span class="std std-ref">Non-parametric 1 sample cluster statistic on single trial power</span></a></span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here we compute the evoked from raw for the Brainstorm CTF phantom tutorial dataset. For compar..."><div class="figure align-default" id="id34">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here we compute the evoked from raw for the Brainstorm CTF phantom tutorial dataset. For compar..."><div class="figure align-default" id="id35">
 <img alt="Brainstorm CTF phantom dataset tutorial" src="../_images/sphx_glr_plot_brainstorm_phantom_ctf_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/sample-datasets/plot_brainstorm_phantom_ctf.html#sphx-glr-auto-tutorials-sample-datasets-plot-brainstorm-phantom-ctf-py"><span class="std std-ref">Brainstorm CTF phantom dataset tutorial</span></a></span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/sample-datasets/plot_brainstorm_phantom_ctf.html#sphx-glr-auto-tutorials-sample-datasets-plot-brainstorm-phantom-ctf-py"><span class="std std-ref">Brainstorm CTF phantom dataset tutorial</span></a></span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></dd></dl>
 
@@ -1090,9 +1084,9 @@ to remove all projectors.</p>
 </dd>
 </dl>
 <p class="rubric" id="sphx-glr-backreferences-mne-evoked-del-proj">Examples using <code class="docutils literal notranslate"><span class="pre">del_proj</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id35">
+<div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id36">
 <img alt="The Evoked data structure: evoked/averaged data" src="../_images/sphx_glr_plot_10_evoked_overview_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></dd></dl>
 
@@ -1128,7 +1122,7 @@ None (default) will pick good data channels.</p>
 
 <dl class="py method">
 <dt id="mne.Evoked.drop_channels">
-<code class="sig-name descname">drop_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L817-L861"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.drop_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">drop_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L832-L876"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.drop_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Drop channel(s).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1157,13 +1151,13 @@ None (default) will pick good data channels.</p>
 <p><span class="versionmodified added">New in version 0.9.0.</span></p>
 </div>
 <p class="rubric" id="sphx-glr-backreferences-mne-evoked-drop-channels">Examples using <code class="docutils literal notranslate"><span class="pre">drop_channels</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="We can apply the MNE inverse operator to a covariance matrix to obtain an estimate of source po..."><div class="figure align-default" id="id36">
+<div class="sphx-glr-thumbcontainer" tooltip="We can apply the MNE inverse operator to a covariance matrix to obtain an estimate of source po..."><div class="figure align-default" id="id37">
 <img alt="Compute source power estimate by projecting the covariance with MNE" src="../_images/sphx_glr_plot_mne_cov_power_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_mne_cov_power.html#sphx-glr-auto-examples-inverse-plot-mne-cov-power-py"><span class="std std-ref">Compute source power estimate by projecting the covariance with MNE</span></a></span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/inverse/plot_mne_cov_power.html#sphx-glr-auto-examples-inverse-plot-mne-cov-power-py"><span class="std std-ref">Compute source power estimate by projecting the covariance with MNE</span></a></span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id37">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id38">
 <img alt="The Evoked data structure: evoked/averaged data" src="../_images/sphx_glr_plot_10_evoked_overview_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></dd></dl>
 
@@ -1247,8 +1241,8 @@ suppression.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 </dd>
-<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+e2d9a94)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
-or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+e2d9a94)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
+<dt><strong>fir_design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Can be “firwin” (default) to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin.html#scipy.signal.firwin" title="(in SciPy v1.6.0.dev0+283cdbb)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin()</span></code></a>,
+or “firwin2” to use <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.firwin2.html#scipy.signal.firwin2" title="(in SciPy v1.6.0.dev0+283cdbb)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.firwin2()</span></code></a>. “firwin” uses
 a time-domain design technique that generally gives improved
 attenuation using fewer samples than “firwin2”.</p>
 <div class="versionadded">
@@ -1327,17 +1321,17 @@ be temporaily stored in memory.</p>
 <p><span class="versionmodified added">New in version 0.15.</span></p>
 </div>
 <p class="rubric" id="sphx-glr-backreferences-mne-evoked-filter">Examples using <code class="docutils literal notranslate"><span class="pre">filter</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="This example looks at high-frequency SEF responses."><div class="figure align-default" id="id38">
+<div class="sphx-glr-thumbcontainer" tooltip="This example looks at high-frequency SEF responses."><div class="figure align-default" id="id39">
 <img alt="HF-SEF dataset" src="../_images/sphx_glr_plot_hf_sef_data_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/datasets/plot_hf_sef_data.html#sphx-glr-auto-examples-datasets-plot-hf-sef-data-py"><span class="std std-ref">HF-SEF dataset</span></a></span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/datasets/plot_hf_sef_data.html#sphx-glr-auto-examples-datasets-plot-hf-sef-data-py"><span class="std std-ref">HF-SEF dataset</span></a></span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id39">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id40">
 <img alt="The Evoked data structure: evoked/averaged data" src="../_images/sphx_glr_plot_10_evoked_overview_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Here we compute the evoked from raw for the auditory Brainstorm tutorial dataset. For compariso..."><div class="figure align-default" id="id40">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Here we compute the evoked from raw for the auditory Brainstorm tutorial dataset. For compariso..."><div class="figure align-default" id="id41">
 <img alt="Brainstorm auditory tutorial dataset" src="../_images/sphx_glr_plot_brainstorm_auditory_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/sample-datasets/plot_brainstorm_auditory.html#sphx-glr-auto-tutorials-sample-datasets-plot-brainstorm-auditory-py"><span class="std std-ref">Brainstorm auditory tutorial dataset</span></a></span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/sample-datasets/plot_brainstorm_auditory.html#sphx-glr-auto-tutorials-sample-datasets-plot-brainstorm-auditory-py"><span class="std std-ref">Brainstorm auditory tutorial dataset</span></a></span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></dd></dl>
 
@@ -1421,19 +1415,19 @@ return_amplitude is True.</p>
 </dd>
 </dl>
 <p class="rubric" id="sphx-glr-backreferences-mne-evoked-get-peak">Examples using <code class="docutils literal notranslate"><span class="pre">get_peak</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example, we take some MNE plots and make some changes to make a figure closer to public..."><div class="figure align-default" id="id41">
+<div class="sphx-glr-thumbcontainer" tooltip="In this example, we take some MNE plots and make some changes to make a figure closer to public..."><div class="figure align-default" id="id42">
 <img alt="Make figures more publication ready" src="../_images/sphx_glr_plot_publication_figure_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/visualization/plot_publication_figure.html#sphx-glr-auto-examples-visualization-plot-publication-figure-py"><span class="std std-ref">Make figures more publication ready</span></a></span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/visualization/plot_publication_figure.html#sphx-glr-auto-examples-visualization-plot-publication-figure-py"><span class="std std-ref">Make figures more publication ready</span></a></span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id42">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers the basics of creating and working with evoked data. It introduces the Evo..."><div class="figure align-default" id="id43">
 <img alt="The Evoked data structure: evoked/averaged data" src="../_images/sphx_glr_plot_10_evoked_overview_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_tutorials/evoked/plot_10_evoked_overview.html#sphx-glr-auto-tutorials-evoked-plot-10-evoked-overview-py"><span class="std std-ref">The Evoked data structure: evoked/averaged data</span></a></span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></dd></dl>
 
 <dl class="py method">
 <dt id="mne.Evoked.interpolate_bads">
-<code class="sig-name descname">interpolate_bads</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reset_bads</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'accurate'</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L1011-L1060"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.interpolate_bads" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">interpolate_bads</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reset_bads</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'accurate'</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L1026-L1102"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.interpolate_bads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate bad MEG and EEG channels.</p>
 <p>Operates in place.</p>
 <dl class="field-list">
@@ -1442,14 +1436,38 @@ return_amplitude is True.</p>
 <dt><strong>reset_bads</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, remove the bads from info.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Either <code class="docutils literal notranslate"><span class="pre">'accurate'</span></code> or <code class="docutils literal notranslate"><span class="pre">'fast'</span></code>, determines the quality of the
-Legendre polynomial expansion used for interpolation of MEG
-channels.</p>
+Legendre polynomial expansion used for interpolation of channels
+using the minimum-norm method.</p>
 </dd>
 <dt><strong>origin</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/glossary.html#term-array-like" title="(in NumPy v1.20.dev0)"><span>array_like</span></a>, shape (3,) | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Origin of the sphere in the head coordinate frame and in meters.
 Can be <code class="docutils literal notranslate"><span class="pre">'auto'</span></code> (default), which means a head-digitization-based
 origin fit.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.17.</span></p>
+</div>
+</dd>
+<dt><strong>method</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Method to use for each channel type.
+Currently only the key “eeg” has multiple options:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;spline&quot;</span></code> (default)</dt><dd><p>Use spherical spline interpolation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;MNE&quot;</span></code></dt><dd><p>Use minimum-norm projection to a sphere and back.
+This is the method used for MEG channels.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The value for “meg” is “MNE”, and the value for
+“fnirs” is “nearest”. The default (None) is thus an alias for:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">meg</span><span class="o">=</span><span class="s2">&quot;MNE&quot;</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="s2">&quot;spline&quot;</span><span class="p">,</span> <span class="n">fnirs</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.</span></p>
 </div>
 </dd>
 <dt><strong>verbose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>If not None, override default verbose level (see <a class="reference internal" href="mne.verbose.html#mne.verbose" title="mne.verbose"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
@@ -1468,12 +1486,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.9.0.</span></p>
 </div>
-<p class="rubric" id="sphx-glr-backreferences-mne-evoked-interpolate-bads">Examples using <code class="docutils literal notranslate"><span class="pre">interpolate_bads</span></code>:</p>
-<div class="sphx-glr-thumbcontainer" tooltip="This example shows how to interpolate bad MEG/EEG channels"><div class="figure align-default" id="id43">
-<img alt="Interpolate bad channels for MEG/EEG channels" src="../_images/sphx_glr_plot_interpolate_bad_channels_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/preprocessing/plot_interpolate_bad_channels.html#sphx-glr-auto-examples-preprocessing-plot-interpolate-bad-channels-py"><span class="std std-ref">Interpolate bad channels for MEG/EEG channels</span></a></span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
-</div>
-</div><div class="sphx-glr-clear"></div></dd></dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="mne.Evoked.kind">
@@ -1483,7 +1496,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 
 <dl class="py method">
 <dt id="mne.Evoked.pick">
-<code class="sig-name descname">pick</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">picks</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L762-L780"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.pick" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pick</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">picks</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L777-L795"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.pick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pick a subset of channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1517,7 +1530,7 @@ types (e.g., exclude=”bads” when picks=”meg”).</p>
 
 <dl class="py method">
 <dt id="mne.Evoked.pick_channels">
-<code class="sig-name descname">pick_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em>, <em class="sig-param"><span class="n">ordered</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L727-L760"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.pick_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pick_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em>, <em class="sig-param"><span class="n">ordered</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L742-L775"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.pick_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pick some channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1563,7 +1576,7 @@ You can use <code class="docutils literal notranslate"><span class="pre">reorder
 
 <dl class="py method">
 <dt id="mne.Evoked.pick_types">
-<code class="sig-name descname">pick_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meg</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eeg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">stim</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">eog</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ecg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">emg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ref_meg</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">misc</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">resp</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">chpi</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">exci</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ias</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">syst</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">seeg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">dipole</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gof</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bio</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ecog</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">fnirs</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">csd</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">'bads'</span></em>, <em class="sig-param"><span class="n">selection</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L636-L725"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.pick_types" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pick_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meg</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eeg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">stim</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">eog</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ecg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">emg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ref_meg</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">misc</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">resp</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">chpi</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">exci</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ias</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">syst</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">seeg</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">dipole</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gof</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bio</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ecog</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">fnirs</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">csd</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">exclude</span><span class="o">=</span><span class="default_value">'bads'</span></em>, <em class="sig-param"><span class="n">selection</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L651-L740"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.pick_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pick some channels by type and names.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -3052,7 +3065,7 @@ that takes and returns a string.</p>
 
 <dl class="py method">
 <dt id="mne.Evoked.reorder_channels">
-<code class="sig-name descname">reorder_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L782-L815"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.reorder_channels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reorder_channels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ch_names</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L797-L830"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.reorder_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reorder channels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -3107,7 +3120,7 @@ Can also be “auto” to use a padding that will result in
 a power-of-two size (can be much faster).</p>
 </dd>
 <dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Frequency-domain window to use in resampling.
-See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+e2d9a94)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
+See <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.6.0.dev0+283cdbb)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Number of jobs to run in parallel. Can be ‘cuda’ if <code class="docutils literal notranslate"><span class="pre">cupy</span></code>
 is installed properly.</p>
@@ -3373,7 +3386,7 @@ they are properly set in <code class="docutils literal notranslate"><span class=
 
 <dl class="py method">
 <dt id="mne.Evoked.set_meas_date">
-<code class="sig-name descname">set_meas_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meas_date</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L580-L630"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.set_meas_date" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_meas_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">meas_date</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/channels/channels.py#L595-L645"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.Evoked.set_meas_date" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the measurement start date.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>

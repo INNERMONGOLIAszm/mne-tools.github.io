@@ -445,7 +445,7 @@ Morphing data.
 <p>Finally, we want to compare the overall activity levels in each condition,
 the diff is taken along the last axis (condition). The negative sign makes
 it so condition1 &gt; condition2 shows up as “red blobs” (instead of blue).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">)</span>  <span class="c1"># only magnitude</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">abs</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">)</span>  <span class="c1"># only magnitude</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># make paired contrast</span>
 </pre></div>
 </div>
@@ -485,49 +485,57 @@ Found 345 clusters
 Permuting 63 times (exact test)...
 
   0%|          |  : 0/63 [00:00&lt;?,       ?it/s]
-  2%|1         |  : 1/63 [00:00&lt;00:02,   29.39it/s]
-  3%|3         |  : 2/63 [00:00&lt;00:02,   29.40it/s]
-  6%|6         |  : 4/63 [00:00&lt;00:01,   30.16it/s]
-  8%|7         |  : 5/63 [00:00&lt;00:01,   30.13it/s]
- 11%|#1        |  : 7/63 [00:00&lt;00:01,   30.89it/s]
- 13%|#2        |  : 8/63 [00:00&lt;00:01,   30.82it/s]
- 16%|#5        |  : 10/63 [00:00&lt;00:01,   31.58it/s]
- 17%|#7        |  : 11/63 [00:00&lt;00:01,   31.48it/s]
- 21%|##        |  : 13/63 [00:00&lt;00:01,   32.23it/s]
- 22%|##2       |  : 14/63 [00:00&lt;00:01,   32.09it/s]
- 25%|##5       |  : 16/63 [00:00&lt;00:01,   32.84it/s]
- 27%|##6       |  : 17/63 [00:00&lt;00:01,   32.66it/s]
- 30%|###       |  : 19/63 [00:00&lt;00:01,   33.41it/s]
- 32%|###1      |  : 20/63 [00:00&lt;00:01,   33.20it/s]
- 35%|###4      |  : 22/63 [00:00&lt;00:01,   33.95it/s]
- 37%|###6      |  : 23/63 [00:00&lt;00:01,   33.70it/s]
- 40%|###9      |  : 25/63 [00:00&lt;00:01,   34.45it/s]
- 41%|####1     |  : 26/63 [00:00&lt;00:01,   34.17it/s]
- 44%|####4     |  : 28/63 [00:00&lt;00:01,   34.90it/s]
- 46%|####6     |  : 29/63 [00:00&lt;00:00,   34.59it/s]
- 49%|####9     |  : 31/63 [00:00&lt;00:00,   35.33it/s]
- 51%|#####     |  : 32/63 [00:00&lt;00:00,   34.99it/s]
- 52%|#####2    |  : 33/63 [00:00&lt;00:00,   34.68it/s]
- 56%|#####5    |  : 35/63 [00:00&lt;00:00,   35.41it/s]
- 57%|#####7    |  : 36/63 [00:00&lt;00:00,   35.07it/s]
- 60%|######    |  : 38/63 [00:00&lt;00:00,   35.80it/s]
- 62%|######1   |  : 39/63 [00:00&lt;00:00,   35.43it/s]
- 65%|######5   |  : 41/63 [00:00&lt;00:00,   36.16it/s]
- 67%|######6   |  : 42/63 [00:00&lt;00:00,   35.76it/s]
- 70%|######9   |  : 44/63 [00:01&lt;00:00,   36.48it/s]
- 71%|#######1  |  : 45/63 [00:01&lt;00:00,   36.06it/s]
- 75%|#######4  |  : 47/63 [00:01&lt;00:00,   36.79it/s]
- 76%|#######6  |  : 48/63 [00:01&lt;00:00,   36.35it/s]
- 79%|#######9  |  : 50/63 [00:01&lt;00:00,   37.06it/s]
- 81%|########  |  : 51/63 [00:01&lt;00:00,   36.60it/s]
- 84%|########4 |  : 53/63 [00:01&lt;00:00,   37.31it/s]
- 86%|########5 |  : 54/63 [00:01&lt;00:00,   36.83it/s]
- 89%|########8 |  : 56/63 [00:01&lt;00:00,   37.53it/s]
- 92%|#########2|  : 58/63 [00:01&lt;00:00,   38.23it/s]
- 94%|#########3|  : 59/63 [00:01&lt;00:00,   37.68it/s]
- 97%|#########6|  : 61/63 [00:01&lt;00:00,   38.38it/s]
- 98%|#########8|  : 62/63 [00:01&lt;00:00,   37.82it/s]
-100%|##########|  : 63/63 [00:01&lt;00:00,   44.05it/s]
+  2%|1         |  : 1/63 [00:00&lt;00:02,   29.35it/s]
+  3%|3         |  : 2/63 [00:00&lt;00:02,   29.36it/s]
+  5%|4         |  : 3/63 [00:00&lt;00:02,   29.37it/s]
+  8%|7         |  : 5/63 [00:00&lt;00:01,   30.12it/s]
+ 10%|9         |  : 6/63 [00:00&lt;00:01,   30.10it/s]
+ 11%|#1        |  : 7/63 [00:00&lt;00:01,   30.07it/s]
+ 13%|#2        |  : 8/63 [00:00&lt;00:01,   30.04it/s]
+ 16%|#5        |  : 10/63 [00:00&lt;00:01,   30.80it/s]
+ 17%|#7        |  : 11/63 [00:00&lt;00:01,   30.73it/s]
+ 19%|#9        |  : 12/63 [00:00&lt;00:01,   30.67it/s]
+ 21%|##        |  : 13/63 [00:00&lt;00:01,   30.62it/s]
+ 24%|##3       |  : 15/63 [00:00&lt;00:01,   31.38it/s]
+ 25%|##5       |  : 16/63 [00:00&lt;00:01,   31.28it/s]
+ 27%|##6       |  : 17/63 [00:00&lt;00:01,   31.19it/s]
+ 30%|###       |  : 19/63 [00:00&lt;00:01,   31.95it/s]
+ 32%|###1      |  : 20/63 [00:00&lt;00:01,   31.82it/s]
+ 35%|###4      |  : 22/63 [00:00&lt;00:01,   32.58it/s]
+ 37%|###6      |  : 23/63 [00:00&lt;00:01,   32.41it/s]
+ 38%|###8      |  : 24/63 [00:00&lt;00:01,   32.26it/s]
+ 41%|####1     |  : 26/63 [00:00&lt;00:01,   33.01it/s]
+ 43%|####2     |  : 27/63 [00:00&lt;00:01,   32.82it/s]
+ 44%|####4     |  : 28/63 [00:00&lt;00:01,   32.65it/s]
+ 48%|####7     |  : 30/63 [00:00&lt;00:00,   33.39it/s]
+ 49%|####9     |  : 31/63 [00:00&lt;00:00,   33.18it/s]
+ 51%|#####     |  : 32/63 [00:00&lt;00:00,   32.98it/s]
+ 52%|#####2    |  : 33/63 [00:00&lt;00:00,   32.79it/s]
+ 56%|#####5    |  : 35/63 [00:00&lt;00:00,   33.54it/s]
+ 57%|#####7    |  : 36/63 [00:00&lt;00:00,   33.32it/s]
+ 59%|#####8    |  : 37/63 [00:00&lt;00:00,   33.10it/s]
+ 60%|######    |  : 38/63 [00:01&lt;00:00,   32.90it/s]
+ 63%|######3   |  : 40/63 [00:01&lt;00:00,   33.65it/s]
+ 65%|######5   |  : 41/63 [00:01&lt;00:00,   33.42it/s]
+ 67%|######6   |  : 42/63 [00:01&lt;00:00,   33.21it/s]
+ 68%|######8   |  : 43/63 [00:01&lt;00:00,   33.00it/s]
+ 71%|#######1  |  : 45/63 [00:01&lt;00:00,   33.75it/s]
+ 73%|#######3  |  : 46/63 [00:01&lt;00:00,   33.51it/s]
+ 75%|#######4  |  : 47/63 [00:01&lt;00:00,   33.29it/s]
+ 76%|#######6  |  : 48/63 [00:01&lt;00:00,   33.08it/s]
+ 79%|#######9  |  : 50/63 [00:01&lt;00:00,   33.82it/s]
+ 81%|########  |  : 51/63 [00:01&lt;00:00,   33.58it/s]
+ 83%|########2 |  : 52/63 [00:01&lt;00:00,   33.35it/s]
+ 84%|########4 |  : 53/63 [00:01&lt;00:00,   33.14it/s]
+ 86%|########5 |  : 54/63 [00:01&lt;00:00,   32.93it/s]
+ 87%|########7 |  : 55/63 [00:01&lt;00:00,   32.74it/s]
+ 89%|########8 |  : 56/63 [00:01&lt;00:00,   32.57it/s]
+ 92%|#########2|  : 58/63 [00:01&lt;00:00,   33.31it/s]
+ 94%|#########3|  : 59/63 [00:01&lt;00:00,   33.11it/s]
+ 95%|#########5|  : 60/63 [00:01&lt;00:00,   32.91it/s]
+ 97%|#########6|  : 61/63 [00:01&lt;00:00,   32.73it/s]
+100%|##########|  : 63/63 [00:01&lt;00:00,   33.62it/s]
+100%|##########|  : 63/63 [00:01&lt;00:00,   37.36it/s]
 Computing cluster p-values
 Done.
 </pre></div>
@@ -559,8 +567,8 @@ Done.
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Visualizing clusters.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.951 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  103 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  23.525 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  113 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-stats-source-space-plot-stats-cluster-spatio-temporal-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/7352f0e8340cd39df5a7ba6354ec1427/plot_stats_cluster_spatio_temporal.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_stats_cluster_spatio_temporal.py</span></code></a></p>

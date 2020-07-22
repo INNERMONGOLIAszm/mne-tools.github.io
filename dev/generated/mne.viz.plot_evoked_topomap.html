@@ -246,9 +246,14 @@ scale is None the unit is automatically determined.</p>
 <code class="docutils literal notranslate"><span class="pre">time_unit='ms'</span></code>, “%0.3f s” if <code class="docutils literal notranslate"><span class="pre">time_unit='s'</span></code>, and
 “%g” otherwise.</p>
 </dd>
-<dt><strong>proj</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a> | ‘interactive’</span></dt><dd><p>If true SSP projections are applied before display. If ‘interactive’,
+<dt><strong>proj</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a> | ‘interactive’ | ‘reconstruct’</span></dt><dd><p>If true SSP projections are applied before display. If ‘interactive’,
 a check box for reversible selection of SSP projection vectors will
-be show.</p>
+be shown. If ‘reconstruct’, projection vectors will be applied and then
+M/EEG data will be reconstructed via field mapping to reduce the signal
+bias caused by projection.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.21: </span>Support for ‘reconstruct’ was added.</p>
+</div>
 </dd>
 <dt><strong>show</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Show figure if True.</p>
 </dd>

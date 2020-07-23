@@ -175,12 +175,16 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.viz.link_brains<a class="headerlink" href="#mne-viz-link-brains" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mne.viz.link_brains">
-<code class="sig-prename descclassname">mne.viz.</code><code class="sig-name descname">link_brains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">brains</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/viz/_3d.py#L1519-L1545"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.viz.link_brains" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne.viz.</code><code class="sig-name descname">link_brains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">brains</span></em>, <em class="sig-param"><span class="n">time</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">camera</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/viz/_3d.py#L1519-L1549"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.viz.link_brains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot multiple SourceEstimate objects with PyVista.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>brains</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> or <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></span></dt><dd><p>The collection of brains to plot.</p>
+</dd>
+<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, link the time controllers. Defaults to True.</p>
+</dd>
+<dt><strong>camera</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, link the camera controls. Defaults to False.</p>
 </dd>
 </dl>
 </dd>

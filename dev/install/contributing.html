@@ -337,6 +337,10 @@ contributors. First, edit these two variables for your situation:</p>
 <span class="gp">$</span> <span class="nv">INSTALL_LOCATION</span><span class="o">=</span><span class="s2">&quot;/opt&quot;</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows, add <code class="docutils literal notranslate"><span class="pre">set</span></code> before the variable names (<code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">GITHUB_USERNAME=...</span></code>, etc.).</p>
+</div>
 <p>Then make a local clone of your remote fork (<code class="docutils literal notranslate"><span class="pre">origin</span></code>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> <span class="nv">$INSTALL_LOCATION</span>
 <span class="gp">$</span> git clone https://github.com/<span class="nv">$GITHUB_USERNAME</span>/mne-python.git
@@ -381,8 +385,15 @@ MNE-Python, but are needed for locally running our test suite:</p>
 </div>
 <p>And for building our documentation:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -r requirements_doc.txt
+<span class="gp">$</span> conda install graphviz
 </pre></div>
 </div>
+<p>To build documentation, you will also require <a class="reference external" href="http://optipng.sourceforge.net/">optipng</a>:</p>
+<ul class="simple">
+<li><p>On Linux, use the command <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">optipng</span></code>.</p></li>
+<li><p>On MacOS, optipng can be installed using Homebrew.</p></li>
+<li><p>On Windows, unzip optipng.exe from the <a class="reference external" href="http://prdownloads.sourceforge.net/optipng/optipng-0.7.7-win32.zip?download">optipng for Windows</a> archive into the <code class="docutils literal notranslate"><span class="pre">doc</span></code> folder.</p></li>
+</ul>
 <p>You can also choose to install some optional linters for reStructuredText:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> conda install -c conda-forge sphinx-autobuild doc8
 </pre></div>
@@ -473,7 +484,7 @@ cycle, adding the unit tests and documentation changes:</p>
 </div>
 <p>When you’re done, it’s time to run the test suite to make sure your changes
 haven’t broken any existing functionality, and to make sure your new test
-covers the lines of code you’ve added (see <a class="reference external" href="https://www.statsmodels.org/dev/dev/test_notes.html#run-tests" title="(in statsmodels vv0.12.0.dev0 (+601))"><span>Running Tests</span></a> and
+covers the lines of code you’ve added (see <a class="reference external" href="https://www.statsmodels.org/dev/dev/test_notes.html#run-tests" title="(in statsmodels vv0.12.0.dev0 (+613))"><span>Running Tests</span></a> and
 <a class="reference internal" href="#build-docs"><span class="std std-ref">Building the documentation</span></a>, below). Once everything looks good, it’s time to push your
 changes to your fork:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="c1"># push local changes to remote branch origin/new-feature-x</span>
@@ -620,7 +631,7 @@ merge conflicts (since the changelog is updated with almost every PR).</p>
 test across multiple installation targets. However, the CIs are often slower
 than testing locally, especially when other contributors also have open PRs
 (which is basically always the case). Therefore, do not rely on the CIs to
-catch bugs and style errors for you; <a class="reference external" href="https://www.statsmodels.org/dev/dev/test_notes.html#run-tests" title="(in statsmodels vv0.12.0.dev0 (+601))"><span class="xref std std-ref">run the tests locally</span></a>
+catch bugs and style errors for you; <a class="reference external" href="https://www.statsmodels.org/dev/dev/test_notes.html#run-tests" title="(in statsmodels vv0.12.0.dev0 (+613))"><span class="xref std std-ref">run the tests locally</span></a>
 instead before opening a new PR and before each time you push additional
 changes to an already-open PR.</p>
 </div>
@@ -697,7 +708,7 @@ will not).</p>
 </div>
 <p>MNE-Python also uses <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html">Intersphinx</a>, so you can (and should)
 cross-reference to Python built-in classes and functions as well as API
-elements in <a class="reference external" href="https://numpy.org/devdocs/reference/index.html#module-numpy" title="(in NumPy v1.20.dev0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>, <a class="reference external" href="https://scipy.github.io/devdocs/index.html#module-scipy" title="(in SciPy v1.6.0.dev0+ebc0c58)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a>, etc. See the Sphinx
+elements in <a class="reference external" href="https://numpy.org/devdocs/reference/index.html#module-numpy" title="(in NumPy v1.20.dev0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NumPy</span></code></a>, <a class="reference external" href="https://scipy.github.io/devdocs/index.html#module-scipy" title="(in SciPy v1.6.0.dev0+b1189c9)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">SciPy</span></code></a>, etc. See the Sphinx
 configuration file (<code class="file docutils literal notranslate"><span class="pre">doc/conf.py</span></code>) for the list of Intersphinx projects
 we link to. Their inventories can be examined using a tool like <a class="reference external" href="https://sphobjinv.readthedocs.io/en/latest/">sphobjinv</a> or
 dumped to file with commands like:</p>
@@ -814,6 +825,14 @@ tutorial, you should instead run
 all the documentation and additionally execute just your example or tutorial
 (so you can make sure it runs successfully and generates the output / figures
 you expect).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows, to use the pattern approach, use the following two lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="n">PATTERN</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="n">REGEX_TO_SELECT_MY_TUTORIAL</span><span class="o">&gt;</span><span class="p">}</span>
+<span class="n">make</span> <span class="n">html_dev</span><span class="o">-</span><span class="n">pattern</span>
+</pre></div>
+</div>
+</div>
 <p>After either of these commands completes, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">show</span></code> will open the
 locally-rendered documentation site in your browser. Additional <code class="docutils literal notranslate"><span class="pre">make</span></code>
 recipes are available; run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">help</span></code> from the <code class="file docutils literal notranslate"><span class="pre">doc</span></code> directory or

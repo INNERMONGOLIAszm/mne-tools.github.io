@@ -183,7 +183,8 @@ data and optode locations.</p>
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#nirx-directory" id="id1">NIRx (directory)</a></p></li>
-<li><p><a class="reference internal" href="#storing-of-optode-locations" id="id2">Storing of optode locations</a></p></li>
+<li><p><a class="reference internal" href="#snirf-snirf" id="id2">SNIRF (.snirf)</a></p></li>
+<li><p><a class="reference internal" href="#storing-of-optode-locations" id="id3">Storing of optode locations</a></p></li>
 </ul>
 </div>
 <div class="section" id="nirx-directory">
@@ -191,18 +192,29 @@ data and optode locations.</p>
 <p>NIRx recordings can be read in using <a class="reference internal" href="../../generated/mne.io.read_raw_nirx.html#mne.io.read_raw_nirx" title="mne.io.read_raw_nirx"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.io.read_raw_nirx()</span></code></a>.
 The NIRx device stores data directly to a directory with multiple file types,
 MNE extracts the appropriate information from each file.</p>
+</div>
+<div class="section" id="snirf-snirf">
+<span id="import-snirf"></span><h2><a class="toc-backref" href="#id2">SNIRF (.snirf)</a><a class="headerlink" href="#snirf-snirf" title="Permalink to this headline">¶</a></h2>
+<p>Data stored in the SNIRF format can be read in
+using <a class="reference internal" href="../../generated/mne.io.read_raw_snirf.html#mne.io.read_raw_snirf" title="mne.io.read_raw_snirf"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.io.read_raw_snirf()</span></code></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The SNIRF format has provisions for many different types of NIRS
+recordings. MNE currently only supports continuous wave data
+stored in the .snirf format.</p>
+</div>
+</div>
+<div class="section" id="storing-of-optode-locations">
+<h2><a class="toc-backref" href="#id3">Storing of optode locations</a><a class="headerlink" href="#storing-of-optode-locations" title="Permalink to this headline">¶</a></h2>
+<p>NIRs devices consist of light sources and light detectors.
+A channel is formed by source-detector pairs.
+MNE stores the location of the channels, sources, and detectors.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Information about device light wavelength is stored in
 channel names. Manual modification of channel names is not
 recommended.</p>
 </div>
-</div>
-<div class="section" id="storing-of-optode-locations">
-<h2><a class="toc-backref" href="#id2">Storing of optode locations</a><a class="headerlink" href="#storing-of-optode-locations" title="Permalink to this headline">¶</a></h2>
-<p>NIRs devices consist of light sources and light detectors.
-A channel is formed by source-detector pairs.
-MNE stores the location of the channels, sources, and detectors.</p>
 <p><strong>Estimated memory usage:</strong>  8 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-io-plot-30-reading-fnirs-data-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">

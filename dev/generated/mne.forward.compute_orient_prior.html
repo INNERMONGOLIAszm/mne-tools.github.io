@@ -175,14 +175,35 @@ Or, switch to documentation for the <a href="https://mne.tools/stable">current s
 <h1>mne.forward.compute_orient_prior<a class="headerlink" href="#mne-forward-compute-orient-prior" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mne.forward.compute_orient_prior">
-<code class="sig-prename descclassname">mne.forward.</code><code class="sig-name descname">compute_orient_prior</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">forward</span></em>, <em class="sig-param"><span class="n">loose</span><span class="o">=</span><span class="default_value">0.2</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/forward/forward.py#L970-L1012"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.forward.compute_orient_prior" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne.forward.</code><code class="sig-name descname">compute_orient_prior</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">forward</span></em>, <em class="sig-param"><span class="n">loose</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/mne-tools/mne-python/blob/master/mne/forward/forward.py#L1014-L1069"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne.forward.compute_orient_prior" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute orientation prior.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>forward</strong><span class="classifier">instance of <a class="reference internal" href="mne.Forward.html#mne.Forward" title="mne.Forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code></a></span></dt><dd><p>Forward operator.</p>
 </dd>
-<dt><strong>loose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>The loose orientation parameter (between 0 and 1).</p>
+<dt><strong>loose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> | ‘auto’ | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Value that weights the source variances of the dipole components
+that are parallel (tangential) to the cortical surface. Can be:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>float between 0 and 1 (inclusive)</dt><dd><p>If 0, then the solution is computed with fixed orientation.
+If 1, it corresponds to free orientations.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'auto'</span></code> (default)</dt><dd><p>Uses 0.2 for surface source spaces (unless <code class="docutils literal notranslate"><span class="pre">fixed</span></code> is True) and
+1.0 for other source spaces (volume or mixed).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>dict</dt><dd><p>Mapping from the key for a given source space type (surface, volume,
+discrete) to the loose value. Useful mostly for mixed source spaces.</p>
+</dd>
+</dl>
+</li>
+</ul>
 </dd>
 <dt><strong>verbose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.8)"><span class="xref std std-ref">bool</span></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>If not None, override default verbose level (see <a class="reference internal" href="mne.verbose.html#mne.verbose" title="mne.verbose"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
 and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configure_mne.html#tut-logging"><span class="std std-ref">Logging documentation</span></a> for more).</p>
@@ -191,7 +212,7 @@ and <a class="reference internal" href="../auto_tutorials/intro/plot_50_configur
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>orient_prior</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, shape (n_vertices,)</span></dt><dd><p>Orientation priors.</p>
+<dt><strong>orient_prior</strong><span class="classifier"><a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, shape (n_sources,)</span></dt><dd><p>Orientation priors.</p>
 </dd>
 </dl>
 </dd>

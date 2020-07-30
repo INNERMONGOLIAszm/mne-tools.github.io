@@ -551,42 +551,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img452c388c11c54a64a66c4f95a6db1a1b">
+  <img id="_anim_imgf2a2337ba4ae4e068e5b83ef8d3225ff">
   <div class="anim-controls">
-    <input id="_anim_slider452c388c11c54a64a66c4f95a6db1a1b" type="range" class="anim-slider"
+    <input id="_anim_sliderf2a2337ba4ae4e068e5b83ef8d3225ff" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim452c388c11c54a64a66c4f95a6db1a1b.set_frame(parseInt(this.value));"></input>
+           oninput="animf2a2337ba4ae4e068e5b83ef8d3225ff.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="anim452c388c11c54a64a66c4f95a6db1a1b.slower()">
+      <button title="Decrease speed" onclick="animf2a2337ba4ae4e068e5b83ef8d3225ff.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="anim452c388c11c54a64a66c4f95a6db1a1b.first_frame()">
+      <button title="First frame" onclick="animf2a2337ba4ae4e068e5b83ef8d3225ff.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="anim452c388c11c54a64a66c4f95a6db1a1b.previous_frame()">
+      <button title="Previous frame" onclick="animf2a2337ba4ae4e068e5b83ef8d3225ff.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="anim452c388c11c54a64a66c4f95a6db1a1b.reverse_animation()">
+      <button title="Play backwards" onclick="animf2a2337ba4ae4e068e5b83ef8d3225ff.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="anim452c388c11c54a64a66c4f95a6db1a1b.pause_animation()">
+      <button title="Pause" onclick="animf2a2337ba4ae4e068e5b83ef8d3225ff.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="anim452c388c11c54a64a66c4f95a6db1a1b.play_animation()">
+      <button title="Play" onclick="animf2a2337ba4ae4e068e5b83ef8d3225ff.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="anim452c388c11c54a64a66c4f95a6db1a1b.next_frame()">
+      <button title="Next frame" onclick="animf2a2337ba4ae4e068e5b83ef8d3225ff.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="anim452c388c11c54a64a66c4f95a6db1a1b.last_frame()">
+      <button title="Last frame" onclick="animf2a2337ba4ae4e068e5b83ef8d3225ff.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="anim452c388c11c54a64a66c4f95a6db1a1b.faster()">
+      <button title="Increase speed" onclick="animf2a2337ba4ae4e068e5b83ef8d3225ff.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_select452c388c11c54a64a66c4f95a6db1a1b"
+    <form title="Repetition mode" action="#n" name="_anim_loop_selectf2a2337ba4ae4e068e5b83ef8d3225ff"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_452c388c11c54a64a66c4f95a6db1a1b"
+      <input type="radio" name="state" value="once" id="_anim_radio1_f2a2337ba4ae4e068e5b83ef8d3225ff"
              >
-      <label for="_anim_radio1_452c388c11c54a64a66c4f95a6db1a1b">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_452c388c11c54a64a66c4f95a6db1a1b"
+      <label for="_anim_radio1_f2a2337ba4ae4e068e5b83ef8d3225ff">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_f2a2337ba4ae4e068e5b83ef8d3225ff"
              checked>
-      <label for="_anim_radio2_452c388c11c54a64a66c4f95a6db1a1b">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_452c388c11c54a64a66c4f95a6db1a1b"
+      <label for="_anim_radio2_f2a2337ba4ae4e068e5b83ef8d3225ff">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_f2a2337ba4ae4e068e5b83ef8d3225ff"
              >
-      <label for="_anim_radio3_452c388c11c54a64a66c4f95a6db1a1b">Reflect</label>
+      <label for="_anim_radio3_f2a2337ba4ae4e068e5b83ef8d3225ff">Reflect</label>
     </form>
   </div>
 </div>
@@ -596,9 +596,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img452c388c11c54a64a66c4f95a6db1a1b";
-    var slider_id = "_anim_slider452c388c11c54a64a66c4f95a6db1a1b";
-    var loop_select_id = "_anim_loop_select452c388c11c54a64a66c4f95a6db1a1b";
+    var img_id = "_anim_imgf2a2337ba4ae4e068e5b83ef8d3225ff";
+    var slider_id = "_anim_sliderf2a2337ba4ae4e068e5b83ef8d3225ff";
+    var loop_select_id = "_anim_loop_selectf2a2337ba4ae4e068e5b83ef8d3225ff";
     var frames = new Array(11);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAH0CAYAAADhUFPUAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -15532,12 +15532,12 @@ CRZBEARBEITNkGARBEEQBEHYDAkWQRAEQRCEzfw/19t+xHzMdTYAAAAASUVORK5CYII=\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim452c388c11c54a64a66c4f95a6db1a1b = new Animation(frames, img_id, slider_id, 500.0,
+        animf2a2337ba4ae4e068e5b83ef8d3225ff = new Animation(frames, img_id, slider_id, 500.0,
                                  loop_select_id);
     }, 0);
   })()
 </script></div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.644 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  18.163 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  13 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-visualization-plot-evoked-topomap-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">

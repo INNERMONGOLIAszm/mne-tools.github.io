@@ -469,11 +469,12 @@ Applying baseline correction (mode: mean)
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">snr</span></a> <span class="o">=</span> <span class="mf">3.0</span>            <span class="c1"># use smaller SNR for raw data</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">inv_method</span></a> <span class="o">=</span> <span class="s1">&#39;dSPM&#39;</span>  <span class="c1"># sLORETA, MNE, dSPM</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">parc</span></a> <span class="o">=</span> <span class="s1">&#39;aparc&#39;</span>       <span class="c1"># the parcellation to use, e.g., &#39;aparc&#39; &#39;aparc.a2009s&#39;</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loose</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">surface</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
 
 <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lambda2</span></a> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">snr</span></a> <span class="o">**</span> <span class="mi">2</span>
 
-<a href="../../generated/mne.minimum_norm.InverseOperator.html#mne.minimum_norm.InverseOperator" title="mne.minimum_norm.InverseOperator" class="sphx-glr-backref-module-mne-minimum_norm sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">inverse_operator</span></a> <span class="o">=</span> <a href="../../generated/mne.minimum_norm.make_inverse_operator.html#mne.minimum_norm.make_inverse_operator" title="mne.minimum_norm.make_inverse_operator" class="sphx-glr-backref-module-mne-minimum_norm sphx-glr-backref-type-py-function"><span class="n">make_inverse_operator</span></a><span class="p">(</span><a href="../../generated/mne.Info.html#mne.Info" title="mne.Info" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked</span><span class="o">.</span><span class="n">info</span></a><span class="p">,</span> <a href="../../generated/mne.Forward.html#mne.Forward" title="mne.Forward" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fwd</span></a><span class="p">,</span> <a href="../../generated/mne.Covariance.html#mne.Covariance" title="mne.Covariance" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">noise_cov</span></a><span class="p">,</span>
-                                         <span class="n">depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fixed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="../../generated/mne.minimum_norm.InverseOperator.html#mne.minimum_norm.InverseOperator" title="mne.minimum_norm.InverseOperator" class="sphx-glr-backref-module-mne-minimum_norm sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">inverse_operator</span></a> <span class="o">=</span> <a href="../../generated/mne.minimum_norm.make_inverse_operator.html#mne.minimum_norm.make_inverse_operator" title="mne.minimum_norm.make_inverse_operator" class="sphx-glr-backref-module-mne-minimum_norm sphx-glr-backref-type-py-function"><span class="n">make_inverse_operator</span></a><span class="p">(</span>
+    <a href="../../generated/mne.Info.html#mne.Info" title="mne.Info" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked</span><span class="o">.</span><span class="n">info</span></a><span class="p">,</span> <a href="../../generated/mne.Forward.html#mne.Forward" title="mne.Forward" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fwd</span></a><span class="p">,</span> <a href="../../generated/mne.Covariance.html#mne.Covariance" title="mne.Covariance" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">noise_cov</span></a><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loose</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">loose</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <a href="../../generated/mne.MixedSourceEstimate.html#mne.MixedSourceEstimate" title="mne.MixedSourceEstimate" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stc</span></a> <span class="o">=</span> <a href="../../generated/mne.minimum_norm.apply_inverse.html#mne.minimum_norm.apply_inverse" title="mne.minimum_norm.apply_inverse" class="sphx-glr-backref-module-mne-minimum_norm sphx-glr-backref-type-py-function"><span class="n">apply_inverse</span></a><span class="p">(</span><a href="../../generated/mne.Evoked.html#mne.Evoked" title="mne.Evoked" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked</span></a><span class="p">,</span> <a href="../../generated/mne.minimum_norm.InverseOperator.html#mne.minimum_norm.InverseOperator" title="mne.minimum_norm.InverseOperator" class="sphx-glr-backref-module-mne-minimum_norm sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">inverse_operator</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lambda2</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">inv_method</span></a><span class="p">,</span>
                     <span class="n">pick_ori</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -481,10 +482,16 @@ Applying baseline correction (mode: mean)
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>info[&quot;bads&quot;] and noise_cov[&quot;bads&quot;] do not match, excluding bad channels from both
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Converting forward solution to surface orientation
+    No patch info available. The standard source space normals will be employed in the rotation to the local surface coordinates....
+    Converting to surface-based source orientations...
+    [done]
+info[&quot;bads&quot;] and noise_cov[&quot;bads&quot;] do not match, excluding bad channels from both
 Computing inverse operator with 305 channels.
     305 out of 306 channels remain after picking
 Selected 305 channels
+Applying loose dipole orientations to surface source spaces: 0.2
+Applying free  dipole orientations to volume  source spaces: 1.0
 Whitening the forward solution.
     Created an SSP operator (subspace dimension = 3)
 Computing rank from covariance with rank=None
@@ -495,8 +502,8 @@ Computing rank from covariance with rank=None
 Creating the source covariance matrix
 Adjusting source covariance matrix.
 Computing SVD of whitened and weighted lead field matrix.
-    largest singular value = 4.45582
-    scaling factor to adjust the trace = 5.72916e+19
+    largest singular value = 4.39266
+    scaling factor to adjust the trace = 3.01344e+19
 Preparing the inverse operator for use...
     Scaled noise and source covariance from nave = 1 to nave = 55
     Created the regularized inverter
@@ -525,7 +532,7 @@ Applying inverse operator to &quot;Left Auditory&quot;...
 </div>
 <img alt="sample - lh" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_mixed_source_space_inverse_003.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using control points [ 3.29733966  3.8303176  15.08063585]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using control points [ 3.45409596  4.02821047 16.97219252]
 </pre></div>
 </div>
 </div>
@@ -539,7 +546,7 @@ Applying inverse operator to &quot;Left Auditory&quot;...
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fixing initial time: 0.1 sec
 Showing: t = 0.100 s, (-25.3, 19.0, -7.3) mm, [5, 10, 7] vox, 2045 vertex
-Using control points [3.33989041 3.59282565 6.18413271]
+Using control points [3.21567156 3.47889133 6.39837939]
 </pre></div>
 </div>
 </div>
@@ -571,8 +578,8 @@ and each sub structure contained in the src space</p>
 Extracting time courses for 75 labels (mode: mean)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  45.472 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  1465 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  31.075 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  1496 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-inverse-plot-mixed-source-space-inverse-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/3a2b9aa2deb5cb4e8da2ffe2be1bff69/plot_mixed_source_space_inverse.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_mixed_source_space_inverse.py</span></code></a></p>
